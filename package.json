@@ -1,0 +1,31 @@
+{
+  "name": "dbm-german-bot",
+  "version": "3.0.0-beta",
+  "description": "The official bot of the DBM German Discord server.",
+  "author": "DBM German",
+  "license": "Attribution-NonCommercial-ShareAlike 4.0 International",
+  "bugs": {
+    "url": "https://github.com/dbm-german/DBM-German-Bot/issues"
+  },
+  "homepage": "https://github.com/dbm-german/DBM-German-Bot#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbm-german/DBM-German-Bot.git"
+  },
+  "keywords": [
+    "discord-bot-maker",
+    "german",
+    "german",
+    "discord",
+    "bot"
+  ],
+  "private": true,
+  "main": "bot/bot.js",
+  "type": "module",
+  "scripts": {
+    "start": "cd bot && node bot.js",
+    "setup": "node utils/setup.js",
+    "to-dbm": "node utils/to-dbm.js",
+    "to-raw": "node utils/to-raw.js"
+  }
+}

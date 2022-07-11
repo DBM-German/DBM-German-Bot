@@ -1,0 +1,46 @@
+{
+    "name": "Hilfe",
+    "permissions": "NONE",
+    "permissions2": "NONE",
+    "restriction": "1",
+    "_id": "YjIIC",
+    "actions": [
+        {
+            "storage": "1",
+            "varName": "titel",
+            "changeType": "0",
+            "value": "\"Hilfe\"",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "beschreibung",
+            "changeType": "0",
+            "value": "\"Zeigt bald eine Übersicht aller verfügbaren Befehle.\"",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "kanal",
+            "changeType": "0",
+            "value": "channel",
+            "name": "Control Variable"
+        },
+        {
+            "source": "FGdiL",
+            "type": "true",
+            "name": "Call Command/Event"
+        }
+    ],
+    "comType": "4",
+    "description": "Informationen zu allen verfügbaren Befehlen",
+    "parameters": [
+        {
+            "name": "Befehl",
+            "description": "Spezifischer Befehl",
+            "type": "STRING",
+            "required": false,
+            "choices": null
+        }
+    ]
+}

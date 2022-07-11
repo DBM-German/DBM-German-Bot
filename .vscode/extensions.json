@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+        "waderyan.nodejs-extension-pack",   // Required
+        "bierner.github-markdown-preview",  // Semi-optional
+        "ExodiusStudios.comment-anchors",   // Semi-optional
+        "eamodio.gitlens",                  // Optional
+        "donjayamanne.githistory",          // Optional
+        "PKief.material-icon-theme",        // Optional
+        "icrawl.discord-vscode",            // Optional
+        "MS-CEINTL.vscode-language-pack-de" // Optional
+    ]
+}

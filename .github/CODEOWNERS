@@ -1,0 +1,9 @@
+raw/** @dbm-german/Developers
+utils/** @dbm-german/Developers
+README.md @dbm-german/Developers
+
+.github/** @dbm-german/Managers
+.vscode/** @dbm-german/Managers
+res/** @dbm-german/Managers
+.gitignore @dbm-german/Managers
+LICENSE @dbm-german/Managers

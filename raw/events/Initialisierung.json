@@ -1,0 +1,32 @@
+{
+    "name": "Initialisierung",
+    "temp": "",
+    "event-type": "48",
+    "_id": "YyWfH",
+    "actions": [
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "console.log(\"Starte Initialisierung...\");",
+            "storage": "0",
+            "varName": "",
+            "name": "Run Script"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "Actions.generateTimeString = function (milliseconds) {\n    let remaining = milliseconds;\n    const times = [];\n\n    const days = Math.floor(remaining / 60 / 60 / 24);\n    if (days > 0) {\n        remaining -= days * 60 * 60 * 24;\n        times.push(days + (days === 1 ? \" Tag\" : \" Tage\"));\n    }\n    const hours = Math.floor(remaining / 60 / 60);\n    if (hours > 0) {\n        remaining -= hours * 60 * 60;\n        times.push(hours + (hours === 1 ? \" Stunde\" : \" Stunden\"));\n    }\n    const minutes = Math.floor(remaining / 60);\n    if (minutes > 0) {\n        remaining -= minutes * 60;\n        times.push(minutes + (minutes === 1 ? \" Minute\" : \" Minuten\"));\n    }\n    const seconds = Math.floor(remaining);\n    if (seconds > 0) {\n        remaining -= seconds;\n        times.push(seconds + (seconds === 1 ? \" Sekunde\" : \" Sekunden\"));\n    }\n\n    let result = \"\";\n    if (times.length === 1) {\n        result = times[0];\n    } else if (times.length === 2) {\n        result = times[0] + \" und \" + times[1];\n    } else if (times.length === 3) {\n        result = times[0] + \", \" + times[1] + \" und \" + times[2];\n    } else if (times.length === 4) {\n        result = times[0] + \", \" + times[1] + \", \" + times[2] + \" und \" + times[3];\n    }\n    return result;\n}",
+            "storage": "0",
+            "varName": "",
+            "name": "Run Script"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "console.log(\"Initialisierung beendet.\");",
+            "storage": "0",
+            "varName": "",
+            "name": "Run Script"
+        }
+    ]
+}

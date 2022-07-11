@@ -1,0 +1,43 @@
+{
+    "name": "Embed senden",
+    "temp": "",
+    "event-type": "0",
+    "_id": "FGdiL",
+    "actions": [
+        {
+            "channel": "5",
+            "varName": "kanal",
+            "message": "",
+            "buttons": [],
+            "selectMenus": [],
+            "attachments": [],
+            "embeds": [
+                {
+                    "title": "${tempVars(\"titel\")}",
+                    "url": "",
+                    "color": "fff700",
+                    "timestamp": "false",
+                    "imageUrl": "",
+                    "thumbUrl": "",
+                    "description": "${tempVars(\"beschreibung\")}",
+                    "fields": [],
+                    "author": "",
+                    "authorUrl": "",
+                    "authorIcon": "",
+                    "footerText": "DBM German Bot v3",
+                    "footerIconUrl": ""
+                }
+            ],
+            "reply": true,
+            "ephemeral": false,
+            "tts": false,
+            "overwrite": false,
+            "dontSend": false,
+            "editMessage": "0",
+            "editMessageVarName": "",
+            "storage": "0",
+            "varName2": "",
+            "name": "Send Message"
+        }
+    ]
+}
