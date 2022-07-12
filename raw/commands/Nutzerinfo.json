@@ -96,31 +96,6 @@
             "name": "Store Member Info"
         },
         {
-            "storage": "1",
-            "varName": "user-bot",
-            "changeType": "0",
-            "value": "Nein",
-            "name": "Control Variable"
-        },
-        {
-            "member": "2",
-            "varName": "user",
-            "info": "0",
-            "varName2": "",
-            "iftrue": "0",
-            "iftrueVal": "",
-            "iffalse": "3",
-            "iffalseVal": "1",
-            "name": "Check If Member"
-        },
-        {
-            "storage": "1",
-            "varName": "user-bot",
-            "changeType": "0",
-            "value": "Ja",
-            "name": "Control Variable"
-        },
-        {
             "server": "0",
             "varName": "",
             "storage": "1",
