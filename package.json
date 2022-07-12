@@ -27,5 +27,8 @@
     "setup": "node utils/setup.js",
     "to-dbm": "node utils/to-dbm.js",
     "to-raw": "node utils/to-raw.js"
+  },
+  "dependencies": {
+    "vdf-parser": "^1.2.0"
   }
 }
