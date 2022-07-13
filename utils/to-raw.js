@@ -85,7 +85,7 @@ async function readDBM(file) {
 /**
  * Write raw data files
  * @param {string} dir Directory path
- * @param {Promise<RawData[]>} data Bundled raw datas of one type
+ * @param {RawData[]} data Bundled raw datas of one type
  */
 async function writeRaws(dir, data) {
     for(let raw of data) {

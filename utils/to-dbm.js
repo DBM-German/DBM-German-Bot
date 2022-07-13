@@ -96,7 +96,7 @@ async function readRaws(dir) {
 /**
  * Write DBM data file
  * @param {string} file File path
- * @param {Promise<RawData[]>} data Bundled raw datas of one type
+ * @param {RawData[]} data Bundled raw datas of one type
  */
 async function writeDBM(file, data) {
     await writeFile(file, JSON.stringify([ null, ...data ]), { encoding: ENCODING });
