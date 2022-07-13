@@ -197,6 +197,9 @@ async function findSteamDir() {
  * @see findDBM Called by the findDBM function
  */
 async function findSteamLibFolders() {
+    /**
+     * @type SteamLibFolders
+     */
     let libraryfolders;
     let errors = [];
 
