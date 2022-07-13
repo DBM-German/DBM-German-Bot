@@ -29,6 +29,7 @@
     "to-raw": "node utils/to-raw.js"
   },
   "dependencies": {
+    "regedit": "^5.1.1",
     "vdf-parser": "^1.2.0"
   }
 }
