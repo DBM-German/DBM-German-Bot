@@ -22,6 +22,8 @@ const DBM_ID = "682130";
 const DBM_FOLDER = "steamapps/common/Discord Bot Maker";
 const DBM_TEMPLATE_FOLDER = "resources/app/bot";
 const DBM_ACTIONS_FOLDER = "actions";
+const FS_R = constants.F_OK | constants.R_OK;
+const FS_RW = FS_R | constants.W_OK;
 
 
 /**
@@ -70,7 +72,7 @@ let steamDir = await findSteamDir();
 
 // Check permissions for Steam directory
 try {
-    await access(steamDir, constants.F_OK | constants.R_OK);
+    await access(steamDir, FS_R);
 } catch(e) {
     console.log(`Auf Steam-Verzeichnis kann nicht zugegriffen werden: ${e}`);
     process.exit(1);
@@ -81,7 +83,7 @@ let dbmDir = await findDBM();
 
 // Check permissions for DBM directory
 try {
-    await access(dbmDir, constants.F_OK | constants.R_OK);
+    await access(dbmDir, FS_R);
 } catch(e) {
     console.log(`Auf Discord Bot Maker-Verzeichnis kann nicht zugegriffen werden: ${e}`);
     process.exit(1);
@@ -89,7 +91,7 @@ try {
 
 // Check permissions for DBM template folder
 try {
-    await access(`${dbmDir}/${DBM_TEMPLATE_FOLDER}`, constants.F_OK | constants.R_OK);
+    await access(`${dbmDir}/${DBM_TEMPLATE_FOLDER}`, FS_R);
 } catch(e) {
     console.log(`Auf Discord Bot Maker-Template-Ordner kann nicht zugegriffen werden: ${e}`);
     process.exit(1);
@@ -97,7 +99,7 @@ try {
 
 // Check permissions for DBM actions folder
 try {
-    await access(`${dbmDir}/${DBM_ACTIONS_FOLDER}`, constants.F_OK | constants.R_OK);
+    await access(`${dbmDir}/${DBM_ACTIONS_FOLDER}`, FS_R);
 } catch(e) {
     console.log(`Auf Discord Bot Maker-Actions-Ordner kann nicht zugegriffen werden: ${e}`);
     process.exit(1);
@@ -107,7 +109,7 @@ try {
 let botDirExists;
 
 try {
-    await access(BOT_DIR, constants.F_OK | constants.R_OK | constants.W_OK);
+    await access(BOT_DIR, FS_RW);
     botDirExists = true;
 } catch(e) {
     try {
@@ -175,11 +177,7 @@ async function findSteamDir() {
     let registryEntry;
 
     try {
-        if(osArch() == "x64") {
-            registryEntry = (await regedit.list(STEAM_REG_KEY_64))[STEAM_REG_KEY_64];
-        } else {
-            registryEntry = (await regedit.list(STEAM_REG_KEY_32))[STEAM_REG_KEY_32];
-        }
+        registryEntry = (await regedit.list(osArch() == "x64" ? STEAM_REG_KEY_64 : STEAM_REG_KEY_32))[STEAM_REG_KEY_64];
     } catch(e) {
         console.log(`Auf die Windows-Registry kann nicht zugegriffen werden: ${e}`);
         process.exit(1);
@@ -204,7 +202,7 @@ async function findSteamLibFolders() {
 
     for(let config of STEAM_LIB_CONFIGS) {
         try {
-            await access(`${steamDir}/${config}`, constants.F_OK | constants.R_OK);
+            await access(`${steamDir}/${config}`, FS_R);
             ({ libraryfolders } = VDF.parse(await readFile(`${steamDir}/${config}`, { encoding: ENCODING })));
             break;
         } catch(e) {

@@ -4,6 +4,8 @@ import { access, readdir, readFile, stat, writeFile } from "fs/promises";
 
 const RAW_DIR = "./raw";
 const BOT_DIR = "./bot";
+const FS_R = constants.F_OK | constants.R_OK;
+const FS_RW = FS_R | constants.W_OK;
 
 
 /**
@@ -34,7 +36,7 @@ console.log("Konvertiere DBM-Dateien zu Raw Datas...");
 
 // Check permissions for bot directory
 try {
-    await access(BOT_DIR, constants.F_OK | constants.R_OK);
+    await access(BOT_DIR, FS_R);
 } catch(e) {
     console.log(`Auf Bot-Verzeichnis kann nicht zugegriffen werden: ${e}`);
     process.exit(1);
@@ -42,7 +44,7 @@ try {
 
 // Check permissions for raw directory
 try {
-    await access(RAW_DIR, constants.F_OK | constants.R_OK | constants.W_OK);
+    await access(RAW_DIR, FS_RW);
 } catch(e) {
     console.log(`Auf Raw Data-Verzeichnis kann nicht zugegriffen werden: ${e}`);
     process.exit(1);
