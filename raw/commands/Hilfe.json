@@ -13,11 +13,12 @@
             "name": "Control Variable"
         },
         {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "let entireDesc = \"Verwende `/hilfe [befehl]`, um spezifischere Informationen zu erhalten.\\n\\n\\n\";\n\nfor(let { name, description, parameters, type } of globalVars(\"commands\")) {\n    entireDesc += `**${name}**\\n`\n        + `${description}\\n`\n        + `Parameter: ${parameters.length}\\n`\n        + `Typ: ${globalVars(\"resolveCommandType\")(type)}\\n\\n`;\n}\n\nentireDesc;",
             "storage": "1",
             "varName": "beschreibung",
-            "changeType": "0",
-            "value": "\"Zeigt bald eine Übersicht aller verfügbaren Befehle.\"",
-            "name": "Control Variable"
+            "name": "Run Script"
         },
         {
             "storage": "1",

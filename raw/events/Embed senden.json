@@ -24,7 +24,7 @@
                     "author": "",
                     "authorUrl": "",
                     "authorIcon": "",
-                    "footerText": "DBM German Bot v3",
+                    "footerText": "DBM German Bot v${globalVars(\"version\")}",
                     "footerIconUrl": ""
                 }
             ],
