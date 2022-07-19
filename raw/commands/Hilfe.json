@@ -7,7 +7,7 @@
     "actions": [
         {
             "storage": "1",
-            "varName": "titel",
+            "varName": "title",
             "changeType": "0",
             "value": "\"Hilfe\"",
             "name": "Control Variable"
@@ -17,12 +17,12 @@
             "interpretation": "1",
             "code": "let entireDesc = \"Verwende `/hilfe [befehl]`, um spezifischere Informationen zu erhalten.\\n\\n\\n\";\n\nfor(let { name, description, parameters, type } of globalVars(\"commands\")) {\n    entireDesc += `**${name}**\\n`\n        + `${description}\\n`\n        + `Parameter: ${parameters.length}\\n`\n        + `Typ: ${globalVars(\"resolveCommandType\")(type)}\\n\\n`;\n}\n\nentireDesc;",
             "storage": "1",
-            "varName": "beschreibung",
+            "varName": "description",
             "name": "Run Script"
         },
         {
             "storage": "1",
-            "varName": "kanal",
+            "varName": "channel",
             "changeType": "0",
             "value": "channel",
             "name": "Control Variable"

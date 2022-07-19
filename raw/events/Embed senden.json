@@ -6,20 +6,20 @@
     "actions": [
         {
             "channel": "5",
-            "varName": "kanal",
+            "varName": "channel",
             "message": "",
             "buttons": [],
             "selectMenus": [],
             "attachments": [],
             "embeds": [
                 {
-                    "title": "${tempVars(\"titel\")}",
+                    "title": "${tempVars(\"title\")}",
                     "url": "",
                     "color": "fff700",
                     "timestamp": "false",
                     "imageUrl": "",
                     "thumbUrl": "",
-                    "description": "${tempVars(\"beschreibung\")}",
+                    "description": "${tempVars(\"description\")}",
                     "fields": [],
                     "author": "",
                     "authorUrl": "",
