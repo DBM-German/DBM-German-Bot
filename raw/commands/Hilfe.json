@@ -6,19 +6,81 @@
     "_id": "YjIIC",
     "actions": [
         {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "const MAX = 10;// Max command count per page\n\nlet commandDescriptions = [];\nlet page = 0;// Current page\nlet count = 0;// Command count on current page\n\nfor(let { name, description, parameters, type } of globalVars(\"commands\")) {\n    if(typeof commandDescriptions[page] != \"string\") commandDescriptions[page] = \"\";\n\n    commandDescriptions[page] += `**${name}**\\n`\n        + `${description}\\n`\n        + `Parameter:\\n${parameters.map(p => `• ${p.name} (${p.description})`).join(\"\\n\")}\\n`\n        + `Typ: ${globalVars(\"resolveCommandType\")(type)}\\n\\n`;\n\n    if(++count >= MAX) {\n        count = 0;\n        page++;\n    }\n}\n\ncommandDescriptions;",
             "storage": "1",
-            "varName": "title",
+            "varName": "commandDescriptions",
+            "name": "Run Script"
+        },
+        {
+            "list": "7",
+            "varName": "commandDescriptions",
+            "storage": "1",
+            "varName2": "commandDescriptionsCount",
+            "name": "Get List Length"
+        },
+        {
+            "storage": "1",
+            "varName": "embeds",
+            "name": "Create List"
+        },
+        {
+            "storage": "1",
+            "varName": "loop",
             "changeType": "0",
-            "value": "\"Hilfe\"",
+            "value": "0",
             "name": "Control Variable"
         },
         {
-            "behavior": "0",
-            "interpretation": "1",
-            "code": "let entireDesc = \"Verwende `/hilfe [befehl]`, um spezifischere Informationen zu erhalten.\\n\\n\\n\";\n\nfor(let { name, description, parameters, type } of globalVars(\"commands\")) {\n    entireDesc += `**${name}**\\n`\n        + `${description}\\n`\n        + `Parameter: ${parameters.length}\\n`\n        + `Typ: ${globalVars(\"resolveCommandType\")(type)}\\n\\n`;\n}\n\nentireDesc;",
+            "anchorName": "loop-entry",
+            "name": "Action Anchor"
+        },
+        {
+            "title": "Hilfe (Seite ${tempVars(\"loop\")+1}/${tempVars(\"commandDescriptionsCount\")})",
+            "author": "",
+            "color": "",
+            "timestamp": "false",
+            "url": "",
+            "authorIcon": "",
+            "imageUrl": "",
+            "thumbUrl": "",
             "storage": "1",
-            "varName": "description",
-            "name": "Run Script"
+            "varName": "embed",
+            "name": "Create Embed Message"
+        },
+        {
+            "storage": "1",
+            "varName": "embed",
+            "message": "Verwende `/hilfe [befehl]`, um spezifischere Informationen zu erhalten.\n\n\n${tempVars(\"commandDescriptions\")[tempVars(\"loop\")]}",
+            "name": "Set Embed Description"
+        },
+        {
+            "storage": "1",
+            "varName": "embeds",
+            "addType": "0",
+            "position": "",
+            "value": "tempVars(\"embed\")",
+            "name": "Add Item to List"
+        },
+        {
+            "storage": "1",
+            "varName": "loop",
+            "changeType": "1",
+            "value": "1",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "loop",
+            "comparison": "1",
+            "value": "tempVars(\"commandDescriptionsCount\")",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "4",
+                "iffalseVal": "loop-entry"
+            },
+            "name": "Check Variable"
         },
         {
             "storage": "1",
@@ -28,7 +90,14 @@
             "name": "Control Variable"
         },
         {
-            "source": "FGdiL",
+            "storage": "1",
+            "varName": "index",
+            "changeType": "0",
+            "value": "0",
+            "name": "Control Variable"
+        },
+        {
+            "source": "IVhmi",
             "type": "true",
             "name": "Call Command/Event"
         }

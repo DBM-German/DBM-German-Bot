@@ -1,0 +1,227 @@
+{
+    "name": "Page Embed senden",
+    "temp": "",
+    "event-type": "0",
+    "_id": "IVhmi",
+    "actions": [
+        {
+            "behavior": "1",
+            "interpretation": "1",
+            "code": "// Check variables and store embed amount\n// Prüfe Variablen und speichere Embed-Menge\n\nconst Discord = this.getDBM().DiscordJS;\n\nlet embeds = tempVars(\"embeds\");// Embeds\nlet amount = embeds?.length;// Embed amount\nlet index = tempVars(\"index\");// Embed index (start at 0)\n\nif(!Array.isArray(embeds) || amount == 0) throw new Error(\"No embeds specified\");\nif(!(typeof index == \"number\") || index >= amount || index < 0) throw new Error(\"Embed index out of range\");\nif(embeds.some((e, i) => !(e instanceof Discord.MessageEmbed))) throw new Error(`Expected an array of embeds but received a value of type \"${typeof e}\" at index ${i}`);\n\nthis.storeValue(amount, 1, \"amount\", cache);\nthis.callNextAction(cache);",
+            "storage": "0",
+            "varName": "",
+            "name": "Run Script"
+        },
+        {
+            "storage": "1",
+            "varName": "editReply",
+            "changeType": "0",
+            "value": "typeof tempVars(\"editReply\") == \"boolean\" ? tempVars(\"editReply\") : false",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "title",
+            "changeType": "0",
+            "value": "tempVars(\"embeds\")[tempVars(\"index\")].title",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "description",
+            "changeType": "0",
+            "value": "tempVars(\"embeds\")[tempVars(\"index\")].description",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "editReply",
+            "comparison": "1",
+            "value": "true",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "3",
+                "iffalseVal": "2"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "channel": "5",
+            "varName": "channel",
+            "message": "",
+            "buttons": [
+                {
+                    "name": "Vorherige Seite",
+                    "type": "SECONDARY",
+                    "id": "msg-button-7b28d07",
+                    "row": "",
+                    "url": "",
+                    "emoji": "⬅️",
+                    "mode": "MULTIPERSONAL",
+                    "time": "",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "index",
+                            "changeType": "0",
+                            "value": "tempVars(\"index\")-1 < 0 ? tempVars(\"amount\")-1 : tempVars(\"index\")-1",
+                            "name": "Control Variable"
+                        },
+                        {
+                            "source": "IVhmi",
+                            "type": "true",
+                            "name": "Call Command/Event"
+                        }
+                    ]
+                },
+                {
+                    "name": "Nächste Seite",
+                    "type": "SECONDARY",
+                    "id": "msg-button-13ec1c4",
+                    "row": "",
+                    "url": "",
+                    "emoji": "➡️",
+                    "mode": "MULTIPERSONAL",
+                    "time": "",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "index",
+                            "changeType": "0",
+                            "value": "tempVars(\"index\")+1 >= tempVars(\"amount\") ? 0 : tempVars(\"index\")+1",
+                            "name": "Control Variable"
+                        },
+                        {
+                            "source": "IVhmi",
+                            "type": "true",
+                            "name": "Call Command/Event"
+                        }
+                    ]
+                }
+            ],
+            "selectMenus": [],
+            "attachments": [],
+            "embeds": [
+                {
+                    "title": "${tempVars(\"title\")}",
+                    "url": "",
+                    "color": "fff700",
+                    "timestamp": "false",
+                    "imageUrl": "",
+                    "thumbUrl": "",
+                    "description": "${tempVars(\"description\")}",
+                    "fields": [],
+                    "author": "",
+                    "authorUrl": "",
+                    "authorIcon": "",
+                    "footerText": "DBM German Bot v${globalVars(\"version\")}",
+                    "footerIconUrl": ""
+                }
+            ],
+            "reply": true,
+            "ephemeral": false,
+            "tts": false,
+            "overwrite": false,
+            "dontSend": false,
+            "editMessage": "intUpdate",
+            "editMessageVarName": "",
+            "storage": "0",
+            "varName2": "",
+            "name": "Send Message"
+        },
+        {
+            "name": "End Action Sequence"
+        },
+        {
+            "storage": "1",
+            "varName": "editReply",
+            "changeType": "0",
+            "value": "true",
+            "name": "Control Variable"
+        },
+        {
+            "channel": "5",
+            "varName": "channel",
+            "message": "",
+            "buttons": [
+                {
+                    "name": "Vorherige Seite",
+                    "type": "SECONDARY",
+                    "id": "msg-button-previous",
+                    "row": "",
+                    "url": "",
+                    "emoji": "⬅️",
+                    "mode": "MULTIPERSONAL",
+                    "time": "",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "index",
+                            "changeType": "0",
+                            "value": "tempVars(\"index\")-1 < 0 ? tempVars(\"amount\")-1 : tempVars(\"index\")-1",
+                            "name": "Control Variable"
+                        },
+                        {
+                            "source": "IVhmi",
+                            "type": "true",
+                            "name": "Call Command/Event"
+                        }
+                    ]
+                },
+                {
+                    "name": "Nächste Seite",
+                    "type": "SECONDARY",
+                    "id": "msg-button-next",
+                    "row": "",
+                    "url": "",
+                    "emoji": "➡️",
+                    "mode": "MULTIPERSONAL",
+                    "time": "",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "index",
+                            "changeType": "0",
+                            "value": "tempVars(\"index\")+1 >= tempVars(\"amount\") ? 0 : tempVars(\"index\")+1",
+                            "name": "Control Variable"
+                        },
+                        {
+                            "source": "IVhmi",
+                            "type": "true",
+                            "name": "Call Command/Event"
+                        }
+                    ]
+                }
+            ],
+            "selectMenus": [],
+            "attachments": [],
+            "embeds": [
+                {
+                    "title": "${tempVars(\"title\")}",
+                    "url": "",
+                    "color": "fff700",
+                    "timestamp": "false",
+                    "imageUrl": "",
+                    "thumbUrl": "",
+                    "description": "${tempVars(\"description\")}",
+                    "fields": [],
+                    "author": "",
+                    "authorUrl": "",
+                    "authorIcon": "",
+                    "footerText": "DBM German Bot v${globalVars(\"version\")}",
+                    "footerIconUrl": ""
+                }
+            ],
+            "reply": true,
+            "ephemeral": false,
+            "tts": false,
+            "overwrite": false,
+            "dontSend": false,
+            "editMessage": "0",
+            "editMessageVarName": "",
+            "storage": "0",
+            "varName2": "",
+            "name": "Send Message"
+        }
+    ]
+}
