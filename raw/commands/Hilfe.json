@@ -8,7 +8,7 @@
         {
             "behavior": "0",
             "interpretation": "1",
-            "code": "const MAX = 10;// Max command count per page\n\nlet commandDescriptions = [];\nlet page = 0;// Current page\nlet count = 0;// Command count on current page\n\nfor(let { name, description, parameters, type } of globalVars(\"commands\")) {\n    if(typeof commandDescriptions[page] != \"string\") commandDescriptions[page] = \"\";\n\n    commandDescriptions[page] += `**${name}**\\n`\n        + `${description}\\n`\n        + `Parameter:\\n${parameters.map(p => `• ${p.name} (${p.description})`).join(\"\\n\")}\\n`\n        + `Typ: ${globalVars(\"resolveCommandType\")(type)}\\n\\n`;\n\n    if(++count >= MAX) {\n        count = 0;\n        page++;\n    }\n}\n\ncommandDescriptions;",
+            "code": "const MAX = 10;// Max command count per page\n\nlet commandDescriptions = [];\nlet page = 0;// Current page\nlet count = 0;// Command count on current page\n\nfor(let { name, description, parameters, type } of globalVars(\"commands\")) {\n    if(typeof commandDescriptions[page] != \"string\") commandDescriptions[page] = \"\";\n\n    commandDescriptions[page] += `**${name}**\\n`\n        + `${description}\\n`\n        + `Parameter:\\n${Array.isArray(parameters) ? parameters.map(p => `• ${p.name} (${p.description})`).join(\"\\n\") : \"keine\"}\\n`\n        + `Typ: ${globalVars(\"resolveCommandType\")(type)}\\n\\n`;\n\n    if(++count >= MAX) {\n        count = 0;\n        page++;\n    }\n}\n\ncommandDescriptions;",
             "storage": "1",
             "varName": "commandDescriptions",
             "name": "Run Script"
