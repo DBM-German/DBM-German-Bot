@@ -1,0 +1,37 @@
+{
+    "name": "Ping",
+    "permissions": "NONE",
+    "permissions2": "NONE",
+    "restriction": "1",
+    "_id": "qdxIw",
+    "actions": [
+        {
+            "storage": "1",
+            "varName": "title",
+            "changeType": "0",
+            "value": "\"Ping\"",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "description",
+            "changeType": "0",
+            "value": "\"🏓 Pong! Reaktionszeit: `\" + client.ws.ping + \"ms`.\"",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "channel",
+            "changeType": "0",
+            "value": "channel",
+            "name": "Control Variable"
+        },
+        {
+            "source": "FGdiL",
+            "type": "true",
+            "name": "Call Command/Event"
+        }
+    ],
+    "comType": "4",
+    "description": "Reaktionszeit des Bots"
+}

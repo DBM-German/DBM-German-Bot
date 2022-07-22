@@ -13,12 +13,70 @@
             "name": "Run Script"
         },
         {
-            "behavior": "0",
-            "interpretation": "1",
-            "code": "Actions.generateTimeString = function (milliseconds) {\n    let remaining = milliseconds;\n    const times = [];\n\n    const days = Math.floor(remaining / 60 / 60 / 24);\n    if (days > 0) {\n        remaining -= days * 60 * 60 * 24;\n        times.push(days + (days === 1 ? \" Tag\" : \" Tage\"));\n    }\n    const hours = Math.floor(remaining / 60 / 60);\n    if (hours > 0) {\n        remaining -= hours * 60 * 60;\n        times.push(hours + (hours === 1 ? \" Stunde\" : \" Stunden\"));\n    }\n    const minutes = Math.floor(remaining / 60);\n    if (minutes > 0) {\n        remaining -= minutes * 60;\n        times.push(minutes + (minutes === 1 ? \" Minute\" : \" Minuten\"));\n    }\n    const seconds = Math.floor(remaining);\n    if (seconds > 0) {\n        remaining -= seconds;\n        times.push(seconds + (seconds === 1 ? \" Sekunde\" : \" Sekunden\"));\n    }\n\n    let result = \"\";\n    if (times.length === 1) {\n        result = times[0];\n    } else if (times.length === 2) {\n        result = times[0] + \" und \" + times[1];\n    } else if (times.length === 3) {\n        result = times[0] + \", \" + times[1] + \" und \" + times[2];\n    } else if (times.length === 4) {\n        result = times[0] + \", \" + times[1] + \", \" + times[2] + \" und \" + times[3];\n    }\n    return result;\n}",
-            "storage": "0",
-            "varName": "",
-            "name": "Run Script"
+            "comment": "Override internal functions | Überschreibe interne Funktionen",
+            "actions": [
+                {
+                    "behavior": "0",
+                    "interpretation": "1",
+                    "code": "// Override the default time data generator\n// Überschreibe den standardmäßigen Zeitangaben-Generator\n\nActions.generateTimeString = function (milliseconds) {\n    let remaining = milliseconds;\n    const times = [];\n\n    const days = Math.floor(remaining / 60 / 60 / 24);\n    if (days > 0) {\n        remaining -= days * 60 * 60 * 24;\n        times.push(days + (days === 1 ? \" Tag\" : \" Tage\"));\n    }\n    const hours = Math.floor(remaining / 60 / 60);\n    if (hours > 0) {\n        remaining -= hours * 60 * 60;\n        times.push(hours + (hours === 1 ? \" Stunde\" : \" Stunden\"));\n    }\n    const minutes = Math.floor(remaining / 60);\n    if (minutes > 0) {\n        remaining -= minutes * 60;\n        times.push(minutes + (minutes === 1 ? \" Minute\" : \" Minuten\"));\n    }\n    const seconds = Math.floor(remaining);\n    if (seconds > 0) {\n        remaining -= seconds;\n        times.push(seconds + (seconds === 1 ? \" Sekunde\" : \" Sekunden\"));\n    }\n\n    let result = \"\";\n    if (times.length === 1) {\n        result = times[0];\n    } else if (times.length === 2) {\n        result = times[0] + \" und \" + times[1];\n    } else if (times.length === 3) {\n        result = times[0] + \", \" + times[1] + \" und \" + times[2];\n    } else if (times.length === 4) {\n        result = times[0] + \", \" + times[1] + \", \" + times[2] + \" und \" + times[3];\n    }\n    return result;\n}",
+                    "storage": "0",
+                    "varName": "",
+                    "name": "Run Script"
+                }
+            ],
+            "name": "Action Container"
+        },
+        {
+            "comment": "Create global variables | Erstelle globale Variablen",
+            "actions": [
+                {
+                    "storage": "3",
+                    "varName": "version",
+                    "changeType": "0",
+                    "value": "\"3.0-beta\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
+                    "varName": "debug",
+                    "changeType": "0",
+                    "value": "client.user.id == \"724335784798322833\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "behavior": "0",
+                    "interpretation": "1",
+                    "code": "// Convert internal command objects to an usable DBM variable\n// Konvertiere interne Befehlsobjekte zu einer nutzbaren DBM-Variable\n\nconst { $slash: slashCmds, $cmds: textCmds } = this.getDBM().Bot;\n\nlet commands = [];\n\nfor(let cmds of [ slashCmds, textCmds ]) {\n    for(let { name, description, parameters, comType: type } of Object.values(cmds)) {\n        commands.push({ name, description, parameters, type  });\n    }\n}\n\ncommands;",
+                    "storage": "3",
+                    "varName": "commands",
+                    "name": "Run Script"
+                },
+                {
+                    "behavior": "0",
+                    "interpretation": "1",
+                    "code": "// Create an object with all command types\n// Erstelle ein Objekt mit allen Befehlsarten\n\nconst TYPES = {\n    TEXT: \"0\",\n    INCLUDES_WORD: \"1\",\n    REGEX: \"2\",\n    ANY_MESSAGE: \"3\",\n    SLASH: \"4\",\n    USER_MENU: \"5\",\n    MSG_MENU: \"6\",\n};\n\nTYPES;",
+                    "storage": "3",
+                    "varName": "commandTypes",
+                    "name": "Run Script"
+                },
+                {
+                    "behavior": "0",
+                    "interpretation": "1",
+                    "code": "// Create an object with the names of all command types\n// Erstelle ein Objekt mit den Namen aller Befehlarten\n\nconst TYPES = globalVars(\"commandTypes\");\nconst NAMES = {};\n\nNAMES[TYPES.TEXT] = \"Text Command\";\nNAMES[TYPES.INCLUDES_WORD] = \"Includes Word\";\nNAMES[TYPES.REGEX] = \"Regular Expression\";\nNAMES[TYPES.ANY_MESSAGE] = \"Any Message\";\nNAMES[TYPES.SLASH] = \"Slash Command\";\nNAMES[TYPES.USER_MENU] = \"User Menu Command\";\nNAMES[TYPES.MSG_MENU] = \"Message Menu\";\n\nNAMES;",
+                    "storage": "3",
+                    "varName": "commandTypeNames",
+                    "name": "Run Script"
+                },
+                {
+                    "behavior": "0",
+                    "interpretation": "1",
+                    "code": "// Create a function  to resolve command types to names\n// Erstelle eine Funktion, um Befehlsarten in Namen aufzulösen\n\nconst TYPES = globalVars(\"commandTypes\");\nconst NAMES = globalVars(\"commandTypeNames\");\n\nconst resolveCommandType = function(commandType) {\n    if(!Object.values(TYPES).includes(commandType)) return \"Manual Command\";\n    return NAMES[commandType];\n}\n\nresolveCommandType;",
+                    "storage": "3",
+                    "varName": "resolveCommandType",
+                    "name": "Run Script"
+                }
+            ],
+            "name": "Action Container"
         },
         {
             "behavior": "0",
