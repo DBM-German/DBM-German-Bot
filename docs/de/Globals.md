@@ -44,7 +44,7 @@ Ein Objekt mit allen von DBMs internen Befehlsarten. Aufbau des Objekts:
 
 Ein Objekt mit lesbaren Namen für DBMs interne Befehlsarten. Aufbau des Objekts:
 
-| Schlüssel             | Value (String)        |
+| Schlüssel             | Wert (String)         |
 |-----------------------|-----------------------|
 | 0                     | Text Command          |
 | 1                     | Includes Word         |
