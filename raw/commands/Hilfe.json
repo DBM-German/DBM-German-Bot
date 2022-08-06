@@ -6,100 +6,190 @@
     "_id": "YjIIC",
     "actions": [
         {
-            "behavior": "0",
-            "interpretation": "1",
-            "code": "const MAX = 10;// Max command count per page\n\nlet commandDescriptions = [];\nlet page = 0;// Current page\nlet count = 0;// Command count on current page\n\nfor(let { name, description, parameters, type } of globalVars(\"commands\")) {\n    if(typeof commandDescriptions[page] != \"string\") commandDescriptions[page] = \"\";\n\n    commandDescriptions[page] += `**${name}**\\n`\n        + `${description}\\n`\n        + `Parameter:\\n${Array.isArray(parameters) ? parameters.map(p => `• ${p.name} (${p.description})`).join(\"\\n\") : \"keine\"}\\n`\n        + `Typ: ${globalVars(\"resolveCommandType\")(type)}\\n\\n`;\n\n    if(++count >= MAX) {\n        count = 0;\n        page++;\n    }\n}\n\ncommandDescriptions;",
-            "storage": "1",
-            "varName": "commandDescriptions",
-            "name": "Run Script"
-        },
-        {
-            "list": "7",
-            "varName": "commandDescriptions",
-            "storage": "1",
-            "varName2": "commandDescriptionsCount",
-            "name": "Get List Length"
-        },
-        {
-            "storage": "1",
-            "varName": "embeds",
-            "name": "Create List"
-        },
-        {
-            "storage": "1",
-            "varName": "loop",
-            "changeType": "0",
-            "value": "0",
-            "name": "Control Variable"
-        },
-        {
-            "anchorName": "loop-entry",
-            "name": "Action Anchor"
-        },
-        {
-            "title": "Hilfe (Seite ${tempVars(\"loop\")+1}/${tempVars(\"commandDescriptionsCount\")})",
-            "author": "",
-            "color": "",
-            "timestamp": "false",
-            "url": "",
-            "authorIcon": "",
-            "imageUrl": "",
-            "thumbUrl": "",
-            "storage": "1",
-            "varName": "embed",
-            "name": "Create Embed Message"
-        },
-        {
-            "storage": "1",
-            "varName": "embed",
-            "message": "Verwende `/hilfe [befehl]`, um spezifischere Informationen zu erhalten.\n\n\n${tempVars(\"commandDescriptions\")[tempVars(\"loop\")]}",
-            "name": "Set Embed Description"
-        },
-        {
-            "storage": "1",
-            "varName": "embeds",
-            "addType": "0",
-            "position": "",
-            "value": "tempVars(\"embed\")",
-            "name": "Add Item to List"
-        },
-        {
-            "storage": "1",
-            "varName": "loop",
-            "changeType": "1",
-            "value": "1",
-            "name": "Control Variable"
-        },
-        {
-            "storage": "1",
-            "varName": "loop",
-            "comparison": "1",
-            "value": "tempVars(\"commandDescriptionsCount\")",
+            "storage": "4",
+            "varName": "Befehl",
+            "comparison": "5",
+            "value": "\"\"",
             "branch": {
-                "iftrue": "0",
-                "iffalse": "4",
-                "iffalseVal": "loop-entry"
+                "iftrue": "3",
+                "iffalse": "0",
+                "iftrueVal": "2"
             },
             "name": "Check Variable"
         },
         {
-            "storage": "1",
-            "varName": "channel",
-            "changeType": "0",
-            "value": "channel",
-            "name": "Control Variable"
+            "comment": "Command overview | Befehlsübersicht",
+            "actions": [
+                {
+                    "behavior": "0",
+                    "interpretation": "1",
+                    "code": "const MAX = 10;// Max command count per page\n\nlet commandDescriptions = [];\nlet page = 0;// Current page\nlet count = 0;// Command count on current page\n\nfor(let { name, description, type } of globalVars(\"commands\")) {\n    if(typeof commandDescriptions[page] != \"string\") commandDescriptions[page] = \"\";\n\n    commandDescriptions[page] += `**${name} (${globalVars(\"resolveCommandType\")(type)})**\\n${description}\\n\\n`;\n\n    if(++count >= MAX) {\n        count = 0;\n        page++;\n    }\n}\n\ncommandDescriptions;",
+                    "storage": "1",
+                    "varName": "commandDescriptions",
+                    "name": "Run Script"
+                },
+                {
+                    "list": "7",
+                    "varName": "commandDescriptions",
+                    "storage": "1",
+                    "varName2": "commandDescriptionsCount",
+                    "name": "Get List Length"
+                },
+                {
+                    "storage": "1",
+                    "varName": "embeds",
+                    "name": "Create List"
+                },
+                {
+                    "storage": "1",
+                    "varName": "loop",
+                    "changeType": "0",
+                    "value": "0",
+                    "name": "Control Variable"
+                },
+                {
+                    "anchorName": "loop-entry",
+                    "name": "Action Anchor"
+                },
+                {
+                    "title": "Hilfe (Seite ${tempVars(\"loop\")+1}/${tempVars(\"commandDescriptionsCount\")})",
+                    "author": "",
+                    "color": "",
+                    "timestamp": "false",
+                    "url": "",
+                    "authorIcon": "",
+                    "imageUrl": "",
+                    "thumbUrl": "",
+                    "storage": "1",
+                    "varName": "embed",
+                    "name": "Create Embed Message"
+                },
+                {
+                    "storage": "1",
+                    "varName": "embed",
+                    "message": "Verwende `/hilfe [befehl]`, um spezifischere Informationen zu erhalten.\n\n\n${tempVars(\"commandDescriptions\")[tempVars(\"loop\")]}",
+                    "name": "Set Embed Description"
+                },
+                {
+                    "storage": "1",
+                    "varName": "embeds",
+                    "addType": "0",
+                    "position": "",
+                    "value": "tempVars(\"embed\")",
+                    "name": "Add Item to List"
+                },
+                {
+                    "storage": "1",
+                    "varName": "loop",
+                    "changeType": "1",
+                    "value": "1",
+                    "name": "Control Variable"
+                },
+                {
+                    "time": "0",
+                    "measurement": "0",
+                    "name": "Wait"
+                },
+                {
+                    "storage": "1",
+                    "varName": "loop",
+                    "comparison": "1",
+                    "value": "tempVars(\"commandDescriptionsCount\")",
+                    "branch": {
+                        "iftrue": "0",
+                        "iffalse": "4",
+                        "iffalseVal": "loop-entry"
+                    },
+                    "name": "Check Variable"
+                },
+                {
+                    "storage": "1",
+                    "varName": "channel",
+                    "changeType": "0",
+                    "value": "channel",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "1",
+                    "varName": "index",
+                    "changeType": "0",
+                    "value": "0",
+                    "name": "Control Variable"
+                },
+                {
+                    "source": "IVhmi",
+                    "type": "true",
+                    "name": "Call Command/Event"
+                }
+            ],
+            "name": "Action Container"
         },
         {
-            "storage": "1",
-            "varName": "index",
-            "changeType": "0",
-            "value": "0",
-            "name": "Control Variable"
+            "name": "End Action Sequence"
         },
         {
-            "source": "IVhmi",
-            "type": "true",
-            "name": "Call Command/Event"
+            "comment": "Command info | Befehlsinfo",
+            "actions": [
+                {
+                    "storage": "1",
+                    "varName": "channel",
+                    "changeType": "0",
+                    "value": "channel",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "1",
+                    "varName": "exists",
+                    "changeType": "0",
+                    "value": "globalVars(\"commands\").some(c => c.name.toLowerCase() == slashParams(\"Befehl\").toLowerCase())",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "1",
+                    "varName": "exists",
+                    "comparison": "1",
+                    "value": "true",
+                    "branch": {
+                        "iftrue": "4",
+                        "iffalse": "0",
+                        "iftrueVal": "send-info"
+                    },
+                    "name": "Check Variable"
+                },
+                {
+                    "storage": "1",
+                    "varName": "description",
+                    "changeType": "0",
+                    "value": "\"Es konnte kein passender Befehl gefunden werden.\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "source": "HPCYz",
+                    "type": "true",
+                    "name": "Call Command/Event"
+                },
+                {
+                    "name": "End Action Sequence"
+                },
+                {
+                    "anchorName": "send-info",
+                    "name": "Action Anchor"
+                },
+                {
+                    "behavior": "0",
+                    "interpretation": "1",
+                    "code": "let command = globalVars(\"commands\").find(c => c.name.toLowerCase() == slashParams(\"Befehl\").toLowerCase());\n\nlet title = `Hilfe – ${command.name} (${globalVars(\"resolveCommandType\")(command.type)})`;\n\nlet description = `\n${command.description}\n\nParameter:\n${\n    Array.isArray(command.parameters)\n    ? command.parameters.map(p => `• ${p.name}: ${p.description}`).join(\"\\n\")\n    : \"keine\"\n}\n`;\n\n\nthis.storeValue(title, 1, \"title\", cache);\nthis.storeValue(description, 1, \"description\", cache);",
+                    "storage": "0",
+                    "varName": "",
+                    "name": "Run Script"
+                },
+                {
+                    "source": "FGdiL",
+                    "type": "true",
+                    "name": "Call Command/Event"
+                }
+            ],
+            "name": "Action Container"
         }
     ],
     "comType": "4",
