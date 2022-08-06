@@ -15,7 +15,7 @@
                 {
                     "title": "${tempVars(\"title\")}",
                     "url": "",
-                    "color": "fff700",
+                    "color": "${tempVars(\"color\") ?? \"fff700\"}",
                     "timestamp": "false",
                     "imageUrl": "",
                     "thumbUrl": "",
