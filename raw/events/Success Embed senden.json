@@ -1,0 +1,27 @@
+{
+    "name": "Success Embed senden",
+    "temp": "",
+    "event-type": "0",
+    "_id": "LITqX",
+    "actions": [
+        {
+            "storage": "1",
+            "varName": "color",
+            "changeType": "0",
+            "value": "\"77b256\"",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "title",
+            "changeType": "0",
+            "value": "tempVars(\"title\") ? `✅ ${tempVars(\"title\")}` : `✅ Erfolg`",
+            "name": "Control Variable"
+        },
+        {
+            "source": "FGdiL",
+            "type": "true",
+            "name": "Call Command/Event"
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "name": "Failure Embed senden",
+    "temp": "",
+    "event-type": "0",
+    "_id": "HPCYz",
+    "actions": [
+        {
+            "storage": "1",
+            "varName": "color",
+            "changeType": "0",
+            "value": "\"dd2e44\"",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "title",
+            "changeType": "0",
+            "value": "tempVars(\"title\") ? `❌ ${tempVars(\"title\")}` : `❌ Fehler`",
+            "name": "Control Variable"
+        },
+        {
+            "source": "FGdiL",
+            "type": "true",
+            "name": "Call Command/Event"
+        }
+    ]
+}
