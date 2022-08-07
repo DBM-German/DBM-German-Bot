@@ -177,7 +177,8 @@ async function findSteamDir() {
     let registryEntry;
 
     try {
-        registryEntry = (await regedit.list(osArch() == "x64" ? STEAM_REG_KEY_64 : STEAM_REG_KEY_32))[STEAM_REG_KEY_64];
+        let is64 = osArch() == "x64";
+        registryEntry = (await regedit.list(is64 ? STEAM_REG_KEY_64 : STEAM_REG_KEY_32))[is64 ? STEAM_REG_KEY_64 : STEAM_REG_KEY_32];
     } catch(e) {
         console.log(`Auf die Windows-Registry kann nicht zugegriffen werden: ${e}`);
         process.exit(1);
