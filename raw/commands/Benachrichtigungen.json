@@ -1,0 +1,172 @@
+{
+    "name": "Benachrichtigungen",
+    "permissions": "NONE",
+    "permissions2": "NONE",
+    "restriction": "1",
+    "_id": "zSteA",
+    "actions": [
+        {
+            "storage": "4",
+            "varName": "rolle",
+            "comparison": "5",
+            "value": "\"\"",
+            "branch": {
+                "iftrue": "3",
+                "iffalse": "0",
+                "iftrueVal": "2"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "comment": "Role overview | Rollenübersicht",
+            "actions": [
+                {
+                    "storage": "1",
+                    "varName": "commandName",
+                    "changeType": "0",
+                    "value": "cache.meta.name",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "1",
+                    "varName": "parameters",
+                    "changeType": "0",
+                    "value": "globalVars(\"commands\").find(c => c.name.toLowerCase() == tempVars(\"commandName\").toLowerCase()).parameters",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "1",
+                    "varName": "choices",
+                    "changeType": "0",
+                    "value": "tempVars(\"parameters\").find(p => p.name.toLowerCase() == \"rolle\").choices",
+                    "name": "Control Variable"
+                },
+                {
+                    "list": "7",
+                    "varName": "choices",
+                    "transform": "new RegExp(\"^\" + item.value + \"$\")",
+                    "null": "null",
+                    "storage": "1",
+                    "varName2": "choiceRegexes",
+                    "name": "Transform List"
+                },
+                {
+                    "server": "0",
+                    "varName": "",
+                    "info": "14",
+                    "storage": "1",
+                    "varName2": "serverRoles",
+                    "name": "Store Server Info"
+                },
+                {
+                    "member": "1",
+                    "varName": "",
+                    "info": "17",
+                    "storage": "1",
+                    "varName2": "memberRoles",
+                    "name": "Store Member Info"
+                },
+                {
+                    "list": "2",
+                    "varName": "",
+                    "transform": "tempVars(\"choiceRegexes\").some(rx => rx.test(item.name)) ? item : null",
+                    "null": "null",
+                    "storage": "1",
+                    "varName2": "notificationRoles",
+                    "name": "Transform List"
+                },
+                {
+                    "list": "7",
+                    "varName": "notificationRoles",
+                    "transform": "({ object: item, hasRole: tempVars(\"memberRoles\").some(r => r.id == item.id) })",
+                    "null": "null",
+                    "storage": "1",
+                    "varName2": "notifiactionRolesInfo",
+                    "name": "Transform List"
+                },
+                {
+                    "list": "7",
+                    "varName": "notifiactionRolesInfo",
+                    "transform": "item.object.toString() + \" – \" + (item.hasRole ? \"✅\" : \"❌\")",
+                    "null": "({ object: null, hasRole: false })",
+                    "storage": "1",
+                    "varName2": "notifiactionRolesInfoTextList",
+                    "name": "Transform List"
+                },
+                {
+                    "list": "7",
+                    "varName": "notifiactionRolesInfoTextList",
+                    "start": "\\n",
+                    "middle": "",
+                    "end": "",
+                    "storage": "1",
+                    "varName2": "notifiactionRolesInfoText",
+                    "name": "Convert List to Text"
+                },
+                {
+                    "storage": "1",
+                    "varName": "channel",
+                    "changeType": "0",
+                    "value": "channel",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "1",
+                    "varName": "title",
+                    "changeType": "0",
+                    "value": "\"Benachrichtigungen\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "1",
+                    "varName": "description",
+                    "changeType": "0",
+                    "value": "\"Verwende `/benachrichtigungen [rolle]`, um eine Benachrichtigungsrollen zu verwalten.\\n\" + tempVars(\"notifiactionRolesInfoText\")",
+                    "name": "Control Variable"
+                },
+                {
+                    "source": "FGdiL",
+                    "type": "true",
+                    "name": "Call Command/Event"
+                }
+            ],
+            "name": "Action Container"
+        },
+        {
+            "name": "End Action Sequence"
+        },
+        {
+            "comment": "Role management | Rollenverwaltung",
+            "actions": [],
+            "name": "Action Container"
+        }
+    ],
+    "comType": "4",
+    "parameters": [
+        {
+            "name": "rolle",
+            "description": "Spezifische Benachrichtigung",
+            "type": "STRING",
+            "required": false,
+            "choices": [
+                {
+                    "name": "helfer",
+                    "value": "DBM\\sHelfer"
+                },
+                {
+                    "name": "giveaways",
+                    "value": "Giveaways"
+                },
+                {
+                    "name": "news",
+                    "value": "News"
+                },
+                {
+                    "name": "rawdata",
+                    "value": "Raw\\sData\\sErsteller"
+                }
+            ]
+        }
+    ],
+    "description": "Verwalten der Benachrichtigungsrollen"
+}
