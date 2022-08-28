@@ -137,7 +137,114 @@
         },
         {
             "comment": "Role management | Rollenverwaltung",
-            "actions": [],
+            "actions": [
+                {
+                    "storage": "1",
+                    "varName": "commandName",
+                    "changeType": "0",
+                    "value": "cache.meta.name",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "1",
+                    "varName": "parameters",
+                    "changeType": "0",
+                    "value": "globalVars(\"commands\").find(c => c.name.toLowerCase() == tempVars(\"commandName\").toLowerCase()).parameters",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "1",
+                    "varName": "choices",
+                    "changeType": "0",
+                    "value": "tempVars(\"parameters\").find(p => p.name.toLowerCase() == \"rolle\").choices",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "1",
+                    "varName": "choiceName",
+                    "changeType": "0",
+                    "value": "tempVars(\"choices\").find(c => c.value == slashParams(\"rolle\")).name",
+                    "name": "Control Variable"
+                },
+                {
+                    "list": "7",
+                    "varName": "choices",
+                    "transform": "new RegExp(\"^\" + item.value + \"$\")",
+                    "null": "null",
+                    "storage": "1",
+                    "varName2": "choiceRegexes",
+                    "name": "Transform List"
+                },
+                {
+                    "server": "0",
+                    "varName": "",
+                    "info": "14",
+                    "storage": "1",
+                    "varName2": "serverRoles",
+                    "name": "Store Server Info"
+                },
+                {
+                    "member": "1",
+                    "varName": "",
+                    "info": "17",
+                    "storage": "1",
+                    "varName2": "memberRoles",
+                    "name": "Store Member Info"
+                },
+                {
+                    "list": "2",
+                    "varName": "",
+                    "transform": "tempVars(\"choiceRegexes\").some(rx => rx.test(item.name)) ? item : null",
+                    "null": "null",
+                    "storage": "1",
+                    "varName2": "notificationRoles",
+                    "name": "Transform List"
+                },
+                {
+                    "list": "7",
+                    "varName": "notificationRoles",
+                    "transform": "({ object: item, hasRole: tempVars(\"memberRoles\").some(r => r.id == item.id) })",
+                    "null": "null",
+                    "storage": "1",
+                    "varName2": "notifiactionRolesInfo",
+                    "name": "Transform List"
+                },
+                {
+                    "channel": "0",
+                    "varName": "",
+                    "message": "",
+                    "buttons": [],
+                    "selectMenus": [],
+                    "attachments": [],
+                    "embeds": [
+                        {
+                            "title": "Benachrichtigungen – ${tempVars(\"choiceName\")}",
+                            "url": "",
+                            "color": "${globalVars(\"default-color\")}",
+                            "timestamp": "false",
+                            "imageUrl": "",
+                            "thumbUrl": "",
+                            "description": "",
+                            "fields": [],
+                            "author": "",
+                            "authorUrl": "",
+                            "authorIcon": "",
+                            "footerText": "DBM German Bot v${globalVars(\"version\")}",
+                            "footerIconUrl": ""
+                        }
+                    ],
+                    "reply": true,
+                    "ephemeral": false,
+                    "tts": false,
+                    "overwrite": false,
+                    "dontSend": false,
+                    "editMessage": "0",
+                    "editMessageVarName": "",
+                    "storage": "0",
+                    "varName2": "",
+                    "name": "Send Message"
+                }
+            ],
             "name": "Action Container"
         }
     ],
