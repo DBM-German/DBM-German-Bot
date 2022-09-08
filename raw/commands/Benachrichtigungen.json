@@ -8,8 +8,8 @@
         {
             "storage": "4",
             "varName": "rolle",
-            "comparison": "5",
-            "value": "\"\"",
+            "comparison": "10",
+            "value": "0",
             "branch": {
                 "iftrue": "3",
                 "iffalse": "0",
@@ -210,6 +210,13 @@
                     "name": "Transform List"
                 },
                 {
+                    "storage": "1",
+                    "varName": "selectedNotificationRoleInfo",
+                    "changeType": "0",
+                    "value": "tempVars(\"notifiactionRolesInfo\").find(role => (new RegExp(\"^\" + slashParams(\"rolle\") + \"$\").test(role.object.name)))",
+                    "name": "Control Variable"
+                },
+                {
                     "channel": "0",
                     "varName": "",
                     "message": "",
@@ -224,7 +231,7 @@
                             "timestamp": "false",
                             "imageUrl": "",
                             "thumbUrl": "",
-                            "description": "",
+                            "description": "${tempVars(\"selectedNotificationRoleInfo\").hasRole ? \"✅\" : \"❌\"}",
                             "fields": [],
                             "author": "",
                             "authorUrl": "",
