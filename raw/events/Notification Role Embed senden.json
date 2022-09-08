@@ -1,0 +1,75 @@
+{
+    "name": "Notification Role Embed senden",
+    "temp": "",
+    "event-type": "0",
+    "_id": "ZrMQs",
+    "actions": [
+        {
+            "storage": "1",
+            "varName": "editReply",
+            "changeType": "0",
+            "value": "typeof tempVars(\"editReply\") == \"boolean\" ? tempVars(\"editReply\") : false",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "editReply",
+            "comparison": "1",
+            "value": "true",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "3",
+                "iffalseVal": "2"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "channel": "5",
+            "varName": "channel",
+            "message": "",
+            "buttons": [],
+            "selectMenus": [],
+            "attachments": [],
+            "embeds": [],
+            "reply": true,
+            "ephemeral": false,
+            "tts": false,
+            "overwrite": false,
+            "dontSend": false,
+            "editMessage": "intUpdate",
+            "editMessageVarName": "",
+            "storage": "0",
+            "varName2": "",
+            "name": "Send Message"
+        },
+        {
+            "name": "End Action Sequence"
+        },
+        {
+            "storage": "1",
+            "varName": "editReply",
+            "changeType": "0",
+            "value": "true",
+            "name": "Control Variable"
+        },
+        {
+            "channel": "5",
+            "varName": "channel",
+            "message": "",
+            "buttons": [],
+            "selectMenus": [],
+            "attachments": [],
+            "embeds": [],
+            "reply": true,
+            "ephemeral": false,
+            "tts": false,
+            "overwrite": false,
+            "dontSend": false,
+            "editMessage": "0",
+            "editMessageVarName": "",
+            "storage": "0",
+            "varName2": "",
+            "name": "Send Message"
+        }
+    ]
+}
