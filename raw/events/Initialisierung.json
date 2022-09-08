@@ -52,7 +52,7 @@
                     "name": "Control Variable"
                 },
                 {
-                    "storage": "1",
+                    "storage": "3",
                     "varName": "default-color",
                     "changeType": "0",
                     "value": "\"fff700\"",
