@@ -140,6 +140,20 @@
             "actions": [
                 {
                     "storage": "1",
+                    "varName": "channel",
+                    "changeType": "0",
+                    "value": "channel",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "1",
+                    "varName": "member",
+                    "changeType": "0",
+                    "value": "member",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "1",
                     "varName": "commandName",
                     "changeType": "0",
                     "value": "cache.meta.name",
@@ -217,39 +231,30 @@
                     "name": "Control Variable"
                 },
                 {
-                    "channel": "0",
-                    "varName": "",
-                    "message": "",
-                    "buttons": [],
-                    "selectMenus": [],
-                    "attachments": [],
-                    "embeds": [
-                        {
-                            "title": "Benachrichtigungen – ${tempVars(\"choiceName\")}",
-                            "url": "",
-                            "color": "${globalVars(\"default-color\")}",
-                            "timestamp": "false",
-                            "imageUrl": "",
-                            "thumbUrl": "",
-                            "description": "${tempVars(\"selectedNotificationRoleInfo\").hasRole ? \"✅\" : \"❌\"}",
-                            "fields": [],
-                            "author": "",
-                            "authorUrl": "",
-                            "authorIcon": "",
-                            "footerText": "DBM German Bot v${globalVars(\"version\")}",
-                            "footerIconUrl": ""
-                        }
-                    ],
-                    "reply": true,
-                    "ephemeral": false,
-                    "tts": false,
-                    "overwrite": false,
-                    "dontSend": false,
-                    "editMessage": "0",
-                    "editMessageVarName": "",
-                    "storage": "0",
-                    "varName2": "",
-                    "name": "Send Message"
+                    "storage": "1",
+                    "varName": "role",
+                    "changeType": "0",
+                    "value": "tempVars(\"selectedNotificationRoleInfo\").object",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "1",
+                    "varName": "hasRole",
+                    "changeType": "0",
+                    "value": "tempVars(\"selectedNotificationRoleInfo\").hasRole",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "1",
+                    "varName": "description",
+                    "changeType": "0",
+                    "value": "globalVars(\"/benachrichtigungen-roles\")[tempVars(\"choiceName\")] ?? \"Beschreibung fehlt.\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "source": "ZrMQs",
+                    "type": "true",
+                    "name": "Call Command/Event"
                 }
             ],
             "name": "Action Container"
