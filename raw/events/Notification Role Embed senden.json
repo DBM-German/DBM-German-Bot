@@ -13,6 +13,30 @@
         },
         {
             "storage": "1",
+            "varName": "hasRole",
+            "comparison": "1",
+            "value": "true",
+            "branch": {
+                "iftrue": "4",
+                "iffalse": "4",
+                "iftrueVal": "remove-role",
+                "iffalseVal": "add-role"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "anchorName": "add-role",
+            "name": "Action Anchor"
+        },
+        {
+            "storage": "1",
+            "varName": "hasRole",
+            "changeType": "0",
+            "value": "true",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
             "varName": "editReply",
             "comparison": "1",
             "value": "true",
@@ -27,10 +51,52 @@
             "channel": "5",
             "varName": "channel",
             "message": "",
-            "buttons": [],
+            "buttons": [
+                {
+                    "name": "Aktivieren",
+                    "type": "SUCCESS",
+                    "id": "msg-button-872dd44",
+                    "row": "",
+                    "url": "",
+                    "emoji": "🔔",
+                    "mode": "MULTIPERSONAL",
+                    "time": "",
+                    "actions": [
+                        {
+                            "member": "2",
+                            "varName2": "member",
+                            "role": "3",
+                            "varName": "role",
+                            "reason": "",
+                            "name": "Add Member Role"
+                        },
+                        {
+                            "source": "ZrMQs",
+                            "type": "true",
+                            "name": "Call Command/Event"
+                        }
+                    ]
+                }
+            ],
             "selectMenus": [],
             "attachments": [],
-            "embeds": [],
+            "embeds": [
+                {
+                    "title": "Benachrichtigungen – ${tempVars(\"role\").name}",
+                    "url": "",
+                    "color": "${globalVars(\"default-color\")}",
+                    "timestamp": "false",
+                    "imageUrl": "",
+                    "thumbUrl": "",
+                    "description": "${tempVars(\"description\")}",
+                    "fields": [],
+                    "author": "",
+                    "authorUrl": "",
+                    "authorIcon": "",
+                    "footerText": "DBM German Bot v${globalVars(\"version\")}",
+                    "footerIconUrl": ""
+                }
+            ],
             "reply": true,
             "ephemeral": false,
             "tts": false,
@@ -56,10 +122,210 @@
             "channel": "5",
             "varName": "channel",
             "message": "",
-            "buttons": [],
+            "buttons": [
+                {
+                    "name": "Aktivieren",
+                    "type": "SUCCESS",
+                    "id": "msg-button-92f628d",
+                    "row": "",
+                    "url": "",
+                    "emoji": "🔔",
+                    "mode": "MULTIPERSONAL",
+                    "time": "",
+                    "actions": [
+                        {
+                            "member": "2",
+                            "varName2": "member",
+                            "role": "3",
+                            "varName": "role",
+                            "reason": "",
+                            "name": "Add Member Role"
+                        },
+                        {
+                            "source": "ZrMQs",
+                            "type": "true",
+                            "name": "Call Command/Event"
+                        }
+                    ]
+                }
+            ],
             "selectMenus": [],
             "attachments": [],
-            "embeds": [],
+            "embeds": [
+                {
+                    "title": "Benachrichtigungen – ${tempVars(\"role\").name}",
+                    "url": "",
+                    "color": "${globalVars(\"default-color\")}",
+                    "timestamp": "false",
+                    "imageUrl": "",
+                    "thumbUrl": "",
+                    "description": "${tempVars(\"description\")}",
+                    "fields": [],
+                    "author": "",
+                    "authorUrl": "",
+                    "authorIcon": "",
+                    "footerText": "DBM German Bot v${globalVars(\"version\")}",
+                    "footerIconUrl": ""
+                }
+            ],
+            "reply": true,
+            "ephemeral": false,
+            "tts": false,
+            "overwrite": false,
+            "dontSend": false,
+            "editMessage": "0",
+            "editMessageVarName": "",
+            "storage": "0",
+            "varName2": "",
+            "name": "Send Message"
+        },
+        {
+            "name": "End Action Sequence"
+        },
+        {
+            "anchorName": "remove-role",
+            "name": "Action Anchor"
+        },
+        {
+            "storage": "1",
+            "varName": "hasRole",
+            "changeType": "0",
+            "value": "false",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "editReply",
+            "comparison": "1",
+            "value": "true",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "3",
+                "iffalseVal": "2"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "channel": "5",
+            "varName": "channel",
+            "message": "",
+            "buttons": [
+                {
+                    "name": "Deaktivieren",
+                    "type": "DANGER",
+                    "id": "msg-button-5f5d5d5",
+                    "row": "",
+                    "url": "",
+                    "emoji": "🔕",
+                    "mode": "MULTIPERSONAL",
+                    "time": "",
+                    "actions": [
+                        {
+                            "member": "2",
+                            "varName2": "member",
+                            "role": "3",
+                            "varName": "role",
+                            "reason": "",
+                            "name": "Remove Member Role"
+                        },
+                        {
+                            "source": "ZrMQs",
+                            "type": "true",
+                            "name": "Call Command/Event"
+                        }
+                    ]
+                }
+            ],
+            "selectMenus": [],
+            "attachments": [],
+            "embeds": [
+                {
+                    "title": "Benachrichtigungen – ${tempVars(\"role\").name}",
+                    "url": "",
+                    "color": "${globalVars(\"default-color\")}",
+                    "timestamp": "false",
+                    "imageUrl": "",
+                    "thumbUrl": "",
+                    "description": "${tempVars(\"description\")}",
+                    "fields": [],
+                    "author": "",
+                    "authorUrl": "",
+                    "authorIcon": "",
+                    "footerText": "DBM German Bot v${globalVars(\"version\")}",
+                    "footerIconUrl": ""
+                }
+            ],
+            "reply": true,
+            "ephemeral": false,
+            "tts": false,
+            "overwrite": false,
+            "dontSend": false,
+            "editMessage": "intUpdate",
+            "editMessageVarName": "",
+            "storage": "0",
+            "varName2": "",
+            "name": "Send Message"
+        },
+        {
+            "name": "End Action Sequence"
+        },
+        {
+            "storage": "1",
+            "varName": "editReply",
+            "changeType": "0",
+            "value": "true",
+            "name": "Control Variable"
+        },
+        {
+            "channel": "5",
+            "varName": "channel",
+            "message": "",
+            "buttons": [
+                {
+                    "name": "Deaktivieren",
+                    "type": "DANGER",
+                    "id": "msg-button-29190ec",
+                    "row": "",
+                    "url": "",
+                    "emoji": "🔕",
+                    "mode": "MULTIPERSONAL",
+                    "time": "",
+                    "actions": [
+                        {
+                            "member": "2",
+                            "varName2": "member",
+                            "role": "3",
+                            "varName": "role",
+                            "reason": "",
+                            "name": "Remove Member Role"
+                        },
+                        {
+                            "source": "ZrMQs",
+                            "type": "true",
+                            "name": "Call Command/Event"
+                        }
+                    ]
+                }
+            ],
+            "selectMenus": [],
+            "attachments": [],
+            "embeds": [
+                {
+                    "title": "Benachrichtigungen – ${tempVars(\"role\").name}",
+                    "url": "",
+                    "color": "${globalVars(\"default-color\")}",
+                    "timestamp": "false",
+                    "imageUrl": "",
+                    "thumbUrl": "",
+                    "description": "${tempVars(\"description\")}",
+                    "fields": [],
+                    "author": "",
+                    "authorUrl": "",
+                    "authorIcon": "",
+                    "footerText": "DBM German Bot v${globalVars(\"version\")}",
+                    "footerIconUrl": ""
+                }
+            ],
             "reply": true,
             "ephemeral": false,
             "tts": false,
