@@ -94,6 +94,20 @@
             "name": "Action Container"
         },
         {
+            "comment": "Create global action-specific variables | Erstelle globale aktionsspezifische Variablen",
+            "actions": [
+                {
+                    "behavior": "0",
+                    "interpretation": "1",
+                    "code": "// Create an object with all notification role descriptions\n// Erstelle ein Objekt mit allen Benachrichtigungsrollen-Beschreibungen\n\nconst DESCRIPTIONS = {};\n\nDESCRIPTIONS[\"helfer\"] = `\nAndere Nutzer können dich anpingen, wenn sie Hilfe benötigen.\n`;\nDESCRIPTIONS[\"giveaways\"] = `\nBei neuen Giveaways (keinen Freebies) wirst du benachrichtigt.\n`;\nDESCRIPTIONS[\"news\"] = `\nWir halten dich auf dem aktuellen Stand, was DBM und diesen Server angeht.\n`;\nDESCRIPTIONS[\"rawdata\"] = `\nAndere Nutzer können sich bei dir bezüglich Raw Datas melden.\n`;\n\nDESCRIPTIONS;",
+                    "storage": "3",
+                    "varName": "/benachrichtigungen-roles",
+                    "name": "Run Script"
+                }
+            ],
+            "name": "Action Container"
+        },
+        {
             "behavior": "0",
             "interpretation": "1",
             "code": "console.log(\"Initialisierung beendet.\");",
