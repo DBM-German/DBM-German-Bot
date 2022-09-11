@@ -105,7 +105,7 @@
                 {
                     "title": "${tempVars(\"title\")}",
                     "url": "",
-                    "color": "fff700",
+                    "color": "${globalVars(\"default-color\")}",
                     "timestamp": "false",
                     "imageUrl": "",
                     "thumbUrl": "",
@@ -199,7 +199,7 @@
                 {
                     "title": "${tempVars(\"title\")}",
                     "url": "",
-                    "color": "fff700",
+                    "color": "${globalVars(\"default-color\")}",
                     "timestamp": "false",
                     "imageUrl": "",
                     "thumbUrl": "",

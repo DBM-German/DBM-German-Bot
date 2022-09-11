@@ -8,8 +8,8 @@
         {
             "storage": "4",
             "varName": "Befehl",
-            "comparison": "5",
-            "value": "\"\"",
+            "comparison": "10",
+            "value": "0",
             "branch": {
                 "iftrue": "3",
                 "iffalse": "0",

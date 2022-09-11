@@ -22,6 +22,14 @@
                     "storage": "0",
                     "varName": "",
                     "name": "Run Script"
+                },
+                {
+                    "behavior": "0",
+                    "interpretation": "1",
+                    "code": "// Override Transform List action\n// Überschreibe Transform List-Aktion\n\nconst Actions = this.getDBM().Actions;\n\nActions[\"Transform List\"] = async (cache) => {\n    const data = cache.actions[cache.index];\n    const list = await this.getListFromData(data.list, data.varName, cache);\n\n    let result = [];\n    const code = data.transform;\n    const nullVal = data.null;\n    let defaultVal;\n\n    try {\n        defaultVal = this.eval(nullVal, cache);\n    } catch (e) {\n        this.displayError(data, cache, e);\n        defaultVal = \"\";\n    }\n\n    for (let i = 0; i < list.length; i++) {\n        try {\n            const item = list[i];\n            const val = this.eval.call(\n                {\n                    ...Actions,\n                    ...{\n                        transformListIndex: i,\n                        transformListItem: item,\n                        transformListArray: list\n                    }\n                },\n                \"const item = this.transformListItem;\\n\" + code,\n                cache\n            );\n\n            if (val) {\n                result.push(val);\n            } else if (defaultVal) {\n                result.push(defaultVal);\n            }\n        } catch (e) {\n            this.displayError(data, cache, e);\n            if (defaultVal) {\n                result.push(defaultVal);\n            }\n        }\n    }\n\n    if (result) {\n        const varName2 = this.evalMessage(data.varName2, cache);\n        const storage2 = parseInt(data.storage, 10);\n        this.storeValue(result, storage2, varName2, cache);\n    }\n\n    this.callNextAction(cache);\n};\n\nActions[\"Transform List\"].bind(Actions);",
+                    "storage": "0",
+                    "varName": "",
+                    "name": "Run Script"
                 }
             ],
             "name": "Action Container"
@@ -41,6 +49,13 @@
                     "varName": "debug",
                     "changeType": "0",
                     "value": "client.user.id == \"724335784798322833\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
+                    "varName": "default-color",
+                    "changeType": "0",
+                    "value": "\"fff700\"",
                     "name": "Control Variable"
                 },
                 {
@@ -73,6 +88,20 @@
                     "code": "// Create a function  to resolve command types to names\n// Erstelle eine Funktion, um Befehlsarten in Namen aufzulösen\n\nconst TYPES = globalVars(\"commandTypes\");\nconst NAMES = globalVars(\"commandTypeNames\");\n\nconst resolveCommandType = function(commandType) {\n    if(!Object.values(TYPES).includes(commandType)) return \"Manual Command\";\n    return NAMES[commandType];\n}\n\nresolveCommandType;",
                     "storage": "3",
                     "varName": "resolveCommandType",
+                    "name": "Run Script"
+                }
+            ],
+            "name": "Action Container"
+        },
+        {
+            "comment": "Create global action-specific variables | Erstelle globale aktionsspezifische Variablen",
+            "actions": [
+                {
+                    "behavior": "0",
+                    "interpretation": "1",
+                    "code": "// Create an object with all notification role descriptions\n// Erstelle ein Objekt mit allen Benachrichtigungsrollen-Beschreibungen\n\nconst DESCRIPTIONS = {};\n\nDESCRIPTIONS[\"helfer\"] = `\nAndere Nutzer können dich anpingen, wenn sie Hilfe benötigen.\n`;\nDESCRIPTIONS[\"giveaways\"] = `\nBei neuen Giveaways (keinen Freebies) wirst du benachrichtigt.\n`;\nDESCRIPTIONS[\"news\"] = `\nWir halten dich auf dem aktuellen Stand, was DBM und diesen Server angeht.\n`;\nDESCRIPTIONS[\"rawdata\"] = `\nAndere Nutzer können sich bei dir bezüglich Raw Datas melden.\n`;\n\nDESCRIPTIONS;",
+                    "storage": "3",
+                    "varName": "/benachrichtigungen-roles",
                     "name": "Run Script"
                 }
             ],
