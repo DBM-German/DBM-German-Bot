@@ -1,0 +1,584 @@
+{
+    "name": "Info",
+    "permissions": "NONE",
+    "permissions2": "NONE",
+    "restriction": "1",
+    "_id": "JppPy",
+    "actions": [
+        {
+            "title": "Info ${slashParams(\"Thema\")}",
+            "author": "",
+            "color": "${globalVars(\"default-color\")}",
+            "timestamp": "false",
+            "url": "",
+            "authorIcon": "",
+            "imageUrl": "",
+            "thumbUrl": "",
+            "storage": "1",
+            "varName": "embed",
+            "name": "Create Embed Message"
+        },
+        {
+            "storage": "1",
+            "varName": "embed",
+            "message": "DBM German Bot v${globalVars(\"version\")}",
+            "footerIcon": "",
+            "name": "Set Embed Footer"
+        },
+        {
+            "storage": "4",
+            "varName": "Thema",
+            "branches": [
+                {
+                    "comparison": "1",
+                    "value": "\"Aliase\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "message": "Aliase sind Verknüpfungen für bereits existierende Befehle. Das bedeutet, dass ein Befehl mehrere Namen haben kann. Ein Nutzer könnte dann z.B. `!p` anstelle von `!play` verwenden.\n\nUm die Aliase eines Befehls zu bearbeiten, führe einen Rechtsklick auf den jeweiligen Befehl in der Befehlsliste aus und wähle `Modify Aliases`.\nBeachte: Aliase funktionieren nur bei Textbefehlen.",
+                            "name": "Set Embed Description"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Cooldown\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "message": "Cooldowns bzw. Time Restrictions dienen dazu, einen Nutzer daran zu hindern, einen Befehl zu schnell hintereinander aufzurufen. Darüber wäre es z.B. möglich, den XP-Zähler nur alle 30 Sekunden reagieren zu lassen.\n\nUm den Cooldown eines Befehls zu bearbeiten, führe einen Rechtsklick auf den jeweiligen Befehl in der Befehlsliste aus und wähle `Adjust Time Restriction`.\nFalls du auf einen Nutzer mit aktivem Cooldown reagieren möchtest, erstelle zusätzlich ein Event mit dem Trigger `On Time Restriction` und füge dort deine jeweiligen Actions ein.",
+                            "name": "Set Embed Description"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Embeds\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "message": "Embeds (eingebettete Nachrichten) sind die Nachrichten-Teile, die einen dunkleren Hintergrund und einen farbigen Akzent auf der linken Seite haben. Bots benutzen diese sehr häufig, um Nachrichten schöner gestalten zu können.\n\nUm ein Embed zu versenden, kannst du entweder die gesonderten Embed-Actions in der Kategorie `Embed Message` verwenden oder in der `Send Message`-Action im Reiter `Embeds` ein Embed hinzufügen.\nBeachte: Bots können maximal __ein__ Embed versenden. Falls du mehrere benötigst, wären Webhooks die Alternative. Diese können maximal __10__ versenden.",
+                            "name": "Set Embed Description"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Interaction-Modi\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "message": "Interactions (Interaktionen) können in DBM verschiedene Modi haben. Es ist wichtig, dass du den korrekten Modus wählst, damit deine Buttons und co. sich so wie gewollt verhalten. Was genau die Unterschiede sind, kannst du unten nachlesen.",
+                            "name": "Set Embed Description"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "Once",
+                            "message": "Die Interaction kann nur __einmal__ bis zum Ablauf des angegebenen Timeouts benutzt werden.\n\n__Command User Only__\nInteraction kann nur vom Command User benutzt werden.\n\n__Anyone Can Use__\nInteraction kann von jedem genutzt werden.",
+                            "inline": "0",
+                            "name": "Add Embed Field"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "Multi",
+                            "message": "Die Interaction kann __mehrmals__ bis zum Ablauf des angegebenen Timeouts benutzt werden.\n\n__Command User Only__\nInteraction kann nur vom Command User benutzt werden.\n\n__Anyone Can Use__\nInteraction kann von jedem genutzt werden.",
+                            "inline": "0",
+                            "name": "Add Embed Field"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "Persistent",
+                            "message": "Die Interaction kann __immer__ benutzt werden. Es gibt kein Timeout und auch nach einem Neustart funktionieren sie weiterhin.\n\nBeachte: Falls du Interactions mit diesem Modi in Variablen abspeichern solltest, dann nutze zusätzlich `Save Variable`, damit sie nach einem Neustart nicht verloren gehen. Wie bereits erwähnt, können diese Interactions auch dann noch benutzt werden.",
+                            "inline": "0",
+                            "name": "Add Embed Field"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Schleifen\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "message": "DBM bietet mehrere Actions, um eine Reihe von Actions mehrfach hintereinander auszuführen. Unten findest du für diese jeweils eine kurze Beschreibung.",
+                            "name": "Set Embed Description"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "Loop Through List",
+                            "message": "Mit dieser Action kann man durch allerlei Listen iterieren und pro Element eine Reihe an Actions ausführen.\n\nSchwierigkeitsgrad: 🟢\nParallelverarbeitung: ✅",
+                            "inline": "1",
+                            "name": "Add Embed Field"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "Loop Through All Servers",
+                            "message": "Durch Loop Through List ist diese Action mittlerweile eigentlich überflüssig, existiert jedoch noch wegen Rückwärtskompatibilität. Ob man diese Action oder Loop Through List verwendet, ist jedem selbst überlassen.\n\nSchwierigkeitsgrad: 🟢\nParallelverarbeitung: ✅",
+                            "inline": "1",
+                            "name": "Add Embed Field"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "Loop Through Numbers",
+                            "message": "Hiermit lassen sich manuelle Schleifen erstellen. Wir sind hier nicht an eine Liste gebunden, sondern können eine eigene Anzahl an Iterationen einstellen.\n\nSchwierigkeitsgrad: 🟡\nParallelverarbeitung: ✅",
+                            "inline": "1",
+                            "name": "Add Embed Field"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "Transform List",
+                            "message": "Mit dieser Action können wir Elemente einer Liste bearbeiten oder herausfildern. Bei `Transform Eval` kann JavaScript-Code angegeben werden, um Änderungen am Element vorzunehmen und `Null Value` dient als alternativer Wert, falls bei der Bearbeitung kein gültiger Wert heraus kommt. Alternativ können wir `Null Value` auch auf `null` (ohne Anführungszeichen) setzen, um das entsprechende Element vollständig aus der Liste zu entfernen.\n\nSchwierigkeitsgrad: 🔴\nParallelverarbeitung: ❌",
+                            "inline": "1",
+                            "name": "Add Embed Field"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Musik\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "message": "Um Musik mit einem DBM-Bot abspielen zu können, müssen FFmpeg und ein paar Musik-Bibliotheken installiert werden. Folge den Anweisungen unten, um diese Dinge zu installieren und einen Befehl zum Abspielen von Musik zu erstellen.",
+                            "name": "Set Embed Description"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "FFmpeg und Musik-Bibliotheken",
+                            "message": "1. Klicke in der DBM-Menüleiste auf `File` -> `Music Capabilities`\n2. Führe `Update Music Libraries` und `Install FFMPEG in Project` jeweils einmal aus",
+                            "inline": "1",
+                            "name": "Add Embed Field"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "Befehl zum Abspielen von Musik",
+                            "message": "1. Get Bot as Member (Store In: `bot`)\n2. Store Member Info (Source Member: `bot`; Source Info: `Member Voice Channel`; Store In: `botvc`)\n3. Check Variable (Variable Name: `botvc`; Comparison Type: `Exists`)\n-> If True: Skip Next Actions (1)\n-> If False: Continue Actions\n4. Join Voice Channel (Voice Channel: `Command User's Voice Channel`)\n5. Play File / URL / YouTube",
+                            "inline": "1",
+                            "name": "Add Embed Field"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Mods\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "message": "Die DBM Mods sind ein Projekt des DBM Netzwerks. Sie sind eine Sammlung an neuen und überarbeiten Actions, Events und Extensions. Besuche https://dbm-network.github.io/ für mehr Informationen.\nVorsicht: Mods können deinen Bot instabil machen oder ggf. beschädigen. Erstelle also regelmäßig Backups!",
+                            "name": "Set Embed Description"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "Downloads",
+                            "message": "[DBM 2.0 (beta)](https://github.com/dbm-network/mods/archive/refs/heads/master.zip)\n[DBM 1.6 (stabil)](https://github.com/dbm-network/mods/archive/refs/heads/old_version_v1.6.zip)\n[DBM 1.5 (veraltet)](https://github.com/dbm-network/mods/archive/refs/heads/old_version_v1.5.zip)",
+                            "inline": "1",
+                            "name": "Add Embed Field"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"DBM-Versionen\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "message": "Discord Bot Maker hat über die Jahre einige Updates erhalten, bei denen der Aufbau von Actions, Raw Datas und co. teils geändert wurde. Daher sind nicht alle Versionen miteinander kompatibel. Unten ist eine Übersicht über alle großen Updates, welche grundlegende Änderungen enthalten haben.",
+                            "name": "Set Embed Description"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "v1.0 – Release",
+                            "message": "Die ursprüngliche Version von Discord Bot Maker, wie sie 2017 auf Steam veröffentlicht wurde.",
+                            "inline": "1",
+                            "name": "Add Embed Field"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "v1.1 – Optimierungen und Templates",
+                            "message": "In diesem Update wurde größtenteils die Benutzeroberfläche optimiert. Zusätzlich wurden Templates eingeführt und zu einigen vorhandenen Actions weitere Optionen hinzugefügt.",
+                            "inline": "1",
+                            "name": "Add Embed Field"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "v1.2 – Lists and Loops",
+                            "message": "Mit dieser Version wurden Listen und Schleifen sowie einige andere neue Actions eingeführt. Zusätzlich wurden neue Event Trigger und Bot-Einstellungen hinzugefügt.",
+                            "inline": "1",
+                            "name": "Add Embed Field"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "v1.5 – Bugfixes",
+                            "message": "Zwischen dieser und der v1.2 wurden hauptsächlich Fehler korrigiert und ggf. kleine Anpassungen vorgenommen.",
+                            "inline": "1",
+                            "name": "Add Embed Field"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "v1.6 – Musik",
+                            "message": "Dieses Update hat war mit absoluter Sicherheit das, welches am längsten den Beta-Status hatte. Jahrelang hatte man die Nutzer angewiesen, zur Beta-Version zu wechseln, um die neuen Musik-Features nutzen zu können. Und nach lange verschobenem Release wurde es erst mal stumm um DBM und dessen Entwickler. Ein weiteres Update war nicht in Sicht.",
+                            "inline": "1",
+                            "name": "Add Embed Field"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "v2.0 – Interactions",
+                            "message": "Nach jahrelanger Warterei war es dann so weit. Im Juni 2022 kam dann endlich das lang ersehnte - und dringend notwendige - nächste Update. Die Oberfläche wurde erneuert und DBM an die neue Discord API angepasst. Dies ermöglichte den DBM-Bots dann ebenfalls zu Interactions zu wechseln. Zusätzlich wurden Dinge wie Action Container und Action Tabs eingeführt.",
+                            "inline": "1",
+                            "name": "Add Embed Field"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Terminal\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "message": "Wenn man einen Bot auf einem VPS (`/info vps`) oder mit Mods (`/info mods`) laufen lassen möchte, ist es sinnvoll, das über ein Terminal (eine Eingabeaufforderung) zu machen.\n\nUnten findest du jeweils eine Anleitung, um ein Terminal unter Linux oder Windows zu öffnen und den Bot zu starten.\nBeachte: Hierfür muss Node.js (`/info nodejs`) installiert sein.",
+                            "name": "Set Embed Description"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "Linux",
+                            "message": "1. Öffne den Projektordner\n2. Klicke in der Menüleiste des Explorers auf `Open Terminal` (oder einen ähnlichen Knopf)\n3. Schreibe im Terminal `node bot.js` und drücke auf Enter\n4. Schließe das Terminal erst wieder, wenn du den Bot abschalten möchtest",
+                            "inline": "1",
+                            "name": "Add Embed Field"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "Windows",
+                            "message": "1. Öffne den Projektordner (bspw. über DBM: Menüleiste -> `Project` -> `Open Project Directory`)\n2. Klicke auf die Adresszeile des Explorers und entferne den gesamten Inhalt\n3. Öffne eines der unten genannten Terminals mit dem jeweiligen Befehl\n4. Schreibe im Terminal `node bot.js` und drücke auf Enter\n5. Schließe das Terminal erst wieder, wenn du den Bot abschalten möchtest\n\n__Windows Terminal (WT)__\n`wt -d .`\nHinweis: bei Win11 vorinstalliert; für Win10 [hier](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701) kostenlos erhältlich.\n\n__PowerShell (PS)__\n`powershell`\n\n__Command Prompt (CMD)__\n`cmd`",
+                            "inline": "1",
+                            "name": "Add Embed Field"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"EACCES\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "message": "Der Fehler `Error: spawn EACCES` tritt bei manchen auf Linux-Systemen auf, nachdem sie ihren Bot frisch übertragen haben.\nUm dieses Problem zu lösen, öffne ein Terminal und gebe folgenden Befehl ein:\n`cd .. && sudo chmod -R a+rwx`\nBeachte: Du benötigst Superuser-Rechte (Root Permissions), um dies durchzuführen.",
+                            "name": "Set Embed Description"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Fehlersuche\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "message": "Falls Discord Bot Maker einmal nicht korrekt funktionieren sollte oder du installierte Mods sauber entfernen möchtest, folge den Schritten unten, um DBM zurückzusetzen.",
+                            "name": "Set Embed Description"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "Softwaredateien auf Fehler überprüfen",
+                            "message": "1. Schließe DBM\n2. Öffne deine Steam-Bibliothek\n3. Führe einen Rechtsklick auf DBM aus und wähle `Eigenschaften`\n4. Gehe zu `Lokale Dateien` und klicke dort auf `Softwaredateien auf Fehler überprüfen`\n5. Warte, bis der Vorgang abgeschlossen wurde und starte DBM dann erneut",
+                            "inline": "1",
+                            "name": "Add Embed Field"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Layer 8\"",
+                    "actions": [
+                        {
+                            "behavior": "0",
+                            "interpretation": "1",
+                            "code": "tempVars(\"embed\").setImage(\"https://cdn.discordapp.com/attachments/655451974610714636/841282570683023419/Layer8b.webp\");",
+                            "storage": "0",
+                            "varName": "",
+                            "name": "Run Script"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "message": "[Mehr Infos](https://de.wikipedia.org/wiki/Layer_8)",
+                            "name": "Set Embed Description"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Node.js\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "message": "DBM-Bots sind in der Programmiersprache JavaScript geschrieben. Um sie ohne DBM laufen lassen zu können, benötigen wir das Programm Node.js.\nBeachte: Du musst zusätzlich den Ordner `actions` vom DBM-Installationsverzeichnis in deinen Projektordner kopieren.\n\nDen Download der LTS-Version findest du hier: https://nodejs.org/de/download/\nDer Actions-Ordner von DBM ist standardmäßig hier: `C:\\Program Files (x86)\\Steam\\steamapps\\common\\Discord Bot Maker\\actions`",
+                            "name": "Set Embed Description"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"NPM\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "message": "NPM (Node Package Manager) ist ein Paketmanager für Node.js (`/info nodejs`). Dieser dient dazu, sogenannte Node-Module zu verwalten. Einige Mods nutzen diesen z.B. um weitere Module zu installieren.\nFalls du einen Fehler wie `Der Befehl \"npm\" ist entweder falsch geschrieben oder konnte nicht gefunden werden` bekommen solltest, vergewissere dich, dass Node.js installiert ist oder installiere es ggf. erneut.",
+                            "name": "Set Embed Description"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Raspberry Pi\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "message": "Der Raspberry Pi ist ein sogenannter Einplatinencomputer in der Größe einer Kreditkarte. Er passt in jede Schublade oder Schrank und kann mit wenig Stromkosten bei sich zu Hause betrieben werden.\nDiscord Bots darüber zu betreiben ist kostengünstig und einfacher als mit einem gemieteten VPS (`/info vps`) und sicherer, da dieser durch den eigenen Router von Zugriffen aus dem Internet abgeschirmt wird. Und falls doch mal etwas schief gehen sollte, kann er ohne allzu großen Aufwand wieder zurückgesetzt werden.\nEine Liste an empfohlenen Modellen sowie nützliche Links findest du unten.\n\nAchte beim Kauf am besten darauf, dir ebenfalls ein Gehäuse sowie passendes Netzteil mitzubestellen. __Ein einfaches Handyladegerät reicht nicht aus!__\nIn einigen Online-Stores und Elektrogeschäften findet man auch Sammelpacks, die dann meist günstiger sind, als sich die einzelnen Komponenten zu kaufen.",
+                            "name": "Set Embed Description"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "Empfohlene Modelle",
+                            "message": "__Leistungsstärker__\n• [Raspberry Pi 4b](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)\n• [Raspberry Pi 3b+](https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/)\n\n__Leistungsschwächer__\n• [Raspberry Pi Zero 2 W](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/)\n• [Raspberry Pi Zero W](https://www.raspberrypi.com/products/raspberry-pi-zero-w/)\n\nFalls du einen anderen Pi verwenden möchtest, erkunde dich zuvor, ob dieser Node.js unterstützt.",
+                            "inline": "0",
+                            "name": "Add Embed Field"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "Nützliche Links",
+                            "message": "• [Raspberry Pi Imager](rptl.io/imager)\n• [Rufus (für erfahrenere Nutzer)](https://rufus.ie/de/)\n• [Video-Tutorials von U-Labs](https://www.youtube.com/playlist?list=PLGqZnU7aLeD-_nOlXGJmncA2a20Nw1_Vq)\n• [Video-Tutorials von SemperVideo (teilweise veraltet)](https://www.youtube.com/playlist?list=PL3-bM7Aq1pUrkASwtwM636PKyyeohGoQa)\n• [Statische IP festlegen](https://www.elektronik-kompendium.de/sites/raspberry-pi/1912151.htm)\n• [Virtuelle Terminals mit GNU-Screen (Englisch)](https://linuxize.com/post/how-to-use-linux-screen/)\n• [Autostart von Programmen](https://tutorials-raspberrypi.de/raspberry-pi-autostart-programm-skript/)\n• [Raspberry Pi als Android TV](https://tutorials-raspberrypi.de/raspberry-pi-android-tv-box-selber-bauen-anleitung/)",
+                            "inline": "0",
+                            "name": "Add Embed Field"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Tutorials\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "message": "Neu bei Discord Bot Maker? Hier sind einige nützliche Tutorials für den Einstieg.\nFalls du auch auf der Liste sein möchtest, lade zwei / drei Videos auf YouTube hoch und wende dich an einen Servermanager.",
+                            "name": "Set Embed Description"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "Deutsch",
+                            "message": "__<:DBMGerman:754287699145392130> DBM German__\n• [Chriegel](https://www.youtube.com/channel/UC42jXs9-a0e5u-S4BYMHzqA)\n• [Thaliruth](https://www.youtube.com/playlist?list=PLtA1w9XYx-fd5I70AOzwWmak_GKHHoZ0y)",
+                            "inline": "0",
+                            "name": "Add Embed Field"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "Englisch",
+                            "message": "__<:DBMOfficial:516698258270191637> Entwickler__\n• [randomdude](https://www.youtube.com/playlist?list=PLkfg3Bt9RE055BeP8DeDZSUCYxeSLnobe)\n\n__<:DBMNetwork:655459522252374035> DBM Network__\n• [Sopy](https://www.youtube.com/channel/UCNeJzoK445HAxA9ZR0ic0qQ)",
+                            "inline": "0",
+                            "name": "Add Embed Field"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Startdatei\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "message": "Es ist sinnvoll, den eigenen Bot über eine eigene Startdatei auszuführen, sobald dieser 24/7 auf einem Server laufen soll. Das sorgt unter anderem auch dafür, dass er bei einem Absturz automatisch neu gestartet wird.\nUnten findest du jeweils eine Anleitung, um solch eine Datei für Linux oder Windows zu erstellen. Nachdem sie erstellt ist, kannst du sie entweder per Terminal (`/info terminal`) oder per Desktopverknüpfung starten.\nOptimalerweise weist du dein Betriebssystem auch dazu an, beim Systemstart die Startdatei automatisch auszuführen, damit dein Bot auch nach einem Systemneustart wieder online geht.",
+                            "name": "Set Embed Description"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "Linux",
+                            "message": "1. Öffne den Projekt Ordner\n2. Füge dieses [Shell Script](https://cdn.discordapp.com/attachments/655451974610714636/655452456775581714/start.sh) in den Ordner ein\n3. Terminal im Projekt Ordner öffnen und `chmod 777 start.sh` ausführen\n\n__Mit Desktop__\n4. Terminal schließen\n5. Doppelklick auf die Datei ausführen und `Im Terminal ausführen` wählen\n\n__Ohne Desktop__\n4. `./start.sh` im Terminal ausführen",
+                            "inline": "1",
+                            "name": "Add Embed Field"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "Windows",
+                            "message": "1. Öffne den Projekt Ordner\n2. Füge die [Batchdatei](https://cdn.discordapp.com/attachments/655451974610714636/655452453482790942/start.bat) in den Ordner ein\n\n__Mit Desktop__\n3. Doppelklick auf die Datei ausführen\n\n__Ohne Desktop__\n4. Terminal im Projekt Ordner öffnen und `.\\start.bat` ausführen",
+                            "inline": "1",
+                            "name": "Add Embed Field"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Netzwerkfehler\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "message": "Wenn dein Computer bzw. Server Internetprobleme haben, kann es passieren, dass der Bot sich mit der Fehlermeldung `Unhandled Error: ...` beendet.\nDieses Verhalten ist völlig normal, hat jedoch den Nachteil, dass jeglicher Command bzw. Event abgebrochen und der Bot gestoppt wird. Folge den Anweisungen unten, um das zu umgehen.",
+                            "name": "Set Embed Description"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "Wiederverbinden nach Verbindungsverlust",
+                            "message": "1. Erstelle ein Event mit dem Trigger `Bot One-Time Initialization`\n2. Füge eine Run Script Action hinzu\n3. Kopiere das Script von unten und füge es in das Eingabefeld ein\n4. Speichere die Action und starte deinen Bot neu\n\n```js\nclient.on(\"error\", error => {\n    if(error.message == \"Unexpected server response: 520\") {\n        console.warn(\"Keine Verbindung zur Discord API möglich! Versuche es erneut...\");\n    } else if(error.message == \"read ECONNRESET\") {\n        console.warn(\"Verbindung zurückgesetzt! Wieder verbinden...\");\n    } else {\n        console.error(error);\n    }\n});\n```",
+                            "inline": "1",
+                            "name": "Add Embed Field"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"VPS\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "message": "Wenn du deinen Bot 24/7 am Laufen haben willst, benötigst du dafür einen [**V**]irtuellen [**P**]rivaten [**S**]erver. Ein VPS übernimmt die Arbeit, die ansonsten dein PC machen müsste: Den Bot betreiben.\nEine kleine Liste an VPS-Anbietern findest du unten.\nBeachte: Einen VPS muss man mieten und kann eventuell unsicher sein. Alternativ kannst du deinen Bot auch zu Hause über einen gekauften Raspberry Pi hosten (`/info raspberrypi`).",
+                            "name": "Set Embed Description"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "Empfohlene Anbieter",
+                            "message": "• [Strato](https://www.strato.de/)\n• [IONOS](https://www.ionos.de/)\n• [Contabo](https://contabo.de/)\n• [netcup](https://www.netcup.de/)\n• [DeinServerHost](https://deinserverhost.de/)\n• [XeonServ](https://xeonserv.de/)\n• [Signaltransmitter](https://signaltransmitter.de/)\n• [Zap-Hosting](https://zap-hosting.com/de/)\n• [Hetzner](https://www.hetzner.com/de/)",
+                            "inline": "1",
+                            "name": "Add Embed Field"
+                        }
+                    ]
+                }
+            ],
+            "name": "Multi-Check Variable"
+        },
+        {
+            "behavior": "1",
+            "interpretation": "1",
+            "code": "let messageOptions = {\n    embeds: [ tempVars(\"embed\") ]\n};\nlet promise = null;\n\nif(cache.interaction.deferred) {\n    promise = cache.interaction.editReply(messageOptions);\n} else {\n    promise = cache.interaction.reply(messageOptions);\n}\n\npromise\n    .then(() => this.callNextAction(cache))\n    .catch((err) => this.displayError(data, cache, err));",
+            "storage": "0",
+            "varName": "",
+            "name": "Run Script"
+        }
+    ],
+    "comType": "4",
+    "description": "Informationen über verschiedene Themen",
+    "parameters": [
+        {
+            "name": "Thema",
+            "description": "Spezifisches Thema",
+            "type": "STRING",
+            "required": true,
+            "choices": [
+                {
+                    "name": "aliase",
+                    "value": "Aliase"
+                },
+                {
+                    "name": "cooldown",
+                    "value": "Cooldown"
+                },
+                {
+                    "name": "embeds",
+                    "value": "Embeds"
+                },
+                {
+                    "name": "interaction-modi",
+                    "value": "Interaction-Modi"
+                },
+                {
+                    "name": "schleifen",
+                    "value": "Schleifen"
+                },
+                {
+                    "name": "musik",
+                    "value": "Musik"
+                },
+                {
+                    "name": "mods",
+                    "value": "Mods"
+                },
+                {
+                    "name": "dbm-versionen",
+                    "value": "DBM-Versionen"
+                },
+                {
+                    "name": "terminal",
+                    "value": "Terminal"
+                },
+                {
+                    "name": "eacces",
+                    "value": "EACCES"
+                },
+                {
+                    "name": "fehlersuche",
+                    "value": "Fehlersuche"
+                },
+                {
+                    "name": "layer-8",
+                    "value": "Layer 8"
+                },
+                {
+                    "name": "nodejs",
+                    "value": "Node.js"
+                },
+                {
+                    "name": "npm",
+                    "value": "NPM"
+                },
+                {
+                    "name": "raspberrypi",
+                    "value": "Raspberry Pi"
+                },
+                {
+                    "name": "tutorials",
+                    "value": "Tutorials"
+                },
+                {
+                    "name": "startdatei",
+                    "value": "Startdatei"
+                },
+                {
+                    "name": "netzwerkfehler",
+                    "value": "Netzwerkfehler"
+                },
+                {
+                    "name": "vps",
+                    "value": "VPS"
+                }
+            ]
+        }
+    ]
+}
