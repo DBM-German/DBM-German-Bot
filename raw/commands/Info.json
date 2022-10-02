@@ -48,7 +48,7 @@
                         {
                             "storage": "1",
                             "varName": "embed",
-                            "message": "Cooldowns bzw. Time Restrictions dienen dazu, einen Nutzer daran zu hindern, einen Befehl zu schnell hintereinander aufzurufen. Darüber wäre es z.B. möglich den XP-Zähler nur alle 30 Sekunden reagieren zu lassen.\n\nUm den Cooldown eines Befehls zu bearbeiten, führe einen Rechtsklick auf den jeweiligen Befehl in der Befehlsliste aus und wähle `Adjust Time Restriction`.\nFalls du auf einen Nutzer mit aktivem Cooldown reagieren möchtest, erstelle zusätzlich ein Event mit dem Trigger `On Time Restriction` und füge dort deine jeweiligen Actions ein.",
+                            "message": "Cooldowns bzw. Time Restrictions dienen dazu, einen Nutzer daran zu hindern, einen Befehl zu schnell hintereinander aufzurufen. Darüber wäre es z.B. möglich, den XP-Zähler nur alle 30 Sekunden reagieren zu lassen.\n\nUm den Cooldown eines Befehls zu bearbeiten, führe einen Rechtsklick auf den jeweiligen Befehl in der Befehlsliste aus und wähle `Adjust Time Restriction`.\nFalls du auf einen Nutzer mit aktivem Cooldown reagieren möchtest, erstelle zusätzlich ein Event mit dem Trigger `On Time Restriction` und füge dort deine jeweiligen Actions ein.",
                             "name": "Set Embed Description"
                         }
                     ]
@@ -60,7 +60,7 @@
                         {
                             "storage": "1",
                             "varName": "embed",
-                            "message": "Embeds (eingebettete Nachrichten) sind die Nachrichten-Teile, die einen dunkleren Hintergrund und einen farbigen Akzent auf der linken Seite haben. Bots benutzen diese sehr häufig, um Nachrichten schöner gestalten zu können.\n\nUm ein Embed zu versenden kannst du entweder die gesonderten Embed-Actions in der Kategorie `Embed Message` verwenden oder in der `Send Message`-Action im Reiter `Embeds` ein Embed hinzufügen.\nBeachte: Bots können maximal __ein__ Embed versenden. Falls du mehrere benötigst, wären Webhooks die Alternative. Diese können maximal __10__ versenden.",
+                            "message": "Embeds (eingebettete Nachrichten) sind die Nachrichten-Teile, die einen dunkleren Hintergrund und einen farbigen Akzent auf der linken Seite haben. Bots benutzen diese sehr häufig, um Nachrichten schöner gestalten zu können.\n\nUm ein Embed zu versenden, kannst du entweder die gesonderten Embed-Actions in der Kategorie `Embed Message` verwenden oder in der `Send Message`-Action im Reiter `Embeds` ein Embed hinzufügen.\nBeachte: Bots können maximal __ein__ Embed versenden. Falls du mehrere benötigst, wären Webhooks die Alternative. Diese können maximal __10__ versenden.",
                             "name": "Set Embed Description"
                         }
                     ]
@@ -223,7 +223,7 @@
                             "storage": "1",
                             "varName": "embed",
                             "fieldName": "v1.2 – Lists and Loops",
-                            "message": "Mit dieser Version wurden Listen und Schleifen, sowie einige andere neue Actions eingeführt. Zusätzlich wurden neue Event Trigger und Bot-Einstellungen hinzugefügt.",
+                            "message": "Mit dieser Version wurden Listen und Schleifen sowie einige andere neue Actions eingeführt. Zusätzlich wurden neue Event Trigger und Bot-Einstellungen hinzugefügt.",
                             "inline": "1",
                             "name": "Add Embed Field"
                         },
@@ -239,7 +239,7 @@
                             "storage": "1",
                             "varName": "embed",
                             "fieldName": "v1.6 – Musik",
-                            "message": "Dieses Update hat war mit absoluter Sicherheit das, welches am längsten den Beta-Status hatte. Jahrelang hatte man die Nutzer angewiesen zur Beta-Version zu wechseln, um die neuen Musik-Features nutzen zu können. Und nach lange verschobenen dem Release wurde es erstmal stumm um DBM und dessen Entwickler. Ein weiteres Update war nicht in Sicht.",
+                            "message": "Dieses Update hat war mit absoluter Sicherheit das, welches am längsten den Beta-Status hatte. Jahrelang hatte man die Nutzer angewiesen, zur Beta-Version zu wechseln, um die neuen Musik-Features nutzen zu können. Und nach lange verschobenem Release wurde es erst mal stumm um DBM und dessen Entwickler. Ein weiteres Update war nicht in Sicht.",
                             "inline": "1",
                             "name": "Add Embed Field"
                         },
@@ -247,7 +247,7 @@
                             "storage": "1",
                             "varName": "embed",
                             "fieldName": "v2.0 – Interactions",
-                            "message": "Nach jahrelanger Warterei war es dann soweit. Im Juni 2022 kamm dann endlich das lang ersehnte - und dringend notwendige - nächste Update. Die Oberfläche wurde erneuert und DBM an die neue Discord API angepasst. Dies ermöglichte den DBM-Bots dann ebenfalls zu Interactions zu wechseln. Zusätzlich wurden Dinge wie Action Container und Action Tabs eingeführt.",
+                            "message": "Nach jahrelanger Warterei war es dann so weit. Im Juni 2022 kam dann endlich das lang ersehnte - und dringend notwendige - nächste Update. Die Oberfläche wurde erneuert und DBM an die neue Discord API angepasst. Dies ermöglichte den DBM-Bots dann ebenfalls zu Interactions zu wechseln. Zusätzlich wurden Dinge wie Action Container und Action Tabs eingeführt.",
                             "inline": "1",
                             "name": "Add Embed Field"
                         }
@@ -260,7 +260,7 @@
                         {
                             "storage": "1",
                             "varName": "embed",
-                            "message": "Wenn man einen Bot auf einem VPS (`/info vps`) oder mit Mods (`/info mods`) laufen lassen möchte, ist es sinnvoll das über ein Terminal (eine Eingabeaufforderung) zu machen.\n\nUnten findest du jeweils eine Anleitung, um ein Terminal unter Linux oder Windows zu öffnen und den Bot zu starten.\nBeachte: hierfür muss Node.js (`/info nodejs`) installiert sein.",
+                            "message": "Wenn man einen Bot auf einem VPS (`/info vps`) oder mit Mods (`/info mods`) laufen lassen möchte, ist es sinnvoll, das über ein Terminal (eine Eingabeaufforderung) zu machen.\n\nUnten findest du jeweils eine Anleitung, um ein Terminal unter Linux oder Windows zu öffnen und den Bot zu starten.\nBeachte: Hierfür muss Node.js (`/info nodejs`) installiert sein.",
                             "name": "Set Embed Description"
                         },
                         {
@@ -288,7 +288,7 @@
                         {
                             "storage": "1",
                             "varName": "embed",
-                            "message": "Der Fehler `Error: spawn EACCES` tritt bei manchen auf Linux-Systemen auf, nachdem sie ihren Bot frisch übertragen haben.\nUm dieses Problem zu lösen, öffne ein Terminal und gebe folgenden Befehl ein:\n`cd .. && sudo chmod -R a+rwx`\nBeachte: du benötigst Superuser-Rechte (Root Permissions), um dies durchzuführen.",
+                            "message": "Der Fehler `Error: spawn EACCES` tritt bei manchen auf Linux-Systemen auf, nachdem sie ihren Bot frisch übertragen haben.\nUm dieses Problem zu lösen, öffne ein Terminal und gebe folgenden Befehl ein:\n`cd .. && sudo chmod -R a+rwx`\nBeachte: Du benötigst Superuser-Rechte (Root Permissions), um dies durchzuführen.",
                             "name": "Set Embed Description"
                         }
                     ]
@@ -307,7 +307,7 @@
                             "storage": "1",
                             "varName": "embed",
                             "fieldName": "Softwaredateien auf Fehler überprüfen",
-                            "message": "1. Schließe DBM\n2. Öffne deine Steam-Bibliothek\n3. Führe einen Rechtsklick auf DBM aus und wähle `Eigenschaften`\n4. Gehe zu `Lokale Dateien` und klicke dort auf `Softwaredateien auf Fehler überprüfen`\n5. Warte bis der Vorgang abgeschlossen wurde und starte DBM dann erneut",
+                            "message": "1. Schließe DBM\n2. Öffne deine Steam-Bibliothek\n3. Führe einen Rechtsklick auf DBM aus und wähle `Eigenschaften`\n4. Gehe zu `Lokale Dateien` und klicke dort auf `Softwaredateien auf Fehler überprüfen`\n5. Warte, bis der Vorgang abgeschlossen wurde und starte DBM dann erneut",
                             "inline": "1",
                             "name": "Add Embed Field"
                         }
@@ -352,7 +352,7 @@
                         {
                             "storage": "1",
                             "varName": "embed",
-                            "message": "NPM (Node Package Manager) ist ein Paketmanager für Node.js (`/info nodejs`). Dieser dient dazu sogenannte Node-Module zu verwalten. Einige Mods nutzen diesen z.B. um weitere Module zu installieren.\nFalls du einen Fehler wie `Der Befehl \"npm\" ist entweder falsch geschrieben oder konnte nicht gefunden werden` bekommen solltest, vergewissere dich, dass Node.js installiert ist oder installiere es ggf. erneut.",
+                            "message": "NPM (Node Package Manager) ist ein Paketmanager für Node.js (`/info nodejs`). Dieser dient dazu, sogenannte Node-Module zu verwalten. Einige Mods nutzen diesen z.B. um weitere Module zu installieren.\nFalls du einen Fehler wie `Der Befehl \"npm\" ist entweder falsch geschrieben oder konnte nicht gefunden werden` bekommen solltest, vergewissere dich, dass Node.js installiert ist oder installiere es ggf. erneut.",
                             "name": "Set Embed Description"
                         }
                     ]
@@ -364,7 +364,7 @@
                         {
                             "storage": "1",
                             "varName": "embed",
-                            "message": "Der Raspberry Pi ist ein sogenannter Einplatinencomputer in der Größe einer Kreditkarte. Er passt in jede Schublade oder Schrank und kann mit wenig Stromkosten bei sich zuhause betrieben werden.\nDiscord Bots darüber zu betreiben ist kostengünstig, einfacher als mit einem gemieteten VPS (`/info vps`) und sicherer, da dieser durch den eigenen Router von Zugriffen aus dem Internet abgeschirmt wird. Und falls doch mal etwas schief gehen sollte, kann er ohne all zu großen Aufwand wieder zurückgesetzt werden.\nEine Liste an empfohlenen Modellen sowie nützliche Links findest du unten.\n\nAchte beim Kauf am besten darauf, dir ebenfalls ein Gehäuse sowie passendes Netzteil mitzubestellen. __Ein einfaches Handyladegerät reicht nicht aus!__\nIn einigen Online-Stores und Elektrogeschäften findet man auch Sammelpacks, die dann meist günstiger sind, als sich die einzelnen Komponenten zu kaufen.",
+                            "message": "Der Raspberry Pi ist ein sogenannter Einplatinencomputer in der Größe einer Kreditkarte. Er passt in jede Schublade oder Schrank und kann mit wenig Stromkosten bei sich zu Hause betrieben werden.\nDiscord Bots darüber zu betreiben ist kostengünstig und einfacher als mit einem gemieteten VPS (`/info vps`) und sicherer, da dieser durch den eigenen Router von Zugriffen aus dem Internet abgeschirmt wird. Und falls doch mal etwas schief gehen sollte, kann er ohne allzu großen Aufwand wieder zurückgesetzt werden.\nEine Liste an empfohlenen Modellen sowie nützliche Links findest du unten.\n\nAchte beim Kauf am besten darauf, dir ebenfalls ein Gehäuse sowie passendes Netzteil mitzubestellen. __Ein einfaches Handyladegerät reicht nicht aus!__\nIn einigen Online-Stores und Elektrogeschäften findet man auch Sammelpacks, die dann meist günstiger sind, als sich die einzelnen Komponenten zu kaufen.",
                             "name": "Set Embed Description"
                         },
                         {
@@ -420,7 +420,7 @@
                         {
                             "storage": "1",
                             "varName": "embed",
-                            "message": "Es ist sinnvoll den eigenen Bot über eine eigene Startdatei auszuführen, sobald dieser 24/7 auf einem Server laufen soll. Das sorgt unter anderem auch dafür, dass er bei einem Absturz automatisch neu gestartet wird.\nUnten findest du jeweils eine Anleitung, um solch eine Datei für Linux oder Windows zu erstellen. Nachdem sie erstellt ist, kannst du sie entweder per Terminal (`/info terminal`) oder per Desktopverknüpfung starten.\nOptimalerweise weist du dein Betriebssystem auch dazu an, beim Systemstart die Startdatei automatisch auszuführen, damit dein Bot auch nach einem Systemneustart wieder online geht.",
+                            "message": "Es ist sinnvoll, den eigenen Bot über eine eigene Startdatei auszuführen, sobald dieser 24/7 auf einem Server laufen soll. Das sorgt unter anderem auch dafür, dass er bei einem Absturz automatisch neu gestartet wird.\nUnten findest du jeweils eine Anleitung, um solch eine Datei für Linux oder Windows zu erstellen. Nachdem sie erstellt ist, kannst du sie entweder per Terminal (`/info terminal`) oder per Desktopverknüpfung starten.\nOptimalerweise weist du dein Betriebssystem auch dazu an, beim Systemstart die Startdatei automatisch auszuführen, damit dein Bot auch nach einem Systemneustart wieder online geht.",
                             "name": "Set Embed Description"
                         },
                         {
@@ -468,7 +468,7 @@
                         {
                             "storage": "1",
                             "varName": "embed",
-                            "message": "Wenn du deinen Bot 24/7 am Laufen haben willst, benötigst du dafür einen [**V**]irtuellen [**P**]rivaten [**S**]erver. Ein VPS übernimmt die Arbeit, die ansonsten dein PC machen müsste: Den Bot betreiben.\nEine kleine Liste an VPS-Anbietern findest du unten.\nBeachte: Einen VPS muss man mieten und kann eventuell unsicher sein. Alternativ kannst du deinen Bot auch zuhause über einen gekauften Raspberry Pi hosten (`/info raspberrypi`).",
+                            "message": "Wenn du deinen Bot 24/7 am Laufen haben willst, benötigst du dafür einen [**V**]irtuellen [**P**]rivaten [**S**]erver. Ein VPS übernimmt die Arbeit, die ansonsten dein PC machen müsste: Den Bot betreiben.\nEine kleine Liste an VPS-Anbietern findest du unten.\nBeachte: Einen VPS muss man mieten und kann eventuell unsicher sein. Alternativ kannst du deinen Bot auch zu Hause über einen gekauften Raspberry Pi hosten (`/info raspberrypi`).",
                             "name": "Set Embed Description"
                         },
                         {
