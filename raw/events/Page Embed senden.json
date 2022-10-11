@@ -34,6 +34,21 @@
             "name": "Control Variable"
         },
         {
+            "server": "0",
+            "varName": "",
+            "storage": "1",
+            "varName2": "bot",
+            "name": "Get Bot as Member"
+        },
+        {
+            "member": "2",
+            "varName": "bot",
+            "info": "16",
+            "storage": "1",
+            "varName2": "avatarURL",
+            "name": "Store Member Info"
+        },
+        {
             "storage": "1",
             "varName": "editReply",
             "comparison": "1",
@@ -115,7 +130,7 @@
                     "authorUrl": "",
                     "authorIcon": "",
                     "footerText": "DBM German Bot v${globalVars(\"version\")}",
-                    "footerIconUrl": ""
+                    "footerIconUrl": "${tempVars(\"avatarURL\")}"
                 }
             ],
             "reply": true,
@@ -209,7 +224,7 @@
                     "authorUrl": "",
                     "authorIcon": "",
                     "footerText": "DBM German Bot v${globalVars(\"version\")}",
-                    "footerIconUrl": ""
+                    "footerIconUrl": "${tempVars(\"avatarURL\")}"
                 }
             ],
             "reply": true,
