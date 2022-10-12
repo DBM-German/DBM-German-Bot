@@ -1,0 +1,100 @@
+{
+    "name": "Leeren",
+    "permissions": "MANAGE_MESSAGES",
+    "permissions2": "NONE",
+    "restriction": "1",
+    "_id": "gBAuf",
+    "actions": [
+        {
+            "storage": "1",
+            "varName": "channel",
+            "changeType": "0",
+            "value": "channel",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "ephemeral",
+            "changeType": "0",
+            "value": "true",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "4",
+            "varName": "Menge",
+            "comparison": "4",
+            "value": "0",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "3",
+                "iffalseVal": "1"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "storage": "4",
+            "varName": "Menge",
+            "comparison": "3",
+            "value": "1000",
+            "branch": {
+                "iftrue": "3",
+                "iffalse": "0",
+                "iftrueVal": "3"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "description",
+            "changeType": "0",
+            "value": "\"Ungültige Menge an Nachrichten. Erlaubt sind 1 - 999.\"",
+            "name": "Control Variable"
+        },
+        {
+            "source": "HPCYz",
+            "type": "true",
+            "name": "Call Command/Event"
+        },
+        {
+            "name": "End Action Sequence"
+        },
+        {
+            "channel": "0",
+            "count": "${slashParams(\"Menge\")}",
+            "condition": "0",
+            "custom": "",
+            "varName": "",
+            "name": "Delete Bulk Messages"
+        },
+        {
+            "storage": "1",
+            "varName": "title",
+            "changeType": "0",
+            "value": "\"Leeren\"",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "description",
+            "changeType": "0",
+            "value": "`Es wurde${slashParams(\"Menge\") == 1 ? \"\" : \"n\"} ${slashParams(\"Menge\")} Nachricht${slashParams(\"Menge\") == 1 ? \"\" : \"en\"} gelöscht.`",
+            "name": "Control Variable"
+        },
+        {
+            "source": "FGdiL",
+            "type": "true",
+            "name": "Call Command/Event"
+        }
+    ],
+    "comType": "4",
+    "description": "Leeren des Nachrichtenverlaufs",
+    "parameters": [
+        {
+            "name": "Menge",
+            "description": "Menge der zu löschenden Nachrichten",
+            "type": "INTEGER",
+            "required": true,
+            "choices": null
+        }
+    ]
+}

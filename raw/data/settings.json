@@ -7,18 +7,9 @@
     "commandsOrder": [],
     "eventsOrder": [],
     "modules": {
-        "discord.js": [
-            "",
-            true
-        ],
-        "fstorm": [
-            "",
-            true
-        ],
-        "jimp": [
-            "",
-            true
-        ]
+        "discord.js": ["", true],
+        "fstorm": ["", true],
+        "jimp": ["", true]
     },
     "ownerId": "282505671356710912",
     "invalidUserText": "Diese Aktion kann nur von der Person gestartet werden, welche den Befehl aufgerufen hat.",
@@ -28,6 +19,7 @@
     "slashType": "manual",
     "slashServers": "488722832201613344\n533618507699585035\n724330774257729647",
     "autoResponseText": "Befehl erfolgreich ausgeführt.",
-    "invalidPermissionsText": "Ungültige Berechtigungen.",
-    "invalidCooldownText": "Bitte warte %s, bevor du diese Aktion erneut aufrufst."
+    "invalidPermissionsText": "Fehlende Berechtigungen.",
+    "invalidCooldownText": "Bitte warte %s, bevor du diese Aktion erneut aufrufst.",
+    "noDescriptionText":"Keine Beschreibung."
 }
