@@ -6,6 +6,59 @@
     "_id": "gBAuf",
     "actions": [
         {
+            "storage": "1",
+            "varName": "channel",
+            "changeType": "0",
+            "value": "channel",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "ephemeral",
+            "changeType": "0",
+            "value": "true",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "4",
+            "varName": "Menge",
+            "comparison": "4",
+            "value": "0",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "3",
+                "iffalseVal": "1"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "storage": "4",
+            "varName": "Menge",
+            "comparison": "3",
+            "value": "1000",
+            "branch": {
+                "iftrue": "3",
+                "iffalse": "0",
+                "iftrueVal": "3"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "description",
+            "changeType": "0",
+            "value": "\"Ungültige Menge an Nachrichten. Erlaubt sind 1 - 999.\"",
+            "name": "Control Variable"
+        },
+        {
+            "source": "HPCYz",
+            "type": "true",
+            "name": "Call Command/Event"
+        },
+        {
+            "name": "End Action Sequence"
+        },
+        {
             "channel": "0",
             "count": "${slashParams(\"Menge\")}",
             "condition": "0",
@@ -24,21 +77,7 @@
             "storage": "1",
             "varName": "description",
             "changeType": "0",
-            "value": "`Es wurden ${slashParams(\"Menge\")} Nachrichten gelöscht.`",
-            "name": "Control Variable"
-        },
-        {
-            "storage": "1",
-            "varName": "channel",
-            "changeType": "0",
-            "value": "channel",
-            "name": "Control Variable"
-        },
-        {
-            "storage": "1",
-            "varName": "ephemeral",
-            "changeType": "0",
-            "value": "true",
+            "value": "`Es wurde${slashParams(\"Menge\") == 1 ? \"\" : \"n\"} ${slashParams(\"Menge\")} Nachricht${slashParams(\"Menge\") == 1 ? \"\" : \"en\"} gelöscht.`",
             "name": "Control Variable"
         },
         {
