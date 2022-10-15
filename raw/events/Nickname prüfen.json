@@ -1,0 +1,96 @@
+{
+    "name": "Nickname prüfen",
+    "temp": "",
+    "event-type": "0",
+    "_id": "FscMD",
+    "actions": [
+        {
+            "member": "2",
+            "varName": "member",
+            "info": "3",
+            "storage": "1",
+            "varName2": "name",
+            "name": "Store Member Info"
+        },
+        {
+            "storage": "1",
+            "varName": "name",
+            "comparison": "6",
+            "value": "([A-Z]|[0-9]|[äüöß^!\"§$%&/{(\\[)\\]=}?\\\\´`+*~#'\\-_.:,;<>|]|\\s)+",
+            "branch": {
+                "iftrue": "1",
+                "iffalse": "0"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "list": "9",
+            "varName": "replacementNicknames",
+            "storage": "1",
+            "varName2": "replacementNicknameAmount",
+            "name": "Get List Length"
+        },
+        {
+            "storage": "1",
+            "varName": "randomNumber",
+            "min": "1",
+            "max": "${tempVars(\"replacementNicknameAmount\")}",
+            "name": "Generate Random Number"
+        },
+        {
+            "list": "9",
+            "varName": "replacementNicknames",
+            "getType": "3",
+            "position": "${tempVars(\"randomNumber\") - 1}",
+            "storage": "1",
+            "varName2": "replacementNickname",
+            "name": "Get Item from List"
+        },
+        {
+            "storage": "1",
+            "varName": "replacementNickname",
+            "comparison": "1",
+            "value": "\"Mathilda\"",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "3",
+                "iffalseVal": "2"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "easterEgg",
+            "min": "1",
+            "max": "2",
+            "name": "Generate Random Number"
+        },
+        {
+            "storage": "1",
+            "varName": "easterEgg",
+            "comparison": "1",
+            "value": "1",
+            "branch": {
+                "iftrue": "99",
+                "iffalse": "0",
+                "iftrueActions": [
+                    {
+                        "storage": "1",
+                        "varName": "replacementNickname",
+                        "changeType": "0",
+                        "value": "\"Mathilda Jonas\"",
+                        "name": "Control Variable"
+                    }
+                ]
+            },
+            "name": "Check Variable"
+        },
+        {
+            "member": "2",
+            "varName": "member",
+            "nickname": "${tempVars(\"replacementNickname\")}",
+            "reason": "Nickname Detection",
+            "name": "Set Member Nickname"
+        }
+    ]
+}

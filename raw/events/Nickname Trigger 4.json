@@ -1,0 +1,22 @@
+{
+    "name": "Nickname Trigger 4",
+    "temp": "300",
+    "event-type": "3",
+    "_id": "adGvC",
+    "actions": [
+        {
+            "list": "0",
+            "varName": "",
+            "tempVarName": "member",
+            "type": "true",
+            "actions": [
+                {
+                    "source": "FscMD",
+                    "type": "true",
+                    "name": "Call Command/Event"
+                }
+            ],
+            "name": "Loop Through List"
+        }
+    ]
+}

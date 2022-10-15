@@ -1,0 +1,14 @@
+{
+    "name": "Nickname Trigger 2",
+    "temp": "oldMember",
+    "event-type": "20",
+    "_id": "qjLJw",
+    "actions": [
+        {
+            "source": "FscMD",
+            "type": "true",
+            "name": "Call Command/Event"
+        }
+    ],
+    "temp2": "member"
+}

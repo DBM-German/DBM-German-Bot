@@ -38,6 +38,13 @@
             "comment": "Create global variables | Erstelle globale Variablen",
             "actions": [
                 {
+                    "storage": "1",
+                    "varName": "true",
+                    "changeType": "0",
+                    "value": "true",
+                    "name": "Control Variable"
+                },
+                {
                     "storage": "3",
                     "varName": "version",
                     "changeType": "0",
@@ -89,6 +96,379 @@
                     "storage": "3",
                     "varName": "resolveCommandType",
                     "name": "Run Script"
+                },
+                {
+                    "storage": "3",
+                    "varName": "replacementNicknames",
+                    "name": "Create List"
+                },
+                {
+                    "storage": "1",
+                    "varName": "true",
+                    "comparison": "1",
+                    "value": "true",
+                    "branch": {
+                        "iftrue": "99",
+                        "iffalse": "0",
+                        "iftrueActions": [
+                            {
+                                "startNum": "1",
+                                "endNum": "11",
+                                "increment": "1",
+                                "tempVarName": "iteration",
+                                "type": "true",
+                                "actions": [
+                                    {
+                                        "storage": "1",
+                                        "varName": "iteration",
+                                        "branches": [
+                                            {
+                                                "comparison": "1",
+                                                "value": "1",
+                                                "actions": [
+                                                    {
+                                                        "storage": "3",
+                                                        "varName": "replacementNicknames",
+                                                        "addType": "0",
+                                                        "position": "",
+                                                        "value": "\"Hans-Peter\"",
+                                                        "name": "Add Item to List"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "comparison": "1",
+                                                "value": "2",
+                                                "actions": [
+                                                    {
+                                                        "storage": "3",
+                                                        "varName": "replacementNicknames",
+                                                        "addType": "0",
+                                                        "position": "",
+                                                        "value": "\"Kevin\"",
+                                                        "name": "Add Item to List"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "comparison": "1",
+                                                "value": "3",
+                                                "actions": [
+                                                    {
+                                                        "storage": "3",
+                                                        "varName": "replacementNicknames",
+                                                        "addType": "0",
+                                                        "position": "",
+                                                        "value": "\"Frederik\"",
+                                                        "name": "Add Item to List"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "comparison": "1",
+                                                "value": "4",
+                                                "actions": [
+                                                    {
+                                                        "storage": "3",
+                                                        "varName": "replacementNicknames",
+                                                        "addType": "0",
+                                                        "position": "",
+                                                        "value": "\"Pascal\"",
+                                                        "name": "Add Item to List"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "comparison": "1",
+                                                "value": "5",
+                                                "actions": [
+                                                    {
+                                                        "storage": "3",
+                                                        "varName": "replacementNicknames",
+                                                        "addType": "0",
+                                                        "position": "",
+                                                        "value": "\"Detlef\"",
+                                                        "name": "Add Item to List"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "comparison": "1",
+                                                "value": "6",
+                                                "actions": [
+                                                    {
+                                                        "storage": "3",
+                                                        "varName": "replacementNicknames",
+                                                        "addType": "0",
+                                                        "position": "",
+                                                        "value": "\"Jürgen\"",
+                                                        "name": "Add Item to List"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "comparison": "1",
+                                                "value": "7",
+                                                "actions": [
+                                                    {
+                                                        "storage": "3",
+                                                        "varName": "replacementNicknames",
+                                                        "addType": "0",
+                                                        "position": "",
+                                                        "value": "\"Horst\"",
+                                                        "name": "Add Item to List"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "comparison": "1",
+                                                "value": "8",
+                                                "actions": [
+                                                    {
+                                                        "storage": "3",
+                                                        "varName": "replacementNicknames",
+                                                        "addType": "0",
+                                                        "position": "",
+                                                        "value": "\"Günter\"",
+                                                        "name": "Add Item to List"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "comparison": "1",
+                                                "value": "9",
+                                                "actions": [
+                                                    {
+                                                        "storage": "3",
+                                                        "varName": "replacementNicknames",
+                                                        "addType": "0",
+                                                        "position": "",
+                                                        "value": "\"Konstantin\"",
+                                                        "name": "Add Item to List"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "comparison": "1",
+                                                "value": "10",
+                                                "actions": [
+                                                    {
+                                                        "storage": "3",
+                                                        "varName": "replacementNicknames",
+                                                        "addType": "0",
+                                                        "position": "",
+                                                        "value": "\"Valentin\"",
+                                                        "name": "Add Item to List"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "comparison": "1",
+                                                "value": "11",
+                                                "actions": [
+                                                    {
+                                                        "storage": "3",
+                                                        "varName": "replacementNicknames",
+                                                        "addType": "0",
+                                                        "position": "",
+                                                        "value": "\"Rüdiger\"",
+                                                        "name": "Add Item to List"
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "name": "Multi-Check Variable"
+                                    }
+                                ],
+                                "name": "Loop Through Numbers"
+                            }
+                        ]
+                    },
+                    "name": "Check Variable"
+                },
+                {
+                    "storage": "1",
+                    "varName": "true",
+                    "comparison": "1",
+                    "value": "false",
+                    "branch": {
+                        "iftrue": "0",
+                        "iffalse": "99",
+                        "iffalseActions": [
+                            {
+                                "startNum": "1",
+                                "endNum": "11",
+                                "increment": "1",
+                                "tempVarName": "iteration",
+                                "type": "true",
+                                "actions": [
+                                    {
+                                        "storage": "1",
+                                        "varName": "iteration",
+                                        "branches": [
+                                            {
+                                                "comparison": "1",
+                                                "value": "1",
+                                                "actions": [
+                                                    {
+                                                        "storage": "3",
+                                                        "varName": "replacementNicknames",
+                                                        "addType": "0",
+                                                        "position": "",
+                                                        "value": "\"Chantal\"",
+                                                        "name": "Add Item to List"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "comparison": "1",
+                                                "value": "2",
+                                                "actions": [
+                                                    {
+                                                        "storage": "3",
+                                                        "varName": "replacementNicknames",
+                                                        "addType": "0",
+                                                        "position": "",
+                                                        "value": "\"Xanthippe\"",
+                                                        "name": "Add Item to List"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "comparison": "1",
+                                                "value": "3",
+                                                "actions": [
+                                                    {
+                                                        "storage": "3",
+                                                        "varName": "replacementNicknames",
+                                                        "addType": "0",
+                                                        "position": "",
+                                                        "value": "\"Mathilda\"",
+                                                        "name": "Add Item to List"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "comparison": "1",
+                                                "value": "4",
+                                                "actions": [
+                                                    {
+                                                        "storage": "3",
+                                                        "varName": "replacementNicknames",
+                                                        "addType": "0",
+                                                        "position": "",
+                                                        "value": "\"Tiffany\"",
+                                                        "name": "Add Item to List"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "comparison": "1",
+                                                "value": "5",
+                                                "actions": [
+                                                    {
+                                                        "storage": "3",
+                                                        "varName": "replacementNicknames",
+                                                        "addType": "0",
+                                                        "position": "",
+                                                        "value": "\"Frieda\"",
+                                                        "name": "Add Item to List"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "comparison": "1",
+                                                "value": "6",
+                                                "actions": [
+                                                    {
+                                                        "storage": "3",
+                                                        "varName": "replacementNicknames",
+                                                        "addType": "0",
+                                                        "position": "",
+                                                        "value": "\"Greta\"",
+                                                        "name": "Add Item to List"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "comparison": "1",
+                                                "value": "7",
+                                                "actions": [
+                                                    {
+                                                        "storage": "3",
+                                                        "varName": "replacementNicknames",
+                                                        "addType": "0",
+                                                        "position": "",
+                                                        "value": "\"Cheyenne\"",
+                                                        "name": "Add Item to List"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "comparison": "1",
+                                                "value": "8",
+                                                "actions": [
+                                                    {
+                                                        "storage": "3",
+                                                        "varName": "replacementNicknames",
+                                                        "addType": "0",
+                                                        "position": "",
+                                                        "value": "\"Klothilde\"",
+                                                        "name": "Add Item to List"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "comparison": "1",
+                                                "value": "9",
+                                                "actions": [
+                                                    {
+                                                        "storage": "3",
+                                                        "varName": "replacementNicknames",
+                                                        "addType": "0",
+                                                        "position": "",
+                                                        "value": "\"Jacqueline\"",
+                                                        "name": "Add Item to List"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "comparison": "1",
+                                                "value": "10",
+                                                "actions": [
+                                                    {
+                                                        "storage": "3",
+                                                        "varName": "replacementNicknames",
+                                                        "addType": "0",
+                                                        "position": "",
+                                                        "value": "\"Theresa\"",
+                                                        "name": "Add Item to List"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "comparison": "1",
+                                                "value": "11",
+                                                "actions": [
+                                                    {
+                                                        "storage": "3",
+                                                        "varName": "replacementNicknames",
+                                                        "addType": "0",
+                                                        "position": "",
+                                                        "value": "\"Carlotta\"",
+                                                        "name": "Add Item to List"
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "name": "Multi-Check Variable"
+                                    }
+                                ],
+                                "name": "Loop Through Numbers"
+                            }
+                        ]
+                    },
+                    "name": "Check Variable"
                 }
             ],
             "name": "Action Container"
