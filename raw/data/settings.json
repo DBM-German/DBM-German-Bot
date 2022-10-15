@@ -21,5 +21,10 @@
     "autoResponseText": "Befehl erfolgreich ausgeführt.",
     "invalidPermissionsText": "Fehlende Berechtigungen.",
     "invalidCooldownText": "Bitte warte %s, bevor du diese Aktion erneut aufrufst.",
-    "noDescriptionText":"Keine Beschreibung."
+    "noDescriptionText":"Keine Beschreibung.",
+    "Bot Intents": {
+        "customData": {
+            "Bot Intents": {"intents":-1}
+        }
+    }
 }
