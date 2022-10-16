@@ -5,6 +5,25 @@
     "_id": "FscMD",
     "actions": [
         {
+            "server": "0",
+            "varName": "",
+            "info": "1",
+            "storage": "1",
+            "varName2": "serverId",
+            "name": "Store Server Info"
+        },
+        {
+            "storage": "1",
+            "varName": "serverId",
+            "comparison": "1",
+            "value": "globalVars(\"main-server-id\")",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "1"
+            },
+            "name": "Check Variable"
+        },
+        {
             "member": "2",
             "varName": "member",
             "info": "3",
@@ -25,7 +44,7 @@
         },
         {
             "list": "9",
-            "varName": "replacementNicknames",
+            "varName": "replacement-nicknames",
             "storage": "1",
             "varName2": "replacementNicknameAmount",
             "name": "Get List Length"
@@ -39,7 +58,7 @@
         },
         {
             "list": "9",
-            "varName": "replacementNicknames",
+            "varName": "replacement-nicknames",
             "getType": "3",
             "position": "${tempVars(\"randomNumber\") - 1}",
             "storage": "1",
