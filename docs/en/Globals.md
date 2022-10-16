@@ -13,6 +13,21 @@ The current version of the bot as text. Examples:
 A boolean that defines whether this is a debug instance or not. If the client id is "724335784798322833", then the variable will be 'false', otherwise it's 'true'.
 
 
+## Main Server ID | ${`globalVars("main-server-id")`}
+
+Depending on whether `globalVars("version")` is 'true', the ID of our DBM German Beta ("724330774257729647") or DBM German server ("488722832201613344").
+
+
+## Team Server ID | ${`globalVars("team-server-id")`}
+
+The ID of our DBM German Team server ("533618507699585035").
+
+
+## Fake Server ID | ${`globalVars("fake-server-id")`}
+
+The ID of our fake DBM German Team server ("731837587836371024"). This server is a troll / easter egg in the server list.
+
+
 ## Commands | ${`globalVars("commands")`}
 
 A list of all available commands and their parameters. Structure of the commands:
@@ -63,3 +78,24 @@ let internalType = "4";
 let readableType = globalVars("resolveCommandType")(commandType);
 console.log(readableType); // Slash Command
 ```
+
+
+## Replacement Nicknames | ${`globalVars("replacement-nicknames")`}
+
+A list of male and female nickname replacements for users who have nicknames with characters that aren't available on a keyboard with QWERTZ layout.
+
+| Male (11)             | Female (11)           |
+|-----------------------|-----------------------|
+| Hans-Peter            | Chantal               |
+| Kevin                 | Xanthippe             |
+| Frederik              | Mathilda<sup>1</sup>  |
+| Pascal                | Tiffany               |
+| Detlef                | Frieda                |
+| Jürgen                | Greta                 |
+| Horst                 | Cheyenne              |
+| Günter                | Klothilde             |
+| Konstantin            | Jacqueline            |
+| Valentin              | Theresa               |
+| Rüdiger               | Carlotta              |
+
+<sup>1</sup> With this name, there's a 50 percent chance that it'll be Mathilda Jonas instead.
