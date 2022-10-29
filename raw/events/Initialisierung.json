@@ -66,6 +66,27 @@
                     "name": "Control Variable"
                 },
                 {
+                    "storage": "3",
+                    "varName": "main-server-id",
+                    "changeType": "0",
+                    "value": "globalVars(\"debug\") ? \"724330774257729647\" : \"488722832201613344\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
+                    "varName": "team-server-id",
+                    "changeType": "0",
+                    "value": "\"533618507699585035\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
+                    "varName": "fake-server-id",
+                    "changeType": "0",
+                    "value": "\"731837587836371024\"",
+                    "name": "Control Variable"
+                },
+                {
                     "behavior": "0",
                     "interpretation": "1",
                     "code": "// Convert internal command objects to an usable DBM variable\n// Konvertiere interne Befehlsobjekte zu einer nutzbaren DBM-Variable\n\nconst { $slash: slashCmds, $cmds: textCmds } = this.getDBM().Bot;\n\nlet commands = [];\n\nfor(let cmds of [ slashCmds, textCmds ]) {\n    for(let { name, description, parameters, comType: type } of Object.values(cmds)) {\n        commands.push({ name, description, parameters, type  });\n    }\n}\n\ncommands;",
@@ -99,7 +120,7 @@
                 },
                 {
                     "storage": "3",
-                    "varName": "replacementNicknames",
+                    "varName": "replacement-nicknames",
                     "name": "Create List"
                 },
                 {
@@ -128,7 +149,7 @@
                                                 "actions": [
                                                     {
                                                         "storage": "3",
-                                                        "varName": "replacementNicknames",
+                                                        "varName": "replacement-nicknames",
                                                         "addType": "0",
                                                         "position": "",
                                                         "value": "\"Hans-Peter\"",
@@ -142,7 +163,7 @@
                                                 "actions": [
                                                     {
                                                         "storage": "3",
-                                                        "varName": "replacementNicknames",
+                                                        "varName": "replacement-nicknames",
                                                         "addType": "0",
                                                         "position": "",
                                                         "value": "\"Kevin\"",
@@ -156,7 +177,7 @@
                                                 "actions": [
                                                     {
                                                         "storage": "3",
-                                                        "varName": "replacementNicknames",
+                                                        "varName": "replacement-nicknames",
                                                         "addType": "0",
                                                         "position": "",
                                                         "value": "\"Frederik\"",
@@ -170,7 +191,7 @@
                                                 "actions": [
                                                     {
                                                         "storage": "3",
-                                                        "varName": "replacementNicknames",
+                                                        "varName": "replacement-nicknames",
                                                         "addType": "0",
                                                         "position": "",
                                                         "value": "\"Pascal\"",
@@ -184,7 +205,7 @@
                                                 "actions": [
                                                     {
                                                         "storage": "3",
-                                                        "varName": "replacementNicknames",
+                                                        "varName": "replacement-nicknames",
                                                         "addType": "0",
                                                         "position": "",
                                                         "value": "\"Detlef\"",
@@ -198,7 +219,7 @@
                                                 "actions": [
                                                     {
                                                         "storage": "3",
-                                                        "varName": "replacementNicknames",
+                                                        "varName": "replacement-nicknames",
                                                         "addType": "0",
                                                         "position": "",
                                                         "value": "\"Jürgen\"",
@@ -212,7 +233,7 @@
                                                 "actions": [
                                                     {
                                                         "storage": "3",
-                                                        "varName": "replacementNicknames",
+                                                        "varName": "replacement-nicknames",
                                                         "addType": "0",
                                                         "position": "",
                                                         "value": "\"Horst\"",
@@ -226,7 +247,7 @@
                                                 "actions": [
                                                     {
                                                         "storage": "3",
-                                                        "varName": "replacementNicknames",
+                                                        "varName": "replacement-nicknames",
                                                         "addType": "0",
                                                         "position": "",
                                                         "value": "\"Günter\"",
@@ -240,7 +261,7 @@
                                                 "actions": [
                                                     {
                                                         "storage": "3",
-                                                        "varName": "replacementNicknames",
+                                                        "varName": "replacement-nicknames",
                                                         "addType": "0",
                                                         "position": "",
                                                         "value": "\"Konstantin\"",
@@ -254,7 +275,7 @@
                                                 "actions": [
                                                     {
                                                         "storage": "3",
-                                                        "varName": "replacementNicknames",
+                                                        "varName": "replacement-nicknames",
                                                         "addType": "0",
                                                         "position": "",
                                                         "value": "\"Valentin\"",
@@ -268,7 +289,7 @@
                                                 "actions": [
                                                     {
                                                         "storage": "3",
-                                                        "varName": "replacementNicknames",
+                                                        "varName": "replacement-nicknames",
                                                         "addType": "0",
                                                         "position": "",
                                                         "value": "\"Rüdiger\"",
@@ -312,7 +333,7 @@
                                                 "actions": [
                                                     {
                                                         "storage": "3",
-                                                        "varName": "replacementNicknames",
+                                                        "varName": "replacement-nicknames",
                                                         "addType": "0",
                                                         "position": "",
                                                         "value": "\"Chantal\"",
@@ -326,7 +347,7 @@
                                                 "actions": [
                                                     {
                                                         "storage": "3",
-                                                        "varName": "replacementNicknames",
+                                                        "varName": "replacement-nicknames",
                                                         "addType": "0",
                                                         "position": "",
                                                         "value": "\"Xanthippe\"",
@@ -340,7 +361,7 @@
                                                 "actions": [
                                                     {
                                                         "storage": "3",
-                                                        "varName": "replacementNicknames",
+                                                        "varName": "replacement-nicknames",
                                                         "addType": "0",
                                                         "position": "",
                                                         "value": "\"Mathilda\"",
@@ -354,7 +375,7 @@
                                                 "actions": [
                                                     {
                                                         "storage": "3",
-                                                        "varName": "replacementNicknames",
+                                                        "varName": "replacement-nicknames",
                                                         "addType": "0",
                                                         "position": "",
                                                         "value": "\"Tiffany\"",
@@ -368,7 +389,7 @@
                                                 "actions": [
                                                     {
                                                         "storage": "3",
-                                                        "varName": "replacementNicknames",
+                                                        "varName": "replacement-nicknames",
                                                         "addType": "0",
                                                         "position": "",
                                                         "value": "\"Frieda\"",
@@ -382,7 +403,7 @@
                                                 "actions": [
                                                     {
                                                         "storage": "3",
-                                                        "varName": "replacementNicknames",
+                                                        "varName": "replacement-nicknames",
                                                         "addType": "0",
                                                         "position": "",
                                                         "value": "\"Greta\"",
@@ -396,7 +417,7 @@
                                                 "actions": [
                                                     {
                                                         "storage": "3",
-                                                        "varName": "replacementNicknames",
+                                                        "varName": "replacement-nicknames",
                                                         "addType": "0",
                                                         "position": "",
                                                         "value": "\"Cheyenne\"",
@@ -410,7 +431,7 @@
                                                 "actions": [
                                                     {
                                                         "storage": "3",
-                                                        "varName": "replacementNicknames",
+                                                        "varName": "replacement-nicknames",
                                                         "addType": "0",
                                                         "position": "",
                                                         "value": "\"Klothilde\"",
@@ -424,7 +445,7 @@
                                                 "actions": [
                                                     {
                                                         "storage": "3",
-                                                        "varName": "replacementNicknames",
+                                                        "varName": "replacement-nicknames",
                                                         "addType": "0",
                                                         "position": "",
                                                         "value": "\"Jacqueline\"",
@@ -438,7 +459,7 @@
                                                 "actions": [
                                                     {
                                                         "storage": "3",
-                                                        "varName": "replacementNicknames",
+                                                        "varName": "replacement-nicknames",
                                                         "addType": "0",
                                                         "position": "",
                                                         "value": "\"Theresa\"",
@@ -452,7 +473,7 @@
                                                 "actions": [
                                                     {
                                                         "storage": "3",
-                                                        "varName": "replacementNicknames",
+                                                        "varName": "replacement-nicknames",
                                                         "addType": "0",
                                                         "position": "",
                                                         "value": "\"Carlotta\"",
