@@ -6,7 +6,7 @@
     "_id": "JppPy",
     "actions": [
         {
-            "title": "Info ${slashParams(\"Thema\")}",
+            "title": "Info – ${slashParams(\"Thema\")}",
             "author": "",
             "color": "${globalVars(\"default-color\")}",
             "timestamp": "false",
@@ -29,6 +29,18 @@
             "storage": "4",
             "varName": "Thema",
             "branches": [
+                {
+                    "comparison": "1",
+                    "value": "\"Links\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "message": "Hier sind einige nützliche Links:\n\n• [Discord Bot Maker – Webseite](https://dbotmaker.io/)\n• [Discord Bot Maker – Dokumentation](https://dbotmaker.io/documentation/)\n• [Discord Bot Maker – Forum](https://dbotmaker.io/forums/)\n• [Discord Bot Maker – Steam](https://s.team/a/682130/)\n• [DBM Network](https://dbm-network.org/)\n• [DBM Network – Mods](https://dbm-network.org/mods/)\n• [DBM Network – Raw Data](https://rawdata.dbm-network.org/)\n• [DBM Network – Support](https://dbm-support.site/)\n• [DBM Network – GitHub](https://github.com/dbm-network/)\n• [Node.js](https://nodejs.org/de/)\n• [Node.js – Downloads](https://nodejs.org/de/download/)\n• [Node.js – Installation via Paketmanager](https://nodejs.org/de/download/package-manager/)\n• [Discord.js](https://discord.js.org/)\n• [Discord.js – Dokumentation](https://discord.js.org/#/docs/)\n• [Discord.js – Handbuch (Guide)](https://discordjs.guide)\n• [Discord.js – GitHub](https://github.com/discordjs/)\n• [Visual Studio Code](https://code.visualstudio.com/)\n• [ShareX](https://getsharex.com/)",
+                            "name": "Set Embed Description"
+                        }
+                    ]
+                },
                 {
                     "comparison": "1",
                     "value": "\"Aliase\"",
@@ -195,6 +207,46 @@
                 },
                 {
                     "comparison": "1",
+                    "value": "\"Eingebettete Links\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "message": "Bots können Links Nachrichten als blau markierten Text formatieren.\nVerwende hierzu folgendes Muster: `[Text](URL \"Hover Text\")`\n\nBeispiele:\n• [Ecosia](https://www.ecosia.org/)\n• [Ecosia](https://www.ecosia.org/ \"Gehe zu www.ecosia.org\")",
+                            "name": "Set Embed Description"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Limits\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "message": "Alle in Discord hat ein Limit - ob nun zeit- oder größenbedingt. Unten findest du Auflistungen von ein paar dieser Limits.",
+                            "name": "Set Embed Description"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "Nachricht (Message)",
+                            "message": "• Textlänge: 2.000 (Normal) / 4.000 (Nitro)\n• Embed-Menge: 1 (Bot) / 10 (Webhook)",
+                            "inline": "1",
+                            "name": "Add Embed Field"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "Eingebettete Nachricht (Embed Message)",
+                            "message": "• Übergreifendes Zeichenlimit: 6.000\n• Felder- (Field-) Menge: 25\n• Autorlänge: 256\n• Titellänge: 256\n• Beschreibungslänge: 4.096\n• Feldnamenlänge: 256\n• Feldinhaltslänge: 1.024\n• Fußzeilenlänge: 2.048",
+                            "inline": "1",
+                            "name": "Add Embed Field"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
                     "value": "\"DBM-Versionen\"",
                     "actions": [
                         {
@@ -342,6 +394,42 @@
                             "varName": "embed",
                             "message": "DBM-Bots sind in der Programmiersprache JavaScript geschrieben. Um sie ohne DBM laufen lassen zu können, benötigen wir das Programm Node.js.\nBeachte: Du musst zusätzlich den Ordner `actions` vom DBM-Installationsverzeichnis in deinen Projektordner kopieren.\n\nDen Download der LTS-Version findest du hier: https://nodejs.org/de/download/\nDer Actions-Ordner von DBM ist standardmäßig hier: `C:\\Program Files (x86)\\Steam\\steamapps\\common\\Discord Bot Maker\\actions`",
                             "name": "Set Embed Description"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "Installation auf Debian- und Ubuntu-Distributionen",
+                            "message": "1. Öffne ein Terminal (über das Startmenü oder via SSH)\n2. Füge die Paketquelle von Node.js (LTS-Version) mit dem Befehl `curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -` hinzu\n3. Starte den Installationsprozess via `sudo apt install -y nodejs`\n\nHinweis: Die LTS-Version ist für die meisten Benutzer empfohlen. Falls du trotzdem die aktuellste Version verwenden möchtest und dir die Konsequenzen klar sind, dann tausche `setup_lts.x` gegen `setup_current.x` aus.",
+                            "inline": "1",
+                            "name": "Add Embed Field"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "Node.js Build Tools",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "message": "Einige Node-Module (Zusatzmodule für Node.js) sind nicht vollständig in JavaScript geschrieben, sondern nutzen teilweise C++ oder Python, um eine bessere Performance zu erreichen. Um solche Module (z.B. `@discordjs/opus`) zu verwenden, müssen die sogenannten Node.js Build Tools installiert sein.\n\nFolge den Schritten unten, um die Build Tools zu installieren bzw. Probleme beim Installieren solcher Module zu beheben.\nBeachte: Die Installation der Builds Tools kann einige Zeit in Anspruch nehmen. Stelle sicher, dass mindestens 10 GB an freiem Speicherplatz vorhanden sind.",
+                            "name": "Set Embed Description"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "Build Tools installieren ",
+                            "message": "__Windows__\n1. Öffne das Startmenü\n2. Gebe `Install Additional Tools for Node.js` ein\n3. Starte das Programm als Administrator\n4. Schließe das Terminal erst, wenn die Installation abgeschlossen wurde\n5. Starte den Computer neu, damit alle Programme die Änderung bemerken\n\n__Linux__\n1. Öffne ein Terminal (über das Startmenü oder via SSH)\n2. Aktualisiere bekannte und installierte Programme mit `sudo apt update && sudo apt upgrade -y`\n3. Installiere die Build Tools mittels `sudo apt install build-essential python python3`\n4. Schließe das Terminal erst, wenn die Installation abgeschlossen wurde\n5. Starte den Computer/Server neu, damit alle Programme die Änderung bemerken",
+                            "inline": "1",
+                            "name": "Add Embed Field"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "Build-Probleme beheben",
+                            "message": "__Windows__\n1. Lege die Visual Studio-Version manuell fest\n- Öffne das Startmenü und suche nach `Developer PowerShell for VS` und merke dir die Jahreszahl hinter dem Namen\n- Öffne ein Terminal und führe `npm config set --global msvs_version JAHR` aus (ersetze `JAHR` mit deiner Jahreszahl)\n2. Lege den Python-Pfad manuell fest\n- Öffne deinen Python-Installationsordner (dieser liegt i.d.R. in `C:\\Users\\%USERNAME%\\AppData\\Local\\` oder `C:\\Program Files\\`)\n- Öffne ein Terminal und führe `npm config set --global python PFAD` aus (ersetze `PFAD` mit dem Pfad zu `python.exe` bzw. `python3.exe`)\n3. Optional: Setze die Umgebungsvariablen\n- Öffne das Startmenü, suche nach `Systemumgebungsvariablen bearbeiten` und starte das Programm\n- Füge folgende zwei Variablen hinzu: `VCINSTALLDIR`, `PYTHON`\n- Trage als Wert den Installationspfad des entsprechenden Programms (Visual Studio bzw. Python) ohne Anführungszeichen ein\n\n__Linux__\nBei Linux gibt es i.d.R. keine Probleme. Wende dich an unsere freiwilligen (Linux-) Experten.",
+                            "inline": "1",
+                            "name": "Add Embed Field"
                         }
                     ]
                 },
@@ -379,8 +467,36 @@
                             "storage": "1",
                             "varName": "embed",
                             "fieldName": "Nützliche Links",
-                            "message": "• [Raspberry Pi Imager](rptl.io/imager)\n• [Rufus (für erfahrenere Nutzer)](https://rufus.ie/de/)\n• [Video-Tutorials von U-Labs](https://www.youtube.com/playlist?list=PLGqZnU7aLeD-_nOlXGJmncA2a20Nw1_Vq)\n• [Video-Tutorials von SemperVideo (teilweise veraltet)](https://www.youtube.com/playlist?list=PL3-bM7Aq1pUrkASwtwM636PKyyeohGoQa)\n• [Statische IP festlegen](https://www.elektronik-kompendium.de/sites/raspberry-pi/1912151.htm)\n• [Virtuelle Terminals mit GNU-Screen (Englisch)](https://linuxize.com/post/how-to-use-linux-screen/)\n• [Autostart von Programmen](https://tutorials-raspberrypi.de/raspberry-pi-autostart-programm-skript/)\n• [Raspberry Pi als Android TV](https://tutorials-raspberrypi.de/raspberry-pi-android-tv-box-selber-bauen-anleitung/)",
+                            "message": "• [Raspberry Pi Imager](https://rptl.io/imager)\n• [Rufus (für erfahrenere Nutzer)](https://rufus.ie/de/)\n• [Beginner-Tutorial von SemperVideo](https://youtu.be/7mOj_Bu7nBA)\n• [Tutorial-Playlist von SemperVideo](https://www.youtube.com/playlist?list=PL3-bM7Aq1pUrkASwtwM636PKyyeohGoQa)\n• [Beginner-Tutorial von U-Labs](https://youtu.be/BKhQpGhCEgs)\n• [Tutorial-Playlist von U-Labs](https://www.youtube.com/playlist?list=PLGqZnU7aLeD-_nOlXGJmncA2a20Nw1_Vq)\n• [Statische IP festlegen](https://www.elektronik-kompendium.de/sites/raspberry-pi/1912151.htm)\n• [Virtuelle Terminals mit GNU-Screen (Englisch)](https://linuxize.com/post/how-to-use-linux-screen/)\n• [Autostart von Programmen](https://tutorials-raspberrypi.de/raspberry-pi-autostart-programm-skript/)\n• [Raspberry Pi als Android TV](https://tutorials-raspberrypi.de/raspberry-pi-android-tv-box-selber-bauen-anleitung/)",
                             "inline": "0",
+                            "name": "Add Embed Field"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Raspi-WiFi\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "message": "Viele Raspberry Pi-Modelle haben einen integrierten WiFi-Chip und können somit ohne einen direkten LAN-Anschluss betrieben werden. Es kann allerdings sein, dass dieser nicht aktiv ist, wenn man bei der Einrichtung nicht die SSID und das Passwort angegeben hat oder die Funktion schlichtweg versehentlich selbst deaktiviert hat. Unten findest du die nötigen Schritte, um den WiFi-Chip zu aktivieren und eine SSID sowie Passwort zu konfigurieren.",
+                            "name": "Set Embed Description"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "WiFi-Chip aktivieren",
+                            "message": "1. Verbinde dich mit deinem Pi via SSH\n2. Führe `sudo rfkill list all` aus, um zu überprüfen, ob der WiFi-Chip blockiert ist (das kann der Fall sein, wenn die Funktion über den Desktop deaktiviert wurde)\n3. Falls bei `Wireless LAN` ein Status auf `yes` stehen sollte, führe `sudo rfkill unblock 0` aus (ersetze die 0 ggf. gegen die ID deines WiFi-Chips, falls sie abweichen sollte)\n4. Im letzten Schritt musst du `sudo ifconfig wlan0 up` ausführen, um den Chip zu aktivieren",
+                            "inline": "1",
+                            "name": "Add Embed Field"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "SSID und Passwort konfigurieren",
+                            "message": "1. Verbinde dich mit deinem Pi via SSH\n2. Öffne die Konfiguration mittels `sudo raspi-config`\n3. Wähle mittels der Pfeiltasten und Enter die Option 2 (Network Options) aus\n4. Nutze dort Punkt 2 (Wi-Fi - Enter SSID and passphrase), um zuerst eine SSID und dann das zugehörige Passwort anzugeben\n5. Bestätige alle deine Angaben und schließe die Konfiguration\n6. Falls dein Pi sich nicht automatisch verbinden sollte, starte ihn mittels `sudo reboot` neu",
+                            "inline": "1",
                             "name": "Add Embed Field"
                         }
                     ]
@@ -480,6 +596,18 @@
                             "name": "Add Embed Field"
                         }
                     ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"YouTube\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "message": "Es wird nicht länger empfohlen, auf YouTube als Audioquelle zurückzugreifen! Probleme können sehr häufig auftreten, Bots werden nicht verifiziert und Google mahnt Betreiber solcher Bots ab. Falls du YouTube trotzdem bei deinem Bot verwenden möchtest, dann wirst du diesbezüglich keine Hilfestellung bekommen.\n\nDu kannst es mit diesem Befehl versuchen, jedoch gibt es keine Garantie, dass es funktionieren wird:\n`npm i ytdl-core@latest youtube-dl-exec@latest ytpl@latest ytsr@latest`",
+                            "name": "Set Embed Description"
+                        }
+                    ]
                 }
             ],
             "name": "Multi-Check Variable"
@@ -487,7 +615,7 @@
         {
             "behavior": "1",
             "interpretation": "1",
-            "code": "let messageOptions = {\n    embeds: [ tempVars(\"embed\") ]\n};\nlet promise = null;\n\nif(cache.interaction.deferred) {\n    promise = cache.interaction.editReply(messageOptions);\n} else {\n    promise = cache.interaction.reply(messageOptions);\n}\n\npromise\n    .then(() => this.callNextAction(cache))\n    .catch((err) => this.displayError(data, cache, err));",
+            "code": "const data = cache.actions[cache.index];\n\nlet messageOptions = {\n    embeds: [ tempVars(\"embed\") ]\n};\nlet promise = null;\n\nif(cache.interaction.deferred) {\n    promise = cache.interaction.editReply(messageOptions);\n} else {\n    promise = cache.interaction.reply(messageOptions);\n}\n\npromise\n    .then(() => this.callNextAction(cache))\n    .catch((err) => this.displayError(data, cache, err));",
             "storage": "0",
             "varName": "",
             "name": "Run Script"
@@ -502,6 +630,10 @@
             "type": "STRING",
             "required": true,
             "choices": [
+                {
+                    "name": "links",
+                    "value": "Links"
+                },
                 {
                     "name": "aliase",
                     "value": "Aliase"
@@ -531,6 +663,14 @@
                     "value": "Mods"
                 },
                 {
+                    "name": "eingebettete-links",
+                    "value": "Eingebettete Links"
+                },
+                {
+                    "name": "limits",
+                    "value": "Limits"
+                },
+                {
                     "name": "dbm-versionen",
                     "value": "DBM-Versionen"
                 },
@@ -555,12 +695,20 @@
                     "value": "Node.js"
                 },
                 {
+                    "name": "nodejs-build-tools",
+                    "value": "Node.js Build Tools"
+                },
+                {
                     "name": "npm",
                     "value": "NPM"
                 },
                 {
                     "name": "raspberrypi",
                     "value": "Raspberry Pi"
+                },
+                {
+                    "name": "raspi-wifi",
+                    "value": "Raspi-WiFi"
                 },
                 {
                     "name": "tutorials",
@@ -577,6 +725,10 @@
                 {
                     "name": "vps",
                     "value": "VPS"
+                },
+                {
+                    "name": "youtube",
+                    "value": "YouTube"
                 }
             ]
         }
