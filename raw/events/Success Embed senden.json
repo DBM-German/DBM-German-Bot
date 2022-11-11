@@ -8,7 +8,7 @@
             "storage": "1",
             "varName": "color",
             "changeType": "0",
-            "value": "\"77b256\"",
+            "value": "globalVars(\"success-color\")",
             "name": "Control Variable"
         },
         {

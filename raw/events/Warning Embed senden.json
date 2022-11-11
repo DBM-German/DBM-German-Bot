@@ -8,7 +8,7 @@
             "storage": "1",
             "varName": "color",
             "changeType": "0",
-            "value": "\"ffcc4d\"",
+            "value": "globalVars(\"warning-color\")",
             "name": "Control Variable"
         },
         {
