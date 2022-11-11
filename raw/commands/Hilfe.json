@@ -110,13 +110,6 @@
                     "name": "Control Variable"
                 },
                 {
-                    "storage": "1",
-                    "varName": "index",
-                    "changeType": "0",
-                    "value": "0",
-                    "name": "Control Variable"
-                },
-                {
                     "source": "IVhmi",
                     "type": "true",
                     "name": "Call Command/Event"
