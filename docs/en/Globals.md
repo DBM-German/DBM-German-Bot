@@ -13,6 +13,30 @@ The current version of the bot as text. Examples:
 A boolean that defines whether this is a debug instance or not. If the client id is "724335784798322833", then the variable will be 'false', otherwise it's 'true'.
 
 
+## Default Color | ${`globalVars("default-color")`}
+
+The default color of the bot (#fff700).
+
+
+## Success Color | ${`globalVars("success-color")`}
+
+The success color of the bot (#3fff3f).
+
+
+## Failure Color | ${`globalVars("failure-color")`}
+
+The failure color of the bot (#ff3f3f).
+
+
+## Info Color | ${`globalVars("info-color")`}
+
+The information color of the bot (#3f3fff).
+
+
+## Warning Color | ${`globalVars("warning-color")`}
+The warning color of the bot (ffff3f).
+
+
 ## Main Server ID | ${`globalVars("main-server-id")`}
 
 Depending on whether `globalVars("version")` is 'true', the ID of our DBM German Beta ("724330774257729647") or DBM German server ("488722832201613344").
@@ -26,6 +50,16 @@ The ID of our DBM German Team server ("533618507699585035").
 ## Fake Server ID | ${`globalVars("fake-server-id")`}
 
 The ID of our fake DBM German Team server ("731837587836371024"). This server is a troll / easter egg in the server list.
+
+
+## Main Welcome / Goodbye Channel ID | ${`globalVars("main-welcome-goodbye-channel-id")`}
+
+Depending on whether `globalVars("version")` is 'true', the ID of our DBM German Beta ("724330774966435852") or DBM German welcome / goodbye channel ("488736789092237322").
+
+
+## Team Welcome / Goodbye Channel ID | ${`globalVars("team-welcome-goodbye-channel-id")`}
+
+Depending on whether `globalVars("version")` is 'true', the ID of our DBM German Beta ("756233531356610580") or DBM German Team welcome / goodbye channel ("559419622667845633").
 
 
 ## Commands | ${`globalVars("commands")`}
