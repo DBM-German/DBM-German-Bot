@@ -1,0 +1,690 @@
+{
+    "name": "System",
+    "permissions": "MANAGE_GUILD",
+    "permissions2": "NONE",
+    "restriction": "1",
+    "_id": "TwzxK",
+    "actions": [
+        {
+            "storage": "1",
+            "varName": "Text-LC",
+            "changeType": "0",
+            "value": "slashParams(\"Text\")?.toLowerCase()",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "4",
+            "varName": "Befehl",
+            "branches": [
+                {
+                    "comparison": "1",
+                    "value": "\"auslösen\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "knownCommand",
+                            "changeType": "0",
+                            "value": "false",
+                            "name": "Control Variable"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "Text-LC",
+                            "branches": [
+                                {
+                                    "comparison": "1",
+                                    "value": "\"austritt\"",
+                                    "actions": [
+                                        {
+                                            "storage": "1",
+                                            "varName": "knownCommand",
+                                            "changeType": "0",
+                                            "value": "true",
+                                            "name": "Control Variable"
+                                        },
+                                        {
+                                            "storage": "4",
+                                            "varName": "Nutzer",
+                                            "comparison": "0",
+                                            "value": "",
+                                            "branch": {
+                                                "iftrue": "3",
+                                                "iffalse": "0",
+                                                "iftrueVal": "4"
+                                            },
+                                            "name": "Check Variable"
+                                        },
+                                        {
+                                            "storage": "1",
+                                            "varName": "channel",
+                                            "changeType": "0",
+                                            "value": "channel",
+                                            "name": "Control Variable"
+                                        },
+                                        {
+                                            "storage": "1",
+                                            "varName": "description",
+                                            "changeType": "0",
+                                            "value": "\"Nutzer fehlt.\"",
+                                            "name": "Control Variable"
+                                        },
+                                        {
+                                            "source": "HPCYz",
+                                            "type": "true",
+                                            "name": "Call Command/Event"
+                                        },
+                                        {
+                                            "name": "End Action Sequence"
+                                        },
+                                        {
+                                            "storage": "1",
+                                            "varName": "member",
+                                            "changeType": "0",
+                                            "value": "slashParams(\"Nutzer\")",
+                                            "name": "Control Variable"
+                                        },
+                                        {
+                                            "source": "mUQis",
+                                            "type": "true",
+                                            "name": "Call Command/Event"
+                                        },
+                                        {
+                                            "storage": "1",
+                                            "varName": "channel",
+                                            "changeType": "0",
+                                            "value": "channel",
+                                            "name": "Control Variable"
+                                        },
+                                        {
+                                            "storage": "1",
+                                            "varName": "description",
+                                            "changeType": "0",
+                                            "value": "\"Befehl ausgeführt.\"",
+                                            "name": "Control Variable"
+                                        },
+                                        {
+                                            "source": "LITqX",
+                                            "type": "true",
+                                            "name": "Call Command/Event"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "comparison": "1",
+                                    "value": "\"beitritt\"",
+                                    "actions": [
+                                        {
+                                            "storage": "1",
+                                            "varName": "knownCommand",
+                                            "changeType": "0",
+                                            "value": "true",
+                                            "name": "Control Variable"
+                                        },
+                                        {
+                                            "storage": "4",
+                                            "varName": "Nutzer",
+                                            "comparison": "0",
+                                            "value": "",
+                                            "branch": {
+                                                "iftrue": "3",
+                                                "iffalse": "0",
+                                                "iftrueVal": "4"
+                                            },
+                                            "name": "Check Variable"
+                                        },
+                                        {
+                                            "storage": "1",
+                                            "varName": "channel",
+                                            "changeType": "0",
+                                            "value": "channel",
+                                            "name": "Control Variable"
+                                        },
+                                        {
+                                            "storage": "1",
+                                            "varName": "description",
+                                            "changeType": "0",
+                                            "value": "\"Nutzer fehlt.\"",
+                                            "name": "Control Variable"
+                                        },
+                                        {
+                                            "source": "HPCYz",
+                                            "type": "true",
+                                            "name": "Call Command/Event"
+                                        },
+                                        {
+                                            "name": "End Action Sequence"
+                                        },
+                                        {
+                                            "storage": "1",
+                                            "varName": "member",
+                                            "changeType": "0",
+                                            "value": "slashParams(\"Nutzer\")",
+                                            "name": "Control Variable"
+                                        },
+                                        {
+                                            "source": "mqJdD",
+                                            "type": "true",
+                                            "name": "Call Command/Event"
+                                        },
+                                        {
+                                            "storage": "1",
+                                            "varName": "channel",
+                                            "changeType": "0",
+                                            "value": "channel",
+                                            "name": "Control Variable"
+                                        },
+                                        {
+                                            "storage": "1",
+                                            "varName": "description",
+                                            "changeType": "0",
+                                            "value": "\"Befehl ausgeführt.\"",
+                                            "name": "Control Variable"
+                                        },
+                                        {
+                                            "source": "LITqX",
+                                            "type": "true",
+                                            "name": "Call Command/Event"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "name": "Multi-Check Variable"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "knownCommand",
+                            "comparison": "1",
+                            "value": "true",
+                            "branch": {
+                                "iftrue": "1",
+                                "iffalse": "0"
+                            },
+                            "name": "Check Variable"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "channel",
+                            "changeType": "0",
+                            "value": "channel",
+                            "name": "Control Variable"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "description",
+                            "changeType": "0",
+                            "value": "\"Text fehlt.\"",
+                            "name": "Control Variable"
+                        },
+                        {
+                            "source": "HPCYz",
+                            "type": "true",
+                            "name": "Call Command/Event"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Embed\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "knownEmbed",
+                            "changeType": "0",
+                            "value": "false",
+                            "name": "Control Variable"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "channel",
+                            "changeType": "0",
+                            "value": "channel",
+                            "name": "Control Variable"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "Text-LC",
+                            "branches": [
+                                {
+                                    "comparison": "1",
+                                    "value": "\"default\"",
+                                    "actions": [
+                                        {
+                                            "storage": "1",
+                                            "varName": "knownEmbed",
+                                            "changeType": "0",
+                                            "value": "true",
+                                            "name": "Control Variable"
+                                        },
+                                        {
+                                            "title": "Default Embed",
+                                            "textInputs": [
+                                                {
+                                                    "name": "Titel",
+                                                    "placeholder": "",
+                                                    "minLength": "1",
+                                                    "maxLength": "256",
+                                                    "id": "title",
+                                                    "row": "",
+                                                    "style": "SHORT",
+                                                    "required": "true"
+                                                },
+                                                {
+                                                    "name": "Beschreibung",
+                                                    "placeholder": "",
+                                                    "minLength": "0",
+                                                    "maxLength": "2048",
+                                                    "id": "description",
+                                                    "row": "",
+                                                    "style": "PARAGRAPH",
+                                                    "required": "false"
+                                                }
+                                            ],
+                                            "name": "Show Modal"
+                                        },
+                                        {
+                                            "source": "FGdiL",
+                                            "type": "true",
+                                            "name": "Call Command/Event"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "comparison": "1",
+                                    "value": "\"failure\"",
+                                    "actions": [
+                                        {
+                                            "storage": "1",
+                                            "varName": "knownEmbed",
+                                            "changeType": "0",
+                                            "value": "true",
+                                            "name": "Control Variable"
+                                        },
+                                        {
+                                            "title": "Failure Embed",
+                                            "textInputs": [
+                                                {
+                                                    "name": "Titel",
+                                                    "placeholder": "",
+                                                    "minLength": "1",
+                                                    "maxLength": "256",
+                                                    "id": "title",
+                                                    "row": "",
+                                                    "style": "SHORT",
+                                                    "required": "true"
+                                                },
+                                                {
+                                                    "name": "Beschreibung",
+                                                    "placeholder": "",
+                                                    "minLength": "0",
+                                                    "maxLength": "2048",
+                                                    "id": "description",
+                                                    "row": "",
+                                                    "style": "PARAGRAPH",
+                                                    "required": "false"
+                                                }
+                                            ],
+                                            "name": "Show Modal"
+                                        },
+                                        {
+                                            "source": "HPCYz",
+                                            "type": "true",
+                                            "name": "Call Command/Event"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "comparison": "1",
+                                    "value": "\"info\"",
+                                    "actions": [
+                                        {
+                                            "storage": "1",
+                                            "varName": "knownEmbed",
+                                            "changeType": "0",
+                                            "value": "true",
+                                            "name": "Control Variable"
+                                        },
+                                        {
+                                            "title": "Info Embed",
+                                            "textInputs": [
+                                                {
+                                                    "name": "Titel",
+                                                    "placeholder": "",
+                                                    "minLength": "1",
+                                                    "maxLength": "256",
+                                                    "id": "title",
+                                                    "row": "",
+                                                    "style": "SHORT",
+                                                    "required": "true"
+                                                },
+                                                {
+                                                    "name": "Beschreibung",
+                                                    "placeholder": "",
+                                                    "minLength": "0",
+                                                    "maxLength": "2048",
+                                                    "id": "description",
+                                                    "row": "",
+                                                    "style": "PARAGRAPH",
+                                                    "required": "false"
+                                                }
+                                            ],
+                                            "name": "Show Modal"
+                                        },
+                                        {
+                                            "source": "MrOYm",
+                                            "type": "true",
+                                            "name": "Call Command/Event"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "comparison": "1",
+                                    "value": "\"success\"",
+                                    "actions": [
+                                        {
+                                            "storage": "1",
+                                            "varName": "knownEmbed",
+                                            "changeType": "0",
+                                            "value": "true",
+                                            "name": "Control Variable"
+                                        },
+                                        {
+                                            "title": "Success Embed",
+                                            "textInputs": [
+                                                {
+                                                    "name": "Titel",
+                                                    "placeholder": "",
+                                                    "minLength": "1",
+                                                    "maxLength": "256",
+                                                    "id": "title",
+                                                    "row": "",
+                                                    "style": "SHORT",
+                                                    "required": "true"
+                                                },
+                                                {
+                                                    "name": "Beschreibung",
+                                                    "placeholder": "",
+                                                    "minLength": "0",
+                                                    "maxLength": "2048",
+                                                    "id": "description",
+                                                    "row": "",
+                                                    "style": "PARAGRAPH",
+                                                    "required": "false"
+                                                }
+                                            ],
+                                            "name": "Show Modal"
+                                        },
+                                        {
+                                            "source": "LITqX",
+                                            "type": "true",
+                                            "name": "Call Command/Event"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "comparison": "1",
+                                    "value": "\"warning\"",
+                                    "actions": [
+                                        {
+                                            "storage": "1",
+                                            "varName": "knownEmbed",
+                                            "changeType": "0",
+                                            "value": "true",
+                                            "name": "Control Variable"
+                                        },
+                                        {
+                                            "title": "Warning Embed",
+                                            "textInputs": [
+                                                {
+                                                    "name": "Titel",
+                                                    "placeholder": "",
+                                                    "minLength": "1",
+                                                    "maxLength": "256",
+                                                    "id": "title",
+                                                    "row": "",
+                                                    "style": "SHORT",
+                                                    "required": "true"
+                                                },
+                                                {
+                                                    "name": "Beschreibung",
+                                                    "placeholder": "",
+                                                    "minLength": "0",
+                                                    "maxLength": "2048",
+                                                    "id": "description",
+                                                    "row": "",
+                                                    "style": "PARAGRAPH",
+                                                    "required": "false"
+                                                }
+                                            ],
+                                            "name": "Show Modal"
+                                        },
+                                        {
+                                            "source": "AelCx",
+                                            "type": "true",
+                                            "name": "Call Command/Event"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "comparison": "1",
+                                    "value": "\"page\"",
+                                    "actions": [
+                                        {
+                                            "storage": "1",
+                                            "varName": "knownEmbed",
+                                            "changeType": "0",
+                                            "value": "true",
+                                            "name": "Control Variable"
+                                        },
+                                        {
+                                            "title": "Page Embed",
+                                            "textInputs": [
+                                                {
+                                                    "name": "Titel 1",
+                                                    "placeholder": "",
+                                                    "minLength": "1",
+                                                    "maxLength": "256",
+                                                    "id": "title1",
+                                                    "row": "",
+                                                    "style": "SHORT",
+                                                    "required": "true"
+                                                },
+                                                {
+                                                    "name": "Beschreibung 1",
+                                                    "placeholder": "",
+                                                    "minLength": "0",
+                                                    "maxLength": "2048",
+                                                    "id": "description1",
+                                                    "row": "",
+                                                    "style": "PARAGRAPH",
+                                                    "required": "false"
+                                                },
+                                                {
+                                                    "name": "Titel 2",
+                                                    "placeholder": "",
+                                                    "minLength": "1",
+                                                    "maxLength": "256",
+                                                    "id": "title2",
+                                                    "row": "",
+                                                    "style": "SHORT",
+                                                    "required": "true"
+                                                },
+                                                {
+                                                    "name": "Beschreibung 2",
+                                                    "placeholder": "",
+                                                    "minLength": "0",
+                                                    "maxLength": "2048",
+                                                    "id": "description2",
+                                                    "row": "",
+                                                    "style": "PARAGRAPH",
+                                                    "required": "false"
+                                                },
+                                                {
+                                                    "name": "Farbe",
+                                                    "placeholder": "${globalVars(\"default-color\")}",
+                                                    "minLength": "0",
+                                                    "maxLength": "7",
+                                                    "id": "color",
+                                                    "row": "",
+                                                    "style": "SHORT",
+                                                    "required": "false"
+                                                }
+                                            ],
+                                            "name": "Show Modal"
+                                        },
+                                        {
+                                            "storage": "1",
+                                            "varName": "embeds",
+                                            "name": "Create List"
+                                        },
+                                        {
+                                            "title": "${tempVars(\"title1\")}",
+                                            "author": "",
+                                            "color": "${tempVars(\"color\")?.length > 0 ? tempVars(\"color\") : globalVars(\"default-color\")}",
+                                            "timestamp": "false",
+                                            "url": "",
+                                            "authorIcon": "",
+                                            "imageUrl": "",
+                                            "thumbUrl": "",
+                                            "storage": "1",
+                                            "varName": "embed1",
+                                            "name": "Create Embed Message"
+                                        },
+                                        {
+                                            "storage": "1",
+                                            "varName": "description1",
+                                            "comparison": "0",
+                                            "value": "",
+                                            "branch": {
+                                                "iftrue": "0",
+                                                "iffalse": "3",
+                                                "iffalseVal": "1"
+                                            },
+                                            "name": "Check Variable"
+                                        },
+                                        {
+                                            "storage": "1",
+                                            "varName": "embed1",
+                                            "message": "${tempVars(\"description1\")}",
+                                            "name": "Set Embed Description"
+                                        },
+                                        {
+                                            "storage": "1",
+                                            "varName": "embeds",
+                                            "addType": "0",
+                                            "position": "",
+                                            "value": "tempVars(\"embed1\")",
+                                            "name": "Add Item to List"
+                                        },
+                                        {
+                                            "title": "${tempVars(\"title2\")}",
+                                            "author": "",
+                                            "color": "${tempVars(\"color\")?.length > 0 ? tempVars(\"color\") : globalVars(\"default-color\")}",
+                                            "timestamp": "false",
+                                            "url": "",
+                                            "authorIcon": "",
+                                            "imageUrl": "",
+                                            "thumbUrl": "",
+                                            "storage": "1",
+                                            "varName": "embed2",
+                                            "name": "Create Embed Message"
+                                        },
+                                        {
+                                            "storage": "1",
+                                            "varName": "description2",
+                                            "comparison": "0",
+                                            "value": "",
+                                            "branch": {
+                                                "iftrue": "0",
+                                                "iffalse": "3",
+                                                "iffalseVal": "1"
+                                            },
+                                            "name": "Check Variable"
+                                        },
+                                        {
+                                            "storage": "1",
+                                            "varName": "embed2",
+                                            "message": "${tempVars(\"description2\")}",
+                                            "name": "Set Embed Description"
+                                        },
+                                        {
+                                            "storage": "1",
+                                            "varName": "embeds",
+                                            "addType": "0",
+                                            "position": "",
+                                            "value": "tempVars(\"embed2\")",
+                                            "name": "Add Item to List"
+                                        },
+                                        {
+                                            "source": "IVhmi",
+                                            "type": "true",
+                                            "name": "Call Command/Event"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "name": "Multi-Check Variable"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "knownEmbed",
+                            "comparison": "1",
+                            "value": "true",
+                            "branch": {
+                                "iftrue": "1",
+                                "iffalse": "0"
+                            },
+                            "name": "Check Variable"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "description",
+                            "changeType": "0",
+                            "value": "\"Embed fehlt.\"",
+                            "name": "Control Variable"
+                        },
+                        {
+                            "source": "HPCYz",
+                            "type": "true",
+                            "name": "Call Command/Event"
+                        }
+                    ]
+                }
+            ],
+            "name": "Multi-Check Variable"
+        }
+    ],
+    "comType": "4",
+    "description": "Verwalten des Bots (Team-spezifischer Befehl)",
+    "parameters": [
+        {
+            "name": "Befehl",
+            "description": "Interner Befehl",
+            "type": "STRING",
+            "required": true,
+            "choices": [
+                {
+                    "name": "auslösen",
+                    "value": "auslösen"
+                },
+                {
+                    "name": "embed",
+                    "value": "Embed"
+                }
+            ]
+        },
+        {
+            "name": "Text",
+            "description": "Optionaler Text für internen Befehl",
+            "type": "STRING",
+            "required": false,
+            "choices": null
+        },
+        {
+            "name": "Nutzer",
+            "description": "Optionaler Nutzer für internen Befehl",
+            "type": "USER",
+            "required": false,
+            "choices": null
+        }
+    ]
+}
