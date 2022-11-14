@@ -1,21 +1,21 @@
 {
-    "name": "Failure Embed senden",
+    "name": "Info Embed senden",
     "temp": "",
     "event-type": "0",
-    "_id": "HPCYz",
+    "_id": "MrOYm",
     "actions": [
         {
             "storage": "1",
             "varName": "color",
             "changeType": "0",
-            "value": "globalVars(\"failure-color\")",
+            "value": "globalVars(\"info-color\")",
             "name": "Control Variable"
         },
         {
             "storage": "1",
             "varName": "title",
             "changeType": "0",
-            "value": "tempVars(\"title\") ? `❌ ${tempVars(\"title\")}` : `❌ Fehler`",
+            "value": "tempVars(\"title\") ? `️️ℹ ${tempVars(\"title\")}` : `ℹ Information`",
             "name": "Control Variable"
         },
         {

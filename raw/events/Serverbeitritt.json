@@ -1,0 +1,85 @@
+{
+    "name": "Serverbeitritt",
+    "temp": "member",
+    "event-type": "6",
+    "_id": "mqJdD",
+    "actions": [
+        {
+            "server": "0",
+            "varName": "",
+            "info": "1",
+            "storage": "1",
+            "varName2": "serverId",
+            "name": "Store Server Info"
+        },
+        {
+            "storage": "1",
+            "varName": "serverId",
+            "comparison": "1",
+            "value": "globalVars(\"main-server-id\")",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "1"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "info": "0",
+            "find": "${globalVars(\"main-welcome-goodbye-channel-id\")}",
+            "storage": "1",
+            "varName": "channel",
+            "name": "Find Channel"
+        },
+        {
+            "member": "2",
+            "varName": "member",
+            "info": "21",
+            "storage": "1",
+            "varName2": "tag",
+            "name": "Store Member Info"
+        },
+        {
+            "member": "2",
+            "varName": "member",
+            "info": "16",
+            "storage": "1",
+            "varName2": "avatar",
+            "name": "Store Member Info"
+        },
+        {
+            "channel": "5",
+            "varName": "channel",
+            "message": "",
+            "buttons": [],
+            "selectMenus": [],
+            "attachments": [],
+            "embeds": [
+                {
+                    "title": "Willkommen!",
+                    "url": "",
+                    "color": "${globalVars(\"success-color\")}",
+                    "timestamp": "false",
+                    "imageUrl": "",
+                    "thumbUrl": "",
+                    "description": "",
+                    "fields": [],
+                    "author": "${tempVars(\"tag\")}",
+                    "authorUrl": "",
+                    "authorIcon": "${tempVars(\"avatar\")}",
+                    "footerText": "",
+                    "footerIconUrl": ""
+                }
+            ],
+            "reply": false,
+            "ephemeral": false,
+            "tts": false,
+            "overwrite": false,
+            "dontSend": false,
+            "editMessage": "0",
+            "editMessageVarName": "",
+            "storage": "0",
+            "varName2": "",
+            "name": "Send Message"
+        }
+    ]
+}

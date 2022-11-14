@@ -25,11 +25,59 @@
             "comparison": "1",
             "value": "true",
             "branch": {
-                "iftrue": "3",
-                "iffalse": "0",
-                "iftrueVal": "2"
+                "iftrue": "4",
+                "iffalse": "4",
+                "iftrueVal": "check-ephemeral",
+                "iffalseVal": "check-default"
             },
             "name": "Check Variable"
+        },
+        {
+            "name": "End Action Sequence"
+        },
+        {
+            "anchorName": "check-ephemeral",
+            "name": "Action Anchor"
+        },
+        {
+            "storage": "1",
+            "varName": "edit",
+            "comparison": "1",
+            "value": "true",
+            "branch": {
+                "iftrue": "4",
+                "iffalse": "4",
+                "iftrueVal": "ephemeral+edit",
+                "iffalseVal": "ephemeral"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "name": "End Action Sequence"
+        },
+        {
+            "anchorName": "check-default",
+            "name": "Action Anchor"
+        },
+        {
+            "storage": "1",
+            "varName": "edit",
+            "comparison": "1",
+            "value": "true",
+            "branch": {
+                "iftrue": "4",
+                "iffalse": "4",
+                "iftrueVal": "edit",
+                "iffalseVal": "default"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "name": "End Action Sequence"
+        },
+        {
+            "anchorName": "ephemeral+edit",
+            "name": "Action Anchor"
         },
         {
             "channel": "5",
@@ -42,7 +90,91 @@
                 {
                     "title": "${tempVars(\"title\")}",
                     "url": "",
-                    "color": "${tempVars(\"color\") ?? globalVars(\"default-color\")}",
+                    "color": "${tempVars(\"color\")?.length >= 6 ? tempVars(\"color\") : globalVars(\"default-color\")}",
+                    "timestamp": "false",
+                    "imageUrl": "",
+                    "thumbUrl": "",
+                    "description": "${tempVars(\"description\")}",
+                    "fields": [],
+                    "author": "",
+                    "authorUrl": "",
+                    "authorIcon": "",
+                    "footerText": "DBM German Bot v${globalVars(\"version\")}",
+                    "footerIconUrl": "${tempVars(\"avatarURL\")}"
+                }
+            ],
+            "reply": true,
+            "ephemeral": true,
+            "tts": false,
+            "overwrite": false,
+            "dontSend": false,
+            "editMessage": "intUpdate",
+            "editMessageVarName": "",
+            "storage": "0",
+            "varName2": "",
+            "name": "Send Message"
+        },
+        {
+            "name": "End Action Sequence"
+        },
+        {
+            "anchorName": "ephemeral",
+            "name": "Action Anchor"
+        },
+        {
+            "channel": "5",
+            "varName": "channel",
+            "message": "",
+            "buttons": [],
+            "selectMenus": [],
+            "attachments": [],
+            "embeds": [
+                {
+                    "title": "${tempVars(\"title\")}",
+                    "url": "",
+                    "color": "${tempVars(\"color\")?.length >= 6 ? tempVars(\"color\") : globalVars(\"default-color\")}",
+                    "timestamp": "false",
+                    "imageUrl": "",
+                    "thumbUrl": "",
+                    "description": "${tempVars(\"description\")}",
+                    "fields": [],
+                    "author": "",
+                    "authorUrl": "",
+                    "authorIcon": "",
+                    "footerText": "DBM German Bot v${globalVars(\"version\")}",
+                    "footerIconUrl": "${tempVars(\"avatarURL\")}"
+                }
+            ],
+            "reply": true,
+            "ephemeral": true,
+            "tts": false,
+            "overwrite": false,
+            "dontSend": false,
+            "editMessage": "0",
+            "editMessageVarName": "",
+            "storage": "0",
+            "varName2": "",
+            "name": "Send Message"
+        },
+        {
+            "name": "End Action Sequence"
+        },
+        {
+            "anchorName": "edit",
+            "name": "Action Anchor"
+        },
+        {
+            "channel": "5",
+            "varName": "channel",
+            "message": "",
+            "buttons": [],
+            "selectMenus": [],
+            "attachments": [],
+            "embeds": [
+                {
+                    "title": "${tempVars(\"title\")}",
+                    "url": "",
+                    "color": "${tempVars(\"color\")?.length >= 6 ? tempVars(\"color\") : globalVars(\"default-color\")}",
                     "timestamp": "false",
                     "imageUrl": "",
                     "thumbUrl": "",
@@ -60,7 +192,7 @@
             "tts": false,
             "overwrite": false,
             "dontSend": false,
-            "editMessage": "0",
+            "editMessage": "intUpdate",
             "editMessageVarName": "",
             "storage": "0",
             "varName2": "",
@@ -68,6 +200,10 @@
         },
         {
             "name": "End Action Sequence"
+        },
+        {
+            "anchorName": "default",
+            "name": "Action Anchor"
         },
         {
             "channel": "5",
@@ -80,7 +216,7 @@
                 {
                     "title": "${tempVars(\"title\")}",
                     "url": "",
-                    "color": "${tempVars(\"color\") ?? globalVars(\"default-color\")}",
+                    "color": "${tempVars(\"color\")?.length >= 6 ? tempVars(\"color\") : globalVars(\"default-color\")}",
                     "timestamp": "false",
                     "imageUrl": "",
                     "thumbUrl": "",
@@ -94,7 +230,7 @@
                 }
             ],
             "reply": true,
-            "ephemeral": true,
+            "ephemeral": false,
             "tts": false,
             "overwrite": false,
             "dontSend": false,

@@ -67,6 +67,34 @@
                 },
                 {
                     "storage": "3",
+                    "varName": "success-color",
+                    "changeType": "0",
+                    "value": "\"3fff3f\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
+                    "varName": "failure-color",
+                    "changeType": "0",
+                    "value": "\"ff3f3f\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
+                    "varName": "info-color",
+                    "changeType": "0",
+                    "value": "\"3f3fff\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
+                    "varName": "warning-color",
+                    "changeType": "0",
+                    "value": "\"ffff3f\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
                     "varName": "main-server-id",
                     "changeType": "0",
                     "value": "globalVars(\"debug\") ? \"724330774257729647\" : \"488722832201613344\"",
@@ -84,6 +112,20 @@
                     "varName": "fake-server-id",
                     "changeType": "0",
                     "value": "\"731837587836371024\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
+                    "varName": "main-welcome-goodbye-channel-id",
+                    "changeType": "0",
+                    "value": "globalVars(\"debug\") ? \"724330774966435852\" : \"488736789092237322\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
+                    "varName": "team-welcome-goodbye-channel-id",
+                    "changeType": "0",
+                    "value": "globalVars(\"debug\") ? \"756233531356610580\" : \"559419622667845633\"",
                     "name": "Control Variable"
                 },
                 {

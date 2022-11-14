@@ -7,7 +7,7 @@
         {
             "behavior": "1",
             "interpretation": "1",
-            "code": "// Check variables and store embed amount\n// Prüfe Variablen und speichere Embed-Menge\n\nconst Discord = this.getDBM().DiscordJS;\n\nlet embeds = tempVars(\"embeds\");// Embeds\nlet amount = embeds?.length;// Embed amount\nlet index = tempVars(\"index\");// Embed index (start at 0)\n\nif(!Array.isArray(embeds) || amount == 0) throw new Error(\"No embeds specified\");\nif(!(typeof index == \"number\") || index >= amount || index < 0) throw new Error(\"Embed index out of range\");\nif(embeds.some((e, i) => !(e instanceof Discord.MessageEmbed))) throw new Error(`Expected an array of embeds but received a value of type \"${typeof e}\" at index ${i}`);\n\nthis.storeValue(amount, 1, \"amount\", cache);\nthis.callNextAction(cache);",
+            "code": "// Check variables and store embed amount\n// Prüfe Variablen und speichere Embed-Menge\n\nconst Discord = this.getDBM().DiscordJS;\n\nlet embeds = tempVars(\"embeds\");// Embeds\nlet amount = embeds?.length;// Embed amount\nlet index = tempVars(\"index\") || 0;// Embed index (start at 0)\n\nif(!Array.isArray(embeds) || amount == 0) throw new Error(\"No embeds specified\");\nif(!(typeof index == \"number\") || index >= amount || index < 0) throw new Error(\"Embed index out of range\");\nif(embeds.some((e, i) => !(e instanceof Discord.MessageEmbed))) throw new Error(`Expected an array of embeds but received a value of type \"${typeof e}\" at index ${i}`);\n\nthis.storeValue(index, 1, \"index\", cache);\nthis.storeValue(amount, 1, \"amount\", cache);\nthis.callNextAction(cache);",
             "storage": "0",
             "varName": "",
             "name": "Run Script"
@@ -120,7 +120,7 @@
                 {
                     "title": "${tempVars(\"title\")}",
                     "url": "",
-                    "color": "${globalVars(\"default-color\")}",
+                    "color": "${tempVars(\"color\")?.length >= 6 ? tempVars(\"color\") : globalVars(\"default-color\")}",
                     "timestamp": "false",
                     "imageUrl": "",
                     "thumbUrl": "",
@@ -214,7 +214,7 @@
                 {
                     "title": "${tempVars(\"title\")}",
                     "url": "",
-                    "color": "${globalVars(\"default-color\")}",
+                    "color": "${tempVars(\"color\")?.length >= 6 ? tempVars(\"color\") : globalVars(\"default-color\")}",
                     "timestamp": "false",
                     "imageUrl": "",
                     "thumbUrl": "",
