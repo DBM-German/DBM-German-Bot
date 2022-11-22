@@ -1,0 +1,175 @@
+{
+    "name": "Regeln",
+    "permissions": "NONE",
+    "permissions2": "NONE",
+    "restriction": "1",
+    "_id": "kcTrs",
+    "actions": [
+        {
+            "server": "0",
+            "varName": "",
+            "storage": "1",
+            "varName2": "bot",
+            "name": "Get Bot as Member"
+        },
+        {
+            "member": "2",
+            "varName": "bot",
+            "info": "16",
+            "storage": "1",
+            "varName2": "avatarURL",
+            "name": "Store Member Info"
+        },
+        {
+            "info": "0",
+            "find": "${globalVars(\"rule-channel-id\")}",
+            "storage": "1",
+            "varName": "ruleChannel",
+            "name": "Find Channel"
+        },
+        {
+            "storage": "1",
+            "varName": "channel",
+            "changeType": "0",
+            "value": "channel",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "title",
+            "changeType": "0",
+            "value": "\"Regeln\"",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "description",
+            "changeType": "0",
+            "value": "`Siehe ${tempVars(\"ruleChannel\")}.`",
+            "name": "Control Variable"
+        },
+        {
+            "source": "FGdiL",
+            "type": "true",
+            "name": "Call Command/Event"
+        },
+        {
+            "member": "1",
+            "varName": "",
+            "permission": "MANAGE_MESSAGES",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "1"
+            },
+            "name": "Check Member Permissions"
+        },
+        {
+            "channel": "5",
+            "varName": "ruleChannel",
+            "message": "",
+            "buttons": [],
+            "selectMenus": [],
+            "attachments": [],
+            "embeds": [
+                {
+                    "title": "Regeln",
+                    "url": "",
+                    "color": "${globalVars(\"default-color\")}",
+                    "timestamp": "true",
+                    "imageUrl": "",
+                    "thumbUrl": "",
+                    "description": "",
+                    "fields": [
+                        {
+                            "name": "1. Gehe freundlich und respektvoll mit anderen um",
+                            "value": "Wir möchten hier keine Streitereien.",
+                            "inline": "false"
+                        },
+                        {
+                            "name": "2. Frag nicht, ob du Fragen darfst, sondern frag einfach",
+                            "value": "Anstatt zuerst zu Fragen, ob dir jemand hilft oder ob jemand über ein gewisses Thema Bescheid weiß, stelle die eigentliche Frage direkt.",
+                            "inline": "false"
+                        },
+                        {
+                            "name": "3. Versende keinen Spam oder ungewollte Pings / Privatnachrichten",
+                            "value": "Das hier ist kein Kindergarten-Sandkasten.",
+                            "inline": "false"
+                        },
+                        {
+                            "name": "4. Versende keine NSFW- oder obszösen Inhalte",
+                            "value": "Genannte Inhalte und sonstige 18+ Themen gehören hier nicht hin.",
+                            "inline": "false"
+                        },
+                        {
+                            "name": "5. Support ist freiwillig",
+                            "value": "Jeder hilft hier jedem - es gibt keine bezahlten Supporter. Lass den anderen also genügend Zeit und Freiraum.",
+                            "inline": "false"
+                        },
+                        {
+                            "name": "6. Keine unsichtbaren oder hinderlichen Namen / Profilbilder verwenden",
+                            "value": "Moderatoren müssen dein Profil einsehen und dich pingen können. Bitte passe dies umgehend an, falls das bei dir der Fall sein sollte.",
+                            "inline": "false"
+                        },
+                        {
+                            "name": "7. Halte die Themen der Kanäle ein",
+                            "value": "Ließ dir zuerst die Kanalbeschreibung durch, bevor du etwas postest.",
+                            "inline": "false"
+                        },
+                        {
+                            "name": "8. Keine Werbung",
+                            "value": "Nutze Server nicht als Plattform für deine Werbung. Weder dein Profilname, Profilbild, Personalisierter Status, Spieltitel, noch eine deiner Nachrichten (egal ob Server- oder Privatnachricht), dürfen Werbung enthalten. Eine Ausnahme kann von einem Servermanager erteilt werden.",
+                            "inline": "false"
+                        },
+                        {
+                            "name": "9. Höre auf Teammitglieder",
+                            "value": "Halte dich an die Anweisungen des gesamten DBM German Teams. Berechtigungsmissbräuche bitte an einen Servermanager melden.",
+                            "inline": "false"
+                        },
+                        {
+                            "name": "10. Halte die Discord-Nutzungsbedingungen ein",
+                            "value": "Wie auf jedem Server gilt die [Discord ToS](https://discord.com/terms).",
+                            "inline": "false"
+                        },
+                        {
+                            "name": "11. Melde Regelverstöße",
+                            "value": "Solltest du mitbekommen, dass jemand anderes die Regeln missachtet, dann zögere nicht einen Moderator oder Servermanager zu informieren. Bei einem Verstoß gegen die Discord ToS, bitte ebenfalls direkt bei [Discord](https://dis.gd/contact) selbst melden.",
+                            "inline": "false"
+                        },
+                        {
+                            "name": "12. Zu erwartende Strafen",
+                            "value": "Bei einem Regelverstoß können folgende Dinge passieren:\n• Mündliche Verwarnung\n• Stummschaltung\n• Kick / temporärer Bann\n• Permanenter Bann\nJeder Moderator kann selbst abwägen, welche Maßnahme ergriffen wird.",
+                            "inline": "false"
+                        },
+                        {
+                            "name": "13. Aufhebung eines Banns",
+                            "value": "Ein permanenter Bann kann nur von einem Servermanager aufgehoben werden. Sende eine Privatnachricht, falls du deinen Bann anfechten möchtest.",
+                            "inline": "false"
+                        },
+                        {
+                            "name": "14. Regeländerungen",
+                            "value": "Diese Regeln gelten mit sofortiger Wirkung und können jederzeit von einem Servermanager angepasst werden.",
+                            "inline": "false"
+                        }
+                    ],
+                    "author": "",
+                    "authorUrl": "",
+                    "authorIcon": "",
+                    "footerText": "DBM German Bot v${globalVars(\"version\")}",
+                    "footerIconUrl": "${tempVars(\"avatarURL\")}"
+                }
+            ],
+            "reply": false,
+            "ephemeral": false,
+            "tts": false,
+            "overwrite": false,
+            "dontSend": false,
+            "editMessage": "0",
+            "editMessageVarName": "",
+            "storage": "0",
+            "varName2": "",
+            "name": "Send Message"
+        }
+    ],
+    "comType": "4",
+    "description": "Listet die Regeln auf"
+}
