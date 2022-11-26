@@ -136,6 +136,13 @@
                     "name": "Control Variable"
                 },
                 {
+                    "storage": "3",
+                    "varName": "faq-channel-id",
+                    "changeType": "0",
+                    "value": "globalVars(\"debug\") ? \"724331079619706910\" : \"547530904453775390\"",
+                    "name": "Control Variable"
+                },
+                {
                     "behavior": "0",
                     "interpretation": "1",
                     "code": "// Convert internal command objects to an usable DBM variable\n// Konvertiere interne Befehlsobjekte zu einer nutzbaren DBM-Variable\n\nconst { $slash: slashCmds, $cmds: textCmds } = this.getDBM().Bot;\n\nlet commands = [];\n\nfor(let cmds of [ slashCmds, textCmds ]) {\n    for(let { name, description, parameters, comType: type } of Object.values(cmds)) {\n        commands.push({ name, description, parameters, type  });\n    }\n}\n\ncommands;",
