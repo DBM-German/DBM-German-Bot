@@ -62,9 +62,14 @@ Basierend darauf, ob `globalVars("version")` 'true' ist, die ID unseres DBM Germ
 Basierend darauf, ob `globalVars("version")` 'true' ist, die ID unseres DBM German Beta ("756233531356610580") oder DBM German Team Willkommen / Aufwiedersehen-Kanals ("559419622667845633").
 
 
-## Rule Channel ID ${`globalVars("rule-channel-id")`}
+## Rule Channel ID | ${`globalVars("rule-channel-id")`}
 
 Basierend darauf, ob `globalVars("version")` 'true' ist, die ID unseres DBM German Beta ("724331029359493120") oder DBM German Regeln-Kanals ("514896934411042834").
+
+
+## FAQ Channel ID | ${`globalVars("faq-channel-id")`}
+
+Basierend darauf, ob `globalVars("version")` 'true' ist, die ID unseres DBM German Beta ("724331079619706910") oder DBM German FAQ-Kanals ("547530904453775390").
 
 
 ## Commands | ${`globalVars("commands")`}

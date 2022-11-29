@@ -1,0 +1,165 @@
+{
+    "name": "FAQ",
+    "permissions": "NONE",
+    "permissions2": "NONE",
+    "restriction": "1",
+    "_id": "wJaVs",
+    "actions": [
+        {
+            "server": "0",
+            "varName": "",
+            "storage": "1",
+            "varName2": "bot",
+            "name": "Get Bot as Member"
+        },
+        {
+            "member": "2",
+            "varName": "bot",
+            "info": "16",
+            "storage": "1",
+            "varName2": "avatarURL",
+            "name": "Store Member Info"
+        },
+        {
+            "info": "0",
+            "find": "${globalVars(\"faq-channel-id\")}",
+            "storage": "1",
+            "varName": "faqChannel",
+            "name": "Find Channel"
+        },
+        {
+            "storage": "1",
+            "varName": "channel",
+            "changeType": "0",
+            "value": "channel",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "title",
+            "changeType": "0",
+            "value": "\"Regeln\"",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "description",
+            "changeType": "0",
+            "value": "`Siehe ${tempVars(\"faqChannel\")}.`",
+            "name": "Control Variable"
+        },
+        {
+            "source": "FGdiL",
+            "type": "true",
+            "name": "Call Command/Event"
+        },
+        {
+            "member": "1",
+            "varName": "",
+            "permission": "MANAGE_MESSAGES",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "1"
+            },
+            "name": "Check Member Permissions"
+        },
+        {
+            "channel": "5",
+            "varName": "faqChannel",
+            "message": "",
+            "buttons": [],
+            "selectMenus": [],
+            "attachments": [],
+            "embeds": [
+                {
+                    "title": "[F]requently [A]sked [Q]uestions",
+                    "url": "",
+                    "color": "${globalVars(\"default-color\")}",
+                    "timestamp": "true",
+                    "imageUrl": "",
+                    "thumbUrl": "",
+                    "description": "",
+                    "fields": [
+                        {
+                            "name": "Einen Bot 24/7 laufen lassen",
+                            "value": "Damit ein Bot 24 Stunden am Tag, 7 Tage die Woche funktioniert, muss der entsprechende Computer ebenfalls die ganze Zeit eingeschaltet sein. Wenn das nicht der eigene Rechner sein soll, dann greift man hier am besten zu einem [**V**]irtuellen [**P**]rivaten [**S**]erver.\nMehr Informationen bekommst du mit `/info vps`.",
+                            "inline": "false"
+                        },
+                        {
+                            "name": "Schriftarten zu .fnt konvertieren",
+                            "value": "Viele Schriftarten im Internet haben die Endung `.ttf` oder `.otf`. Diese sind allerdings nicht mit DBM kompatibel. Dafür müssen sie zuerst in `.fnt` konvertiert werden.\nDu kannst dafür einen Online Converter deiner Wahl verwenden. Wir empfehlen hierfür [Vertopal](https://www.vertopal.com/en/convert/font).",
+                            "inline": "false"
+                        },
+                        {
+                            "name": "Webstreams stoppen nach ca. 7 - 8h",
+                            "value": "Warum? Ganz einfach! Nach 7 - 8h erfolgt eine Zwangstrennung, um alle Nutzer wieder auf den aktuellen Stand zu bringen. Jede Anwendung bzw. Bot puffert den Audiostream bei sich und kann daher etwas hinterherhinken.\nDie Trennung wird von der Streamquelle ausgelöst, weshalb man selbst keinen Einfluss haben kann. Das Problem lässt sich jedoch einfach mit der Loop Queue Mod lösen.",
+                            "inline": "false"
+                        },
+                        {
+                            "name": "Reaktionen mit Emojis, die DBM nicht kennt",
+                            "value": "Wenn du Emojis als Reaktionen zu Nachrichten hinzufügen möchtest, die nicht in DBM gelistet sind, musst du sie als **Unicode**-Zeichen hinterlegen.\nDiese kannst du direkt in Discord abrufen, indem du `\\:emoji:` versendest. Alternativ kann man alle existierenden Emojis [hier](https://unicode-table.com/de/emoji/) einsehen.\nUnter Windows 10/11 kann man auch einfach mit der Emoji-Auswahl (`Win` + `+`) arbeiten.\n\nBeispiel für Zahlen-Emojis: `0⃣` `1⃣` `2⃣` `3⃣` `4⃣` `5⃣` `6⃣` `7⃣` `8⃣` `9⃣` `🔟`",
+                            "inline": "false"
+                        },
+                        {
+                            "name": "Der Bot startet auf dem VPS nicht",
+                            "value": "Achte darauf, dass du beim Übertragen deines Projektordners den Ordner `node_modules` sowie die Datei `package-lock.json` **nicht** überträgst.\nDiese müssen auf jedem Computer bzw. Server neu generiert werden. Führe dazu `npm i` auf dem Zielsystem im Projektordner aus.",
+                            "inline": "false"
+                        },
+                        {
+                            "name": "Virtuelle Terminals unter Linux",
+                            "value": "Die meisten Server bieten nur einen SSH-Zugang. Wenn man einen Bot direkt darüber startet und das Terminal schließt, wird der Bot ebenfalls beendet. Um dieses Problem zu lösen, muss der Bot in einem virtuellen Terminal gestartet werden.\nMehr Informationen dazu findest du [hier](https://linuxize.com/post/how-to-use-linux-screen/).",
+                            "inline": "false"
+                        },
+                        {
+                            "name": "Der Befehl \"node\" oder \"npm\" konnte nicht gefunden werden",
+                            "value": "Node.js ist nicht (vollständig) installiert. Verwende `/info nodejs` für mehr Informationen.",
+                            "inline": "false"
+                        },
+                        {
+                            "name": "Action XYZ does not exist!",
+                            "value": "Dir fehlt die genannte Action im Unterordner `actions` deines Projektordners.\nÖffne das Discord Bot Maker-Installationsverzeichnis und kopiere dessen `actions`-Ordner in deinen Projektordner. Starte deinen Bot danach einmal neu.",
+                            "inline": "false"
+                        },
+                        {
+                            "name": "Einige Events werden nicht ausgelöst",
+                            "value": "Für Events wie `Member Join Server`, `Member Leave Server` und `Member Presence Update` müssen zusätzliche Intents (Berechtigungen für Datenzugriff) aktiviert werden.\nDiese kannst du über das [Entwicklerportal](https://discord.com/developers/applications/) und die entsprechende Intents Extension in DBM aktivieren (für Bots mit 100+ Servern muss der [Discord-Support](https://dis.gd/contact/) kontaktiert werden).",
+                            "inline": "false"
+                        },
+                        {
+                            "name": "FFmpeg/avconv not found",
+                            "value": "FFMPEG ist ein Programm, welches von DBM dazu verwendet wird, Audiostreams passend für Discord zu konvertieren.\nÖffne DBM und navigiere über die Menüleiste zu `File` > `Music Capabilities`. Klicke dort jeweils einmal auf `Update Music Libraries` sowie `Install FFMPEG in Project`. Starte deinen Bot danach einmal neu.",
+                            "inline": "false"
+                        },
+                        {
+                            "name": "XYZ is not defined!",
+                            "value": "Vermutlich hast du in einer Check Variable Action versucht, eine Variable auf einen bestimmten Text zu prüfen. Stelle sicher, dass dieser zwischen Anführungszeichen (\") steht.\nBeispiel: `\"Das hier ist mein kleiner Beispiel Text, der in \\\"Anführungszeichen\\\" steht.\"`",
+                            "inline": "false"
+                        },
+                        {
+                            "name": "SyntaxError: Unexpected Token XYZ",
+                            "value": "Bei diesem Fehler hast du **kein** Problem mit deinem Bot-Token! Es bedeutet, dass du in einer Action (häufig Check Variable, Control Variable oder Run Script) ein Zeichen hast, mit dem DBM bzw. Node.js überhaupt nichts anfangen kann.\nGenauso wie bei dem Fehler `Please install XYZ manually`, solltest du prüfen, ob alle Texte in Anführungszeichen stehen. Ansonsten suche nach dem genannten Zeichen in deinem Bot. Vielleicht fällt dir dann noch ein anderer Fehler auf.",
+                            "inline": "false"
+                        }
+                    ],
+                    "author": "",
+                    "authorUrl": "",
+                    "authorIcon": "",
+                    "footerText": "DBM German Bot v${globalVars(\"version\")}",
+                    "footerIconUrl": "${tempVars(\"avatarURL\")}"
+                }
+            ],
+            "reply": false,
+            "ephemeral": false,
+            "tts": false,
+            "overwrite": false,
+            "dontSend": false,
+            "editMessage": "0",
+            "editMessageVarName": "",
+            "storage": "0",
+            "varName2": "",
+            "name": "Send Message"
+        }
+    ],
+    "comType": "4",
+    "description": "Listet die häufig gestellten Fragen auf"
+}

@@ -199,7 +199,7 @@
                             "storage": "1",
                             "varName": "embed",
                             "fieldName": "Downloads",
-                            "message": "[DBM 2.0 (beta)](https://github.com/dbm-network/mods/archive/refs/heads/master.zip)\n[DBM 1.6 (stabil)](https://github.com/dbm-network/mods/archive/refs/heads/old_version_v1.6.zip)\n[DBM 1.5 (veraltet)](https://github.com/dbm-network/mods/archive/refs/heads/old_version_v1.5.zip)",
+                            "message": "[DBM 2.0 (stabil)](https://github.com/dbm-network/mods/archive/refs/heads/master.zip)\n[DBM 1.6 (veraltet)](https://github.com/dbm-network/mods/archive/refs/heads/old_version_v1.6.zip)\n[DBM 1.5 (veraltet)](https://github.com/dbm-network/mods/archive/refs/heads/old_version_v1.5.zip)",
                             "inline": "1",
                             "name": "Add Embed Field"
                         }
