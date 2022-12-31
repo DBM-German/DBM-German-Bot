@@ -72,6 +72,11 @@ Basierend darauf, ob `globalVars("version")` 'true' ist, die ID unseres DBM Germ
 Basierend darauf, ob `globalVars("version")` 'true' ist, die ID unseres DBM German Beta ("724331079619706910") oder DBM German FAQ-Kanals ("547530904453775390").
 
 
+## Hidden Role ID | ${`globalVars("hidden-role-id")`}
+
+Basierend darauf, ob `globalVars("version")` 'true' ist, die ID unserer DBM German Beta ("724335094281666642") oder DBM German Ausgeblendet-Rolle ("663781677016809504").
+
+
 ## Commands | ${`globalVars("commands")`}
 
 Eine Liste von allen verfügbaren Befehlen und deren Parametern. Aufbau der Befehle:
@@ -143,3 +148,8 @@ Eine Liste von männlichen und weiblichen Ersatznamen für Benutzer, die Nicknam
 | Rüdiger               | Carlotta              |
 
 <sup>1</sup> Bei diesem Namen besteht eine 50-prozentige Chance, dass es stattdessen Mathilda Jonas sein wird.
+
+
+## Advertisement RegEx | ${`globalVars("advertisement-regex")`}
+
+Der reguläre Ausdruck, der verwendet wird, um Werbung in den Namen und Personalisierten Status zu erkennen.
