@@ -1,0 +1,436 @@
+{
+    "name": "Link",
+    "permissions": "NONE",
+    "permissions2": "NONE",
+    "restriction": "1",
+    "_id": "prEKA",
+    "actions": [
+        {
+            "storage": "4",
+            "varName": "Webseite",
+            "branches": [
+                {
+                    "comparison": "1",
+                    "value": "\"Discord Bot Maker\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "link",
+                            "changeType": "0",
+                            "value": "\"https://dbotmaker.io/\"",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Discord Bot Maker – Dokumentation\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "link",
+                            "changeType": "0",
+                            "value": "\"https://dbotmaker.io/documentation/\"",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Discord Bot Maker – Forum\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "link",
+                            "changeType": "0",
+                            "value": "\"https://dbotmaker.io/forums/\"",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Discord Bot Maker – Steam\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "link",
+                            "changeType": "0",
+                            "value": "\"https://s.team/a/682130/\"",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"DBM Network\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "link",
+                            "changeType": "0",
+                            "value": "\"https://dbm-network.org/\"",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"DBM Network – Mods\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "link",
+                            "changeType": "0",
+                            "value": "\"https://dbm-network.org/mods/\"",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"DBM Network – Raw Data\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "link",
+                            "changeType": "0",
+                            "value": "\"https://rawdata.dbm-network.org/\"",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"DBM Network – Support\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "link",
+                            "changeType": "0",
+                            "value": "\"https://dbm-support.site/\"",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"DBM Network – GitHub\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "link",
+                            "changeType": "0",
+                            "value": "\"https://github.com/dbm-network/\"",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"DBM German\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "link",
+                            "changeType": "0",
+                            "value": "\"https://discord.gg/3RfuZUT\"",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"DBM German Team\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "link",
+                            "changeType": "0",
+                            "value": "\"https://discord.gg/UhTqp97\"",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"DBM German Beta\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "link",
+                            "changeType": "0",
+                            "value": "\"https://www.youtube.com/watch?v=dQw4w9WgXcQ\"",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Node.js\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "link",
+                            "changeType": "0",
+                            "value": "\"https://nodejs.org/de/\"",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Node.js – Downloads\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "link",
+                            "changeType": "0",
+                            "value": "\"https://nodejs.org/de/download/\"",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Node.js – Installation via Paketmanager\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "link",
+                            "changeType": "0",
+                            "value": "\"https://nodejs.org/de/download/package-manager/\"",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Discord.js\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "link",
+                            "changeType": "0",
+                            "value": "\"https://discord.js.org/\"",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Discord.js – Dokumentation\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "link",
+                            "changeType": "0",
+                            "value": "\"https://discord.js.org/#/docs/\"",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Discord.js – Handbuch (Guide)\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "link",
+                            "changeType": "0",
+                            "value": "\"https://discordjs.guide/\"",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Discord.js – GitHub\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "link",
+                            "changeType": "0",
+                            "value": "\"https://github.com/discordjs/\"",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Visual Studio Code\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "link",
+                            "changeType": "0",
+                            "value": "\"https://code.visualstudio.com/\"",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"ShareX\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "link",
+                            "changeType": "0",
+                            "value": "\"https://getsharex.com/\"",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"RegExr\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "link",
+                            "changeType": "0",
+                            "value": "\"https://regexr.com/\"",
+                            "name": "Control Variable"
+                        }
+                    ]
+                }
+            ],
+            "name": "Multi-Check Variable"
+        },
+        {
+            "title": "Link – ${slashParams(\"Webseite\")}",
+            "author": "",
+            "color": "${globalVars(\"default-color\")}",
+            "timestamp": "false",
+            "url": "",
+            "authorIcon": "",
+            "imageUrl": "",
+            "thumbUrl": "",
+            "storage": "1",
+            "varName": "embed",
+            "name": "Create Embed Message"
+        },
+        {
+            "storage": "1",
+            "varName": "embed",
+            "message": "🔗 [Link öffnen](${tempVars(\"link\")} \"Öffne ${tempVars(\"link\")}\")",
+            "name": "Set Embed Description"
+        },
+        {
+            "storage": "1",
+            "varName": "embed",
+            "message": "DBM German Bot v${globalVars(\"version\")}",
+            "footerIcon": "",
+            "name": "Set Embed Footer"
+        },
+        {
+            "behavior": "1",
+            "interpretation": "1",
+            "code": "const data = cache.actions[cache.index];\n\nlet messageOptions = {\n    embeds: [ tempVars(\"embed\") ]\n};\nlet promise = null;\n\nif(cache.interaction.deferred) {\n    promise = cache.interaction.editReply(messageOptions);\n} else {\n    promise = cache.interaction.reply(messageOptions);\n}\n\npromise\n    .then(() => this.callNextAction(cache))\n    .catch((err) => this.displayError(data, cache, err));",
+            "storage": "0",
+            "varName": "",
+            "name": "Run Script"
+        }
+    ],
+    "comType": "4",
+    "description": "Links zu verschiedenen Webseiten",
+    "parameters": [
+        {
+            "name": "Webseite",
+            "description": "Spezifische Webseite",
+            "type": "STRING",
+            "required": true,
+            "choices": [
+                {
+                    "name": "dbm",
+                    "value": "Discord Bot Maker"
+                },
+                {
+                    "name": "dbm-doku",
+                    "value": "Discord Bot Maker – Dokumentation"
+                },
+                {
+                    "name": "dbm-forum",
+                    "value": "Discord Bot Maker – Forum"
+                },
+                {
+                    "name": "dbm-steam",
+                    "value": "Discord Bot Maker – Steam"
+                },
+                {
+                    "name": "dbm-network",
+                    "value": "DBM Network"
+                },
+                {
+                    "name": "dbm-network-mods",
+                    "value": "DBM Network – Mods"
+                },
+                {
+                    "name": "dbm-network-rawdata",
+                    "value": "DBM Network – Raw Data"
+                },
+                {
+                    "name": "dbm-network-support",
+                    "value": "DBM Network – Support"
+                },
+                {
+                    "name": "dbm-network-github",
+                    "value": "DBM Network – GitHub"
+                },
+                {
+                    "name": "dbm-german",
+                    "value": "DBM German"
+                },
+                {
+                    "name": "dbm-german-team",
+                    "value": "DBM German Team"
+                },
+                {
+                    "name": "dbm-german-beta",
+                    "value": "DBM German Beta"
+                },
+                {
+                    "name": "nodejs",
+                    "value": "Node.js"
+                },
+                {
+                    "name": "nodejs-downloads",
+                    "value": "Node.js – Downloads"
+                },
+                {
+                    "name": "nodejs-install-via-pkm",
+                    "value": "Node.js – Installation via Paketmanager"
+                },
+                {
+                    "name": "discordjs",
+                    "value": "Discord.js"
+                },
+                {
+                    "name": "discordjs-doku",
+                    "value": "Discord.js – Dokumentation"
+                },
+                {
+                    "name": "discordjs-guide",
+                    "value": "Discord.js – Handbuch (Guide)"
+                },
+                {
+                    "name": "discordjs-github",
+                    "value": "Discord.js – GitHub"
+                },
+                {
+                    "name": "vscode",
+                    "value": "Visual Studio Code"
+                },
+                {
+                    "name": "sharex",
+                    "value": "ShareX"
+                },
+                {
+                    "name": "regexr",
+                    "value": "RegExr"
+                }
+            ]
+        }
+    ]
+}
