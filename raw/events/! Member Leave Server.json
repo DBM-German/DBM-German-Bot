@@ -1,0 +1,13 @@
+{
+    "name": "! Member Leave Server",
+    "temp": "member",
+    "event-type": "7",
+    "_id": "mwDHw",
+    "actions": [
+        {
+            "source": "mUQis",
+            "type": "true",
+            "name": "Call Command/Event"
+        }
+    ]
+}

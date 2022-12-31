@@ -1,0 +1,26 @@
+{
+    "name": "! Presence Update",
+    "temp": "_",
+    "event-type": "21",
+    "_id": "jawFU",
+    "actions": [
+        {
+            "storage": "1",
+            "varName": "member",
+            "changeType": "0",
+            "value": "tempVars(\"presence\").member ?? tempVars(\"presence\")",
+            "name": "Control Variable"
+        },
+        {
+            "source": "FscMD",
+            "type": "true",
+            "name": "Call Command/Event"
+        },
+        {
+            "source": "nGjuv",
+            "type": "true",
+            "name": "Call Command/Event"
+        }
+    ],
+    "temp2": "presence"
+}

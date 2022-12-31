@@ -1,0 +1,50 @@
+{
+    "name": "! Bot Per-Server Initialization",
+    "temp": "",
+    "event-type": "1",
+    "_id": "dqrdd",
+    "actions": [
+        {
+            "server": "0",
+            "varName": "",
+            "info": "1",
+            "storage": "1",
+            "varName2": "server-id",
+            "name": "Store Server Info"
+        },
+        {
+            "storage": "1",
+            "varName": "server-id",
+            "comparison": "1",
+            "value": "globalVars(\"main-server-id\")",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "1"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "comment": "Update Member Data | Member Data aktualisieren",
+            "actions": [
+                {
+                    "list": "0",
+                    "varName": "",
+                    "tempVarName": "member",
+                    "type": "true",
+                    "actions": [
+                        {
+                            "member": "2",
+                            "varName": "member",
+                            "dataName": "spam-counter",
+                            "changeType": "0",
+                            "value": "0",
+                            "name": "Control Member Data"
+                        }
+                    ],
+                    "name": "Loop Through List"
+                }
+            ],
+            "name": "Action Container"
+        }
+    ]
+}
