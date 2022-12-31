@@ -1,0 +1,23 @@
+{
+    "name": "! Member Join Server",
+    "temp": "member",
+    "event-type": "6",
+    "_id": "ebvZt",
+    "actions": [
+        {
+            "source": "FscMD",
+            "type": "true",
+            "name": "Call Command/Event"
+        },
+        {
+            "source": "nGjuv",
+            "type": "true",
+            "name": "Call Command/Event"
+        },
+        {
+            "source": "mqJdD",
+            "type": "true",
+            "name": "Call Command/Event"
+        }
+    ]
+}

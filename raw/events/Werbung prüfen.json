@@ -1,0 +1,253 @@
+{
+    "name": "Werbung prüfen",
+    "temp": "",
+    "event-type": "0",
+    "_id": "nGjuv",
+    "actions": [
+        {
+            "server": "0",
+            "varName": "",
+            "info": "1",
+            "storage": "1",
+            "varName2": "serverId",
+            "name": "Store Server Info"
+        },
+        {
+            "storage": "1",
+            "varName": "serverId",
+            "comparison": "1",
+            "value": "globalVars(\"main-server-id\")",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "1"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "member",
+            "comparison": "0",
+            "value": "",
+            "branch": {
+                "iftrue": "99",
+                "iffalse": "0",
+                "iftrueActions": [
+                    {
+                        "member": "2",
+                        "varName": "member",
+                        "info": "2",
+                        "storage": "1",
+                        "varName2": "username",
+                        "name": "Store Member Info"
+                    },
+                    {
+                        "member": "2",
+                        "varName": "member",
+                        "info": "3",
+                        "storage": "1",
+                        "varName2": "displayname",
+                        "name": "Store Member Info"
+                    },
+                    {
+                        "member": "2",
+                        "varName": "member",
+                        "info": "14",
+                        "storage": "1",
+                        "varName2": "game-status",
+                        "name": "Store Member Info"
+                    },
+                    {
+                        "member": "2",
+                        "varName": "member",
+                        "info": "30",
+                        "storage": "1",
+                        "varName2": "custom-status",
+                        "name": "Store Member Info"
+                    },
+                    {
+                        "behavior": "0",
+                        "interpretation": "1",
+                        "code": "const regex = globalVars(\"advertisement-regex\");\n\nlet username = regex.test(tempVars(\"username\"));\nlet displayname = regex.test(tempVars(\"displayname\"));\nlet gameStatus = regex.test(tempVars(\"game-status\"));\nlet customStatus = regex.test(tempVars(\"custom-status\"));\n\nusername || displayname || gameStatus || customStatus;",
+                        "storage": "1",
+                        "varName": "regex-check",
+                        "name": "Run Script"
+                    },
+                    {
+                        "storage": "1",
+                        "varName": "regex-check",
+                        "comparison": "1",
+                        "value": "true",
+                        "branch": {
+                            "iftrue": "4",
+                            "iffalse": "4",
+                            "iftrueVal": "hide-member",
+                            "iffalseVal": "show-member"
+                        },
+                        "name": "Check Variable"
+                    },
+                    {
+                        "name": "End Action Sequence"
+                    },
+                    {
+                        "anchorName": "hide-member",
+                        "name": "Action Anchor"
+                    },
+                    {
+                        "member": "2",
+                        "varName2": "member",
+                        "role": "101",
+                        "varName": "${globalVars(\"hidden-role-id\")}",
+                        "reason": "Werbung",
+                        "name": "Add Member Role"
+                    },
+                    {
+                        "name": "End Action Sequence"
+                    },
+                    {
+                        "anchorName": "show-member",
+                        "name": "Action Anchor"
+                    },
+                    {
+                        "member": "2",
+                        "varName2": "member",
+                        "role": "101",
+                        "varName": "${globalVars(\"hidden-role-id\")}",
+                        "reason": "Keine Werbung",
+                        "name": "Remove Member Role"
+                    }
+                ]
+            },
+            "name": "Check Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "message",
+            "comparison": "0",
+            "value": "",
+            "branch": {
+                "iftrue": "99",
+                "iffalse": "0",
+                "iftrueActions": [
+                    {
+                        "message": "1",
+                        "varName": "message",
+                        "info": "3",
+                        "storage": "1",
+                        "varName2": "author",
+                        "name": "Store Message Info"
+                    },
+                    {
+                        "message": "1",
+                        "varName": "message",
+                        "info": "4",
+                        "storage": "1",
+                        "varName2": "channel",
+                        "name": "Store Message Info"
+                    },
+                    {
+                        "message": "1",
+                        "varName": "message",
+                        "info": "2",
+                        "storage": "1",
+                        "varName2": "text",
+                        "name": "Store Message Info"
+                    },
+                    {
+                        "behavior": "0",
+                        "interpretation": "1",
+                        "code": "globalVars(\"advertisement-regex\").test(tempVars(\"text\"));",
+                        "storage": "1",
+                        "varName": "regex-check",
+                        "name": "Run Script"
+                    },
+                    {
+                        "storage": "1",
+                        "varName": "regex-check",
+                        "comparison": "1",
+                        "value": "true",
+                        "branch": {
+                            "iftrue": "0",
+                            "iffalse": "1"
+                        },
+                        "name": "Check Variable"
+                    },
+                    {
+                        "member": "2",
+                        "varName": "author",
+                        "dataName": "spam-counter",
+                        "changeType": "1",
+                        "value": "1",
+                        "name": "Control Member Data"
+                    },
+                    {
+                        "member": "2",
+                        "varName": "author",
+                        "dataName": "spam-counter",
+                        "comparison": "4",
+                        "value": "2",
+                        "branch": {
+                            "iftrue": "4",
+                            "iffalse": "0",
+                            "iftrueVal": "timeout"
+                        },
+                        "name": "Check Member Data"
+                    },
+                    {
+                        "storage": "1",
+                        "varName": "message",
+                        "reason": "Werbung",
+                        "name": "Delete Message"
+                    },
+                    {
+                        "channel": "5",
+                        "varName": "channel",
+                        "message": "${tempVars(\"author\")} bitte keine Links senden. Nutze stattdessen `/link`.",
+                        "buttons": [],
+                        "selectMenus": [],
+                        "attachments": [],
+                        "embeds": [],
+                        "reply": false,
+                        "ephemeral": false,
+                        "tts": false,
+                        "overwrite": false,
+                        "dontSend": false,
+                        "editMessage": "0",
+                        "editMessageVarName": "",
+                        "storage": "0",
+                        "varName2": "",
+                        "name": "Send Message"
+                    },
+                    {
+                        "name": "End Action Sequence"
+                    },
+                    {
+                        "anchorName": "timeout",
+                        "name": "Action Anchor"
+                    },
+                    {
+                        "member": "2",
+                        "varName": "author",
+                        "time": "1 * 60 * 60",
+                        "reason": "Werbung",
+                        "name": "Timeout Member"
+                    },
+                    {
+                        "storage": "1",
+                        "varName": "message",
+                        "reason": "Werbung",
+                        "name": "Delete Message"
+                    },
+                    {
+                        "member": "2",
+                        "varName": "author",
+                        "dataName": "spam-counter",
+                        "changeType": "0",
+                        "value": "0",
+                        "name": "Control Member Data"
+                    }
+                ]
+            },
+            "name": "Check Variable"
+        }
+    ]
+}

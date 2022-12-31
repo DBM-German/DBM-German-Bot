@@ -72,6 +72,11 @@ Depending on whether `globalVars("version")` is 'true', the ID of our DBM German
 Depending on whether `globalVars("version")` is 'true', the ID of our DBM German Beta ("724331079619706910") or DBM German faq channel ("547530904453775390").
 
 
+## Hidden Role ID | ${`globalVars("hidden-role-id")`}
+
+Depending on whether `globalVars("version")` is 'true', the ID of our DBM German Beta ("724335094281666642") or DBM German hidden role ("663781677016809504").
+
+
 ## Commands | ${`globalVars("commands")`}
 
 A list of all available commands and their parameters. Structure of the commands:
@@ -143,3 +148,8 @@ A list of male and female nickname replacements for users who have nicknames wit
 | Rüdiger               | Carlotta              |
 
 <sup>1</sup> With this name, there's a 50 percent chance that it'll be Mathilda Jonas instead.
+
+
+## Advertisement RegEx | ${`globalVars("advertisement-regex")`}
+
+The regular expression used to detect ads in the names and custom status of users.

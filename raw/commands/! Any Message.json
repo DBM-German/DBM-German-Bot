@@ -1,0 +1,32 @@
+{
+    "name": "! Any Message",
+    "permissions": "NONE",
+    "permissions2": "NONE",
+    "restriction": "1",
+    "_id": "gbisF",
+    "actions": [
+        {
+            "message": "0",
+            "varName": "",
+            "info": "3",
+            "storage": "1",
+            "varName2": "member",
+            "name": "Store Message Info"
+        },
+        {
+            "message": "0",
+            "varName": "",
+            "info": "0",
+            "storage": "1",
+            "varName2": "message",
+            "name": "Store Message Info"
+        },
+        {
+            "source": "nGjuv",
+            "type": "true",
+            "name": "Call Command/Event"
+        }
+    ],
+    "comType": "3",
+    "description": "Trigger für Any Message Events"
+}

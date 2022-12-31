@@ -1,0 +1,22 @@
+{
+    "name": "! Message Update",
+    "temp": "_",
+    "event-type": "26",
+    "_id": "nMLgc",
+    "actions": [
+        {
+            "message": "1",
+            "varName": "message",
+            "info": "3",
+            "storage": "1",
+            "varName2": "member",
+            "name": "Store Message Info"
+        },
+        {
+            "source": "nGjuv",
+            "type": "true",
+            "name": "Call Command/Event"
+        }
+    ],
+    "temp2": "message"
+}

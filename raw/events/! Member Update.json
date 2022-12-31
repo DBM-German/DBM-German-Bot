@@ -1,0 +1,19 @@
+{
+    "name": "! Member Update",
+    "temp": "_",
+    "event-type": "20",
+    "_id": "qjLJw",
+    "actions": [
+        {
+            "source": "FscMD",
+            "type": "true",
+            "name": "Call Command/Event"
+        },
+        {
+            "source": "nGjuv",
+            "type": "true",
+            "name": "Call Command/Event"
+        }
+    ],
+    "temp2": "member"
+}
