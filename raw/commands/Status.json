@@ -1,0 +1,38 @@
+{
+    "name": "Status",
+    "permissions": "NONE",
+    "permissions2": "NONE",
+    "restriction": "1",
+    "_id": "BsmKw",
+    "actions": [
+        {
+            "storage": "1",
+            "varName": "title",
+            "changeType": "0",
+            "value": "\"Status\"",
+            "name": "Control Variable"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "`Bot: v${globalVars(\"version\")}\nDBM: v${DBM.version}\nDiscord.js: v${DBM.DiscordJS.version}\nNode.js: ${process.version}\nOS: ${process.platform == \"win32\" ? \"Windows\" : \"Linux\"} (${process.arch})\nServer-Betriebszeit: ${this.generateTimeString(process.uptime() * 1000)}\nBot-Betriebszeit: ${this.generateTimeString(client.uptime)}`;",
+            "storage": "1",
+            "varName": "description",
+            "name": "Run Script"
+        },
+        {
+            "storage": "1",
+            "varName": "channel",
+            "changeType": "0",
+            "value": "channel",
+            "name": "Control Variable"
+        },
+        {
+            "source": "FGdiL",
+            "type": "true",
+            "name": "Call Command/Event"
+        }
+    ],
+    "comType": "4",
+    "description": "Status des Bots"
+}
