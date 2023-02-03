@@ -1,5 +1,5 @@
 import { constants } from "fs";
-import { access, readdir, readFile, stat, writeFile } from "fs/promises";
+import { access, readdir, readFile, rm, stat, writeFile } from "fs/promises";
 
 
 const RAW_DIR = "./raw";
@@ -90,6 +90,14 @@ async function readDBM(file) {
  * @param {RawData[]} data Bundled raw datas of one type
  */
 async function writeRaws(dir, data) {
+    let filesToRemove = (await readdir(dir)).filter(file => {
+        if(!file.endsWith(".json")) return false;
+
+        return !data.some(raw => raw.name == file.substring(0, file.length - 5));
+    });
+
+    await Promise.all(filesToRemove.map(file => rm(`${dir}/${file}`)));
+
     for(let raw of data) {
         let path = `${dir}/${raw.name}.json`;
 
