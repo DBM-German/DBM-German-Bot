@@ -136,7 +136,7 @@
             "reply": true,
             "ephemeral": false,
             "tts": false,
-            "overwrite": false,
+            "overwrite": true,
             "dontSend": false,
             "editMessage": "intUpdate",
             "editMessageVarName": "",
