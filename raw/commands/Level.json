@@ -7,7 +7,7 @@
     "actions": [
         {
             "member": "5",
-            "varName": "nutzer",
+            "varName": "Nutzer",
             "info": "0",
             "storage": "1",
             "varName2": "member",
@@ -91,19 +91,19 @@
         {
             "member": "2",
             "varName": "member",
-            "dataName": "xp",
-            "defaultVal": "0",
+            "dataName": "level",
+            "defaultVal": "1",
             "storage": "1",
-            "varName2": "xp",
+            "varName2": "level",
             "name": "Store Member Data"
         },
         {
             "member": "2",
             "varName": "member",
-            "dataName": "level",
-            "defaultVal": "1",
+            "dataName": "xp",
+            "defaultVal": "0",
             "storage": "1",
-            "varName2": "level",
+            "varName2": "xp",
             "name": "Store Member Data"
         },
         {
@@ -129,19 +129,19 @@
                 {
                     "member": "2",
                     "varName": "loopMember",
-                    "dataName": "xp",
-                    "defaultVal": "0",
+                    "dataName": "level",
+                    "defaultVal": "1",
                     "storage": "1",
-                    "varName2": "loopXp",
+                    "varName2": "loopLevel",
                     "name": "Store Member Data"
                 },
                 {
                     "member": "2",
                     "varName": "loopMember",
-                    "dataName": "level",
-                    "defaultVal": "1",
+                    "dataName": "xp",
+                    "defaultVal": "0",
                     "storage": "1",
-                    "varName2": "loopLevel",
+                    "varName2": "loopXp",
                     "name": "Store Member Data"
                 },
                 {
@@ -297,7 +297,7 @@
     "description": "Level und XP eines Nutzers",
     "parameters": [
         {
-            "name": "nutzer",
+            "name": "Nutzer",
             "description": "Anderer Nutzer",
             "type": "USER",
             "required": false,

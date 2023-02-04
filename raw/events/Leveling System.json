@@ -49,19 +49,19 @@
         {
             "member": "2",
             "varName": "member",
-            "dataName": "xp",
-            "defaultVal": "0",
+            "dataName": "level",
+            "defaultVal": "1",
             "storage": "1",
-            "varName2": "xp",
+            "varName2": "level",
             "name": "Store Member Data"
         },
         {
             "member": "2",
             "varName": "member",
-            "dataName": "level",
-            "defaultVal": "1",
+            "dataName": "xp",
+            "defaultVal": "0",
             "storage": "1",
-            "varName2": "level",
+            "varName2": "xp",
             "name": "Store Member Data"
         },
         {
