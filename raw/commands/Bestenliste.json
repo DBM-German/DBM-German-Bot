@@ -1,0 +1,173 @@
+{
+    "name": "Bestenliste",
+    "permissions": "NONE",
+    "permissions2": "NONE",
+    "restriction": "1",
+    "_id": "AiMVM",
+    "actions": [
+        {
+            "ephemeral": false,
+            "name": "Start Thinking"
+        },
+        {
+            "server": "0",
+            "varName": "",
+            "info": "15",
+            "storage": "1",
+            "varName2": "members",
+            "name": "Store Server Info"
+        },
+        {
+            "list": "7",
+            "varName": "members",
+            "transform": "item.user.bot ? null : item",
+            "null": "null",
+            "storage": "1",
+            "varName2": "members",
+            "name": "Transform List"
+        },
+        {
+            "storage": "1",
+            "varName": "xps",
+            "name": "Create List"
+        },
+        {
+            "storage": "1",
+            "varName": "requiredXps",
+            "name": "Create List"
+        },
+        {
+            "storage": "1",
+            "varName": "levels",
+            "name": "Create List"
+        },
+        {
+            "list": "7",
+            "varName": "members",
+            "tempVarName": "member",
+            "type": "true",
+            "actions": [
+                {
+                    "member": "2",
+                    "varName": "member",
+                    "dataName": "xp",
+                    "defaultVal": "0",
+                    "storage": "1",
+                    "varName2": "xp",
+                    "name": "Store Member Data"
+                },
+                {
+                    "member": "2",
+                    "varName": "member",
+                    "dataName": "level",
+                    "defaultVal": "1",
+                    "storage": "1",
+                    "varName2": "level",
+                    "name": "Store Member Data"
+                },
+                {
+                    "storage": "1",
+                    "varName": "requiredXp",
+                    "changeType": "0",
+                    "value": "tempVars(\"level\") * 10",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "1",
+                    "varName": "xps",
+                    "addType": "0",
+                    "position": "",
+                    "value": "tempVars(\"xp\")",
+                    "name": "Add Item to List"
+                },
+                {
+                    "storage": "1",
+                    "varName": "levels",
+                    "addType": "0",
+                    "position": "",
+                    "value": "tempVars(\"level\")",
+                    "name": "Add Item to List"
+                },
+                {
+                    "storage": "1",
+                    "varName": "requiredXps",
+                    "addType": "0",
+                    "position": "",
+                    "value": "tempVars(\"requiredXp\")",
+                    "name": "Add Item to List"
+                }
+            ],
+            "name": "Loop Through List"
+        },
+        {
+            "list": "7",
+            "varName": "members",
+            "transform": "({ member: item, xp: tempVars(\"xps\")[index], requiredXp: tempVars(\"requiredXps\")[index], level: tempVars(\"levels\")[index] })",
+            "null": "null",
+            "storage": "1",
+            "varName2": "memberStats",
+            "name": "Transform List"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "// Sort list\n// Liste sortieren\n\ntempVars(\"memberStats\").sort((a, b) => {\n    let levelDiff = (a.level - b.level) * (-1);\n    if(levelDiff != 0) return levelDiff;\n\n    let xpDiff = (a.xp - b.xp) * (-1);\n    if(xpDiff != 0) return xpDiff;\n\n    return a.member.displayName - b.member.displayName;\n});",
+            "storage": "0",
+            "varName": "",
+            "name": "Run Script"
+        },
+        {
+            "list": "7",
+            "varName": "memberStats",
+            "transform": "`**#${index+1}** ${item.member.displayName} – ${item.level} (${item.xp}/${item.requiredXp})`",
+            "null": "null",
+            "storage": "1",
+            "varName2": "memberStatsTexts",
+            "name": "Transform List"
+        },
+        {
+            "storage": "1",
+            "varName": "title",
+            "changeType": "0",
+            "value": "\"Bestenliste\"",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "description",
+            "changeType": "0",
+            "value": "\"\"",
+            "name": "Control Variable"
+        },
+        {
+            "list": "7",
+            "varName": "memberStatsTexts",
+            "tempVarName": "memberStatsText",
+            "type": "true",
+            "actions": [
+                {
+                    "storage": "1",
+                    "varName": "description",
+                    "changeType": "1",
+                    "value": "tempVars(\"memberStatsText\") + \"\\n\"",
+                    "name": "Control Variable"
+                }
+            ],
+            "name": "Loop Through List"
+        },
+        {
+            "storage": "1",
+            "varName": "channel",
+            "changeType": "0",
+            "value": "channel",
+            "name": "Control Variable"
+        },
+        {
+            "source": "FGdiL",
+            "type": "true",
+            "name": "Call Command/Event"
+        }
+    ],
+    "comType": "4",
+    "description": "Level und XP aller Nutzer"
+}
