@@ -1,6 +1,6 @@
 import { exec as execCb } from "child_process";
 import { constants } from "fs";
-import { access, cp, readFile, rm } from "fs/promises";
+import { access, cp, readFile, rm, writeFile } from "fs/promises";
 import { arch as osArch, type as osType } from "os";
 import { promisify } from "util";
 import { promisified as regedit } from "regedit";
@@ -25,6 +25,16 @@ const DBM_ACTIONS_FOLDER = "actions";
 const FS_R = constants.F_OK | constants.R_OK;
 const FS_RW = FS_R | constants.W_OK;
 
+
+/**
+ * @typedef DBMSettings
+ * @type {{ token: string; client: string; tag: string; case: boolean | `${boolean}`; separator: string; commandsOrder: string[]; eventsOrder: string[]; modules: {[dependency: string]: [string, boolean]}; ownerId: string; invalidUserText: string; invalidSelectText: string; invalidButtonText: string; leaveVoiceTimeout: number; slashType: string; slashServers: string; autoResponseText: string; invalidPermissionsText: string; invalidCooldownText: string; noDescriptionText: string; [extension: string]: {customData: {[data: string]: any}} }}
+ */
+
+/**
+ * @typedef DBMPackage
+ * @type {{ name: string; author: string; main: string; version: string; dependencies: {[dependency: string]: string} }}
+ */
 
 /**
  * @typedef RegValue
@@ -63,7 +73,7 @@ console.log("Richte DBM-Projekt ein...");
 
 // Check os type for Windows
 if(osType() != "Windows_NT") {
-    console.log("Discord Bot Maker wird nur für Windows unterstützt.");
+    console.error("Discord Bot Maker wird nur für Windows unterstützt.");
     process.exit(1);
 }
 
@@ -74,7 +84,7 @@ let steamDir = await findSteamDir();
 try {
     await access(steamDir, FS_R);
 } catch(e) {
-    console.log(`Auf Steam-Verzeichnis kann nicht zugegriffen werden: ${e}`);
+    console.error(`Auf Steam-Verzeichnis kann nicht zugegriffen werden: ${e}`);
     process.exit(1);
 }
 
@@ -85,7 +95,7 @@ let dbmDir = await findDBM();
 try {
     await access(dbmDir, FS_R);
 } catch(e) {
-    console.log(`Auf Discord Bot Maker-Verzeichnis kann nicht zugegriffen werden: ${e}`);
+    console.error(`Auf Discord Bot Maker-Verzeichnis kann nicht zugegriffen werden: ${e}`);
     process.exit(1);
 }
 
@@ -93,7 +103,7 @@ try {
 try {
     await access(`${dbmDir}/${DBM_TEMPLATE_FOLDER}`, FS_R);
 } catch(e) {
-    console.log(`Auf Discord Bot Maker-Template-Ordner kann nicht zugegriffen werden: ${e}`);
+    console.error(`Auf Discord Bot Maker-Template-Ordner kann nicht zugegriffen werden: ${e}`);
     process.exit(1);
 }
 
@@ -101,7 +111,7 @@ try {
 try {
     await access(`${dbmDir}/${DBM_ACTIONS_FOLDER}`, FS_R);
 } catch(e) {
-    console.log(`Auf Discord Bot Maker-Actions-Ordner kann nicht zugegriffen werden: ${e}`);
+    console.error(`Auf Discord Bot Maker-Actions-Ordner kann nicht zugegriffen werden: ${e}`);
     process.exit(1);
 }
 
@@ -115,7 +125,7 @@ try {
     try {
         await access(BOT_DIR);
         botDirExists = true;
-        console.log(`Auf Bot-Verzeichnis kann nicht zugegriffen werden: ${e}`);
+        console.error(`Auf Bot-Verzeichnis kann nicht zugegriffen werden: ${e}`);
         process.exit(1);
     } catch {
         botDirExists = false;
@@ -128,7 +138,7 @@ if(botDirExists) {
         console.log("Lösche Bot-Verzeichnis...");
         await rm(BOT_DIR, { recursive: true });
     } catch(e) {
-        console.log(`Bot-Verzeichnis kann nicht gelöscht werden: ${e}`);
+        console.error(`Bot-Verzeichnis kann nicht gelöscht werden: ${e}`);
         process.exit(1);
     }
 }
@@ -139,7 +149,7 @@ try {
     await cp(`${dbmDir}/${DBM_TEMPLATE_FOLDER}`, BOT_DIR, { recursive: true });
     await cp(`${dbmDir}/${DBM_ACTIONS_FOLDER}`, BOT_ACTIONS_DIR, { recursive: true });
 } catch (e) {
-    console.log(`Template oder Actions können nicht kopiert werden: ${e}`);
+    console.error(`Template oder Actions können nicht kopiert werden: ${e}`);
     process.exit(1);
 }
 
@@ -148,7 +158,29 @@ try {
     console.log("Kopiere Bot-Daten...");
     await cp(RAW_DATA_DIR, BOT_DATA_DIR, { recursive: true });
 } catch(e) {
-    console.log(`Bot-Daten können nicht kopiert werden: ${e}`);
+    console.error(`Bot-Daten können nicht kopiert werden: ${e}`);
+    process.exit(1);
+}
+
+// Apply Module Manager settings
+try {
+    console.log("Wende Module Manager-Einstellungen an...");
+    /**
+     * @type {DBMSettings}
+     */
+    let settings = JSON.parse(await readFile(`${BOT_DATA_DIR}/settings.json`, { encoding: ENCODING }));
+    /**
+     * @type {DBMPackage}
+     */
+    let project = JSON.parse(await readFile(`${BOT_DIR}/package.json`, { encoding: ENCODING }));
+
+    for(let [dependency, [version, installed]] of Object.entries(settings.modules)) {
+        if(installed && version?.length > 0) project.dependencies[dependency] = version;
+    }
+
+    await writeFile(`${BOT_DIR}/package.json`, JSON.stringify(project, null, 4), { encoding: ENCODING });
+} catch(e) {
+    console.error("Module Manager-Einstellungen können nicht angewendet werden...");
     process.exit(1);
 }
 
@@ -157,7 +189,7 @@ try {
     console.log("Installiere Node-Module...");
     await exec("npm i", { cwd: BOT_DIR, windowsHide: true, encoding: ENCODING });
 } catch (e) {
-    console.log(`Node-Module können nicht installiert werden: ${e}`);
+    console.error(`Node-Module können nicht installiert werden: ${e}`);
     process.exit(1);
 }
 
@@ -180,12 +212,12 @@ async function findSteamDir() {
         let is64 = osArch() == "x64";
         registryEntry = (await regedit.list(is64 ? STEAM_REG_KEY_64 : STEAM_REG_KEY_32))[is64 ? STEAM_REG_KEY_64 : STEAM_REG_KEY_32];
     } catch(e) {
-        console.log(`Auf die Windows-Registry kann nicht zugegriffen werden: ${e}`);
+        console.error(`Auf die Windows-Registry kann nicht zugegriffen werden: ${e}`);
         process.exit(1);
     }
 
     if(!registryEntry.exists) {
-        console.log("Steam Registry-Eintrag kann nicht gefunden werden. Eventuell ist Steam nicht korrekt installiert.");
+        console.error("Steam Registry-Eintrag kann nicht gefunden werden. Eventuell ist Steam nicht korrekt installiert.");
         process.exit(1);
     }
 
@@ -215,7 +247,7 @@ async function findSteamLibFolders() {
     }
 
     if(errors.length > 0 && !libraryfolders) {
-        console.log(`Auf Steam Bibliotheken-Konfiguration kann nicht zugegriffen werden: ${errors.map(e => e?.toString())}`);
+        console.error(`Auf Steam Bibliotheken-Konfiguration kann nicht zugegriffen werden: ${errors.map(e => e?.toString())}`);
         process.exit(1);
     }
 
@@ -238,7 +270,7 @@ async function findDBM() {
     }
     
     if(!dbmDir) {
-        console.log("Discord Bot Maker-Verzeichnis kann nicht gefunden werden. Eventuell muss Steam neu gestartet werden.");
+        console.error("Discord Bot Maker-Verzeichnis kann nicht gefunden werden. Eventuell muss Steam neu gestartet werden.");
         process.exit(1);
     }
 

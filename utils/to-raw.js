@@ -1,5 +1,5 @@
 import { constants } from "fs";
-import { access, readdir, readFile, stat, writeFile } from "fs/promises";
+import { access, readdir, readFile, rm, stat, writeFile } from "fs/promises";
 
 
 const RAW_DIR = "./raw";
@@ -38,7 +38,7 @@ console.log("Konvertiere DBM-Dateien zu Raw Datas...");
 try {
     await access(BOT_DIR, FS_R);
 } catch(e) {
-    console.log(`Auf Bot-Verzeichnis kann nicht zugegriffen werden: ${e}`);
+    console.error(`Auf Bot-Verzeichnis kann nicht zugegriffen werden: ${e}`);
     process.exit(1);
 }
 
@@ -46,7 +46,7 @@ try {
 try {
     await access(RAW_DIR, FS_RW);
 } catch(e) {
-    console.log(`Auf Raw Data-Verzeichnis kann nicht zugegriffen werden: ${e}`);
+    console.error(`Auf Raw Data-Verzeichnis kann nicht zugegriffen werden: ${e}`);
     process.exit(1);
 }
 
@@ -90,6 +90,14 @@ async function readDBM(file) {
  * @param {RawData[]} data Bundled raw datas of one type
  */
 async function writeRaws(dir, data) {
+    let filesToRemove = (await readdir(dir)).filter(file => {
+        if(!file.endsWith(".json")) return false;
+
+        return !data.some(raw => raw.name == file.substring(0, file.length - 5));
+    });
+
+    await Promise.all(filesToRemove.map(file => rm(`${dir}/${file}`)));
+
     for(let raw of data) {
         let path = `${dir}/${raw.name}.json`;
 

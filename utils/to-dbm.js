@@ -38,7 +38,7 @@ console.log("Konvertiere Raw Datas zu DBM-Dateien...");
 try {
     await access(RAW_DIR, FS_R);
 } catch(e) {
-    console.log(`Auf Raw Data-Verzeichnis kann nicht zugegriffen werden: ${e}`);
+    console.error(`Auf Raw Data-Verzeichnis kann nicht zugegriffen werden: ${e}`);
     process.exit(1);
 }
 
@@ -46,7 +46,7 @@ try {
 try {
     await access(BOT_DIR, FS_RW);
 } catch(e) {
-    console.log(`Auf Bot-Verzeichnis kann nicht zugegriffen werden: ${e}`);
+    console.error(`Auf Bot-Verzeichnis kann nicht zugegriffen werden: ${e}`);
     process.exit(1);
 }
 
