@@ -648,6 +648,208 @@
                             "name": "Call Command/Event"
                         }
                     ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"neustarten\"",
+                    "actions": [
+                        {
+                            "server": "0",
+                            "varName": "",
+                            "storage": "1",
+                            "varName2": "bot",
+                            "name": "Get Bot as Member"
+                        },
+                        {
+                            "member": "2",
+                            "varName": "bot",
+                            "info": "16",
+                            "storage": "1",
+                            "varName2": "avatarURL",
+                            "name": "Store Member Info"
+                        },
+                        {
+                            "channel": "0",
+                            "varName": "",
+                            "message": "",
+                            "buttons": [
+                                {
+                                    "name": "Bestätigen",
+                                    "type": "DANGER",
+                                    "id": "msg-button-8d2b1a8",
+                                    "row": "",
+                                    "url": "",
+                                    "emoji": "",
+                                    "mode": "PERSONAL",
+                                    "time": "60000",
+                                    "actions": [
+                                        {
+                                            "channel": "0",
+                                            "varName": "",
+                                            "message": "",
+                                            "buttons": [
+                                                {
+                                                    "name": "Discord",
+                                                    "type": "LINK",
+                                                    "id": "msg-button-1403b37",
+                                                    "row": "",
+                                                    "url": "https://discord.gg/3RfuZUT",
+                                                    "emoji": "",
+                                                    "mode": "PERSISTENT",
+                                                    "time": "",
+                                                    "actions": []
+                                                },
+                                                {
+                                                    "name": "GitHub",
+                                                    "type": "LINK",
+                                                    "id": "msg-button-898005d",
+                                                    "row": "",
+                                                    "url": "https://github.com/dbm-german/DBM-German-Bot",
+                                                    "emoji": "",
+                                                    "mode": "PERSISTENT",
+                                                    "time": "",
+                                                    "actions": []
+                                                }
+                                            ],
+                                            "selectMenus": [],
+                                            "attachments": [],
+                                            "embeds": [
+                                                {
+                                                    "title": "✅ Neustart bestätigt",
+                                                    "url": "",
+                                                    "color": "${globalVars(\"success-color\")}",
+                                                    "timestamp": "false",
+                                                    "imageUrl": "",
+                                                    "thumbUrl": "",
+                                                    "description": "Der Bot wird neu gestartet...",
+                                                    "fields": [],
+                                                    "author": "",
+                                                    "authorUrl": "",
+                                                    "authorIcon": "",
+                                                    "footerText": "DBM German Bot v${globalVars(\"version\")}",
+                                                    "footerIconUrl": "${tempVars(\"avatarURL\")}"
+                                                }
+                                            ],
+                                            "reply": true,
+                                            "ephemeral": false,
+                                            "tts": false,
+                                            "overwrite": true,
+                                            "dontSend": false,
+                                            "editMessage": "intUpdate",
+                                            "editMessageVarName": "",
+                                            "storage": "0",
+                                            "varName2": "",
+                                            "name": "Send Message"
+                                        },
+                                        {
+                                            "source": "mcYdf",
+                                            "type": "true",
+                                            "name": "Call Command/Event"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "Abbrechen",
+                                    "type": "SECONDARY",
+                                    "id": "msg-button-ebaef9f",
+                                    "row": "",
+                                    "url": "",
+                                    "emoji": "",
+                                    "mode": "PERSONAL",
+                                    "time": "60000",
+                                    "actions": [
+                                        {
+                                            "channel": "0",
+                                            "varName": "",
+                                            "message": "",
+                                            "buttons": [
+                                                {
+                                                    "name": "Discord",
+                                                    "type": "LINK",
+                                                    "id": "msg-button-e62555b",
+                                                    "row": "",
+                                                    "url": "https://discord.gg/3RfuZUT",
+                                                    "emoji": "",
+                                                    "mode": "PERSISTENT",
+                                                    "time": "",
+                                                    "actions": []
+                                                },
+                                                {
+                                                    "name": "GitHub",
+                                                    "type": "LINK",
+                                                    "id": "msg-button-82a5a63",
+                                                    "row": "",
+                                                    "url": "https://github.com/dbm-german/DBM-German-Bot",
+                                                    "emoji": "",
+                                                    "mode": "PERSISTENT",
+                                                    "time": "",
+                                                    "actions": []
+                                                }
+                                            ],
+                                            "selectMenus": [],
+                                            "attachments": [],
+                                            "embeds": [
+                                                {
+                                                    "title": "❌ Neustart abgebrochen",
+                                                    "url": "",
+                                                    "color": "${globalVars(\"failure-color\")}",
+                                                    "timestamp": "false",
+                                                    "imageUrl": "",
+                                                    "thumbUrl": "",
+                                                    "description": "Der Bot bleibt online.",
+                                                    "fields": [],
+                                                    "author": "",
+                                                    "authorUrl": "",
+                                                    "authorIcon": "",
+                                                    "footerText": "DBM German Bot v${globalVars(\"version\")}",
+                                                    "footerIconUrl": "${tempVars(\"avatarURL\")}"
+                                                }
+                                            ],
+                                            "reply": true,
+                                            "ephemeral": false,
+                                            "tts": false,
+                                            "overwrite": true,
+                                            "dontSend": false,
+                                            "editMessage": "intUpdate",
+                                            "editMessageVarName": "",
+                                            "storage": "0",
+                                            "varName2": "",
+                                            "name": "Send Message"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "selectMenus": [],
+                            "attachments": [],
+                            "embeds": [
+                                {
+                                    "title": "⚠ Warnung",
+                                    "url": "",
+                                    "color": "${globalVars(\"warning-color\")}",
+                                    "timestamp": "false",
+                                    "imageUrl": "",
+                                    "thumbUrl": "",
+                                    "description": "Möchtest du den Bot wirklich neu starten?",
+                                    "fields": [],
+                                    "author": "",
+                                    "authorUrl": "",
+                                    "authorIcon": "",
+                                    "footerText": "DBM German Bot v${globalVars(\"version\")}",
+                                    "footerIconUrl": "${tempVars(\"avatarURL\")}"
+                                }
+                            ],
+                            "reply": true,
+                            "ephemeral": false,
+                            "tts": false,
+                            "overwrite": false,
+                            "dontSend": false,
+                            "editMessage": "0",
+                            "editMessageVarName": "",
+                            "storage": "0",
+                            "varName2": "",
+                            "name": "Send Message"
+                        }
+                    ]
                 }
             ],
             "name": "Multi-Check Variable"
@@ -669,6 +871,10 @@
                 {
                     "name": "embed",
                     "value": "Embed"
+                },
+                {
+                    "name": "neustarten",
+                    "value": "neustarten"
                 }
             ]
         },
