@@ -1,0 +1,197 @@
+{
+    "name": "Leveling System",
+    "temp": "",
+    "event-type": "0",
+    "_id": "CJKBd",
+    "actions": [
+        {
+            "server": "0",
+            "varName": "",
+            "info": "1",
+            "storage": "1",
+            "varName2": "serverId",
+            "name": "Store Server Info"
+        },
+        {
+            "storage": "1",
+            "varName": "serverId",
+            "comparison": "1",
+            "value": "globalVars(\"main-server-id\")",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "1"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "message": "1",
+            "varName": "message",
+            "info": "2",
+            "storage": "1",
+            "varName2": "text",
+            "name": "Store Message Info"
+        },
+        {
+            "storage": "1",
+            "varName": "textLength",
+            "changeType": "0",
+            "value": "tempVars(\"text\").length",
+            "name": "Control Variable"
+        },
+        {
+            "message": "1",
+            "varName": "message",
+            "info": "5",
+            "storage": "1",
+            "varName2": "messageTimestamp",
+            "name": "Store Message Info"
+        },
+        {
+            "member": "2",
+            "varName": "member",
+            "dataName": "xp",
+            "defaultVal": "0",
+            "storage": "1",
+            "varName2": "xp",
+            "name": "Store Member Data"
+        },
+        {
+            "member": "2",
+            "varName": "member",
+            "dataName": "level",
+            "defaultVal": "1",
+            "storage": "1",
+            "varName2": "level",
+            "name": "Store Member Data"
+        },
+        {
+            "member": "2",
+            "varName": "member",
+            "dataName": "xp-timestamp",
+            "defaultVal": "0",
+            "storage": "1",
+            "varName2": "xpTimestamp",
+            "name": "Store Member Data"
+        },
+        {
+            "storage": "1",
+            "varName": "messageTimestamp",
+            "comparison": "4",
+            "value": "tempVars(\"xpTimestamp\") + 10000",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "1"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "textLength",
+            "branches": [
+                {
+                    "comparison": "3",
+                    "value": "501",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "newXp",
+                            "changeType": "0",
+                            "value": "tempVars(\"xp\") + 1",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "3",
+                    "value": "1001",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "newXp",
+                            "changeType": "0",
+                            "value": "tempVars(\"xp\") + 2",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "3",
+                    "value": "1501",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "newXp",
+                            "changeType": "0",
+                            "value": "tempVars(\"xp\") + 3",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "4",
+                    "value": "1500",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "newXp",
+                            "changeType": "0",
+                            "value": "tempVars(\"xp\") + 4",
+                            "name": "Control Variable"
+                        }
+                    ]
+                }
+            ],
+            "name": "Multi-Check Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "requiredXp",
+            "changeType": "0",
+            "value": "tempVars(\"level\") * 10",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "newXp",
+            "comparison": "3",
+            "value": "tempVars(\"requiredXp\")",
+            "branch": {
+                "iftrue": "3",
+                "iffalse": "0",
+                "iftrueVal": "2"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "member": "2",
+            "varName": "member",
+            "dataName": "level",
+            "changeType": "1",
+            "value": "1",
+            "name": "Control Member Data"
+        },
+        {
+            "storage": "1",
+            "varName": "newXp",
+            "changeType": "0",
+            "value": "tempVars(\"newXp\") - tempVars(\"requiredXp\")",
+            "name": "Control Variable"
+        },
+        {
+            "member": "2",
+            "varName": "member",
+            "dataName": "xp",
+            "changeType": "0",
+            "value": "tempVars(\"newXp\")",
+            "name": "Control Member Data"
+        },
+        {
+            "member": "2",
+            "varName": "member",
+            "dataName": "xp-timestamp",
+            "changeType": "0",
+            "value": "tempVars(\"messageTimestamp\")",
+            "name": "Control Member Data"
+        }
+    ]
+}

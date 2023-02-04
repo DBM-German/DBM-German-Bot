@@ -25,6 +25,11 @@
             "source": "nGjuv",
             "type": "true",
             "name": "Call Command/Event"
+        },
+        {
+            "source": "CJKBd",
+            "type": "true",
+            "name": "Call Command/Event"
         }
     ],
     "comType": "3",
