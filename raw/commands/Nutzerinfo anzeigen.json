@@ -1,0 +1,16 @@
+{
+    "name": "Nutzerinfo anzeigen",
+    "permissions": "NONE",
+    "permissions2": "NONE",
+    "restriction": "1",
+    "_id": "MWiLH",
+    "actions": [
+        {
+            "source": "rnVWb",
+            "type": "true",
+            "name": "Call Command/Event"
+        }
+    ],
+    "comType": "5",
+    "description": "Informationen über einen Nutzer"
+}
