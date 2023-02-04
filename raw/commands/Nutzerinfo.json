@@ -1,0 +1,214 @@
+{
+    "name": "Nutzerinfo",
+    "permissions": "NONE",
+    "permissions2": "NONE",
+    "restriction": "1",
+    "_id": "rnVWb",
+    "actions": [
+        {
+            "storage": "1",
+            "varName": "user",
+            "changeType": "0",
+            "value": "member",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "4",
+            "varName": "Nutzer",
+            "comparison": "1",
+            "value": "null",
+            "branch": {
+                "iftrue": "3",
+                "iffalse": "0",
+                "iftrueVal": "1"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "user",
+            "changeType": "0",
+            "value": "slashParams(\"Nutzer\")",
+            "name": "Control Variable"
+        },
+        {
+            "member": "2",
+            "varName": "user",
+            "info": "1",
+            "storage": "1",
+            "varName2": "user-id",
+            "name": "Store Member Info"
+        },
+        {
+            "member": "2",
+            "varName": "user",
+            "info": "21",
+            "storage": "1",
+            "varName2": "user-tag",
+            "name": "Store Member Info"
+        },
+        {
+            "member": "2",
+            "varName": "user",
+            "info": "22",
+            "storage": "1",
+            "varName2": "user-created",
+            "name": "Store Member Info"
+        },
+        {
+            "member": "2",
+            "varName": "user",
+            "info": "24",
+            "storage": "1",
+            "varName2": "user-joined",
+            "name": "Store Member Info"
+        },
+        {
+            "member": "2",
+            "varName": "user",
+            "info": "15",
+            "storage": "1",
+            "varName2": "user-status",
+            "name": "Store Member Info"
+        },
+        {
+            "member": "2",
+            "varName": "user",
+            "info": "16",
+            "storage": "1",
+            "varName2": "user-avatar",
+            "name": "Store Member Info"
+        },
+        {
+            "member": "2",
+            "varName": "user",
+            "info": "3",
+            "storage": "1",
+            "varName2": "user-name",
+            "name": "Store Member Info"
+        },
+        {
+            "member": "2",
+            "varName": "user",
+            "info": "4",
+            "storage": "1",
+            "varName2": "user-color",
+            "name": "Store Member Info"
+        },
+        {
+            "server": "0",
+            "varName": "",
+            "storage": "1",
+            "varName2": "bot",
+            "name": "Get Bot as Member"
+        },
+        {
+            "member": "2",
+            "varName": "bot",
+            "info": "16",
+            "storage": "1",
+            "varName2": "bot-avatar",
+            "name": "Store Member Info"
+        },
+        {
+            "member": "2",
+            "varName": "bot",
+            "info": "2",
+            "storage": "1",
+            "varName2": "bot-name",
+            "name": "Store Member Info"
+        },
+        {
+            "channel": "0",
+            "varName": "",
+            "message": "",
+            "buttons": [],
+            "selectMenus": [],
+            "attachments": [],
+            "embeds": [
+                {
+                    "title": "",
+                    "url": "",
+                    "color": "${tempVars(\"user-color\")}",
+                    "timestamp": "false",
+                    "imageUrl": "",
+                    "thumbUrl": "${tempVars(\"user-avatar\")}",
+                    "description": "",
+                    "fields": [
+                        {
+                            "name": "ID",
+                            "value": "${tempVars(\"user-id\")}",
+                            "inline": "true"
+                        },
+                        {
+                            "name": "Tag",
+                            "value": "${tempVars(\"user-tag\")}",
+                            "inline": "true"
+                        },
+                        {
+                            "name": "Bot",
+                            "value": "${tempVars(\"user\").user.bot ? \"Ja\" : \"Nein\"}",
+                            "inline": "true"
+                        },
+                        {
+                            "name": "Level",
+                            "value": "[Coming Soon]",
+                            "inline": "true"
+                        },
+                        {
+                            "name": "XP",
+                            "value": "[Coming Soon]",
+                            "inline": "true"
+                        },
+                        {
+                            "name": "Warnungen",
+                            "value": "[Coming Soon]",
+                            "inline": "true"
+                        },
+                        {
+                            "name": "Erstellungsdatum des Accounts",
+                            "value": "${tempVars(\"user-created\").toLocaleString(\"de-DE\", { day: 'numeric', month: 'numeric', year: 'numeric' })}",
+                            "inline": "true"
+                        },
+                        {
+                            "name": "Beitrittsdatum des Servers",
+                            "value": "${tempVars(\"user-joined\").toLocaleString(\"de-DE\", { day: 'numeric', month: 'numeric', year: 'numeric' })}",
+                            "inline": "true"
+                        },
+                        {
+                            "name": "Nitro Booster",
+                            "value": "${tempVars(\"user\").premiumSince !== null ? \"Ja\" : \"Nein\"}",
+                            "inline": "true"
+                        }
+                    ],
+                    "author": "${tempVars(\"bot-name\")} - Nutzerinfo [${tempVars(\"user-name\")}]",
+                    "authorUrl": "",
+                    "authorIcon": "${tempVars(\"bot-avatar\")}",
+                    "footerText": "",
+                    "footerIconUrl": ""
+                }
+            ],
+            "reply": true,
+            "ephemeral": false,
+            "tts": false,
+            "overwrite": false,
+            "dontSend": false,
+            "editMessage": "0",
+            "editMessageVarName": "",
+            "storage": "0",
+            "varName2": "",
+            "name": "Send Message"
+        }
+    ],
+    "comType": "4",
+    "parameters": [
+        {
+            "name": "Nutzer",
+            "description": "Der Nutzer, dessen Nutzerinfo gezeigt werden soll",
+            "type": "USER",
+            "required": false,
+            "choices": null
+        }
+    ],
+    "description": "Zeige die Nutzerinfo eines Nutzers"
+}
