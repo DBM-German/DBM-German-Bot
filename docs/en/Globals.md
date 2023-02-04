@@ -67,6 +67,11 @@ Depending on whether `globalVars("version")` is 'true', the ID of our DBM German
 Depending on whether `globalVars("version")` is 'true', the ID of our DBM German Beta ("724331029359493120") or DBM German rules channel ("514896934411042834").
 
 
+## Serverlist Channel ID | ${`globalVars("serverlist-channel-id")`}
+
+Depending on whether `globalVars("version")` is 'true', the ID of our DBM German Beta ("724331017401532446") or DBM German serverlist channel ("488734739000328202").
+
+
 ## FAQ Channel ID | ${`globalVars("faq-channel-id")`}
 
 Depending on whether `globalVars("version")` is 'true', the ID of our DBM German Beta ("724331079619706910") or DBM German faq channel ("547530904453775390").

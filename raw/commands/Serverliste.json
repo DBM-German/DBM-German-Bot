@@ -1,0 +1,125 @@
+{
+    "name": "Serverliste",
+    "permissions": "NONE",
+    "permissions2": "NONE",
+    "restriction": "1",
+    "_id": "ZnrYO",
+    "actions": [
+        {
+            "server": "0",
+            "varName": "",
+            "storage": "1",
+            "varName2": "bot",
+            "name": "Get Bot as Member"
+        },
+        {
+            "member": "2",
+            "varName": "bot",
+            "info": "16",
+            "storage": "1",
+            "varName2": "avatarURL",
+            "name": "Store Member Info"
+        },
+        {
+            "info": "0",
+            "find": "${globalVars(\"serverlist-channel-id\")}",
+            "storage": "1",
+            "varName": "serverlistChannel",
+            "name": "Find Channel"
+        },
+        {
+            "storage": "1",
+            "varName": "channel",
+            "changeType": "0",
+            "value": "channel",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "title",
+            "changeType": "0",
+            "value": "\"Serverliste\"",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "description",
+            "changeType": "0",
+            "value": "`Siehe ${tempVars(\"serverlistChannel\")}.`",
+            "name": "Control Variable"
+        },
+        {
+            "source": "FGdiL",
+            "type": "true",
+            "name": "Call Command/Event"
+        },
+        {
+            "member": "1",
+            "varName": "",
+            "permission": "MANAGE_MESSAGES",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "1"
+            },
+            "name": "Check Member Permissions"
+        },
+        {
+            "channel": "5",
+            "varName": "serverlistChannel",
+            "message": "",
+            "buttons": [],
+            "selectMenus": [],
+            "attachments": [],
+            "embeds": [
+                {
+                    "title": "Serverliste",
+                    "url": "",
+                    "color": "${globalVars(\"default-color\")}",
+                    "timestamp": "true",
+                    "imageUrl": "",
+                    "thumbUrl": "",
+                    "description": "",
+                    "fields": [
+                        {
+                            "name": "DBM",
+                            "value": "<:DBMOfficial:516698258270191637> [Discord Bot Maker](https://discord.gg/DMDvzSe)\n<:DBMNetwork:655459522252374035> [DBM Network](https://discord.gg/djcvWRpgHm)",
+                            "inline": "false"
+                        },
+                        {
+                            "name": "DBM German",
+                            "value": "<:DBMGerman:754287699145392130> [DBM German](https://discord.gg/3RfuZUT)\n<:DBMGermanTeam:754287730703466518> [DBM German Team](https://discord.gg/UhTqp97)\n<:DBMGermanBeta:754287751540637716> [DBM German Beta](https://www.youtube.com/watch?v=dQw4w9WgXcQ)",
+                            "inline": "false"
+                        },
+                        {
+                            "name": "DBM International",
+                            "value": "Weitere sprachspezifische Server findest du auf dem offiziellen DBM-Server.",
+                            "inline": "false"
+                        },
+                        {
+                            "name": "Weitere",
+                            "value": "[Discord Developers](discord.gg/discord-developers)\n[Discord API](https://discord.gg/discord-api)\n[Discord Town Hall](discord.gg/discord-townhall)\n[Discord.js](https://discord.gg/djs)\n[PreMiD](https://discord.premid.app/)\n[Top.gg](https://discord.gg/EYHTgJX)",
+                            "inline": "false"
+                        }
+                    ],
+                    "author": "",
+                    "authorUrl": "",
+                    "authorIcon": "",
+                    "footerText": "DBM German Bot v${globalVars(\"version\")}",
+                    "footerIconUrl": "${tempVars(\"avatarURL\")}"
+                }
+            ],
+            "reply": false,
+            "ephemeral": false,
+            "tts": false,
+            "overwrite": false,
+            "dontSend": false,
+            "editMessage": "0",
+            "editMessageVarName": "",
+            "storage": "0",
+            "varName2": "",
+            "name": "Send Message"
+        }
+    ],
+    "comType": "4",
+    "description": "Listet einige DBM-Server auf"
+}

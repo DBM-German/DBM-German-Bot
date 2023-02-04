@@ -137,6 +137,13 @@
                 },
                 {
                     "storage": "3",
+                    "varName": "serverlist-channel-id",
+                    "changeType": "0",
+                    "value": "globalVars(\"debug\") ? \"724331017401532446\" : \"488734739000328202\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
                     "varName": "faq-channel-id",
                     "changeType": "0",
                     "value": "globalVars(\"debug\") ? \"724331079619706910\" : \"547530904453775390\"",
