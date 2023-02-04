@@ -26,6 +26,26 @@
             "name": "Check Variable"
         },
         {
+            "member": "6",
+            "varName": "",
+            "info": "0",
+            "storage": "1",
+            "varName2": "member",
+            "name": "Store Member Info"
+        },
+        {
+            "storage": "1",
+            "varName": "member",
+            "comparison": "0",
+            "value": "",
+            "branch": {
+                "iftrue": "3",
+                "iffalse": "0",
+                "iftrueVal": "1"
+            },
+            "name": "Check Variable"
+        },
+        {
             "member": "1",
             "varName": "",
             "info": "0",

@@ -1,0 +1,16 @@
+{
+    "name": "Level anzeigen",
+    "permissions": "NONE",
+    "permissions2": "NONE",
+    "restriction": "1",
+    "_id": "kKTsR",
+    "actions": [
+        {
+            "source": "TzGgh",
+            "type": "true",
+            "name": "Call Command/Event"
+        }
+    ],
+    "comType": "5",
+    "description": "Level und XP eines Nutzers"
+}
