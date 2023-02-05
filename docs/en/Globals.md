@@ -134,6 +134,18 @@ console.log(readableType); // Slash Command
 ```
 
 
+## Break Text | ${`globalVars("breakText")`}
+
+A function to break texts if needed and replace the end with break characters. Example:
+```js
+let text1 = "DBM German";
+let text2 = "DBM German Bot";
+console.log(globalVars("breakText")(text1, 10)); // DBM German
+console.log(globalVars("breakText")(text2, 10)); // DBM Ger...
+console.log(globalVars("breakText")(text2, 10, " [...]")); // DBM  [...]
+```
+
+
 ## Replacement Nicknames | ${`globalVars("replacement-nicknames")`}
 
 A list of male and female nickname replacements for users who have nicknames with characters that aren't available on a keyboard with QWERTZ layout.

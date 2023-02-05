@@ -183,9 +183,17 @@
                 {
                     "behavior": "0",
                     "interpretation": "1",
-                    "code": "// Create a function  to resolve command types to names\n// Erstelle eine Funktion, um Befehlsarten in Namen aufzulösen\n\nconst TYPES = globalVars(\"commandTypes\");\nconst NAMES = globalVars(\"commandTypeNames\");\n\nconst resolveCommandType = function(commandType) {\n    if(!Object.values(TYPES).includes(commandType)) return \"Manual Command\";\n    return NAMES[commandType];\n}\n\nresolveCommandType;",
+                    "code": "// Create a function to resolve command types to names\n// Erstelle eine Funktion, um Befehlsarten in Namen aufzulösen\n\nconst TYPES = globalVars(\"commandTypes\");\nconst NAMES = globalVars(\"commandTypeNames\");\n\nconst resolveCommandType = function(commandType) {\n    if(!Object.values(TYPES).includes(commandType)) return \"Manual Command\";\n    return NAMES[commandType];\n}\n\nresolveCommandType;",
                     "storage": "3",
                     "varName": "resolveCommandType",
+                    "name": "Run Script"
+                },
+                {
+                    "behavior": "0",
+                    "interpretation": "1",
+                    "code": "// Create a function to break texts if needed and replace the end with break characters\n// Erstelle eine Funktion, um Texte falls nötig abzubrechen und das Ende mit Abbruchzeichen zu ersetzen\n\nconst breakText = function(text, maxLength, breakCharacters = \"...\") {\n    if(text?.length > maxLength) return text.substring(0, maxLength - breakCharacters.length) + breakCharacters;\n\n    return text;\n} \n\nbreakText;",
+                    "storage": "3",
+                    "varName": "breakText",
                     "name": "Run Script"
                 },
                 {
