@@ -1,0 +1,307 @@
+{
+    "name": "Level",
+    "permissions": "NONE",
+    "permissions2": "NONE",
+    "restriction": "1",
+    "_id": "TzGgh",
+    "actions": [
+        {
+            "member": "5",
+            "varName": "Nutzer",
+            "info": "0",
+            "storage": "1",
+            "varName2": "member",
+            "name": "Store Member Info"
+        },
+        {
+            "storage": "1",
+            "varName": "member",
+            "comparison": "0",
+            "value": "",
+            "branch": {
+                "iftrue": "3",
+                "iffalse": "0",
+                "iftrueVal": "1"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "member": "6",
+            "varName": "",
+            "info": "0",
+            "storage": "1",
+            "varName2": "member",
+            "name": "Store Member Info"
+        },
+        {
+            "storage": "1",
+            "varName": "member",
+            "comparison": "0",
+            "value": "",
+            "branch": {
+                "iftrue": "3",
+                "iffalse": "0",
+                "iftrueVal": "1"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "member": "1",
+            "varName": "",
+            "info": "0",
+            "storage": "1",
+            "varName2": "member",
+            "name": "Store Member Info"
+        },
+        {
+            "member": "2",
+            "varName": "member",
+            "info": "3",
+            "storage": "1",
+            "varName2": "displayname",
+            "name": "Store Member Info"
+        },
+        {
+            "member": "2",
+            "varName": "member",
+            "info": "16",
+            "storage": "1",
+            "varName2": "avatar",
+            "name": "Store Member Info"
+        },
+        {
+            "storage": "1",
+            "varName": "isBot",
+            "changeType": "0",
+            "value": "tempVars(\"member\").user.bot",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "isBot",
+            "comparison": "1",
+            "value": "true",
+            "branch": {
+                "iftrue": "4",
+                "iffalse": "0",
+                "iftrueVal": "bot-easter-egg"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "member": "2",
+            "varName": "member",
+            "dataName": "level",
+            "defaultVal": "1",
+            "storage": "1",
+            "varName2": "level",
+            "name": "Store Member Data"
+        },
+        {
+            "member": "2",
+            "varName": "member",
+            "dataName": "xp",
+            "defaultVal": "0",
+            "storage": "1",
+            "varName2": "xp",
+            "name": "Store Member Data"
+        },
+        {
+            "storage": "1",
+            "varName": "requiredXp",
+            "changeType": "0",
+            "value": "tempVars(\"level\") * 10",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "rank",
+            "changeType": "0",
+            "value": "1",
+            "name": "Control Variable"
+        },
+        {
+            "list": "0",
+            "varName": "",
+            "tempVarName": "loopMember",
+            "type": "true",
+            "actions": [
+                {
+                    "member": "2",
+                    "varName": "loopMember",
+                    "dataName": "level",
+                    "defaultVal": "1",
+                    "storage": "1",
+                    "varName2": "loopLevel",
+                    "name": "Store Member Data"
+                },
+                {
+                    "member": "2",
+                    "varName": "loopMember",
+                    "dataName": "xp",
+                    "defaultVal": "0",
+                    "storage": "1",
+                    "varName2": "loopXp",
+                    "name": "Store Member Data"
+                },
+                {
+                    "storage": "1",
+                    "varName": "level",
+                    "branches": [
+                        {
+                            "comparison": "1",
+                            "value": "tempVars(\"loopLevel\")",
+                            "actions": [
+                                {
+                                    "storage": "1",
+                                    "varName": "xp",
+                                    "comparison": "3",
+                                    "value": "tempVars(\"loopXp\")",
+                                    "branch": {
+                                        "iftrue": "0",
+                                        "iffalse": "1"
+                                    },
+                                    "name": "Check Variable"
+                                },
+                                {
+                                    "storage": "1",
+                                    "varName": "rank",
+                                    "changeType": "1",
+                                    "value": "1",
+                                    "name": "Control Variable"
+                                }
+                            ]
+                        },
+                        {
+                            "comparison": "3",
+                            "value": "tempVars(\"loopLevel\")",
+                            "actions": [
+                                {
+                                    "storage": "1",
+                                    "varName": "rank",
+                                    "changeType": "1",
+                                    "value": "1",
+                                    "name": "Control Variable"
+                                }
+                            ]
+                        }
+                    ],
+                    "name": "Multi-Check Variable"
+                }
+            ],
+            "name": "Loop Through List"
+        },
+        {
+            "storage": "1",
+            "varName": "title",
+            "changeType": "0",
+            "value": "`Level – ${tempVars(\"displayname\")}`",
+            "name": "Control Variable"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "`**Level:** ${tempVars(\"level\")}\n**XP:** ${tempVars(\"xp\")}/${tempVars(\"requiredXp\")}\n**Rang:** #${tempVars(\"rank\")}`;",
+            "storage": "1",
+            "varName": "description",
+            "name": "Run Script"
+        },
+        {
+            "storage": "1",
+            "varName": "level",
+            "comparison": "4",
+            "value": "99",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "3",
+                "iffalseVal": "1"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "image",
+            "changeType": "0",
+            "value": "\"https://c.tenor.com/goq48dvYSFYAAAAC/tenor.gif\"",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "thumbnail",
+            "changeType": "0",
+            "value": "tempVars(\"avatar\")",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "channel",
+            "changeType": "0",
+            "value": "channel",
+            "name": "Control Variable"
+        },
+        {
+            "source": "FGdiL",
+            "type": "true",
+            "name": "Call Command/Event"
+        },
+        {
+            "name": "End Action Sequence"
+        },
+        {
+            "anchorName": "bot-easter-egg",
+            "name": "Action Anchor"
+        },
+        {
+            "storage": "1",
+            "varName": "title",
+            "changeType": "0",
+            "value": "`Level – ${tempVars(\"displayname\")}`",
+            "name": "Control Variable"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "`**Level:** ¯\\\\\\_(ツ)\\_/¯\n**XP:** ┬─┬ノ( º \\_ ºノ)\n**Rang:** (╯°□°)╯︵ ┻━┻`;",
+            "storage": "1",
+            "varName": "description",
+            "name": "Run Script"
+        },
+        {
+            "storage": "1",
+            "varName": "image",
+            "changeType": "0",
+            "value": "\"https://media.tenor.com/2XYeiMKRnG8AAAAC/wait-thats-illegal-halo.gif\"",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "thumbnail",
+            "changeType": "0",
+            "value": "tempVars(\"avatar\")",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "channel",
+            "changeType": "0",
+            "value": "channel",
+            "name": "Control Variable"
+        },
+        {
+            "source": "FGdiL",
+            "type": "true",
+            "name": "Call Command/Event"
+        }
+    ],
+    "comType": "4",
+    "description": "Level und XP eines Nutzers",
+    "parameters": [
+        {
+            "name": "Nutzer",
+            "description": "Anderer Nutzer",
+            "type": "USER",
+            "required": false,
+            "choices": null
+        }
+    ]
+}

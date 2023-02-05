@@ -1,0 +1,183 @@
+{
+    "name": "Nutzerinfo",
+    "permissions": "NONE",
+    "permissions2": "NONE",
+    "restriction": "1",
+    "_id": "rnVWb",
+    "actions": [
+        {
+            "member": "5",
+            "varName": "Nutzer",
+            "info": "0",
+            "storage": "1",
+            "varName2": "member",
+            "name": "Store Member Info"
+        },
+        {
+            "storage": "1",
+            "varName": "member",
+            "comparison": "0",
+            "value": "",
+            "branch": {
+                "iftrue": "3",
+                "iffalse": "0",
+                "iftrueVal": "1"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "member": "6",
+            "varName": "",
+            "info": "0",
+            "storage": "1",
+            "varName2": "member",
+            "name": "Store Member Info"
+        },
+        {
+            "storage": "1",
+            "varName": "member",
+            "comparison": "0",
+            "value": "",
+            "branch": {
+                "iftrue": "3",
+                "iffalse": "0",
+                "iftrueVal": "1"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "member": "1",
+            "varName": "",
+            "info": "0",
+            "storage": "1",
+            "varName2": "member",
+            "name": "Store Member Info"
+        },
+        {
+            "member": "2",
+            "varName": "member",
+            "info": "3",
+            "storage": "1",
+            "varName2": "displayname",
+            "name": "Store Member Info"
+        },
+        {
+            "member": "2",
+            "varName": "member",
+            "info": "16",
+            "storage": "1",
+            "varName2": "avatar",
+            "name": "Store Member Info"
+        },
+        {
+            "member": "2",
+            "varName": "member",
+            "info": "1",
+            "storage": "1",
+            "varName2": "id",
+            "name": "Store Member Info"
+        },
+        {
+            "member": "2",
+            "varName": "member",
+            "info": "21",
+            "storage": "1",
+            "varName2": "tag",
+            "name": "Store Member Info"
+        },
+        {
+            "member": "2",
+            "varName": "member",
+            "dataName": "level",
+            "defaultVal": "1",
+            "storage": "1",
+            "varName2": "level",
+            "name": "Store Member Data"
+        },
+        {
+            "member": "2",
+            "varName": "member",
+            "dataName": "xp",
+            "defaultVal": "0",
+            "storage": "1",
+            "varName2": "xp",
+            "name": "Store Member Data"
+        },
+        {
+            "storage": "1",
+            "varName": "requiredXp",
+            "changeType": "0",
+            "value": "tempVars(\"level\") * 10",
+            "name": "Control Variable"
+        },
+        {
+            "member": "2",
+            "varName": "member",
+            "info": "23",
+            "storage": "1",
+            "varName2": "created-timestamp",
+            "name": "Store Member Info"
+        },
+        {
+            "member": "2",
+            "varName": "member",
+            "info": "25",
+            "storage": "1",
+            "varName2": "joined-timestamp",
+            "name": "Store Member Info"
+        },
+        {
+            "member": "2",
+            "varName": "member",
+            "info": "15",
+            "storage": "1",
+            "varName2": "status",
+            "name": "Store Member Info"
+        },
+        {
+            "storage": "1",
+            "varName": "title",
+            "changeType": "0",
+            "value": "`Nutzerinfo – ${tempVars(\"displayname\")}`",
+            "name": "Control Variable"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "`**ID:** ${tempVars(\"id\")}\n**Tag:** ${tempVars(\"tag\")}\n**Bot:** ${tempVars(\"member\").user.bot ? \"Ja\" : \"Nein\"}\n**Level:** ${tempVars(\"level\")}\n**XP:** ${tempVars(\"xp\")}/${tempVars(\"requiredXp\")}\n**Nitro Booster:** ${tempVars(\"member\").premiumSince ? \"Ja\" : \"Nein\"}\n**Erstellung des Accounts:** <t:${Math.round(tempVars(\"created-timestamp\") / 1000)}:F>\n**Beitritt des Servers:** <t:${Math.round(tempVars(\"joined-timestamp\") / 1000)}:F>`;",
+            "storage": "1",
+            "varName": "description",
+            "name": "Run Script"
+        },
+        {
+            "storage": "1",
+            "varName": "thumbnail",
+            "changeType": "0",
+            "value": "tempVars(\"avatar\")",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "channel",
+            "changeType": "0",
+            "value": "channel",
+            "name": "Control Variable"
+        },
+        {
+            "source": "FGdiL",
+            "type": "true",
+            "name": "Call Command/Event"
+        }
+    ],
+    "comType": "4",
+    "parameters": [
+        {
+            "name": "Nutzer",
+            "description": "Anderer Nutzer",
+            "type": "USER",
+            "required": false,
+            "choices": null
+        }
+    ],
+    "description": "Informationen über einen Nutzer"
+}

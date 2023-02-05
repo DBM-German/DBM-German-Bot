@@ -1,6 +1,6 @@
 {
     "name": "! Message Update",
-    "temp": "_",
+    "temp": "oldMessage",
     "event-type": "26",
     "_id": "nMLgc",
     "actions": [
@@ -11,6 +11,33 @@
             "storage": "1",
             "varName2": "member",
             "name": "Store Message Info"
+        },
+        {
+            "message": "1",
+            "varName": "oldMessage",
+            "info": "2",
+            "storage": "1",
+            "varName2": "oldText",
+            "name": "Store Message Info"
+        },
+        {
+            "message": "1",
+            "varName": "message",
+            "info": "2",
+            "storage": "1",
+            "varName2": "newText",
+            "name": "Store Message Info"
+        },
+        {
+            "storage": "1",
+            "varName": "oldText",
+            "comparison": "1",
+            "value": "tempVars(\"newText\")",
+            "branch": {
+                "iftrue": "1",
+                "iffalse": "0"
+            },
+            "name": "Check Variable"
         },
         {
             "source": "nGjuv",
