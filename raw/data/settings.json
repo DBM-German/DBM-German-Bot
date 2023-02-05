@@ -9,7 +9,8 @@
     "modules": {
         "discord.js": ["13.9.2", true],
         "fstorm": ["", true],
-        "jimp": ["", true]
+        "jimp": ["", true],
+        "vm2": ["3", true]
     },
     "ownerId": "282505671356710912",
     "invalidUserText": "Diese Aktion kann nur von der Person gestartet werden, welche den Befehl aufgerufen hat.",

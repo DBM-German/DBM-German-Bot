@@ -24,7 +24,8 @@
   "type": "module",
   "scripts": {
     "start": "cd bot && node bot.js",
-    "setup": "npm i && node utils/setup.js && node utils/to-dbm.js",
+    "setup": "npm i && node utils/setup.js && node utils/copy-code.js && node utils/to-dbm.js",
+    "copy-code": "node utils/copy-code.js",
     "to-dbm": "node utils/to-dbm.js",
     "to-raw": "node utils/to-raw.js"
   },

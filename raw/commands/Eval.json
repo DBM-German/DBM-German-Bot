@@ -1,0 +1,244 @@
+{
+    "name": "Eval",
+    "permissions": "NONE",
+    "permissions2": "NONE",
+    "restriction": "1",
+    "_id": "wchVI",
+    "actions": [
+        {
+            "storage": "1",
+            "varName": "eval-code",
+            "comparison": "10",
+            "value": "0",
+            "branch": {
+                "iftrue": "4",
+                "iffalse": "0",
+                "iftrueVal": "eval"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "storage": "4",
+            "varName": "Code",
+            "comparison": "10",
+            "value": "0",
+            "branch": {
+                "iftrue": "4",
+                "iffalse": "4",
+                "iftrueVal": "eval-param",
+                "iffalseVal": "eval-modal"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "name": "End Action Sequence"
+        },
+        {
+            "anchorName": "eval-param",
+            "name": "Action Anchor"
+        },
+        {
+            "storage": "1",
+            "varName": "eval-code",
+            "changeType": "0",
+            "value": "slashParams(\"Code\")",
+            "name": "Control Variable"
+        },
+        {
+            "anchorName": "eval",
+            "name": "Go To Action Anchor"
+        },
+        {
+            "name": "End Action Sequence"
+        },
+        {
+            "anchorName": "eval-modal",
+            "name": "Action Anchor"
+        },
+        {
+            "server": "0",
+            "varName": "",
+            "storage": "1",
+            "varName2": "bot",
+            "name": "Get Bot as Member"
+        },
+        {
+            "member": "2",
+            "varName": "bot",
+            "info": "16",
+            "storage": "1",
+            "varName2": "avatarURL",
+            "name": "Store Member Info"
+        },
+        {
+            "channel": "0",
+            "varName": "",
+            "message": "",
+            "buttons": [
+                {
+                    "name": "Editor öffnen",
+                    "type": "SECONDARY",
+                    "id": "msg-button-b99105c",
+                    "row": "",
+                    "url": "",
+                    "emoji": "",
+                    "mode": "MULTIPERSONAL",
+                    "time": "",
+                    "actions": [
+                        {
+                            "title": "Eval - Editor",
+                            "textInputs": [
+                                {
+                                    "name": "Eingabe",
+                                    "placeholder": "return Math.random();",
+                                    "minLength": "0",
+                                    "maxLength": "4000",
+                                    "id": "modal-code",
+                                    "row": "",
+                                    "style": "PARAGRAPH",
+                                    "required": "true"
+                                }
+                            ],
+                            "name": "Show Modal"
+                        },
+                        {
+                            "storage": "0",
+                            "varName": "",
+                            "type": "allButtons",
+                            "searchValue": "",
+                            "name": "Remove Buttons and Selects"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "eval-code",
+                            "changeType": "0",
+                            "value": "tempVars(\"modal-code\")",
+                            "name": "Control Variable"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "edit",
+                            "changeType": "0",
+                            "value": "true",
+                            "name": "Control Variable"
+                        },
+                        {
+                            "source": "wchVI",
+                            "type": "true",
+                            "name": "Call Command/Event"
+                        }
+                    ]
+                }
+            ],
+            "selectMenus": [],
+            "attachments": [],
+            "embeds": [
+                {
+                    "title": "Eval",
+                    "url": "",
+                    "color": "${globalVars(\"default-color\")}",
+                    "timestamp": "false",
+                    "imageUrl": "",
+                    "thumbUrl": "",
+                    "description": "Verwende `/eval [code]` oder den Knopf unter dieser Nachricht, um JavaScript-Code auszuführen.\nSchadcode darf nicht ausgeführt werden.",
+                    "fields": [],
+                    "author": "",
+                    "authorUrl": "",
+                    "authorIcon": "",
+                    "footerText": "DBM German Bot v${globalVars(\"version\")}",
+                    "footerIconUrl": "${tempVars(\"avatarURL\")}"
+                }
+            ],
+            "reply": true,
+            "ephemeral": false,
+            "tts": false,
+            "overwrite": false,
+            "dontSend": false,
+            "editMessage": "0",
+            "editMessageVarName": "",
+            "storage": "0",
+            "varName2": "",
+            "name": "Send Message"
+        },
+        {
+            "name": "End Action Sequence"
+        },
+        {
+            "anchorName": "eval",
+            "name": "Action Anchor"
+        },
+        {
+            "storage": "1",
+            "varName": "eval-timestamp",
+            "changeType": "0",
+            "value": "Date.now()",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "title",
+            "changeType": "0",
+            "value": "\"Eval\"",
+            "name": "Control Variable"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "const EVAL_CODE_LENGTH = 1500;\n\n`Eingabe:\n\\`\\`\\`js\n${globalVars(\"breakText\")(tempVars(\"eval-code\"), EVAL_CODE_LENGTH)}\n\\`\\`\\`\nAusgabe:\n\\`\\`\\`js\nBitte warten...\n\\`\\`\\`\nKonsole:\n\\`\\`\\`cmd\nBitte warten...\n\\`\\`\\`\nExit Code:\n\\`\\`\\`\nBitte warten...\n\\`\\`\\`\n\nAusführung endet <t:${Math.ceil(tempVars(\"eval-timestamp\") / 1000) + 5}:R>`;",
+            "storage": "1",
+            "varName": "description",
+            "name": "Run Script"
+        },
+        {
+            "storage": "1",
+            "varName": "channel",
+            "changeType": "0",
+            "value": "channel",
+            "name": "Control Variable"
+        },
+        {
+            "source": "FGdiL",
+            "type": "true",
+            "name": "Call Command/Event"
+        },
+        {
+            "behavior": "1",
+            "interpretation": "1",
+            "code": "const { fork } = require(\"node:child_process\");\n\nconst controller = new AbortController();\nconst child = fork(\"./code/eval-worker.js\", { signal: controller.signal, silent: true , timeout: 5000 });\nlet consoleOutput = \"\";\n\nchild.send(tempVars(\"eval-code\"));\n\nchild.on(\"message\", message => {\n    let result;\n    try {\n        result = JSON.parse(message);\n    \n        if(result === undefined) throw new Error(\"No JSON-friendly result.\");\n    } catch(e) {\n        result = message;\n    }\n\n    this.storeValue(result, 1, \"eval-result\", cache);\n    this.storeValue(consoleOutput, 1, \"eval-console\", cache);\n});\n\nchild.on(\"error\", error => {\n    this.storeValue(error, 1, \"eval-error\", cache);\n    this.storeValue(consoleOutput, 1, \"eval-console\", cache);\n});\n\nchild.on(\"exit\", code => {\n    this.storeValue(code ?? 0, 1, \"eval-exit-code\", cache);\n    this.storeValue(consoleOutput, 1, \"eval-console\", cache);\n    this.callNextAction(cache);\n});\n\nchild.stdout.on(\"data\", data => {\n    consoleOutput += data.toString();\n});\n\nchild.stderr.on(\"data\", data => {\n    consoleOutput += data.toString();\n});",
+            "storage": "0",
+            "varName": "",
+            "name": "Run Script"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "const EVAL_CODE_LENGTH = 1500;\nconst EVAL_CONTENT_LENGTH = 2000;\nconst EVAL_CONSOLE_LENGTH = 2000;\nconst EVAL_EXIT_CODE_LENGTH = 500;\nconst INVISIBLE_CHAR = \"ㅤ\";\n\nlet content = tempVars(\"eval-result\");\nlet contentName = \"Ausgabe\";\n\nif(tempVars(\"eval-error\")) {\n    content = tempVars(\"eval-error\");\n    contentName = \"Error\";\n}\n\n`Eingabe:\n\\`\\`\\`js\n${globalVars(\"breakText\")(tempVars(\"eval-code\"), EVAL_CODE_LENGTH)}\n\\`\\`\\`\n${contentName}:\n\\`\\`\\`js\n${globalVars(\"breakText\")(String(content?.toString()), EVAL_CONTENT_LENGTH)}\n\\`\\`\\`\nKonsole:\n\\`\\`\\`cmd\n${tempVars(\"eval-console\")?.length > 0 ? globalVars(\"breakText\")(tempVars(\"eval-console\"), EVAL_CONSOLE_LENGTH) : INVISIBLE_CHAR}\n\\`\\`\\`\nExit Code:\n\\`\\`\\`\n${globalVars(\"breakText\")(tempVars(\"eval-exit-code\"), EVAL_EXIT_CODE_LENGTH)}\n\\`\\`\\``;",
+            "storage": "1",
+            "varName": "description",
+            "name": "Run Script"
+        },
+        {
+            "storage": "1",
+            "varName": "edit",
+            "changeType": "0",
+            "value": "true",
+            "name": "Control Variable"
+        },
+        {
+            "source": "FGdiL",
+            "type": "true",
+            "name": "Call Command/Event"
+        }
+    ],
+    "comType": "4",
+    "description": "JavaScript-Code ausführen",
+    "parameters": [
+        {
+            "name": "Code",
+            "description": "Auszuführender Code",
+            "type": "STRING",
+            "required": false,
+            "choices": null
+        }
+    ]
+}
