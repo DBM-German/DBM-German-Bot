@@ -159,7 +159,7 @@
                 {
                     "behavior": "0",
                     "interpretation": "1",
-                    "code": "// Convert internal command objects to an usable DBM variable\n// Konvertiere interne Befehlsobjekte zu einer nutzbaren DBM-Variable\n\nconst { $slash: slashCmds, $cmds: textCmds } = this.getDBM().Bot;\n\nlet commands = [];\n\nfor(let cmds of [ slashCmds, textCmds ]) {\n    for(let { name, description, parameters, comType: type } of Object.values(cmds)) {\n        commands.push({ name, description, parameters, type  });\n    }\n}\n\ncommands;",
+                    "code": "// Convert internal command objects to an usable DBM variable\n// Konvertiere interne Befehlsobjekte zu einer nutzbaren DBM-Variable\n\nconst { $slash: slashCmds, $user: userCmds, $msge: msgCmds, $cmds: textCmds } = this.getDBM().Bot;\n\nlet commands = [];\n\nfor(let cmds of [ slashCmds, userCmds, msgCmds, textCmds ]) {\n    for(let { name, description, parameters, comType: type } of Object.values(cmds)) {\n        commands.push({ name, description, parameters, type  });\n    }\n}\n\ncommands.sort((a, b) => a.name.localeCompare(b.name) || a.type.localeCompare(b.type) || a.description?.localeCompare(b.description));",
                     "storage": "3",
                     "varName": "commands",
                     "name": "Run Script"
