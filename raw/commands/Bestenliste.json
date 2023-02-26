@@ -126,34 +126,86 @@
             "name": "Transform List"
         },
         {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "const MAX = 10;// Max member stats per page\n\nlet memberStatsPages = [];\nlet page = 0;// Current page\nlet count = 0;// Member stats count on current page\n\nfor(let statsText of tempVars(\"memberStatsTexts\")) {\n    if(typeof memberStatsPages[page] != \"string\") memberStatsPages[page] = \"\";\n\n    memberStatsPages[page] += `${statsText}\\n`;\n\n    if(++count >= MAX) {\n        count = 0;\n        page++;\n    }\n}\n\nmemberStatsPages;",
             "storage": "1",
-            "varName": "title",
-            "changeType": "0",
-            "value": "\"Bestenliste\"",
-            "name": "Control Variable"
-        },
-        {
-            "storage": "1",
-            "varName": "description",
-            "changeType": "0",
-            "value": "\"\"",
-            "name": "Control Variable"
+            "varName": "memberStatsPages",
+            "name": "Run Script"
         },
         {
             "list": "7",
-            "varName": "memberStatsTexts",
-            "tempVarName": "memberStatsText",
-            "type": "true",
-            "actions": [
-                {
-                    "storage": "1",
-                    "varName": "description",
-                    "changeType": "1",
-                    "value": "tempVars(\"memberStatsText\") + \"\\n\"",
-                    "name": "Control Variable"
-                }
-            ],
-            "name": "Loop Through List"
+            "varName": "memberStatsPages",
+            "storage": "1",
+            "varName2": "memberStatsPagesCount",
+            "name": "Get List Length"
+        },
+        {
+            "storage": "1",
+            "varName": "embeds",
+            "name": "Create List"
+        },
+        {
+            "storage": "1",
+            "varName": "loop",
+            "changeType": "0",
+            "value": "0",
+            "name": "Control Variable"
+        },
+        {
+            "anchorName": "loop-entry",
+            "name": "Action Anchor"
+        },
+        {
+            "title": "Bestenliste (Seite ${tempVars(\"loop\")+1}/${tempVars(\"memberStatsPagesCount\")})",
+            "author": "",
+            "color": "",
+            "timestamp": "false",
+            "url": "",
+            "authorIcon": "",
+            "imageUrl": "",
+            "thumbUrl": "",
+            "storage": "1",
+            "varName": "embed",
+            "name": "Create Embed Message"
+        },
+        {
+            "storage": "1",
+            "varName": "embed",
+            "message": "Verwende `/level [nutzer]`, um spezifischere Informationen zu erhalten.\n\n\n${tempVars(\"memberStatsPages\")[tempVars(\"loop\")]}",
+            "name": "Set Embed Description"
+        },
+        {
+            "storage": "1",
+            "varName": "embeds",
+            "addType": "0",
+            "position": "",
+            "value": "tempVars(\"embed\")",
+            "name": "Add Item to List"
+        },
+        {
+            "storage": "1",
+            "varName": "loop",
+            "changeType": "1",
+            "value": "1",
+            "name": "Control Variable"
+        },
+        {
+            "time": "0",
+            "measurement": "0",
+            "name": "Wait"
+        },
+        {
+            "storage": "1",
+            "varName": "loop",
+            "comparison": "1",
+            "value": "tempVars(\"memberStatsPagesCount\")",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "4",
+                "iffalseVal": "loop-entry"
+            },
+            "name": "Check Variable"
         },
         {
             "storage": "1",
@@ -163,7 +215,7 @@
             "name": "Control Variable"
         },
         {
-            "source": "FGdiL",
+            "source": "IVhmi",
             "type": "true",
             "name": "Call Command/Event"
         }
