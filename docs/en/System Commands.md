@@ -27,3 +27,8 @@ Send one of the predefined embeds.
 | Success Embed | Success        | Unused            |
 | Warning Embed | Warning        | Unused            |
 | Page Embed    | Page           | Unused            |
+
+
+## Werbeinfo
+
+Sends a short info about advertising in the game status or custom status.

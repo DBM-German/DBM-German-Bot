@@ -170,3 +170,18 @@ Eine Liste von männlichen und weiblichen Ersatznamen für Benutzer, die Nicknam
 ## Advertisement RegEx | ${`globalVars("advertisement-regex")`}
 
 Der reguläre Ausdruck, der verwendet wird, um Werbung in den Namen und Personalisierten Status zu erkennen.
+
+
+## Holiday | ${`globalVars("holiday")`}
+
+Falls der aktuelle Tag zur Laufzeit ein Feiertag sein sollte, wird dessen Name in der Variable gespeichert. An regulären Tagen ist ihr Wert `null`.
+
+
+## Is Nitro Booster | ${`globalVars("isNitroBooster")`}
+
+Eine Funktion zum Prüfen, ob ein Mitglied ein Nitro Booster ist. Beispiel:
+```js
+let member = tempVars("member");
+let status = globalVars("isNitroBooster")(member);
+console.log(status); // true / false
+```
