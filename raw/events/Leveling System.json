@@ -75,6 +75,13 @@
         },
         {
             "storage": "1",
+            "varName": "booster",
+            "changeType": "0",
+            "value": "globalVars(\"isNitroBooster\")(tempVars(\"member\"))",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
             "varName": "messageTimestamp",
             "comparison": "4",
             "value": "tempVars(\"xpTimestamp\") + 10000",
@@ -83,6 +90,51 @@
                 "iffalse": "1"
             },
             "name": "Check Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "multiplier",
+            "changeType": "0",
+            "value": "1",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "3",
+            "varName": "holiday",
+            "comparison": "0",
+            "value": "",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "3",
+                "iffalseVal": "1"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "multiplier",
+            "changeType": "1",
+            "value": "1",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "booster",
+            "comparison": "1",
+            "value": "true",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "3",
+                "iffalseVal": "1"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "multiplier",
+            "changeType": "1",
+            "value": "1",
+            "name": "Control Variable"
         },
         {
             "storage": "1",
@@ -96,7 +148,7 @@
                             "storage": "1",
                             "varName": "newXp",
                             "changeType": "0",
-                            "value": "tempVars(\"xp\") + 1",
+                            "value": "tempVars(\"xp\") + 1 * tempVars(\"multiplier\")",
                             "name": "Control Variable"
                         }
                     ]
@@ -109,7 +161,7 @@
                             "storage": "1",
                             "varName": "newXp",
                             "changeType": "0",
-                            "value": "tempVars(\"xp\") + 2",
+                            "value": "tempVars(\"xp\") + 2 * tempVars(\"multiplier\")",
                             "name": "Control Variable"
                         }
                     ]
@@ -122,7 +174,7 @@
                             "storage": "1",
                             "varName": "newXp",
                             "changeType": "0",
-                            "value": "tempVars(\"xp\") + 3",
+                            "value": "tempVars(\"xp\") + 3 * tempVars(\"multiplier\")",
                             "name": "Control Variable"
                         }
                     ]
@@ -135,7 +187,7 @@
                             "storage": "1",
                             "varName": "newXp",
                             "changeType": "0",
-                            "value": "tempVars(\"xp\") + 4",
+                            "value": "tempVars(\"xp\") + 4 * tempVars(\"multiplier\")",
                             "name": "Control Variable"
                         }
                     ]
