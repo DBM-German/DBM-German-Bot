@@ -1,0 +1,13 @@
+{
+    "name": "! On Interval [1h]",
+    "temp": "3600",
+    "event-type": "3",
+    "_id": "RjzKP",
+    "actions": [
+        {
+            "source": "CmzVR",
+            "type": "true",
+            "name": "Call Command/Event"
+        }
+    ]
+}
