@@ -1,0 +1,443 @@
+{
+    "name": "Feiertage prüfen",
+    "temp": "",
+    "event-type": "0",
+    "_id": "CmzVR",
+    "actions": [
+        {
+            "storage": "1",
+            "varName": "day-in-ms",
+            "changeType": "0",
+            "value": "86400000",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "current-date",
+            "changeType": "0",
+            "value": "new Date()",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "current-date-ts",
+            "changeType": "0",
+            "value": "tempVars(\"current-date\").getTime()",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "current-date-month",
+            "changeType": "0",
+            "value": "tempVars(\"current-date\").getMonth()",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "current-date-day",
+            "changeType": "0",
+            "value": "new Date().getDate()",
+            "name": "Control Variable"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "// Easter sunday\n// Ostersonntag\n\nconst now = new Date();\nconst year = now.getFullYear();\n\nconst a = year % 19;\nconst b = Math.floor(year / 100);\nconst c = year % 100;\nconst d = Math.floor(b / 4);\nconst e = b % 4;\nconst f = Math.floor((b + 8) / 25);\nconst g = Math.floor((b - f + 1) / 3);\nconst h = (19*a + b - d - g + 15) % 30;\nconst i = Math.floor(c / 4);\nconst k = c % 4;\nconst l = (32 + 2*e + 2*i - h - k) % 7;\nconst m = Math.floor((a + 11*h + 22*l) / 451);\nconst n = Math.floor((h + l - 7*m + 114) / 31);\nconst o = (h + l - 7*m + 114) % 31;\n\nconst easterDay = o + 1;\nconst easterMonth = n;\n\nnew Date(year, easterMonth - 1, easterDay);\n\n// https://de.wikipedia.org/wiki/Gesetzliche_Feiertage_in_Deutschland (2023-04-30)\n// https://de.wikipedia.org/wiki/Osterdatum (2023-04-30)\n// https://de.wikipedia.org/wiki/Spencers_Osterformel (2023-04-30)",
+            "storage": "1",
+            "varName": "easter-sunday",
+            "name": "Run Script"
+        },
+        {
+            "storage": "1",
+            "varName": "easter-sunday-ts",
+            "changeType": "0",
+            "value": "tempVars(\"easter-sunday\").getTime();",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "holidays",
+            "name": "Create List"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "// New Year\n// Neujahr\n\nnew Date(tempVars(\"current-date\").getFullYear(), 0, 1);",
+            "storage": "1",
+            "varName": "new-year",
+            "name": "Run Script"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "// Epiphany\n// Heilige Drei Könige\n\nnew Date(tempVars(\"current-date\").getFullYear(), 0, 6);",
+            "storage": "1",
+            "varName": "epiphany",
+            "name": "Run Script"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "// International Women's Day\n// Internationaler Frauentag\n\nnew Date(tempVars(\"current-date\").getFullYear(), 2, 8);",
+            "storage": "1",
+            "varName": "womens-day",
+            "name": "Run Script"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "// Good Friday\n// Karfreitag\n\nnew Date(tempVars(\"easter-sunday-ts\") - 2 * tempVars(\"day-in-ms\"));",
+            "storage": "1",
+            "varName": "good-friday",
+            "name": "Run Script"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "// Easter monday\n// Ostermontag\n\nnew Date(tempVars(\"easter-sunday-ts\") + 1 * tempVars(\"day-in-ms\"));",
+            "storage": "1",
+            "varName": "easter-monday",
+            "name": "Run Script"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "// Labour Day\n// Tag der Arbeit\n\nnew Date(tempVars(\"current-date\").getFullYear(), 4, 1);",
+            "storage": "1",
+            "varName": "labour-day",
+            "name": "Run Script"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "// Feast of the Ascension\n// Christi Himmelfahrt\n\nnew Date(tempVars(\"easter-sunday-ts\") + 39 * tempVars(\"day-in-ms\"));",
+            "storage": "1",
+            "varName": "feast-of-the-ascension",
+            "name": "Run Script"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "// Whit sunday\n// Pfingstsonntag\n\nnew Date(tempVars(\"easter-sunday-ts\") + 49 * tempVars(\"day-in-ms\"));",
+            "storage": "1",
+            "varName": "whit-sunday",
+            "name": "Run Script"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "// Whit monday\n// Pfingstmontag\n\nnew Date(tempVars(\"easter-sunday-ts\") + 50 * tempVars(\"day-in-ms\"));",
+            "storage": "1",
+            "varName": "whit-monday",
+            "name": "Run Script"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "// Feast of Corpus Christi\n// Fronleichnam\n\nnew Date(tempVars(\"easter-sunday-ts\") + 60 * tempVars(\"day-in-ms\"));",
+            "storage": "1",
+            "varName": "feast-of-corpus-christi",
+            "name": "Run Script"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "// Assumption of Mary\n// Mariä Himmelfahrt\n\nnew Date(tempVars(\"current-date\").getFullYear(), 7, 15);",
+            "storage": "1",
+            "varName": "assumption-of-mary",
+            "name": "Run Script"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "// World Children's Day\n// Weltkindertag\n\nnew Date(tempVars(\"current-date\").getFullYear(), 8, 20);",
+            "storage": "1",
+            "varName": "world-childrens-day",
+            "name": "Run Script"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "// German Unity Day\n// Tag der Deutschen Einheit\n\nnew Date(tempVars(\"current-date\").getFullYear(), 9, 3);",
+            "storage": "1",
+            "varName": "german-unity-day",
+            "name": "Run Script"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "// Reformation Day\n// Reformationstag\n\nnew Date(tempVars(\"current-date\").getFullYear(), 9, 31);",
+            "storage": "1",
+            "varName": "reformation-day",
+            "name": "Run Script"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "// All Saints' Day\n// Allerheiligen\n\nnew Date(tempVars(\"current-date\").getFullYear(), 10, 1);",
+            "storage": "1",
+            "varName": "all-saints-day",
+            "name": "Run Script"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "// 1. Christmas Day\n// 1. Weihnachtsfeiertag\n\nnew Date(tempVars(\"current-date\").getFullYear(), 11, 25);",
+            "storage": "1",
+            "varName": "1st-christmas-day",
+            "name": "Run Script"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "// 2. Christmas Day\n// 2. Weihnachtsfeiertag\n\nnew Date(tempVars(\"current-date\").getFullYear(), 11, 26);",
+            "storage": "1",
+            "varName": "2st-christmas-day",
+            "name": "Run Script"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "// Day of Repentance and Prayer\n// Buß- und Bettag\n\nconst weekday = tempVars(\"1st-christmas-day\").getDay(); // Sunday - Saturday, 0 - 6\n\nlet ts = tempVars(\"1st-christmas-day\").getTime();\nts -= weekday * tempVars(\"day-in-ms\"); // Calculate sunday at / before 1. Christmas Day\nts -= (weekday == 0 ? 4 : 3) * 7 * tempVars(\"day-in-ms\"); // Calculate sunday four weeks earlier (1. Advent)\n\nnew Date(ts - 11 * tempVars(\"day-in-ms\"));",
+            "storage": "1",
+            "varName": "day-of-repentance-and-prayer",
+            "name": "Run Script"
+        },
+        {
+            "storage": "1",
+            "varName": "holidays",
+            "addType": "0",
+            "position": "",
+            "value": "({ name: \"Neujahr\", date: tempVars(\"new-year\") })",
+            "name": "Add Item to List"
+        },
+        {
+            "storage": "1",
+            "varName": "holidays",
+            "addType": "0",
+            "position": "",
+            "value": "({ name: \"Heilige Drei Könige\", date: tempVars(\"epiphany\") })",
+            "name": "Add Item to List"
+        },
+        {
+            "storage": "1",
+            "varName": "holidays",
+            "addType": "0",
+            "position": "",
+            "value": "({ name: \"Frauentag\", date: tempVars(\"womens-day\") })",
+            "name": "Add Item to List"
+        },
+        {
+            "storage": "1",
+            "varName": "holidays",
+            "addType": "0",
+            "position": "",
+            "value": "({ name: \"Karfreitag\", date: tempVars(\"good-friday\") })",
+            "name": "Add Item to List"
+        },
+        {
+            "storage": "1",
+            "varName": "holidays",
+            "addType": "0",
+            "position": "",
+            "value": "({ name: \"Ostersonntag\", date: tempVars(\"easter-sunday\") })",
+            "name": "Add Item to List"
+        },
+        {
+            "storage": "1",
+            "varName": "holidays",
+            "addType": "0",
+            "position": "",
+            "value": "({ name: \"Ostermontag\", date: tempVars(\"easter-monday\") })",
+            "name": "Add Item to List"
+        },
+        {
+            "storage": "1",
+            "varName": "holidays",
+            "addType": "0",
+            "position": "",
+            "value": "({ name: \"Tag der Arbeit\", date: tempVars(\"labour-day\") })",
+            "name": "Add Item to List"
+        },
+        {
+            "storage": "1",
+            "varName": "holidays",
+            "addType": "0",
+            "position": "",
+            "value": "({ name: \"Christi-Himmelfahrt\", date: tempVars(\"feast-of-the-ascension\") })",
+            "name": "Add Item to List"
+        },
+        {
+            "storage": "1",
+            "varName": "holidays",
+            "addType": "0",
+            "position": "",
+            "value": "({ name: \"Pfingstsonntag\", date: tempVars(\"whit-sunday\") })",
+            "name": "Add Item to List"
+        },
+        {
+            "storage": "1",
+            "varName": "holidays",
+            "addType": "0",
+            "position": "",
+            "value": "({ name: \"Pfingstmontag\", date: tempVars(\"whit-monday\") })",
+            "name": "Add Item to List"
+        },
+        {
+            "storage": "1",
+            "varName": "holidays",
+            "addType": "0",
+            "position": "",
+            "value": "({ name: \"Fronleichnam\", date: tempVars(\"feast-of-corpus-christi\") })",
+            "name": "Add Item to List"
+        },
+        {
+            "storage": "1",
+            "varName": "holidays",
+            "addType": "0",
+            "position": "",
+            "value": "({ name: \"Mariä Himmelfahrt\", date: tempVars(\"assumption-of-mary\") })",
+            "name": "Add Item to List"
+        },
+        {
+            "storage": "1",
+            "varName": "holidays",
+            "addType": "0",
+            "position": "",
+            "value": "({ name: \"Weltkindertag\", date: tempVars(\"world-childrens-day\") })",
+            "name": "Add Item to List"
+        },
+        {
+            "storage": "1",
+            "varName": "holidays",
+            "addType": "0",
+            "position": "",
+            "value": "({ name: \"Tag der Deutschen Einheit\", date: tempVars(\"german-unity-day\") })",
+            "name": "Add Item to List"
+        },
+        {
+            "storage": "1",
+            "varName": "holidays",
+            "addType": "0",
+            "position": "",
+            "value": "({ name: \"Reformationstag\", date: tempVars(\"reformation-day\") })",
+            "name": "Add Item to List"
+        },
+        {
+            "storage": "1",
+            "varName": "holidays",
+            "addType": "0",
+            "position": "",
+            "value": "({ name: \"Allerheiligen\", date: tempVars(\"all-saints-day\") })",
+            "name": "Add Item to List"
+        },
+        {
+            "storage": "1",
+            "varName": "holidays",
+            "addType": "0",
+            "position": "",
+            "value": "({ name: \"Buß- und Bettag\", date: tempVars(\"day-of-repentance-and-prayer\") })",
+            "name": "Add Item to List"
+        },
+        {
+            "storage": "1",
+            "varName": "holidays",
+            "addType": "0",
+            "position": "",
+            "value": "({ name: \"1. Weihnachtsfeiertag\", date: tempVars(\"1st-christmas-day\") })",
+            "name": "Add Item to List"
+        },
+        {
+            "storage": "1",
+            "varName": "holidays",
+            "addType": "0",
+            "position": "",
+            "value": "({ name: \"2. Weihnachtsfeiertag\", date: tempVars(\"2st-christmas-day\") })",
+            "name": "Add Item to List"
+        },
+        {
+            "storage": "1",
+            "varName": "holiday-found",
+            "changeType": "0",
+            "value": "false",
+            "name": "Control Variable"
+        },
+        {
+            "list": "7",
+            "varName": "holidays",
+            "tempVarName": "holiday",
+            "type": "true",
+            "actions": [
+                {
+                    "storage": "1",
+                    "varName": "holiday-day",
+                    "changeType": "0",
+                    "value": "tempVars(\"holiday\").date.getDate()",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "1",
+                    "varName": "holiday-month",
+                    "changeType": "0",
+                    "value": "tempVars(\"holiday\").date.getMonth()",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "1",
+                    "varName": "current-date-month",
+                    "comparison": "1",
+                    "value": "tempVars(\"holiday-month\")",
+                    "branch": {
+                        "iftrue": "0",
+                        "iffalse": "1"
+                    },
+                    "name": "Check Variable"
+                },
+                {
+                    "storage": "1",
+                    "varName": "current-date-day",
+                    "comparison": "1",
+                    "value": "tempVars(\"holiday-day\")",
+                    "branch": {
+                        "iftrue": "0",
+                        "iffalse": "1"
+                    },
+                    "name": "Check Variable"
+                },
+                {
+                    "storage": "3",
+                    "varName": "holiday",
+                    "changeType": "0",
+                    "value": "tempVars(\"holiday\").name",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "1",
+                    "varName": "holiday-found",
+                    "changeType": "0",
+                    "value": "true",
+                    "name": "Control Variable"
+                }
+            ],
+            "name": "Loop Through List"
+        },
+        {
+            "storage": "1",
+            "varName": "holiday-found",
+            "comparison": "1",
+            "value": "true",
+            "branch": {
+                "iftrue": "1",
+                "iffalse": "0"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "storage": "3",
+            "varName": "holiday",
+            "changeType": "0",
+            "value": "null",
+            "name": "Control Variable"
+        }
+    ]
+}

@@ -170,3 +170,18 @@ A list of male and female nickname replacements for users who have nicknames wit
 ## Advertisement RegEx | ${`globalVars("advertisement-regex")`}
 
 The regular expression used to detect ads in the names and custom status of users.
+
+
+## Holiday | ${`globalVars("holiday")`}
+
+If the current day at runtime is a German holiday, its name will be stored in the variable. On regular days the value is `null`.
+
+
+## Is Nitro Booster | ${`globalVars("isNitroBooster")`}
+
+A function to check if a member is a Nitro booster. Example:
+```js
+let member = tempVars("member");
+let status = globalVars("isNitroBooster")(member);
+console.log(status); // true / false
+```

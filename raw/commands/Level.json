@@ -201,7 +201,7 @@
         {
             "behavior": "0",
             "interpretation": "1",
-            "code": "`**Level:** ${tempVars(\"level\")}\n**XP:** ${tempVars(\"xp\")}/${tempVars(\"requiredXp\")}\n**Rang:** #${tempVars(\"rank\")}`;",
+            "code": "let description = `**Level:** ${tempVars(\"level\")}\n**XP:** ${tempVars(\"xp\")}/${tempVars(\"requiredXp\")}\n**Rang:** #${tempVars(\"rank\")}`;\n\nlet multiplier = 1;\n\nif(globalVars(\"holiday\")) {\n    if(multiplier == 1) description += `\\n\\n${globalVars(\"holiday\")}`;\n    multiplier += 1;\n}\nif(globalVars(\"isNitroBooster\")(tempVars(\"member\"))) {\n    if(multiplier == 1) description += `\\n\\nNitro Booster`;\n    multiplier += 1;\n}\n\nswitch(multiplier) {\n    case 3:\n        description += \" – **dreifache XP!**\";\n        break;\n    case 2:\n        description += \" – **zweifache XP!**\";\n        break;\n    case 1:\n    default:\n        break;\n}\n\ndescription;",
             "storage": "1",
             "varName": "description",
             "name": "Run Script"

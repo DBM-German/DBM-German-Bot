@@ -575,6 +575,19 @@
                     "changeType": "0",
                     "value": "/([-a-zA-Z0-9@:%_\\+.~#?&/=]{2,256}\\.[a-z]{2,64}\\b(\\/[-a-zA-Z0-9@:%_\\+.~#?&/=]*)?(?<!tenor\\.com\\2?|giphy\\.com\\2?))|(\\.gg\\/[-a-zA-Z0-9@:%_\\+.~#?&/=]+)/i",
                     "name": "Control Variable"
+                },
+                {
+                    "source": "CmzVR",
+                    "type": "true",
+                    "name": "Call Command/Event"
+                },
+                {
+                    "behavior": "0",
+                    "interpretation": "1",
+                    "code": "// Create a function to check if a member is a Nitro booster\n// Erstelle eine Funktion zum Prüfen, ob ein Mitglied ein Nitro Booster ist\n\nconst isNitroBooster = function(member) {\n    return !!member.premiumSince;\n}\n\nisNitroBooster;",
+                    "storage": "3",
+                    "varName": "isNitroBooster",
+                    "name": "Run Script"
                 }
             ],
             "name": "Action Container"

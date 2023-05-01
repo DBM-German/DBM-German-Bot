@@ -1,6 +1,5 @@
 {
     "recommendations": [
-        "jasonnutter.search-node-modules",   // Required
         "christian-kohler.npm-intellisense", // Required
         "christian-kohler.path-intellisense",// Required
         "bierner.github-markdown-preview",   // Semi-optional

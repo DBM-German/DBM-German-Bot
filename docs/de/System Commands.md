@@ -27,3 +27,8 @@ Eines der vordefinierten Embeds versenden.
 | Success Embed | Success        | Ungenutzt         |
 | Warning Embed | Warning        | Ungenutzt         |
 | Page Embed    | Page           | Ungenutzt         |
+
+
+## Werbeinfo
+
+Sendet eine kurze Info bzgl. Werbung im Spielstatus bzw. benutzerdefinierten Status.

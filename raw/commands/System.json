@@ -850,6 +850,39 @@
                             "name": "Send Message"
                         }
                     ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"Werbeinfo\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "channel",
+                            "changeType": "0",
+                            "value": "channel",
+                            "name": "Control Variable"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "title",
+                            "changeType": "0",
+                            "value": "\"Werbung erkannt\"",
+                            "name": "Control Variable"
+                        },
+                        {
+                            "behavior": "0",
+                            "interpretation": "1",
+                            "code": "`Du wurdest ausgeblendet, da in deinem Spielstatus bzw. benutzerdefinierten Status Werbung erkannt wurde.\nBitte ändere deinen Status, um auf diesen Server zuzugreifen. Vielen Dank.`;",
+                            "storage": "1",
+                            "varName": "description",
+                            "name": "Run Script"
+                        },
+                        {
+                            "source": "FGdiL",
+                            "type": "true",
+                            "name": "Call Command/Event"
+                        }
+                    ]
                 }
             ],
             "name": "Multi-Check Variable"
@@ -875,6 +908,10 @@
                 {
                     "name": "neustarten",
                     "value": "neustarten"
+                },
+                {
+                    "name": "werbeinfo",
+                    "value": "Werbeinfo"
                 }
             ]
         },
