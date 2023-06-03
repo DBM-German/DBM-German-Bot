@@ -39,7 +39,7 @@ Die Warnungsfarbe des Bots (ffff3f).
 
 ## Main Server ID | ${`globalVars("main-server-id")`}
 
-Basierend darauf, ob `globalVars("version")` 'true' ist, die ID unseres DBM German Beta ("724330774257729647") oder DBM German-Servers ("488722832201613344").
+Basierend darauf, ob `globalVars("debug")` 'true' ist, die ID unseres DBM German Beta ("724330774257729647") oder DBM German-Servers ("488722832201613344").
 
 
 ## Team Server ID | ${`globalVars("team-server-id")`}
@@ -54,32 +54,42 @@ Die ID unseres gefälschten DBM German Team-Servers ("731837587836371024"). Dies
 
 ## Main Welcome / Goodbye Channel ID | ${`globalVars("main-welcome-goodbye-channel-id")`}
 
-Basierend darauf, ob `globalVars("version")` 'true' ist, die ID unseres DBM German Beta ("724330774966435852") oder DBM German Willkommen / Aufwiedersehen-Kanals ("488736789092237322").
+Basierend darauf, ob `globalVars("debug")` 'true' ist, die ID unseres DBM German Beta ("724330774966435852") oder DBM German Willkommen / Aufwiedersehen-Kanals ("488736789092237322").
 
 
 ## Team Welcome / Goodbye Channel ID | ${`globalVars("team-welcome-goodbye-channel-id")`}
 
-Basierend darauf, ob `globalVars("version")` 'true' ist, die ID unseres DBM German Beta ("756233531356610580") oder DBM German Team Willkommen / Aufwiedersehen-Kanals ("559419622667845633").
+Basierend darauf, ob `globalVars("debug")` 'true' ist, die ID unseres DBM German Beta ("756233531356610580") oder DBM German Team Willkommen / Aufwiedersehen-Kanals ("559419622667845633").
 
 
 ## Rule Channel ID | ${`globalVars("rule-channel-id")`}
 
-Basierend darauf, ob `globalVars("version")` 'true' ist, die ID unseres DBM German Beta ("724331029359493120") oder DBM German Regeln-Kanals ("514896934411042834").
+Basierend darauf, ob `globalVars("debug")` 'true' ist, die ID unseres DBM German Beta ("724331029359493120") oder DBM German Regeln-Kanals ("514896934411042834").
 
 
 ## Serverlist Channel ID | ${`globalVars("serverlist-channel-id")`}
 
-Basierend darauf, ob `globalVars("version")` 'true' ist, die ID unseres DBM German Beta ("724331017401532446") oder DBM German Regeln-Kanals ("488734739000328202").
+Basierend darauf, ob `globalVars("debug")` 'true' ist, die ID unseres DBM German Beta ("724331017401532446") oder DBM German Regeln-Kanals ("488734739000328202").
 
 
 ## FAQ Channel ID | ${`globalVars("faq-channel-id")`}
 
-Basierend darauf, ob `globalVars("version")` 'true' ist, die ID unseres DBM German Beta ("724331079619706910") oder DBM German FAQ-Kanals ("547530904453775390").
+Basierend darauf, ob `globalVars("debug")` 'true' ist, die ID unseres DBM German Beta ("724331079619706910") oder DBM German FAQ-Kanals ("547530904453775390").
+
+
+## Help Channel ID | ${`globalVars("help-channel-id")`}
+
+Basierend darauf, ob `globalVars("debug")` 'true' ist, die ID unseres DBM German Beta ("724331258351452251") oder DBM German Hilfe-Kanals ("1047167552792563712").
 
 
 ## Hidden Role ID | ${`globalVars("hidden-role-id")`}
 
-Basierend darauf, ob `globalVars("version")` 'true' ist, die ID unserer DBM German Beta ("724335094281666642") oder DBM German Ausgeblendet-Rolle ("663781677016809504").
+Basierend darauf, ob `globalVars("debug")` 'true' ist, die ID unserer DBM German Beta ("724335094281666642") oder DBM German Ausgeblendet-Rolle ("663781677016809504").
+
+
+## Answered Tag ID | ${`globalVars("answered-tag-id")`}
+
+Basierend darauf, ob `globalVars("debug")` 'true' ist, die ID unserer DBM German Beta (`null`) oder DBM German "Beantwortet"-Tags ("1047539260724613140").
 
 
 ## Commands | ${`globalVars("commands")`}
@@ -90,8 +100,8 @@ Eine Liste von allen verfügbaren Befehlen und deren Parametern. Aufbau der Befe
 |-----------------------|-------------------------------|
 | name                  | String                        |
 | description           | String                        |
-| parameters            | [ApplicationCommandOptionData](https://discord.js.org/#/docs/discord.js/main/typedef/ApplicationCommandOptionData)  |
-| type                  | [ApplicationCommandType](https://discord-api-types.dev/api/discord-api-types-v10/enum/ApplicationCommandType)        |
+| parameters            | [ApplicationCommandOption]    |
+| type                  | [ApplicationCommandType]      |
 
 
 ## Command Types | ${`globalVars("commandTypes")`}
@@ -185,3 +195,17 @@ let member = tempVars("member");
 let status = globalVars("isNitroBooster")(member);
 console.log(status); // true / false
 ```
+
+
+## Is Bot Owner | ${`globalVars("isBotOwner")`}
+
+Eine Funktion zum Prüfen, ob ein Mitglied der Bot-Eigentümer ist. Beispiel:
+```js
+let member = tempVars("member");
+let status = globalVars("isBotOwner")(member);
+console.log(status); // true / false
+```
+
+
+[ApplicationCommandOption]: https://old.discordjs.dev/#/docs/discord.js/v13/typedef/ApplicationCommandOption
+[ApplicationCommandType]: https://old.discordjs.dev/#/docs/discord.js/v13/typedef/ApplicationCommandType
