@@ -1,2 +1,2 @@
 # Commands
-Use the `to-dbm` script to convert the raw datas to DBM files.
+Use `npm run to-dbm` to convert raw data to DBM files and `npm run to-raw` for the other way around.
