@@ -1,6 +1,6 @@
 import { exec as execCb } from "child_process";
 import { constants } from "fs";
-import { access, cp, readFile, rm, writeFile } from "fs/promises";
+import { access, cp, readFile, rm, stat, writeFile } from "fs/promises";
 import { arch as osArch, type as osType } from "os";
 import { promisify } from "util";
 import { promisified as regedit } from "regedit";
@@ -156,7 +156,7 @@ try {
 // Copy bot data
 try {
     console.log("Kopiere Bot-Daten...");
-    await cp(RAW_DATA_DIR, BOT_DATA_DIR, { recursive: true, filter: source => source.endsWith(".json") });
+    await cp(RAW_DATA_DIR, BOT_DATA_DIR, { recursive: true, filter: async source => (await stat(source)).isDirectory() || source.endsWith(".json") });
 } catch(e) {
     console.error(`Bot-Daten können nicht kopiert werden: ${e}`);
     process.exit(1);
