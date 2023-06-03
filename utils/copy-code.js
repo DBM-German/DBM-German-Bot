@@ -1,5 +1,5 @@
 import { constants } from "fs";
-import { access, cp } from "fs/promises";
+import { access, cp, stat } from "fs/promises";
 
 
 const RAW_DIR = "./raw";
@@ -10,7 +10,7 @@ const FS_R = constants.F_OK | constants.R_OK;
 const FS_RW = FS_R | constants.W_OK;
 
 // Start
-console.log("Passe DBM-Projekt an...");
+console.log("Passe Projekt-Code an...");
 
 // Check permissions for raw directory
 try {
@@ -31,7 +31,10 @@ try {
 // Copy
 try {
     console.log("Kopiere zusätzlichen Code...");
-    await cp(RAW_CODE_DIR, BOT_CODE_DIR, { recursive: true });
+    await cp(RAW_CODE_DIR, BOT_CODE_DIR, {
+        recursive: true,
+        filter: async source => (await stat(source)).isDirectory() || source.endsWith(".js")
+    });
 } catch(e) {
     console.error(`Zusätzlicher Code kann nicht kopiert werden: ${e}`);
     process.exit(1);
