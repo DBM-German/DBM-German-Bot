@@ -90,7 +90,7 @@
                 {
                     "title": "${tempVars(\"title\")}",
                     "url": "",
-                    "color": "${tempVars(\"color\")?.length >= 6 ? tempVars(\"color\") : globalVars(\"default-color\")}",
+                    "color": "${tempVars(\"color\")?.length >= 6 || typeof tempVars(\"color\") == \"number\" ? tempVars(\"color\") : globalVars(\"default-color\")}",
                     "timestamp": "false",
                     "imageUrl": "${tempVars(\"image\")?.length > 0 ? tempVars(\"image\") : \"\"}",
                     "thumbUrl": "${tempVars(\"thumbnail\")?.length > 0 ? tempVars(\"thumbnail\") : \"\"}",
@@ -132,7 +132,7 @@
                 {
                     "title": "${tempVars(\"title\")}",
                     "url": "",
-                    "color": "${tempVars(\"color\")?.length >= 6 ? tempVars(\"color\") : globalVars(\"default-color\")}",
+                    "color": "${tempVars(\"color\")?.length >= 6 || typeof tempVars(\"color\") == \"number\" ? tempVars(\"color\") : globalVars(\"default-color\")}",
                     "timestamp": "false",
                     "imageUrl": "${tempVars(\"image\")?.length > 0 ? tempVars(\"image\") : \"\"}",
                     "thumbUrl": "${tempVars(\"thumbnail\")?.length > 0 ? tempVars(\"thumbnail\") : \"\"}",
@@ -174,7 +174,7 @@
                 {
                     "title": "${tempVars(\"title\")}",
                     "url": "",
-                    "color": "${tempVars(\"color\")?.length >= 6 ? tempVars(\"color\") : globalVars(\"default-color\")}",
+                    "color": "${tempVars(\"color\")?.length >= 6 || typeof tempVars(\"color\") == \"number\" ? tempVars(\"color\") : globalVars(\"default-color\")}",
                     "timestamp": "false",
                     "imageUrl": "${tempVars(\"image\")?.length > 0 ? tempVars(\"image\") : \"\"}",
                     "thumbUrl": "${tempVars(\"thumbnail\")?.length > 0 ? tempVars(\"thumbnail\") : \"\"}",
@@ -216,7 +216,7 @@
                 {
                     "title": "${tempVars(\"title\")}",
                     "url": "",
-                    "color": "${tempVars(\"color\")?.length >= 6 ? tempVars(\"color\") : globalVars(\"default-color\")}",
+                    "color": "${tempVars(\"color\")?.length >= 6 || typeof tempVars(\"color\") == \"number\" ? tempVars(\"color\") : globalVars(\"default-color\")}",
                     "timestamp": "false",
                     "imageUrl": "${tempVars(\"image\")?.length > 0 ? tempVars(\"image\") : \"\"}",
                     "thumbUrl": "${tempVars(\"thumbnail\")?.length > 0 ? tempVars(\"thumbnail\") : \"\"}",

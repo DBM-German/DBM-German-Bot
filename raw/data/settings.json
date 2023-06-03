@@ -12,15 +12,15 @@
         "jimp": ["", true],
         "vm2": ["3", true]
     },
-    "ownerId": "282505671356710912",
+    "ownerId": "320507572455079949",
     "invalidUserText": "Diese Aktion kann nur von der Person gestartet werden, welche den Befehl aufgerufen hat.",
     "invalidSelectText": "Das Auswahlmenü ist nicht länger gültig.",
     "invalidButtonText": "Der Knopf ist nicht länger gültig.",
     "leaveVoiceTimeout": "60",
     "slashType": "manual",
     "slashServers": "488722832201613344\n533618507699585035\n724330774257729647",
-    "autoResponseText": "Befehl erfolgreich ausgeführt.",
-    "invalidPermissionsText": "Fehlende Berechtigungen.",
+    "autoResponseText": "Der Befehl wurde auf eine unvorhergesehene Art ausgeführt.",
+    "invalidPermissionsText": "Du hast nicht die vorausgesetzten Berechtigungen.",
     "invalidCooldownText": "Bitte warte %s, bevor du diese Aktion erneut aufrufst.",
     "noDescriptionText":"Keine Beschreibung.",
     "Bot Intents": {

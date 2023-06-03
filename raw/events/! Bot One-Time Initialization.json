@@ -151,9 +151,23 @@
                 },
                 {
                     "storage": "3",
+                    "varName": "help-channel-id",
+                    "changeType": "0",
+                    "value": "globalVars(\"debug\") ? \"724331258351452251\" : \"1047167552792563712\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
                     "varName": "hidden-role-id",
                     "changeType": "0",
                     "value": "globalVars(\"debug\") ? \"724335094281666642\" : \"663781677016809504\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
+                    "varName": "answered-tag-id",
+                    "changeType": "0",
+                    "value": "globalVars(\"debug\") ? null : \"1047539260724613140\"",
                     "name": "Control Variable"
                 },
                 {
@@ -598,9 +612,17 @@
                 {
                     "behavior": "0",
                     "interpretation": "1",
-                    "code": "// Create an object with all notification role descriptions\n// Erstelle ein Objekt mit allen Benachrichtigungsrollen-Beschreibungen\n\nconst DESCRIPTIONS = {};\n\nDESCRIPTIONS[\"helfer\"] = `\nAndere Nutzer können dich anpingen, wenn sie Hilfe benötigen.\n`;\nDESCRIPTIONS[\"giveaways\"] = `\nBei neuen Giveaways (keinen Freebies) wirst du benachrichtigt.\n`;\nDESCRIPTIONS[\"news\"] = `\nWir halten dich auf dem aktuellen Stand, was DBM und diesen Server angeht.\n`;\nDESCRIPTIONS[\"rawdata\"] = `\nAndere Nutzer können sich bei dir bezüglich Raw Datas melden.\n`;\n\nDESCRIPTIONS;",
+                    "code": "// Create a function to check if a member is a Nitro booster\n// Erstelle eine Funktion zum Prüfen, ob ein Mitglied ein Nitro Booster ist\n\nconst isNitroBooster = function(member) {\n    return !!member.premiumSince;\n}\n\nisNitroBooster;",
                     "storage": "3",
-                    "varName": "/benachrichtigungen-roles",
+                    "varName": "isNitroBooster",
+                    "name": "Run Script"
+                },
+                {
+                    "behavior": "0",
+                    "interpretation": "1",
+                    "code": "// Create a function to check if a member is the bot owner\n// Erstelle eine Funktion zum Prüfen, ob ein Mitglied der Bot-Eigentümer ist\n\nconst isBotOwner = function(member) {\n    return Files.data.settings.ownerId && member.id === Files.data.settings.ownerId;\n}\n\nisBotOwner;",
+                    "storage": "3",
+                    "varName": "isBotOwner",
                     "name": "Run Script"
                 }
             ],

@@ -7,6 +7,18 @@
     "actions": [
         {
             "storage": "1",
+            "varName": "check-team-server",
+            "changeType": "0",
+            "value": "true",
+            "name": "Control Variable"
+        },
+        {
+            "source": "WFDVm",
+            "type": "true",
+            "name": "Call Command/Event"
+        },
+        {
+            "storage": "1",
             "varName": "title",
             "changeType": "0",
             "value": "\"Ping\"",

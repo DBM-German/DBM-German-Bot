@@ -6,6 +6,11 @@
     "_id": "wJaVs",
     "actions": [
         {
+            "source": "WFDVm",
+            "type": "true",
+            "name": "Call Command/Event"
+        },
+        {
             "server": "0",
             "varName": "",
             "storage": "1",

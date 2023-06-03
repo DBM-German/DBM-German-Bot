@@ -156,7 +156,7 @@ try {
 // Copy bot data
 try {
     console.log("Kopiere Bot-Daten...");
-    await cp(RAW_DATA_DIR, BOT_DATA_DIR, { recursive: true });
+    await cp(RAW_DATA_DIR, BOT_DATA_DIR, { recursive: true, filter: source => source.endsWith(".json") });
 } catch(e) {
     console.error(`Bot-Daten können nicht kopiert werden: ${e}`);
     process.exit(1);

@@ -1,0 +1,6 @@
+{
+    "[markdown]": {
+        "editor.wordWrap": "off",
+        "diffEditor.wordWrap": "off"
+    }
+}
