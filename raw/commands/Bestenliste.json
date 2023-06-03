@@ -6,6 +6,11 @@
     "_id": "AiMVM",
     "actions": [
         {
+            "source": "WFDVm",
+            "type": "true",
+            "name": "Call Command/Event"
+        },
+        {
             "ephemeral": false,
             "name": "Start Thinking"
         },

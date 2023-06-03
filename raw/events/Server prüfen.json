@@ -1,0 +1,84 @@
+{
+    "name": "Server prüfen",
+    "temp": "",
+    "event-type": "0",
+    "_id": "WFDVm",
+    "actions": [
+        {
+            "server": "0",
+            "varName": "",
+            "info": "1",
+            "storage": "1",
+            "varName2": "server-id",
+            "name": "Store Server Info"
+        },
+        {
+            "storage": "1",
+            "varName": "server-id",
+            "comparison": "1",
+            "value": "globalVars(\"main-server-id\")",
+            "branch": {
+                "iftrue": "1",
+                "iffalse": "0"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "check-team-server",
+            "comparison": "1",
+            "value": "true",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "3",
+                "iffalseVal": "1"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "server-id",
+            "comparison": "1",
+            "value": "globalVars(\"team-server-id\")",
+            "branch": {
+                "iftrue": "1",
+                "iffalse": "0"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "description",
+            "changeType": "0",
+            "value": "\"Du bist nicht auf dem vorausgesetzten Server.\"",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "channel",
+            "changeType": "0",
+            "value": "channel",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "ephemeral",
+            "changeType": "0",
+            "value": "true",
+            "name": "Control Variable"
+        },
+        {
+            "source": "HPCYz",
+            "type": "true",
+            "name": "Call Command/Event"
+        },
+        {
+            "behavior": "1",
+            "interpretation": "1",
+            "code": "// End the action sequence recursively by neither \"this.callNextAction()\" nor \"this.endActions()\" getting called\n// Beende die Aktionssequenz rekursiv indem weder \"this.callNextAction()\", noch \"this.endActions()\" aufgerufen wird",
+            "storage": "0",
+            "varName": "",
+            "name": "Run Script"
+        }
+    ]
+}

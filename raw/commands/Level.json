@@ -6,6 +6,11 @@
     "_id": "TzGgh",
     "actions": [
         {
+            "source": "WFDVm",
+            "type": "true",
+            "name": "Call Command/Event"
+        },
+        {
             "member": "5",
             "varName": "Nutzer",
             "info": "0",
