@@ -1,0 +1,171 @@
+{
+    "name": "Antwork markieren",
+    "permissions": "NONE",
+    "permissions2": "NONE",
+    "restriction": "1",
+    "_id": "jmCEt",
+    "actions": [
+        {
+            "source": "WFDVm",
+            "type": "true",
+            "name": "Call Command/Event"
+        },
+        {
+            "storage": "1",
+            "varName": "channel",
+            "changeType": "0",
+            "value": "channel",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "channel-type",
+            "changeType": "0",
+            "value": "channel.type",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "parent-channel",
+            "changeType": "0",
+            "value": "channel.parent",
+            "name": "Control Variable"
+        },
+        {
+            "channel": "3",
+            "varName": "parent-channel",
+            "info": "1",
+            "storage": "1",
+            "varName2": "parent-channel-id",
+            "name": "Store Channel Info"
+        },
+        {
+            "storage": "1",
+            "varName": "ephemeral",
+            "changeType": "0",
+            "value": "true",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "channel-type",
+            "comparison": "6",
+            "value": "(GUILD_PUBLIC_THREAD|GUILD_PRIVATE_THREAD)",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "3",
+                "iffalseVal": "1"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "parent-channel-id",
+            "comparison": "1",
+            "value": "globalVars(\"help-channel-id\")",
+            "branch": {
+                "iftrue": "3",
+                "iffalse": "0",
+                "iftrueVal": "3"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "description",
+            "changeType": "0",
+            "value": "\"Nachrichten können nur in Hilfe-Posts als Antworten markiert werden.\"",
+            "name": "Control Variable"
+        },
+        {
+            "source": "HPCYz",
+            "type": "true",
+            "name": "Call Command/Event"
+        },
+        {
+            "name": "End Action Sequence"
+        },
+        {
+            "storage": "1",
+            "varName": "channel-owner-id",
+            "changeType": "0",
+            "value": "channel.ownerId",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "channel-owner-id",
+            "comparison": "1",
+            "value": "member.id",
+            "branch": {
+                "iftrue": "3",
+                "iffalse": "0",
+                "iftrueVal": "3"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "description",
+            "changeType": "0",
+            "value": "\"Nachrichten können nur vom Post-Ersteller als Antworten markiert werden.\"",
+            "name": "Control Variable"
+        },
+        {
+            "source": "HPCYz",
+            "type": "true",
+            "name": "Call Command/Event"
+        },
+        {
+            "name": "End Action Sequence"
+        },
+        {
+            "message": "0",
+            "varName": "",
+            "info": "3",
+            "storage": "1",
+            "varName2": "message-author",
+            "name": "Store Message Info"
+        },
+        {
+            "storage": "0",
+            "varName": "",
+            "name": "Pin Message"
+        },
+        {
+            "storage": "3",
+            "varName": "answered-tag-id",
+            "comparison": "0",
+            "value": "",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "3",
+                "iffalseVal": "1"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "behavior": "1",
+            "interpretation": "1",
+            "code": "channel.setAppliedTags([ ...channel.appliedTags, globalVars(\"answered-tag-id\") ])\n    .then(newChannel => {\n        this.callNextAction(cache);\n    })\n    .catch(error => {\n        this.displayError(data, cache, error);\n        this.callNextAction(cache);\n    });",
+            "storage": "0",
+            "varName": "",
+            "name": "Run Script"
+        },
+        {
+            "storage": "1",
+            "varName": "description",
+            "changeType": "0",
+            "value": "`Die Nachricht von ${tempVars(\"message-author\")} wurde als Antwort markiert.`",
+            "name": "Control Variable"
+        },
+        {
+            "source": "LITqX",
+            "type": "true",
+            "name": "Call Command/Event"
+        }
+    ],
+    "comType": "6",
+    "description": "Antwort auf eine Frage markieren",
+    "_timeRestriction": 180
+}
