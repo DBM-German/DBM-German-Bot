@@ -602,6 +602,20 @@
                     "storage": "3",
                     "varName": "isNitroBooster",
                     "name": "Run Script"
+                }
+            ],
+            "name": "Action Container"
+        },
+        {
+            "comment": "Create global action-specific variables | Erstelle globale aktionsspezifische Variablen",
+            "actions": [
+                {
+                    "behavior": "0",
+                    "interpretation": "1",
+                    "code": "// Create a function to check if a member is a Nitro booster\n// Erstelle eine Funktion zum Prüfen, ob ein Mitglied ein Nitro Booster ist\n\nconst isNitroBooster = function(member) {\n    return !!member.premiumSince;\n}\n\nisNitroBooster;",
+                    "storage": "3",
+                    "varName": "isNitroBooster",
+                    "name": "Run Script"
                 },
                 {
                     "behavior": "0",
