@@ -44,6 +44,19 @@
             "type": "node"
         },
         {
+            "name": "Copy resources",
+            "request": "launch",
+            "runtimeArgs": [
+                "run-script",
+                "copy-res"
+            ],
+            "runtimeExecutable": "npm",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        },
+        {
             "name": "Convert to DBM",
             "request": "launch",
             "runtimeArgs": [
