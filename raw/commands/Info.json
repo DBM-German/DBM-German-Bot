@@ -472,6 +472,14 @@
                             "varName": "embed",
                             "fieldName": "Empfohlene Modelle",
                             "message": "__Leistungsstärker__\n• [Raspberry Pi 4b](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)\n• [Raspberry Pi 3b+](https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/)\n\n__Leistungsschwächer__\n• [Raspberry Pi Zero 2 W](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/)\n• [Raspberry Pi Zero W](https://www.raspberrypi.com/products/raspberry-pi-zero-w/)\n\nFalls du einen anderen Pi verwenden möchtest, erkunde dich zuvor, ob dieser Node.js unterstützt.",
+                            "inline": "1",
+                            "name": "Add Embed Field"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "embed",
+                            "fieldName": "Anleitungen / Tutorials",
+                            "message": "• [Einstieg - Benötigte Hardware](https://tutorials-raspberrypi.de/raspberry-pi-einstieg-wie-starte-ich/)\n• [Installationsvideo von Raspberry (Englisch)](https://www.youtube.com/watch?v=ntaXWS8Lk34)\n\n• [Tutorial-Playlist von Raspberry (Englisch)](https://www.youtube.com/playlist?list=PLcd1Q0-YkB1e0x5WuE9tWIKybEarSsYoN)\n• [Beginner-Tutorial von SemperVideo](https://youtu.be/7mOj_Bu7nBA)\n• [Tutorial-Playlist von SemperVideo](https://www.youtube.com/playlist?list=PL3-bM7Aq1pUrkASwtwM636PKyyeohGoQa)\n• [Beginner-Tutorial von U-Labs](https://youtu.be/BKhQpGhCEgs)\n• [Tutorial-Playlist von U-Labs](https://www.youtube.com/playlist?list=PLGqZnU7aLeD-_nOlXGJmncA2a20Nw1_Vq)\n\n• [Dokumentation von Raspberry (Englisch](https://www.raspberrypi.com/documentation/computers/getting-started.html)",
                             "inline": "0",
                             "name": "Add Embed Field"
                         },
@@ -479,7 +487,7 @@
                             "storage": "1",
                             "varName": "embed",
                             "fieldName": "Nützliche Links",
-                            "message": "• [Raspberry Pi Imager](https://rptl.io/imager)\n• [Rufus (für erfahrenere Nutzer)](https://rufus.ie/de/)\n• [Beginner-Tutorial von SemperVideo](https://youtu.be/7mOj_Bu7nBA)\n• [Tutorial-Playlist von SemperVideo](https://www.youtube.com/playlist?list=PL3-bM7Aq1pUrkASwtwM636PKyyeohGoQa)\n• [Beginner-Tutorial von U-Labs](https://youtu.be/BKhQpGhCEgs)\n• [Tutorial-Playlist von U-Labs](https://www.youtube.com/playlist?list=PLGqZnU7aLeD-_nOlXGJmncA2a20Nw1_Vq)\n• [Statische IP festlegen](https://www.elektronik-kompendium.de/sites/raspberry-pi/1912151.htm)\n• [Virtuelle Terminals mit GNU-Screen (Englisch)](https://linuxize.com/post/how-to-use-linux-screen/)\n• [Autostart von Programmen](https://tutorials-raspberrypi.de/raspberry-pi-autostart-programm-skript/)\n• [Raspberry Pi als Android TV](https://tutorials-raspberrypi.de/raspberry-pi-android-tv-box-selber-bauen-anleitung/)",
+                            "message": "• [Raspberry Pi Imager](https://rptl.io/imager)\n• [Rufus (für erfahrenere Nutzer)](https://rufus.ie/de/)\n\n• [Statische IP festlegen](https://www.elektronik-kompendium.de/sites/raspberry-pi/1912151.htm)\n• [Autostart von Programmen](https://tutorials-raspberrypi.de/raspberry-pi-autostart-programm-skript/)\n\n• [Virtuelle Terminals mit GNU-Screen (Englisch)](https://linuxize.com/post/how-to-use-linux-screen/)\n• [USB-Sticks / -SSDs / -HDDs manuell einbinden (Englisch)](https://raspberrytips.com/mount-usb-drive-raspberry-pi/)\n• [Erklärung des Dateisystems (Englisch)](https://raspberrytips.com/raspberry-pi-file-system/)",
                             "inline": "0",
                             "name": "Add Embed Field"
                         }
