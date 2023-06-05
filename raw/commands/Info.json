@@ -411,7 +411,7 @@
                             "storage": "1",
                             "varName": "embed",
                             "fieldName": "Installation auf Debian- und Ubuntu-Distributionen",
-                            "message": "1. Öffne ein Terminal (über das Startmenü oder via SSH)\n2. Füge die Paketquelle von Node.js (LTS-Version) mit dem Befehl `curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -` hinzu\n3. Starte den Installationsprozess via `sudo apt install -y nodejs`\n\nHinweis: Die LTS-Version ist für die meisten Benutzer empfohlen. Falls du trotzdem die aktuellste Version verwenden möchtest und dir die Konsequenzen klar sind, dann tausche `setup_lts.x` gegen `setup_current.x` aus.",
+                            "message": "1. Öffne ein Terminal (über das Startmenü oder via SSH)\n2. Wechsle mit `sudo -s` in den Superuser-Modus (Adminmodus)\n3. Füge die Paketquelle von Node.js (LTS-Version) mit dem Befehl `curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -` hinzu\n4. Starte den Installationsprozess via `apt install -y nodejs`\n\nHinweis: Die LTS-Version ist für die meisten Benutzer empfohlen. Falls du trotzdem die aktuellste Version verwenden möchtest und dir die Konsequenzen klar sind, dann tausche `setup_lts.x` gegen `setup_current.x` aus.\nSolltest du eine ganz spezielle Version benötigen, kannst du statt \"lts\" oder \"current\" auch die Versionsnummer angeben. Beispiel: `setup_18.x`",
                             "inline": "1",
                             "name": "Add Embed Field"
                         }
