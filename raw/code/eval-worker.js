@@ -1,10 +1,13 @@
 const { NodeVM } = require("vm2");
+const { sep } = require("path");
 
 process.on("message", code => {
     const vm = new NodeVM({
         console: "inherit",
         sandbox: {},
-        wrapper: "none"
+        wrapper: "none",
+        // Imitate argv to display "~/DBM-German-Bot" as cwd
+        argv: [ "/usr/bin/node", `~/${process.argv[1].split(sep).at(-3)}` ]
     });
 
     // Evaluate without catching errors - the parent process needs to receive them
