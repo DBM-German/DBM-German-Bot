@@ -1,13 +1,11 @@
 const { sep } = require("path");
+const { NodeVM } = require("vm2");
 
 // Get actual cwd from argv
 const cwd = process.argv[1].split(sep).slice(0, -3).join(sep);
 // Set vm cwd to "~/DBM-German-Bot"
 const vmCwd = `~${sep}${process.argv[1].split(sep).at(-4)}`;
 
-// Initialze vm2 with current nodejs context
-const { NodeVM } = require("vm2");
-const { sep } = require("path");
 
 process.on("message", code => {
     const vm = new NodeVM({
