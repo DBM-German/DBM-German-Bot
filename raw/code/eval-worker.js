@@ -1,47 +1,37 @@
-const { sep } = require("path");
-const { NodeVM } = require("vm2");
+const { basename } = require("path");
+const { Isolate } = require("isolated-vm");
 
-// Get actual cwd from argv
-const cwd = process.argv[1].split(sep).slice(0, -3).join(sep);
-// Set vm cwd to "~/DBM-German-Bot"
-const vmCwd = `~${sep}${process.argv[1].split(sep).at(-4)}`;
+// Create isolation context with memory limited to ~ 128 MB
+const isolate = new Isolate({ memoryLimit: 128, onCatastrophicError: _ => process.abort() });
+const context = isolate.createContextSync();
 
 
 process.on("message", code => {
-    const vm = new NodeVM({
-        // Pass through console output to parent process
-        console: "inherit",
-        // Do not provide any additional outside objects
-        sandbox: {},
-        // Do not return the last value automatically
-        wrapper: "none",
-        // Imitate argv to display vm cwd
-        argv: [ "/usr/bin/node", vmCwd ]
-    });
+    let response = { result: null, error: null };
 
-    let result;
-    try {
-        // Evaluate user input in vm context
-        result = vm.run(code);
-    } catch(e) {
-        // Replace file paths in stack trace with vm cwd
-        e.stack = e.stack?.replaceAll(cwd, vmCwd);
-        // Pass through error to parent process
-        throw e;
-    }
+    // Eval code in isolation context with a 5 second timeout and assuming that is returns a promise
+    context.eval("(async () => {\n" + code + "\n})();", { timeout: 5e3, promise: true, filename: basename(__filename) })
+        .then(result => {
+            try {
+                // Try to convert the result to JSON to allow the parent process to fully recreate it
+                response.result = JSON.stringify(result);
 
-    let response;
-    try {
-        // Try to send the result as JSON to allow the parent process to fully recreate the output
-        response = JSON.stringify(result);
-
-        if(response === undefined) throw new Error("No JSON-friendly result.");
-    } catch(e) {
-        // Alternatively just send it as a simple string because of the Serialization API limitations
-        // https://nodejs.org/api/v8.html#serialization-api
-        response = String(result);
-    }
-
-    process.send(response);
-    process.disconnect();
+                if(response.result === undefined) throw new Error("No JSON-friendly result.");
+            } catch(e) {
+                // Alternatively just store it as a simple string because of the Serialization API limitations
+                // https://nodejs.org/api/v8.html#serialization-api
+                response.result = String(result);
+            }
+        })
+        .catch(error => {
+            // Errors can be processed by the Serialization API without any problems
+            response.error = error;
+        })
+        .finally(() => {
+            // Send the response as plain object, assuming that the parent uses the advanced serialization mode
+            process.send(response);
+            // Destroy the isolation context and end the sub-process
+            isolate.dispose();
+            process.disconnect();
+        });
 });
