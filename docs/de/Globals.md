@@ -207,5 +207,16 @@ console.log(status); // true / false
 ```
 
 
+## Levenshtein | ${`globalVars("levenshtein")`}
+
+Eine Funktion zum Berechnen der Levenshtein-Distanz zwischen zwischen zwei Zeichenfolgen. Beispiel:
+```js
+let a = "sample";
+let b = "example";
+let distance = globalVars("levenshtein")(a, b);
+console.log(distance); // 2
+```
+
+
 [ApplicationCommandOption]: https://old.discordjs.dev/#/docs/discord.js/v13/typedef/ApplicationCommandOption
 [ApplicationCommandType]: https://old.discordjs.dev/#/docs/discord.js/v13/typedef/ApplicationCommandType
