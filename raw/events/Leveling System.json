@@ -101,8 +101,8 @@
         {
             "storage": "3",
             "varName": "holiday",
-            "comparison": "0",
-            "value": "",
+            "comparison": "10",
+            "value": "0",
             "branch": {
                 "iftrue": "0",
                 "iffalse": "3",
