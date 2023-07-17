@@ -9,7 +9,7 @@ const context = isolate.createContextSync();
 process.on("message", code => {
     let response = { result: null, error: null };
 
-    // Eval code in isolation context with a 5 second timeout and assuming that is returns a promise
+    // Eval code in isolation context with a 5 second timeout and assuming that it returns a promise
     context.eval("(async () => {\n" + code + "\n})();", { timeout: 5e3, promise: true, filename: basename(__filename) })
         .then(result => {
             try {
