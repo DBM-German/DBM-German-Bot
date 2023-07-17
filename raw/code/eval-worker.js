@@ -16,7 +16,7 @@ process.on("message", code => {
                 // Try to convert the result to JSON to allow the parent process to fully recreate it
                 response.result = JSON.stringify(result);
 
-                if(response.result === undefined) throw new Error("No JSON-friendly result.");
+                if(!response.result) throw new Error("No JSON-friendly result.");
             } catch(e) {
                 // Alternatively just store it as a simple string because of the Serialization API limitations
                 // https://nodejs.org/api/v8.html#serialization-api
