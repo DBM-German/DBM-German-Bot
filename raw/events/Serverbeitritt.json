@@ -33,9 +33,9 @@
         {
             "member": "2",
             "varName": "member",
-            "info": "21",
+            "info": "3",
             "storage": "1",
-            "varName2": "tag",
+            "varName2": "name",
             "name": "Store Member Info"
         },
         {
@@ -63,7 +63,7 @@
                     "thumbUrl": "",
                     "description": "",
                     "fields": [],
-                    "author": "${tempVars(\"tag\")}",
+                    "author": "${tempVars(\"name\")}",
                     "authorUrl": "",
                     "authorIcon": "${tempVars(\"avatar\")}",
                     "footerText": "",
