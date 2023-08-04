@@ -1,0 +1,16 @@
+{
+    "name": "RegEx auswerten",
+    "temp": "",
+    "event-type": "0",
+    "_id": "vdjKu",
+    "actions": [
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "tempVars(\"text\").match(tempVars(\"regex\"));",
+            "storage": "1",
+            "varName": "matches",
+            "name": "Run Script"
+        }
+    ]
+}
