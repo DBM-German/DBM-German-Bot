@@ -1038,6 +1038,14 @@
                             "varName": "advertisement-exceptions",
                             "addType": "0",
                             "position": "",
+                            "value": "\"markdownguide.org\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
                             "value": "\"symbl.cc\"",
                             "name": "Add Item to List"
                         },
