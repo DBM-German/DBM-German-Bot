@@ -135,6 +135,14 @@ try {
     process.exit(1);
 }
 
+// Check permissions for raw directory
+try {
+    await access(RAW_DIR, FS_R);
+} catch(e) {
+    console.error(`Auf Raw Data-Verzeichnis kann nicht zugegriffen werden: ${e}`);
+    process.exit(1);
+}
+
 // Check permissions for bot directory
 let botDirExists;
 
