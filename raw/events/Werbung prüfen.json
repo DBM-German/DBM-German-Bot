@@ -153,23 +153,131 @@
                         "name": "Store Message Info"
                     },
                     {
-                        "behavior": "0",
-                        "interpretation": "1",
-                        "code": "globalVars(\"advertisement-regex\").test(tempVars(\"text\"));",
                         "storage": "1",
-                        "varName": "regex-check",
-                        "name": "Run Script"
+                        "varName": "regex",
+                        "changeType": "0",
+                        "value": "globalVars(\"advertisement-regex\")",
+                        "name": "Control Variable"
+                    },
+                    {
+                        "source": "vdjKu",
+                        "type": "true",
+                        "name": "Call Command/Event"
                     },
                     {
                         "storage": "1",
-                        "varName": "regex-check",
-                        "comparison": "1",
-                        "value": "true",
+                        "varName": "matches",
+                        "comparison": "10",
+                        "value": "0",
                         "branch": {
                             "iftrue": "0",
                             "iffalse": "1"
                         },
                         "name": "Check Variable"
+                    },
+                    {
+                        "list": "7",
+                        "varName": "matches",
+                        "tempVarName": "match",
+                        "type": "true",
+                        "actions": [
+                            {
+                                "storage": "1",
+                                "varName": "match",
+                                "comparison": "6",
+                                "value": "(https?)?(discord)?\\.gg\\/[-a-zA-Z0-9@:%_\\+.~#?&/=]+",
+                                "branch": {
+                                    "iftrue": "0",
+                                    "iffalse": "3",
+                                    "iffalseVal": "3"
+                                },
+                                "name": "Check Variable"
+                            },
+                            {
+                                "anchorName": "take-action",
+                                "name": "Go To Action Anchor"
+                            },
+                            {
+                                "source": "vkigl",
+                                "type": "true",
+                                "name": "Call Command/Event"
+                            },
+                            {
+                                "name": "End Action Sequence"
+                            },
+                            {
+                                "storage": "1",
+                                "varName": "match",
+                                "comparison": "6",
+                                "value": "(https?)?discord(app)?\\.com\\/invite\\/[-a-zA-Z0-9@:%_\\+.~#?&/=]+",
+                                "branch": {
+                                    "iftrue": "0",
+                                    "iffalse": "3",
+                                    "iffalseVal": "3"
+                                },
+                                "name": "Check Variable"
+                            },
+                            {
+                                "anchorName": "take-action",
+                                "name": "Go To Action Anchor"
+                            },
+                            {
+                                "source": "vkigl",
+                                "type": "true",
+                                "name": "Call Command/Event"
+                            },
+                            {
+                                "name": "End Action Sequence"
+                            },
+                            {
+                                "behavior": "0",
+                                "interpretation": "1",
+                                "code": "let url = new URL(tempVars(\"match\"));\nlet hostParts = url.hostname.split(\".\");\n\n// Only process the top and second level domain (e.g. \"www.youtube.com\" will get \"youtube.com\")\n// Nur die Top und Second Level Domain verarbeiten (Bsp.: \"www.youtube.com\" wird zu \"youtube.com\")\nhostParts.slice(-2, hostParts.length).join(\".\");",
+                                "storage": "1",
+                                "varName": "item",
+                                "name": "Run Script"
+                            },
+                            {
+                                "storage": "1",
+                                "varName": "list",
+                                "changeType": "0",
+                                "value": "globalVars(\"advertisement-exceptions\")",
+                                "name": "Control Variable"
+                            },
+                            {
+                                "source": "zZHod",
+                                "type": "true",
+                                "name": "Call Command/Event"
+                            },
+                            {
+                                "storage": "1",
+                                "varName": "position",
+                                "comparison": "4",
+                                "value": "-1",
+                                "branch": {
+                                    "iftrue": "0",
+                                    "iffalse": "1"
+                                },
+                                "name": "Check Variable"
+                            },
+                            {
+                                "source": "vkigl",
+                                "type": "true",
+                                "name": "Call Command/Event"
+                            }
+                        ],
+                        "name": "Loop Through List"
+                    },
+                    {
+                        "anchorName": "take-action",
+                        "name": "Go To Action Anchor"
+                    },
+                    {
+                        "name": "End Action Sequence"
+                    },
+                    {
+                        "anchorName": "take-action",
+                        "name": "Action Anchor"
                     },
                     {
                         "member": "2",
@@ -201,7 +309,7 @@
                     {
                         "channel": "5",
                         "varName": "channel",
-                        "message": "${tempVars(\"author\")} bitte keine Links senden. Nutze stattdessen `/link`.",
+                        "message": "${tempVars(\"author\")} dieser Link ist nicht freigegeben. Bitte versende ihn zukünftig nicht mehr.\nWenn du denkst, dass für diese Webseite eine Ausnahme hinzugefügt werden sollte, erstelle bitte ein Issue auf [GitHub](${globalVars(\"github-link\")}) oder wende dich ggf. an ein Teammitglied.\n\nEin paar erlaubte Links sind in `/link` hinterlegt.",
                         "buttons": [],
                         "selectMenus": [],
                         "attachments": [],

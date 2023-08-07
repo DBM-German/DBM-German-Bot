@@ -1,3 +1,7 @@
+## Aktionssequenz rekursiv beenden
+Beendet die Aktionssequenz rekursiv, indem weder "this.callNextAction()", noch "this.endActions()" aufgerufen werden.
+
+
 ## Bot stoppen
 Führt einen Logout aus und stoppt dann den restlichen Bot.
 
@@ -55,6 +59,16 @@ Erstellt und versendet ein Info-Embed anhand der übergebenen Daten.
 | Eingabe        | thumbnail         | Temp             | [string]                | x        | *nichts*                      | Ein anzuzeigendes Thumbnail (URL)                                                                     |
 
 
+## Item in Liste finden
+Sucht nach einem bestimmten Element in einer Liste.
+
+| Ein- / Ausgabe | Variable          | Art der Variable | Datentyp                | Optional | Standard                      | Beschreibung                                                                                          |
+|----------------|-------------------|------------------|-------------------------|----------|-------------------------------|-------------------------------------------------------------------------------------------------------|
+| Eingabe        | list              | Temp             | [Array]<[Object]>       |          |                               | Die zu durchsuchende Liste                                                                            |
+| Eingabe        | item              | Temp             | [Object]                |          |                               | Das zu findende Element                                                                               |
+| Ausgabe        | position          | Temp             | [number]                | x        | `-1`                          | Position in der Liste                                                                                 |
+
+
 ## Leveling System
 Verteilt Level und XP anhand gesendeter Nachrichten.
 
@@ -87,6 +101,16 @@ Erstellt und versendet ein mehrseitiges Embed. Einzelne Seiten können über ent
 - color (optional)
 - image (optional)
 - thumbnail (optional)
+
+
+## RegEx auswerten
+Versucht einen Regulären Ausdruck (Regular Expression; RegEx) für einen gegebenen Text auszuwerten.
+
+| Ein- / Ausgabe | Variable          | Art der Variable | Datentyp                | Optional | Standard                      | Beschreibung                                                                                          |
+|----------------|-------------------|------------------|-------------------------|----------|-------------------------------|-------------------------------------------------------------------------------------------------------|
+| Eingabe        | text              | Temp             | [string]                |          |                               | Den zu verarbeitenden Text                                                                            |
+| Eingabe        | regex             | Temp             | [RegExp]                |          |                               | Den auszuwertenden RegEx                                                                              |
+| Ausgabe        | matches           | Temp             | [Array]<[string]>       | x        | `undefined`                   | RegEx-Treffer, falls vorhanden                                                                        |
 
 
 ## Server prüfen
@@ -155,7 +179,9 @@ Erstellt und versendet ein Warnungs-Embed anhand der übergebenen Daten.
 [boolean]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean
 [number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
 [string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+[Object]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
 [Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+[RegExp]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
 [GuildMember]: https://old.discordjs.dev/#/docs/discord.js/v13/class/GuildMember
 [Message]: https://old.discordjs.dev/#/docs/discord.js/v13/class/Message
 [MessageEmbed]: https://old.discordjs.dev/#/docs/discord.js/v13/class/MessageEmbed

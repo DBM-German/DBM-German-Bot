@@ -1,0 +1,16 @@
+{
+    "name": "Aktionssequenz rekursiv beenden",
+    "temp": "",
+    "event-type": "0",
+    "_id": "vkigl",
+    "actions": [
+        {
+            "behavior": "1",
+            "interpretation": "1",
+            "code": "// End the action sequence recursively by neither calling \"this.callNextAction()\" nor \"this.endActions()\"\n// Beende die Aktionssequenz rekursiv, indem weder \"this.callNextAction()\", noch \"this.endActions()\" aufgerufen werden",
+            "storage": "0",
+            "varName": "",
+            "name": "Run Script"
+        }
+    ]
+}

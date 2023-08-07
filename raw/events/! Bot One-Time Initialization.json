@@ -60,6 +60,13 @@
                 },
                 {
                     "storage": "3",
+                    "varName": "github-link",
+                    "changeType": "0",
+                    "value": "\"https://github.com/dbm-german/DBM-German-Bot\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
                     "varName": "default-color",
                     "changeType": "0",
                     "value": "\"fff700\"",
@@ -211,384 +218,1143 @@
                     "name": "Run Script"
                 },
                 {
-                    "storage": "3",
-                    "varName": "replacement-nicknames",
-                    "name": "Create List"
-                },
-                {
-                    "storage": "1",
-                    "varName": "true",
-                    "comparison": "1",
-                    "value": "true",
-                    "branch": {
-                        "iftrue": "99",
-                        "iffalse": "0",
-                        "iftrueActions": [
-                            {
-                                "startNum": "1",
-                                "endNum": "11",
-                                "increment": "1",
-                                "tempVarName": "iteration",
-                                "type": "true",
-                                "actions": [
-                                    {
-                                        "storage": "1",
-                                        "varName": "iteration",
-                                        "branches": [
-                                            {
-                                                "comparison": "1",
-                                                "value": "1",
-                                                "actions": [
-                                                    {
-                                                        "storage": "3",
-                                                        "varName": "replacement-nicknames",
-                                                        "addType": "0",
-                                                        "position": "",
-                                                        "value": "\"Hans-Peter\"",
-                                                        "name": "Add Item to List"
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "comparison": "1",
-                                                "value": "2",
-                                                "actions": [
-                                                    {
-                                                        "storage": "3",
-                                                        "varName": "replacement-nicknames",
-                                                        "addType": "0",
-                                                        "position": "",
-                                                        "value": "\"Kevin\"",
-                                                        "name": "Add Item to List"
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "comparison": "1",
-                                                "value": "3",
-                                                "actions": [
-                                                    {
-                                                        "storage": "3",
-                                                        "varName": "replacement-nicknames",
-                                                        "addType": "0",
-                                                        "position": "",
-                                                        "value": "\"Frederik\"",
-                                                        "name": "Add Item to List"
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "comparison": "1",
-                                                "value": "4",
-                                                "actions": [
-                                                    {
-                                                        "storage": "3",
-                                                        "varName": "replacement-nicknames",
-                                                        "addType": "0",
-                                                        "position": "",
-                                                        "value": "\"Pascal\"",
-                                                        "name": "Add Item to List"
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "comparison": "1",
-                                                "value": "5",
-                                                "actions": [
-                                                    {
-                                                        "storage": "3",
-                                                        "varName": "replacement-nicknames",
-                                                        "addType": "0",
-                                                        "position": "",
-                                                        "value": "\"Detlef\"",
-                                                        "name": "Add Item to List"
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "comparison": "1",
-                                                "value": "6",
-                                                "actions": [
-                                                    {
-                                                        "storage": "3",
-                                                        "varName": "replacement-nicknames",
-                                                        "addType": "0",
-                                                        "position": "",
-                                                        "value": "\"Jürgen\"",
-                                                        "name": "Add Item to List"
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "comparison": "1",
-                                                "value": "7",
-                                                "actions": [
-                                                    {
-                                                        "storage": "3",
-                                                        "varName": "replacement-nicknames",
-                                                        "addType": "0",
-                                                        "position": "",
-                                                        "value": "\"Horst\"",
-                                                        "name": "Add Item to List"
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "comparison": "1",
-                                                "value": "8",
-                                                "actions": [
-                                                    {
-                                                        "storage": "3",
-                                                        "varName": "replacement-nicknames",
-                                                        "addType": "0",
-                                                        "position": "",
-                                                        "value": "\"Günter\"",
-                                                        "name": "Add Item to List"
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "comparison": "1",
-                                                "value": "9",
-                                                "actions": [
-                                                    {
-                                                        "storage": "3",
-                                                        "varName": "replacement-nicknames",
-                                                        "addType": "0",
-                                                        "position": "",
-                                                        "value": "\"Konstantin\"",
-                                                        "name": "Add Item to List"
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "comparison": "1",
-                                                "value": "10",
-                                                "actions": [
-                                                    {
-                                                        "storage": "3",
-                                                        "varName": "replacement-nicknames",
-                                                        "addType": "0",
-                                                        "position": "",
-                                                        "value": "\"Valentin\"",
-                                                        "name": "Add Item to List"
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "comparison": "1",
-                                                "value": "11",
-                                                "actions": [
-                                                    {
-                                                        "storage": "3",
-                                                        "varName": "replacement-nicknames",
-                                                        "addType": "0",
-                                                        "position": "",
-                                                        "value": "\"Rüdiger\"",
-                                                        "name": "Add Item to List"
-                                                    }
-                                                ]
-                                            }
-                                        ],
-                                        "name": "Multi-Check Variable"
-                                    }
-                                ],
-                                "name": "Loop Through Numbers"
-                            }
-                        ]
-                    },
-                    "name": "Check Variable"
-                },
-                {
-                    "storage": "1",
-                    "varName": "true",
-                    "comparison": "1",
-                    "value": "false",
-                    "branch": {
-                        "iftrue": "0",
-                        "iffalse": "99",
-                        "iffalseActions": [
-                            {
-                                "startNum": "1",
-                                "endNum": "11",
-                                "increment": "1",
-                                "tempVarName": "iteration",
-                                "type": "true",
-                                "actions": [
-                                    {
-                                        "storage": "1",
-                                        "varName": "iteration",
-                                        "branches": [
-                                            {
-                                                "comparison": "1",
-                                                "value": "1",
-                                                "actions": [
-                                                    {
-                                                        "storage": "3",
-                                                        "varName": "replacement-nicknames",
-                                                        "addType": "0",
-                                                        "position": "",
-                                                        "value": "\"Chantal\"",
-                                                        "name": "Add Item to List"
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "comparison": "1",
-                                                "value": "2",
-                                                "actions": [
-                                                    {
-                                                        "storage": "3",
-                                                        "varName": "replacement-nicknames",
-                                                        "addType": "0",
-                                                        "position": "",
-                                                        "value": "\"Xanthippe\"",
-                                                        "name": "Add Item to List"
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "comparison": "1",
-                                                "value": "3",
-                                                "actions": [
-                                                    {
-                                                        "storage": "3",
-                                                        "varName": "replacement-nicknames",
-                                                        "addType": "0",
-                                                        "position": "",
-                                                        "value": "\"Mathilda\"",
-                                                        "name": "Add Item to List"
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "comparison": "1",
-                                                "value": "4",
-                                                "actions": [
-                                                    {
-                                                        "storage": "3",
-                                                        "varName": "replacement-nicknames",
-                                                        "addType": "0",
-                                                        "position": "",
-                                                        "value": "\"Tiffany\"",
-                                                        "name": "Add Item to List"
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "comparison": "1",
-                                                "value": "5",
-                                                "actions": [
-                                                    {
-                                                        "storage": "3",
-                                                        "varName": "replacement-nicknames",
-                                                        "addType": "0",
-                                                        "position": "",
-                                                        "value": "\"Frieda\"",
-                                                        "name": "Add Item to List"
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "comparison": "1",
-                                                "value": "6",
-                                                "actions": [
-                                                    {
-                                                        "storage": "3",
-                                                        "varName": "replacement-nicknames",
-                                                        "addType": "0",
-                                                        "position": "",
-                                                        "value": "\"Greta\"",
-                                                        "name": "Add Item to List"
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "comparison": "1",
-                                                "value": "7",
-                                                "actions": [
-                                                    {
-                                                        "storage": "3",
-                                                        "varName": "replacement-nicknames",
-                                                        "addType": "0",
-                                                        "position": "",
-                                                        "value": "\"Cheyenne\"",
-                                                        "name": "Add Item to List"
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "comparison": "1",
-                                                "value": "8",
-                                                "actions": [
-                                                    {
-                                                        "storage": "3",
-                                                        "varName": "replacement-nicknames",
-                                                        "addType": "0",
-                                                        "position": "",
-                                                        "value": "\"Klothilde\"",
-                                                        "name": "Add Item to List"
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "comparison": "1",
-                                                "value": "9",
-                                                "actions": [
-                                                    {
-                                                        "storage": "3",
-                                                        "varName": "replacement-nicknames",
-                                                        "addType": "0",
-                                                        "position": "",
-                                                        "value": "\"Jacqueline\"",
-                                                        "name": "Add Item to List"
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "comparison": "1",
-                                                "value": "10",
-                                                "actions": [
-                                                    {
-                                                        "storage": "3",
-                                                        "varName": "replacement-nicknames",
-                                                        "addType": "0",
-                                                        "position": "",
-                                                        "value": "\"Theresa\"",
-                                                        "name": "Add Item to List"
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "comparison": "1",
-                                                "value": "11",
-                                                "actions": [
-                                                    {
-                                                        "storage": "3",
-                                                        "varName": "replacement-nicknames",
-                                                        "addType": "0",
-                                                        "position": "",
-                                                        "value": "\"Carlotta\"",
-                                                        "name": "Add Item to List"
-                                                    }
-                                                ]
-                                            }
-                                        ],
-                                        "name": "Multi-Check Variable"
-                                    }
-                                ],
-                                "name": "Loop Through Numbers"
-                            }
-                        ]
-                    },
-                    "name": "Check Variable"
+                    "comment": "Replacement Nicknames",
+                    "actions": [
+                        {
+                            "storage": "3",
+                            "varName": "replacement-nicknames",
+                            "name": "Create List"
+                        },
+                        {
+                            "startNum": "1",
+                            "endNum": "11",
+                            "increment": "1",
+                            "tempVarName": "iteration",
+                            "type": "true",
+                            "actions": [
+                                {
+                                    "storage": "1",
+                                    "varName": "iteration",
+                                    "branches": [
+                                        {
+                                            "comparison": "1",
+                                            "value": "1",
+                                            "actions": [
+                                                {
+                                                    "storage": "3",
+                                                    "varName": "replacement-nicknames",
+                                                    "addType": "0",
+                                                    "position": "",
+                                                    "value": "\"Hans-Peter\"",
+                                                    "name": "Add Item to List"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "comparison": "1",
+                                            "value": "2",
+                                            "actions": [
+                                                {
+                                                    "storage": "3",
+                                                    "varName": "replacement-nicknames",
+                                                    "addType": "0",
+                                                    "position": "",
+                                                    "value": "\"Kevin\"",
+                                                    "name": "Add Item to List"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "comparison": "1",
+                                            "value": "3",
+                                            "actions": [
+                                                {
+                                                    "storage": "3",
+                                                    "varName": "replacement-nicknames",
+                                                    "addType": "0",
+                                                    "position": "",
+                                                    "value": "\"Frederik\"",
+                                                    "name": "Add Item to List"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "comparison": "1",
+                                            "value": "4",
+                                            "actions": [
+                                                {
+                                                    "storage": "3",
+                                                    "varName": "replacement-nicknames",
+                                                    "addType": "0",
+                                                    "position": "",
+                                                    "value": "\"Pascal\"",
+                                                    "name": "Add Item to List"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "comparison": "1",
+                                            "value": "5",
+                                            "actions": [
+                                                {
+                                                    "storage": "3",
+                                                    "varName": "replacement-nicknames",
+                                                    "addType": "0",
+                                                    "position": "",
+                                                    "value": "\"Detlef\"",
+                                                    "name": "Add Item to List"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "comparison": "1",
+                                            "value": "6",
+                                            "actions": [
+                                                {
+                                                    "storage": "3",
+                                                    "varName": "replacement-nicknames",
+                                                    "addType": "0",
+                                                    "position": "",
+                                                    "value": "\"Jürgen\"",
+                                                    "name": "Add Item to List"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "comparison": "1",
+                                            "value": "7",
+                                            "actions": [
+                                                {
+                                                    "storage": "3",
+                                                    "varName": "replacement-nicknames",
+                                                    "addType": "0",
+                                                    "position": "",
+                                                    "value": "\"Horst\"",
+                                                    "name": "Add Item to List"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "comparison": "1",
+                                            "value": "8",
+                                            "actions": [
+                                                {
+                                                    "storage": "3",
+                                                    "varName": "replacement-nicknames",
+                                                    "addType": "0",
+                                                    "position": "",
+                                                    "value": "\"Günter\"",
+                                                    "name": "Add Item to List"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "comparison": "1",
+                                            "value": "9",
+                                            "actions": [
+                                                {
+                                                    "storage": "3",
+                                                    "varName": "replacement-nicknames",
+                                                    "addType": "0",
+                                                    "position": "",
+                                                    "value": "\"Konstantin\"",
+                                                    "name": "Add Item to List"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "comparison": "1",
+                                            "value": "10",
+                                            "actions": [
+                                                {
+                                                    "storage": "3",
+                                                    "varName": "replacement-nicknames",
+                                                    "addType": "0",
+                                                    "position": "",
+                                                    "value": "\"Valentin\"",
+                                                    "name": "Add Item to List"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "comparison": "1",
+                                            "value": "11",
+                                            "actions": [
+                                                {
+                                                    "storage": "3",
+                                                    "varName": "replacement-nicknames",
+                                                    "addType": "0",
+                                                    "position": "",
+                                                    "value": "\"Rüdiger\"",
+                                                    "name": "Add Item to List"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "name": "Multi-Check Variable"
+                                }
+                            ],
+                            "name": "Loop Through Numbers"
+                        },
+                        {
+                            "startNum": "1",
+                            "endNum": "11",
+                            "increment": "1",
+                            "tempVarName": "iteration",
+                            "type": "true",
+                            "actions": [
+                                {
+                                    "storage": "1",
+                                    "varName": "iteration",
+                                    "branches": [
+                                        {
+                                            "comparison": "1",
+                                            "value": "1",
+                                            "actions": [
+                                                {
+                                                    "storage": "3",
+                                                    "varName": "replacement-nicknames",
+                                                    "addType": "0",
+                                                    "position": "",
+                                                    "value": "\"Chantal\"",
+                                                    "name": "Add Item to List"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "comparison": "1",
+                                            "value": "2",
+                                            "actions": [
+                                                {
+                                                    "storage": "3",
+                                                    "varName": "replacement-nicknames",
+                                                    "addType": "0",
+                                                    "position": "",
+                                                    "value": "\"Xanthippe\"",
+                                                    "name": "Add Item to List"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "comparison": "1",
+                                            "value": "3",
+                                            "actions": [
+                                                {
+                                                    "storage": "3",
+                                                    "varName": "replacement-nicknames",
+                                                    "addType": "0",
+                                                    "position": "",
+                                                    "value": "\"Mathilda\"",
+                                                    "name": "Add Item to List"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "comparison": "1",
+                                            "value": "4",
+                                            "actions": [
+                                                {
+                                                    "storage": "3",
+                                                    "varName": "replacement-nicknames",
+                                                    "addType": "0",
+                                                    "position": "",
+                                                    "value": "\"Tiffany\"",
+                                                    "name": "Add Item to List"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "comparison": "1",
+                                            "value": "5",
+                                            "actions": [
+                                                {
+                                                    "storage": "3",
+                                                    "varName": "replacement-nicknames",
+                                                    "addType": "0",
+                                                    "position": "",
+                                                    "value": "\"Frieda\"",
+                                                    "name": "Add Item to List"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "comparison": "1",
+                                            "value": "6",
+                                            "actions": [
+                                                {
+                                                    "storage": "3",
+                                                    "varName": "replacement-nicknames",
+                                                    "addType": "0",
+                                                    "position": "",
+                                                    "value": "\"Greta\"",
+                                                    "name": "Add Item to List"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "comparison": "1",
+                                            "value": "7",
+                                            "actions": [
+                                                {
+                                                    "storage": "3",
+                                                    "varName": "replacement-nicknames",
+                                                    "addType": "0",
+                                                    "position": "",
+                                                    "value": "\"Cheyenne\"",
+                                                    "name": "Add Item to List"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "comparison": "1",
+                                            "value": "8",
+                                            "actions": [
+                                                {
+                                                    "storage": "3",
+                                                    "varName": "replacement-nicknames",
+                                                    "addType": "0",
+                                                    "position": "",
+                                                    "value": "\"Klothilde\"",
+                                                    "name": "Add Item to List"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "comparison": "1",
+                                            "value": "9",
+                                            "actions": [
+                                                {
+                                                    "storage": "3",
+                                                    "varName": "replacement-nicknames",
+                                                    "addType": "0",
+                                                    "position": "",
+                                                    "value": "\"Jacqueline\"",
+                                                    "name": "Add Item to List"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "comparison": "1",
+                                            "value": "10",
+                                            "actions": [
+                                                {
+                                                    "storage": "3",
+                                                    "varName": "replacement-nicknames",
+                                                    "addType": "0",
+                                                    "position": "",
+                                                    "value": "\"Theresa\"",
+                                                    "name": "Add Item to List"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "comparison": "1",
+                                            "value": "11",
+                                            "actions": [
+                                                {
+                                                    "storage": "3",
+                                                    "varName": "replacement-nicknames",
+                                                    "addType": "0",
+                                                    "position": "",
+                                                    "value": "\"Carlotta\"",
+                                                    "name": "Add Item to List"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "name": "Multi-Check Variable"
+                                }
+                            ],
+                            "name": "Loop Through Numbers"
+                        }
+                    ],
+                    "name": "Action Container"
                 },
                 {
                     "storage": "3",
                     "varName": "advertisement-regex",
                     "changeType": "0",
-                    "value": "/(https?:\\/\\/[-a-zA-Z0-9@:%_\\+.~#?&/=]{2,256}\\.[a-z]{2,64}\\b(\\/[-a-zA-Z0-9@:%_\\+.~#?&/=]*)?(?<!tenor\\.com\\2?|giphy\\.com\\2?))|(\\.gg\\/[-a-zA-Z0-9@:%_\\+.~#?&/=]+)/i",
+                    "value": "/(?:https?:\\/\\/[-a-zA-Z0-9@:%_\\+.~#?&/=]{2,256}\\.[a-z]{2,64}\\b(?:\\/[-a-zA-Z0-9@:%_\\+.~#?&/=]*)?)|(?:discord(?:app)?\\.com\\/invite\\/[-a-zA-Z0-9@:%_\\+.~#?&/=]+)|(?:\\.gg\\/[-a-zA-Z0-9@:%_\\+.~#?&/=]+)/i",
                     "name": "Control Variable"
+                },
+                {
+                    "comment": "Advertisement Exceptions",
+                    "actions": [
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "name": "Create List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"discord.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"discord.gg\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"discordapp.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"discordapp.net\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"dis.gd\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"ecosia.org\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"qwant.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"google.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"google.de\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"youtube.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"youtu.be\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"microsoft.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"live.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"visualstudio.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"office.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"office365.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"tenor.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"giphy.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"github.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"github.io\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"nodejs.org\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"nodejs.dev\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"npmjs.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"dbotmaker.io\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"silversunset.net\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"dbm-network.org\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"dbm-support.site\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"js.org\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"discordjs.dev\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"discordjs.guide\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"ffmpeg.org\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"mysql.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"jetbrains.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"eclipse.org\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"crystalmark.info\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"stackexchange.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"stackoverflow.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"serverfault.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"superuser.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"askubuntu.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"linuxize.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"elektronik-kompendium.de\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"raspberrypi.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"raspberrypi.org\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"u-labs.de\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"windowsarea.de\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"windowscentral.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"onmsft.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"regex101.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"regexr.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"w3schools.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"mozilla.org\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"brave.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"dontasktoask.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"pastebin.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"sourceb.in\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"markdownguide.org\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"symbl.cc\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"firefox.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"getsharex.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"premid.app\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"proton.me\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"deepl.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"duden.de\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"ifttt.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"dafont.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"pixabay.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"geizhals.de\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"idealo.de\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"bahn.de\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"steampowered.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"steamcommunity.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"s.team\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"steamdb.info\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"steamstat.us\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"epicgames.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"humblebundle.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"gog.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"ea.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"ubisoft.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"ubisoftconnect.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"ubi.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"amazon.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"amazon.de\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"ebay.com\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"ebay.de\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"mediamarkt.de\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"saturn.de\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"mindfactory.de\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"galaxus.de\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"notebooksbilliger.de\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"alternate.de\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"proshop.de\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"computeruniverse.net\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"reichelt.de\"",
+                            "name": "Add Item to List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"caseking.de\"",
+                            "name": "Add Item to List"
+                        }
+                    ],
+                    "name": "Action Container"
                 },
                 {
                     "source": "CmzVR",
@@ -606,31 +1372,17 @@
                 {
                     "behavior": "0",
                     "interpretation": "1",
-                    "code": "// Create a function to calculate the levenshtein distance between to strings\n// Erstelle eine Funktion zum Berechnen der Levenshtein-Distanz zwischen zwei Zeichenfolgen\n\nconst { distance } = require(\"fastest-levenshtein\");\n\nconst levenshtein = function(a, b) {\n    return distance(a, b);\n}\n\nlevenshtein;",
+                    "code": "// Create a function to check if a member is the bot owner\n// Erstelle eine Funktion zum Prüfen, ob ein Mitglied der Bot-Eigentümer ist\n\nconst isBotOwner = function(member) {\n    return Files.data.settings.ownerId && member.id === Files.data.settings.ownerId;\n}\n\nisBotOwner;",
                     "storage": "3",
-                    "varName": "levenshtein",
-                    "name": "Run Script"
-                }
-            ],
-            "name": "Action Container"
-        },
-        {
-            "comment": "Create global action-specific variables | Erstelle globale aktionsspezifische Variablen",
-            "actions": [
-                {
-                    "behavior": "0",
-                    "interpretation": "1",
-                    "code": "// Create a function to check if a member is a Nitro booster\n// Erstelle eine Funktion zum Prüfen, ob ein Mitglied ein Nitro Booster ist\n\nconst isNitroBooster = function(member) {\n    return !!member.premiumSince;\n}\n\nisNitroBooster;",
-                    "storage": "3",
-                    "varName": "isNitroBooster",
+                    "varName": "isBotOwner",
                     "name": "Run Script"
                 },
                 {
                     "behavior": "0",
                     "interpretation": "1",
-                    "code": "// Create a function to check if a member is the bot owner\n// Erstelle eine Funktion zum Prüfen, ob ein Mitglied der Bot-Eigentümer ist\n\nconst isBotOwner = function(member) {\n    return Files.data.settings.ownerId && member.id === Files.data.settings.ownerId;\n}\n\nisBotOwner;",
+                    "code": "// Create a function to calculate the levenshtein distance between to strings\n// Erstelle eine Funktion zum Berechnen der Levenshtein-Distanz zwischen zwei Zeichenfolgen\n\nconst { distance } = require(\"fastest-levenshtein\");\n\nconst levenshtein = function(a, b) {\n    return distance(a, b);\n}\n\nlevenshtein;",
                     "storage": "3",
-                    "varName": "isBotOwner",
+                    "varName": "levenshtein",
                     "name": "Run Script"
                 }
             ],
