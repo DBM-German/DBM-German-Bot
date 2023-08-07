@@ -1,0 +1,348 @@
+{
+    "name": "Team",
+    "permissions": "MANAGE_GUILD",
+    "permissions2": "NONE",
+    "restriction": "1",
+    "_id": "Nlhxr",
+    "actions": [
+        {
+            "storage": "4",
+            "varName": "Rolle",
+            "branches": [
+                {
+                    "comparison": "2",
+                    "value": "\"Experte\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "main-role-id",
+                            "changeType": "0",
+                            "value": "globalVars(\"main-expert-role\")",
+                            "name": "Control Variable"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "team-role-id",
+                            "changeType": "0",
+                            "value": "globalVars(\"team-expert-role\")",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "2",
+                    "value": "\"Moderator\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "main-role-id",
+                            "changeType": "0",
+                            "value": "globalVars(\"main-moderator-role\")",
+                            "name": "Control Variable"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "team-role-id",
+                            "changeType": "0",
+                            "value": "globalVars(\"team-moderator-role\")",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "2",
+                    "value": "\"Manager\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "main-role-id",
+                            "changeType": "0",
+                            "value": "globalVars(\"main-manager-role\")",
+                            "name": "Control Variable"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "team-role-id",
+                            "changeType": "0",
+                            "value": "globalVars(\"team-manager-role\")",
+                            "name": "Control Variable"
+                        }
+                    ]
+                }
+            ],
+            "name": "Multi-Check Variable"
+        },
+        {
+            "server": "101",
+            "varName": "${globalVars(\"team-server-id\")}",
+            "name": "Change Server"
+        },
+        {
+            "info": "0",
+            "find": "${globalVars(\"team-team-general-role\")}",
+            "storage": "1",
+            "varName": "team-general-role",
+            "name": "Find Role"
+        },
+        {
+            "info": "0",
+            "find": "${tempVars(\"team-role-id\")}",
+            "storage": "1",
+            "varName": "team-server-role",
+            "name": "Find Role"
+        },
+        {
+            "server": "101",
+            "varName": "${globalVars(\"main-server-id\")}",
+            "name": "Change Server"
+        },
+        {
+            "info": "0",
+            "find": "${globalVars(\"main-team-general-role\")}",
+            "storage": "1",
+            "varName": "main-general-role",
+            "name": "Find Role"
+        },
+        {
+            "info": "0",
+            "find": "${tempVars(\"main-role-id\")}",
+            "storage": "1",
+            "varName": "main-server-role",
+            "name": "Find Role"
+        },
+        {
+            "storage": "4",
+            "varName": "Befehl",
+            "comparison": "2",
+            "value": "\"hinzufügen\"",
+            "branch": {
+                "iftrue": "99",
+                "iffalse": "99",
+                "iftrueActions": [
+                    {
+                        "member": "5",
+                        "varName": "Nutzer",
+                        "role": "3",
+                        "varName2": "main-server-role",
+                        "branch": {
+                            "iftrue": "0",
+                            "iffalse": "3",
+                            "iffalseVal": "2"
+                        },
+                        "name": "Check If Member has Role"
+                    },
+                    {
+                        "comment": "Send failure embed",
+                        "actions": [
+                            {
+                                "storage": "1",
+                                "varName": "channel",
+                                "changeType": "0",
+                                "value": "channel",
+                                "name": "Control Variable"
+                            },
+                            {
+                                "storage": "1",
+                                "varName": "description",
+                                "changeType": "0",
+                                "value": "\"Der Nutzer besitzt die Rolle bereits!\"",
+                                "name": "Control Variable"
+                            },
+                            {
+                                "source": "HPCYz",
+                                "type": "true",
+                                "name": "Call Command/Event"
+                            }
+                        ],
+                        "name": "Action Container"
+                    },
+                    {
+                        "name": "End Action Sequence"
+                    },
+                    {
+                        "member": "5",
+                        "varName2": "Nutzer",
+                        "role": "3",
+                        "varName": "main-general-role",
+                        "reason": "",
+                        "name": "Add Member Role"
+                    },
+                    {
+                        "member": "5",
+                        "varName2": "Nutzer",
+                        "role": "3",
+                        "varName": "main-server-role",
+                        "reason": "",
+                        "name": "Add Member Role"
+                    },
+                    {
+                        "server": "101",
+                        "varName": "${globalVars(\"team-server-id\")}",
+                        "name": "Change Server"
+                    },
+                    {
+                        "server": "0",
+                        "varName": "",
+                        "info": "15",
+                        "storage": "1",
+                        "varName2": "members",
+                        "name": "Store Server Info"
+                    },
+                    {
+                        "storage": "1",
+                        "varName": "istMitglied",
+                        "changeType": "0",
+                        "value": "false",
+                        "name": "Control Variable"
+                    },
+                    {
+                        "list": "0",
+                        "varName": "members",
+                        "tempVarName": "member",
+                        "type": "true",
+                        "actions": [
+                            {
+                                "storage": "1",
+                                "varName": "member",
+                                "comparison": "1",
+                                "value": "slashParams(\"Nutzer\")",
+                                "branch": {
+                                    "iftrue": "0",
+                                    "iffalse": "99",
+                                    "iffalseActions": []
+                                },
+                                "name": "Check Variable"
+                            },
+                            {
+                                "storage": "1",
+                                "varName": "istMitglied",
+                                "changeType": "0",
+                                "value": "true",
+                                "name": "Control Variable"
+                            }
+                        ],
+                        "name": "Loop Through List"
+                    },
+                    {
+                        "storage": "1",
+                        "varName": "istMitglied",
+                        "comparison": "1",
+                        "value": "true",
+                        "branch": {
+                            "iftrue": "99",
+                            "iffalse": "99",
+                            "iftrueActions": [
+                                {
+                                    "member": "5",
+                                    "varName2": "Nutzer",
+                                    "role": "3",
+                                    "varName": "team-general-role",
+                                    "reason": "",
+                                    "name": "Add Member Role"
+                                },
+                                {
+                                    "member": "5",
+                                    "varName2": "Nutzer",
+                                    "role": "3",
+                                    "varName": "team-server-role",
+                                    "reason": "",
+                                    "name": "Add Member Role"
+                                }
+                            ],
+                            "iffalseActions": []
+                        },
+                        "name": "Check Variable"
+                    },
+                    {
+                        "comment": "Embed senden",
+                        "actions": [
+                            {
+                                "storage": "1",
+                                "varName": "ephemeral",
+                                "changeType": "0",
+                                "value": "false",
+                                "name": "Control Variable"
+                            },
+                            {
+                                "storage": "1",
+                                "varName": "edit",
+                                "changeType": "0",
+                                "value": "false",
+                                "name": "Control Variable"
+                            },
+                            {
+                                "storage": "1",
+                                "varName": "title",
+                                "changeType": "0",
+                                "value": "\"Erfolgreich!\"",
+                                "name": "Control Variable"
+                            },
+                            {
+                                "storage": "1",
+                                "varName": "description",
+                                "changeType": "0",
+                                "value": "Die Rolle wurde erfolgreich vergeben!",
+                                "name": "Control Variable"
+                            },
+                            {
+                                "source": "FGdiL",
+                                "type": "true",
+                                "name": "Call Command/Event"
+                            }
+                        ],
+                        "name": "Action Container"
+                    }
+                ],
+                "iffalseActions": []
+            },
+            "name": "Check Variable"
+        }
+    ],
+    "comType": "4",
+    "description": "Verwalten des Teams (Team-spezifischer Befehl)",
+    "parameters": [
+        {
+            "name": "Befehl",
+            "description": "Unter-Befehl",
+            "type": "STRING",
+            "required": true,
+            "choices": [
+                {
+                    "name": "hinzufügen",
+                    "value": "hinzufügen"
+                },
+                {
+                    "name": "entfernen",
+                    "value": "entfernen"
+                }
+            ]
+        },
+        {
+            "name": "Nutzer",
+            "description": "Anderer Nutzer",
+            "type": "USER",
+            "required": true,
+            "choices": null
+        },
+        {
+            "name": "Rolle",
+            "description": "Teamrolle",
+            "type": "STRING",
+            "required": true,
+            "choices": [
+                {
+                    "name": "experte",
+                    "value": "Experte"
+                },
+                {
+                    "name": "moderator",
+                    "value": "Moderator"
+                },
+                {
+                    "name": "manager",
+                    "value": "Manager"
+                }
+            ]
+        }
+    ]
+}

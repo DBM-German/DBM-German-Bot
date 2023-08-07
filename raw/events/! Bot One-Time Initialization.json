@@ -602,6 +602,62 @@
                     "storage": "3",
                     "varName": "isNitroBooster",
                     "name": "Run Script"
+                },
+                {
+                    "storage": "3",
+                    "varName": "main-team-general-role",
+                    "changeType": "0",
+                    "value": "globalVars(\"debug\") ? \"756234066545606818\" : \"488731124248346644\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
+                    "varName": "team-team-general-role",
+                    "changeType": "0",
+                    "value": "globalVars(\"debug\") ? \"724334624041600037\" : \"559431217590697985\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
+                    "varName": "main-expert-role",
+                    "changeType": "0",
+                    "value": "globalVars(\"debug\") ? \"724334571751080149\" : \"552490611639582720\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
+                    "varName": "team-expert-role",
+                    "changeType": "0",
+                    "value": "globalVars(\"debug\") ? \"756233856595656767\" : \"559431231029379075\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
+                    "varName": "main-moderator-role",
+                    "changeType": "0",
+                    "value": "globalVars(\"debug\") ? \"724334554541981727\" : \"605757344365805568\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
+                    "varName": "team-moderator-role",
+                    "changeType": "0",
+                    "value": "globalVars(\"debug\") ? \"756233777977491647\" : \"617796696549752852\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
+                    "varName": "main-manager-role",
+                    "changeType": "0",
+                    "value": "globalVars(\"debug\") ? \"724334501614059632\" : \"512626729681027103\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
+                    "varName": "team-manager-role",
+                    "changeType": "0",
+                    "value": "globalVars(\"debug\") ? \"756233661187358843\" : \"559420175439364100\"",
+                    "name": "Control Variable"
                 }
             ],
             "name": "Action Container"
