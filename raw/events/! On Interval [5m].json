@@ -22,6 +22,11 @@
                 }
             ],
             "name": "Loop Through List"
+        },
+        {
+            "source": "wpLYn",
+            "type": "true",
+            "name": "Call Command/Event"
         }
     ]
 }

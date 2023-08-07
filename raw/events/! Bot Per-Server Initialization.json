@@ -13,19 +13,27 @@
             "name": "Store Server Info"
         },
         {
-            "storage": "1",
-            "varName": "server-id",
-            "comparison": "1",
-            "value": "globalVars(\"main-server-id\")",
-            "branch": {
-                "iftrue": "0",
-                "iffalse": "1"
-            },
-            "name": "Check Variable"
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "console.log(`Starte Initialisierung für Server ${tempVars(\"server-id\")}...`);",
+            "storage": "0",
+            "varName": "",
+            "name": "Run Script"
         },
         {
             "comment": "Update Member Data | Member Data aktualisieren",
             "actions": [
+                {
+                    "storage": "1",
+                    "varName": "server-id",
+                    "comparison": "1",
+                    "value": "globalVars(\"main-server-id\")",
+                    "branch": {
+                        "iftrue": "0",
+                        "iffalse": "1"
+                    },
+                    "name": "Check Variable"
+                },
                 {
                     "list": "0",
                     "varName": "",
@@ -45,6 +53,19 @@
                 }
             ],
             "name": "Action Container"
+        },
+        {
+            "source": "wpLYn",
+            "type": "true",
+            "name": "Call Command/Event"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "console.log(`Initialisierung für Server ${tempVars(\"server-id\")} beendet.`);",
+            "storage": "0",
+            "varName": "",
+            "name": "Run Script"
         }
     ]
 }
