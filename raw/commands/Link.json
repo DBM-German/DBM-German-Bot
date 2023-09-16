@@ -296,6 +296,19 @@
                 },
                 {
                     "comparison": "1",
+                    "value": "\"RegEx101\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "link",
+                            "changeType": "0",
+                            "value": "\"regex101.com\"",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
                     "value": "\"RegExr\"",
                     "actions": [
                         {
@@ -429,6 +442,10 @@
                 {
                     "name": "sharex",
                     "value": "ShareX"
+                },
+                {
+                    "name": "regex101",
+                    "value": "RegEx101"
                 },
                 {
                     "name": "regexr",
