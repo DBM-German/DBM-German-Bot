@@ -1,114 +1,56 @@
 # Globale Variablen
 
-
-## Version | ${`globalVars("version")`}
-
-Die aktuelle Version des Bots als Text. Beispiele:
-- "3.0"
-- "3.0-beta"
+Globale Variablen können in zwei Kategorien unterteilt werden:
+- [Konstanten](#Konstanten)
+- [Funktionen](#Funktionen)
 
 
-## Debug | ${`globalVars("debug")`}
 
-Ein Boolean, welcher definiert, ob dies eine Instanz zum Suchen von Fehlern ist oder nicht. Wenn die Client-ID "724335784798322833" ist, dann wird die Variable 'false' sein, andernfalls ist sie 'true'.
+## Konstanten
 
-
-## Default Color | ${`globalVars("default-color")`}
-
-Die Standardfarbe des Bots (#fff700).
-
-
-## Success Color | ${`globalVars("success-color")`}
-
-Die Erfolgsfarbe des Bots (#3fff3f).
-
-
-## Failure Color | ${`globalVars("failure-color")`}
-
-Die Fehlschlagsfarbe des Bots (#ff3f3f).
-
-
-## Info Color | ${`globalVars("info-color")`}
-
-Die Informationsfarbe des Bots (#3f3fff).
-
-
-## Warning Color | ${`globalVars("warning-color")`}
-Die Warnungsfarbe des Bots (ffff3f).
-
-
-## Main Server ID | ${`globalVars("main-server-id")`}
-
-Basierend darauf, ob `globalVars("debug")` 'true' ist, die ID unseres DBM German Beta ("724330774257729647") oder DBM German-Servers ("488722832201613344").
-
-
-## Team Server ID | ${`globalVars("team-server-id")`}
-
-Die ID unseres DBM German Team-Servers ("533618507699585035").
+| Variable                        | Regulärer Wert                                  | Wert im Debug-Modus                             | Beschreibung                                                                                                                                     |
+|---------------------------------|-------------------------------------------------|-------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| version                         | *aktuelle Version*                              | *regulärer Wert*                                | Die aktuelle Version des Bots als Text (Beispiele: "3.0", "3.0-beta")                                                                            |
+| debug                           | `false`                                         | `true`                                          | Ein Boolean, welcher definiert, ob es der Beta-Bot ist oder nicht (bei der Client-ID "724335784798322833" ist es `false`, andernfalls `true`)    |
+| github-link                     | `https://github.com/dbm-german/DBM-German-Bot`  | *regulärer Wert*                                | Link zum GitHub-Repository des DBM German Bots                                                                                                   |
+| default-color                   | `#fff700`                                       | *regulärer Wert*                                | Standardfarbe des Bots                                                                                                                           |
+| success-color                   | `#3fff3f`                                       | *regulärer Wert*                                | Erfolgsfarbe des Bots                                                                                                                            |
+| failure-color                   | `#ff3f3f`                                       | *regulärer Wert*                                | Fehlschlagsfarbe des Bots                                                                                                                        |
+| info-color                      | `#3f3fff`                                       | *regulärer Wert*                                | Informationsfarbe des Bots                                                                                                                       |
+| warning-color                   | `#ffff3f`                                       | *regulärer Wert*                                | Warnungsfarbe des Bots                                                                                                                           |
+| main-server-id                  | `488722832201613344` (DBM German)               | `724330774257729647` (DBM German Beta)          | Hauptserver                                                                                                                                      |
+| team-server-id                  | `533618507699585035` (DBM German Team)          | *regulärer Wert*                                | Teamserver                                                                                                                                       |
+| fake-server-id                  | `731837587836371024` (Fake DBM German Team)     | *regulärer Wert*                                | Fake Teamserver (Troll / Easter Egg)                                                                                                             |
+| main-welcome-goodbye-channel-id | `488736789092237322`                            | `724330774966435852`                            | Willkommen / Aufwiedersehen-Kanal                                                                                                                |
+| team-welcome-goodbye-channel-id | `559419622667845633`                            | `756233531356610580`                            | Team Willkommen / Aufwiedersehen-Kanal                                                                                                           |
+| rule-channel-id                 | `514896934411042834`                            | `724331029359493120`                            | Regeln-Kanal                                                                                                                                     |
+| serverlist-channel-id           | `488734739000328202`                            | `724331017401532446`                            | Serverliste-Kanal                                                                                                                                |
+| faq-channel-id                  | `547530904453775390`                            | `724331079619706910`                            | FAQ-Kanal                                                                                                                                        |
+| help-channel-id                 | `1047167552792563712`                           | `724331258351452251`                            | Hilfe-Kanal                                                                                                                                      |
+| hidden-role-id                  | `663781677016809504`                            | `724335094281666642`                            | "Ausgeblendet"-Rolle                                                                                                                             |
+| answered-tag-id                 | `1047539260724613140`                           | `null`                                          | "Beantwortet"-Tag                                                                                                                                |
+| commands                        | [Array]<[Command](#Command)>                    | *regulärer Wert*                                | Liste aller geladenen Befehle und deren Parameter                                                                                                |
+| commandTypes                    | [Command Types](#Command-Types)                 | *regulärer Wert*                                | Objekt mit allen DBM-Befehlsarten                                                                                                                |
+| commandTypeNames                | [Command Type Names](#Command-Type-Names)       | *regulärer Wert*                                | Lesbaren Namen für alle Befehlsarten                                                                                                             |
+| replacement-nicknames           | [Replacement Nicknames](#Replacement-Nicknames) | *regulärer Wert*                                | Liste von männlichen und weiblichen Ersatznamen für Benutzer, die Zeichen in ihrem Namen haben, welche nicht im QWERTZ-Tastaturlayout vorkommen  |
+| advertisement-regex             | [RegExp]                                        | *regulärer Wert*                                | Der Reguläre Ausdruck (Regular Expression; RegEx), der verwendet wird, um Werbung (Links) in Profilen und Nachrichten zu erkennen                |
+| advertisement-exceptions        | [RegExp]                                        | *regulärer Wert*                                | Ausnahmen für den Advertisement RegEx (Treffer sollten zuvor auf Discord-Einladungslinks geprüft werden, da Discord-Links generell erlaubt sind) |
+| holiday                         | [string] / `null`                               | *regulärer Wert*                                | Sollte der aktuelle Tag ein deutscher Feiertag sein, dann ist dessen Name in der Variable, ansonsten `null` (wird täglich aktualisiert)          |
 
 
-## Fake Server ID | ${`globalVars("fake-server-id")`}
+### Command
 
-Die ID unseres gefälschten DBM German Team-Servers ("731837587836371024"). Dieser Server ist ein Troll / Easter Egg in der Serverliste.
-
-
-## Main Welcome / Goodbye Channel ID | ${`globalVars("main-welcome-goodbye-channel-id")`}
-
-Basierend darauf, ob `globalVars("debug")` 'true' ist, die ID unseres DBM German Beta ("724330774966435852") oder DBM German Willkommen / Aufwiedersehen-Kanals ("488736789092237322").
-
-
-## Team Welcome / Goodbye Channel ID | ${`globalVars("team-welcome-goodbye-channel-id")`}
-
-Basierend darauf, ob `globalVars("debug")` 'true' ist, die ID unseres DBM German Beta ("756233531356610580") oder DBM German Team Willkommen / Aufwiedersehen-Kanals ("559419622667845633").
-
-
-## Rule Channel ID | ${`globalVars("rule-channel-id")`}
-
-Basierend darauf, ob `globalVars("debug")` 'true' ist, die ID unseres DBM German Beta ("724331029359493120") oder DBM German Regeln-Kanals ("514896934411042834").
-
-
-## Serverlist Channel ID | ${`globalVars("serverlist-channel-id")`}
-
-Basierend darauf, ob `globalVars("debug")` 'true' ist, die ID unseres DBM German Beta ("724331017401532446") oder DBM German Regeln-Kanals ("488734739000328202").
-
-
-## FAQ Channel ID | ${`globalVars("faq-channel-id")`}
-
-Basierend darauf, ob `globalVars("debug")` 'true' ist, die ID unseres DBM German Beta ("724331079619706910") oder DBM German FAQ-Kanals ("547530904453775390").
-
-
-## Help Channel ID | ${`globalVars("help-channel-id")`}
-
-Basierend darauf, ob `globalVars("debug")` 'true' ist, die ID unseres DBM German Beta ("724331258351452251") oder DBM German Hilfe-Kanals ("1047167552792563712").
-
-
-## Hidden Role ID | ${`globalVars("hidden-role-id")`}
-
-Basierend darauf, ob `globalVars("debug")` 'true' ist, die ID unserer DBM German Beta ("724335094281666642") oder DBM German Ausgeblendet-Rolle ("663781677016809504").
-
-
-## Answered Tag ID | ${`globalVars("answered-tag-id")`}
-
-Basierend darauf, ob `globalVars("debug")` 'true' ist, die ID unserer DBM German Beta (`null`) oder DBM German "Beantwortet"-Tags ("1047539260724613140").
-
-
-## Commands | ${`globalVars("commands")`}
-
-Eine Liste von allen verfügbaren Befehlen und deren Parametern. Aufbau der Befehle:
-
-| Schlüssel             | Typ des Werts                 |
+| Schlüssel             | Datentyp                      |
 |-----------------------|-------------------------------|
-| name                  | String                        |
-| description           | String                        |
+| name                  | [string]                      |
+| description           | [string]                      |
 | parameters            | [ApplicationCommandOption]    |
 | type                  | [ApplicationCommandType]      |
 
 
-## Command Types | ${`globalVars("commandTypes")`}
+### Command Types
 
-Ein Objekt mit allen von DBMs internen Befehlsarten. Aufbau des Objekts:
-
-| Schlüssel             | Wert (String)         |
+| Schlüssel             | Wert ([string])       |
 |-----------------------|-----------------------|
 | TEXT                  | 0                     |
 | INCLUDES_WORD         | 1                     |
@@ -119,11 +61,9 @@ Ein Objekt mit allen von DBMs internen Befehlsarten. Aufbau des Objekts:
 | MSG_MENU              | 6                     |
 
 
-## Command Type Names | ${`globalVars("commandTypeNames")`}
+### Command Type Names
 
-Ein Objekt mit lesbaren Namen für DBMs interne Befehlsarten. Aufbau des Objekts:
-
-| Schlüssel             | Wert (String)         |
+| Schlüssel             | Wert ([string])       |
 |-----------------------|-----------------------|
 | 0                     | Text Command          |
 | 1                     | Includes Word         |
@@ -134,31 +74,7 @@ Ein Objekt mit lesbaren Namen für DBMs interne Befehlsarten. Aufbau des Objekts
 | 6                     | Message Menu          |
 
 
-## Resolve Command Type | ${`globalVars("resolveCommandType")`}
-
-Eine Funktion zum Auflösen der Befehlsarten zu lesbaren Namen. Beispiel:
-```js
-let internalType = "4";
-let readableType = globalVars("resolveCommandType")(commandType);
-console.log(readableType); // Slash Command
-```
-
-
-## Break Text | ${`globalVars("breakText")`}
-
-Eine Funktion, um Texte falls nötig abzubrechen und das Ende mit Abbruchzeichen zu ersetzen. Beispiel:
-```js
-let text1 = "DBM German";
-let text2 = "DBM German Bot";
-console.log(globalVars("breakText")(text1, 10)); // DBM German
-console.log(globalVars("breakText")(text2, 10)); // DBM Ger...
-console.log(globalVars("breakText")(text2, 10, " [...]")); // DBM  [...]
-```
-
-
-## Replacement Nicknames | ${`globalVars("replacement-nicknames")`}
-
-Eine Liste von männlichen und weiblichen Ersatznamen für Benutzer, die Nicknamen mit Zeichen haben, die nicht auf einer Tastatur mit QWERTZ-Layout verfügbar sind.
+### Replacement Nicknames
 
 | Männlich (11)         | Weiblich (11)         |
 |-----------------------|-----------------------|
@@ -174,20 +90,36 @@ Eine Liste von männlichen und weiblichen Ersatznamen für Benutzer, die Nicknam
 | Valentin              | Theresa               |
 | Rüdiger               | Carlotta              |
 
-<sup>1</sup> Bei diesem Namen besteht eine 50-prozentige Chance, dass es stattdessen Mathilda Jonas sein wird.
+<sup>1</sup> Bei diesem Namen besteht im "Nicknamen prüfen"-Event eine 50-prozentige Chance, dass es stattdessen Mathilda Jonas sein wird.
 
 
-## Advertisement RegEx | ${`globalVars("advertisement-regex")`}
 
-Der reguläre Ausdruck, der verwendet wird, um Werbung in den Namen und Personalisierten Status zu erkennen.
-
-
-## Holiday | ${`globalVars("holiday")`}
-
-Falls der aktuelle Tag zur Laufzeit ein Feiertag sein sollte, wird dessen Name in der Variable gespeichert. An regulären Tagen ist ihr Wert `null`.
+## Funktionen
 
 
-## Is Nitro Booster | ${`globalVars("isNitroBooster")`}
+### Resolve Command Type | ${`globalVars("resolveCommandType")`}
+
+Eine Funktion zum Auflösen der Befehlsarten zu lesbaren Namen. Beispiel:
+```js
+let internalType = "4";
+let readableType = globalVars("resolveCommandType")(commandType);
+console.log(readableType); // Slash Command
+```
+
+
+### Break Text | ${`globalVars("breakText")`}
+
+Eine Funktion, um Texte falls nötig abzubrechen und das Ende mit Abbruchzeichen zu ersetzen. Beispiel:
+```js
+let text1 = "DBM German";
+let text2 = "DBM German Bot";
+console.log(globalVars("breakText")(text1, 10)); // DBM German
+console.log(globalVars("breakText")(text2, 10)); // DBM Ger...
+console.log(globalVars("breakText")(text2, 10, " [...]")); // DBM  [...]
+```
+
+
+### Is Nitro Booster | ${`globalVars("isNitroBooster")`}
 
 Eine Funktion zum Prüfen, ob ein Mitglied ein Nitro Booster ist. Beispiel:
 ```js
@@ -197,7 +129,7 @@ console.log(status); // true / false
 ```
 
 
-## Is Bot Owner | ${`globalVars("isBotOwner")`}
+### Is Bot Owner | ${`globalVars("isBotOwner")`}
 
 Eine Funktion zum Prüfen, ob ein Mitglied der Bot-Eigentümer ist. Beispiel:
 ```js
@@ -207,5 +139,20 @@ console.log(status); // true / false
 ```
 
 
+### Levenshtein | ${`globalVars("levenshtein")`}
+
+Eine Funktion zum Berechnen der Levenshtein-Distanz zwischen zwischen zwei Zeichenfolgen. Beispiel:
+```js
+let a = "sample";
+let b = "example";
+let distance = globalVars("levenshtein")(a, b);
+console.log(distance); // 2
+```
+
+
+
+[string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+[Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+[RegExp]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
 [ApplicationCommandOption]: https://old.discordjs.dev/#/docs/discord.js/v13/typedef/ApplicationCommandOption
 [ApplicationCommandType]: https://old.discordjs.dev/#/docs/discord.js/v13/typedef/ApplicationCommandType

@@ -1,8 +1,8 @@
 {
-    "name": "Serverbeitritt",
+    "name": "Mitgliederanzahl aktualisieren",
     "temp": "",
     "event-type": "0",
-    "_id": "mqJdD",
+    "_id": "wpLYn",
     "actions": [
         {
             "server": "0",
@@ -64,55 +64,26 @@
             "name": "Check Variable"
         },
         {
-            "member": "2",
-            "varName": "member",
-            "info": "3",
+            "server": "0",
+            "varName": "",
+            "info": "35",
             "storage": "1",
-            "varName2": "name",
-            "name": "Store Member Info"
+            "varName2": "member-count",
+            "name": "Store Server Info"
         },
         {
-            "member": "2",
-            "varName": "member",
-            "info": "16",
-            "storage": "1",
-            "varName2": "avatar",
-            "name": "Store Member Info"
-        },
-        {
-            "channel": "103",
-            "varName": "${tempVars(\"welcome-goodbye-channel-id\")}",
-            "message": "",
-            "buttons": [],
-            "selectMenus": [],
-            "attachments": [],
-            "embeds": [
-                {
-                    "title": "Willkommen!",
-                    "url": "",
-                    "color": "${globalVars(\"success-color\")}",
-                    "timestamp": "false",
-                    "imageUrl": "",
-                    "thumbUrl": "",
-                    "description": "",
-                    "fields": [],
-                    "author": "${tempVars(\"name\")}",
-                    "authorUrl": "",
-                    "authorIcon": "${tempVars(\"avatar\")}",
-                    "footerText": "",
-                    "footerIconUrl": ""
-                }
-            ],
-            "reply": false,
-            "ephemeral": false,
-            "tts": false,
-            "overwrite": false,
-            "dontSend": false,
-            "editMessage": "0",
-            "editMessageVarName": "",
-            "storage": "0",
-            "varName2": "",
-            "name": "Send Message"
+            "channel": "101",
+            "channelVarName": "${tempVars(\"welcome-goodbye-channel-id\")}",
+            "channelName": "mitglieder-${tempVars(\"member-count\")}",
+            "reason": "",
+            "channelEdits": {
+                "_index": 0,
+                "topic": "",
+                "categoryID": "",
+                "slowmode": "",
+                "position": ""
+            },
+            "name": "Edit Any Channel"
         }
     ]
 }

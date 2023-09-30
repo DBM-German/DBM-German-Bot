@@ -18,24 +18,57 @@
             "comparison": "1",
             "value": "globalVars(\"main-server-id\")",
             "branch": {
+                "iftrue": "99",
+                "iffalse": "0",
+                "iftrueActions": [
+                    {
+                        "storage": "1",
+                        "varName": "welcome-goodbye-channel-id",
+                        "changeType": "0",
+                        "value": "globalVars(\"main-welcome-goodbye-channel-id\")",
+                        "name": "Control Variable"
+                    }
+                ]
+            },
+            "name": "Check Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "serverId",
+            "comparison": "1",
+            "value": "globalVars(\"team-server-id\")",
+            "branch": {
+                "iftrue": "99",
+                "iffalse": "0",
+                "iftrueActions": [
+                    {
+                        "storage": "1",
+                        "varName": "welcome-goodbye-channel-id",
+                        "changeType": "0",
+                        "value": "globalVars(\"team-welcome-goodbye-channel-id\")",
+                        "name": "Control Variable"
+                    }
+                ]
+            },
+            "name": "Check Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "welcome-goodbye-channel-id",
+            "comparison": "0",
+            "value": "",
+            "branch": {
                 "iftrue": "0",
                 "iffalse": "1"
             },
             "name": "Check Variable"
         },
         {
-            "info": "0",
-            "find": "${globalVars(\"main-welcome-goodbye-channel-id\")}",
-            "storage": "1",
-            "varName": "channel",
-            "name": "Find Channel"
-        },
-        {
             "member": "2",
             "varName": "member",
-            "info": "21",
+            "info": "3",
             "storage": "1",
-            "varName2": "tag",
+            "varName2": "name",
             "name": "Store Member Info"
         },
         {
@@ -47,8 +80,8 @@
             "name": "Store Member Info"
         },
         {
-            "channel": "5",
-            "varName": "channel",
+            "channel": "103",
+            "varName": "${tempVars(\"welcome-goodbye-channel-id\")}",
             "message": "",
             "buttons": [],
             "selectMenus": [],
@@ -63,7 +96,7 @@
                     "thumbUrl": "",
                     "description": "",
                     "fields": [],
-                    "author": "${tempVars(\"tag\")}",
+                    "author": "${tempVars(\"name\")}",
                     "authorUrl": "",
                     "authorIcon": "${tempVars(\"avatar\")}",
                     "footerText": "",

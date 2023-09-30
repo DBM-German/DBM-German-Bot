@@ -14,6 +14,8 @@ const RAW_DATA_DIR = `${RAW_DIR}/data`;
 const BOT_DIR = "./bot";
 const BOT_DATA_DIR = `${BOT_DIR}/data`;
 const BOT_ACTIONS_DIR = `${BOT_DIR}/actions`;
+const BOT_EVENTS_DIR = `${BOT_DIR}/events`;
+const BOT_EXTENSIONS_DIR = `${BOT_DIR}/extensions`;
 const STEAM_REG_KEY_32 = "HKLM\\SOFTWARE\\Valve\\Steam";
 const STEAM_REG_KEY_64 = "HKLM\\SOFTWARE\\Wow6432Node\\Valve\\Steam";
 const STEAM_REG_VAL_PATH = "InstallPath";
@@ -22,6 +24,8 @@ const DBM_ID = "682130";
 const DBM_FOLDER = "steamapps/common/Discord Bot Maker";
 const DBM_TEMPLATE_FOLDER = "resources/app/bot";
 const DBM_ACTIONS_FOLDER = "actions";
+const DBM_EVENTS_FOLDER = "events";
+const DBM_EXTENSIONS_FOLDER = "extensions";
 const FS_R = constants.F_OK | constants.R_OK;
 const FS_RW = FS_R | constants.W_OK;
 
@@ -95,7 +99,7 @@ let dbmDir = await findDBM();
 try {
     await access(dbmDir, FS_R);
 } catch(e) {
-    console.error(`Auf Discord Bot Maker-Verzeichnis kann nicht zugegriffen werden: ${e}`);
+    console.error(`Auf DBM-Verzeichnis kann nicht zugegriffen werden: ${e}`);
     process.exit(1);
 }
 
@@ -103,7 +107,7 @@ try {
 try {
     await access(`${dbmDir}/${DBM_TEMPLATE_FOLDER}`, FS_R);
 } catch(e) {
-    console.error(`Auf Discord Bot Maker-Template-Ordner kann nicht zugegriffen werden: ${e}`);
+    console.error(`Auf DBM-Template-Ordner kann nicht zugegriffen werden: ${e}`);
     process.exit(1);
 }
 
@@ -111,7 +115,31 @@ try {
 try {
     await access(`${dbmDir}/${DBM_ACTIONS_FOLDER}`, FS_R);
 } catch(e) {
-    console.error(`Auf Discord Bot Maker-Actions-Ordner kann nicht zugegriffen werden: ${e}`);
+    console.error(`Auf DBM-Actions-Ordner kann nicht zugegriffen werden: ${e}`);
+    process.exit(1);
+}
+
+// Check permissions for DBM events folder
+try {
+    await access(`${dbmDir}/${DBM_EVENTS_FOLDER}`, FS_R);
+} catch(e) {
+    console.error(`Auf DBM-Events-Ordner kann nicht zugegriffen werden: ${e}`);
+    process.exit(1);
+}
+
+// Check permissions for DBM extensions folder
+try {
+    await access(`${dbmDir}/${DBM_EXTENSIONS_FOLDER}`, FS_R);
+} catch(e) {
+    console.error(`Auf DBM-Extensions-Ordner kann nicht zugegriffen werden: ${e}`);
+    process.exit(1);
+}
+
+// Check permissions for raw directory
+try {
+    await access(RAW_DIR, FS_R);
+} catch(e) {
+    console.error(`Auf Raw Data-Verzeichnis kann nicht zugegriffen werden: ${e}`);
     process.exit(1);
 }
 
@@ -145,11 +173,13 @@ if(botDirExists) {
 
 // Copy template and actions from DBM installation directory
 try {
-    console.log("Kopiere DBM-Template und -Actions...");
+    console.log("Kopiere DBM-Template, -Actions, -Events und -Extensions...");
     await cp(`${dbmDir}/${DBM_TEMPLATE_FOLDER}`, BOT_DIR, { recursive: true });
     await cp(`${dbmDir}/${DBM_ACTIONS_FOLDER}`, BOT_ACTIONS_DIR, { recursive: true });
+    await cp(`${dbmDir}/${DBM_EVENTS_FOLDER}`, BOT_EVENTS_DIR, { recursive: true });
+    await cp(`${dbmDir}/${DBM_EXTENSIONS_FOLDER}`, BOT_EXTENSIONS_DIR, { recursive: true });
 } catch (e) {
-    console.error(`Template oder Actions können nicht kopiert werden: ${e}`);
+    console.error(`DBM Template, -Actions, -Events oder -Extensions können nicht kopiert werden: ${e}`);
     process.exit(1);
 }
 

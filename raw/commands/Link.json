@@ -29,7 +29,7 @@
                             "storage": "1",
                             "varName": "link",
                             "changeType": "0",
-                            "value": "\"https://dbotmaker.io/\"",
+                            "value": "\"dbotmaker.io\"",
                             "name": "Control Variable"
                         }
                     ]
@@ -42,7 +42,7 @@
                             "storage": "1",
                             "varName": "link",
                             "changeType": "0",
-                            "value": "\"https://dbotmaker.io/documentation/\"",
+                            "value": "\"dbotmaker.io/documentation\"",
                             "name": "Control Variable"
                         }
                     ]
@@ -55,7 +55,7 @@
                             "storage": "1",
                             "varName": "link",
                             "changeType": "0",
-                            "value": "\"https://dbotmaker.io/forums/\"",
+                            "value": "\"dbotmaker.io/forums\"",
                             "name": "Control Variable"
                         }
                     ]
@@ -68,7 +68,7 @@
                             "storage": "1",
                             "varName": "link",
                             "changeType": "0",
-                            "value": "\"https://s.team/a/682130/\"",
+                            "value": "\"s.team/a/682130\"",
                             "name": "Control Variable"
                         }
                     ]
@@ -81,7 +81,7 @@
                             "storage": "1",
                             "varName": "link",
                             "changeType": "0",
-                            "value": "\"https://dbm-network.org/\"",
+                            "value": "\"dbm-network.org\"",
                             "name": "Control Variable"
                         }
                     ]
@@ -94,7 +94,7 @@
                             "storage": "1",
                             "varName": "link",
                             "changeType": "0",
-                            "value": "\"https://dbm-network.org/mods/\"",
+                            "value": "\"dbm-network.org/mods\"",
                             "name": "Control Variable"
                         }
                     ]
@@ -107,7 +107,7 @@
                             "storage": "1",
                             "varName": "link",
                             "changeType": "0",
-                            "value": "\"https://rawdata.dbm-network.org/\"",
+                            "value": "\"rawdata.dbm-network.org\"",
                             "name": "Control Variable"
                         }
                     ]
@@ -120,7 +120,7 @@
                             "storage": "1",
                             "varName": "link",
                             "changeType": "0",
-                            "value": "\"https://dbm-support.site/\"",
+                            "value": "\"dbm-support.site\"",
                             "name": "Control Variable"
                         }
                     ]
@@ -133,7 +133,7 @@
                             "storage": "1",
                             "varName": "link",
                             "changeType": "0",
-                            "value": "\"https://github.com/dbm-network/\"",
+                            "value": "\"github.com/dbm-network\"",
                             "name": "Control Variable"
                         }
                     ]
@@ -146,7 +146,7 @@
                             "storage": "1",
                             "varName": "link",
                             "changeType": "0",
-                            "value": "\"https://discord.gg/3RfuZUT\"",
+                            "value": "\"discord.gg/3RfuZUT\"",
                             "name": "Control Variable"
                         }
                     ]
@@ -159,7 +159,7 @@
                             "storage": "1",
                             "varName": "link",
                             "changeType": "0",
-                            "value": "\"https://discord.gg/UhTqp97\"",
+                            "value": "\"discord.gg/UhTqp97\"",
                             "name": "Control Variable"
                         }
                     ]
@@ -172,7 +172,7 @@
                             "storage": "1",
                             "varName": "link",
                             "changeType": "0",
-                            "value": "\"https://www.youtube.com/watch?v=dQw4w9WgXcQ\"",
+                            "value": "\"discord.gg/QDXae4G\"",
                             "name": "Control Variable"
                         }
                     ]
@@ -185,7 +185,7 @@
                             "storage": "1",
                             "varName": "link",
                             "changeType": "0",
-                            "value": "\"https://nodejs.org/de/\"",
+                            "value": "\"nodejs.org/de\"",
                             "name": "Control Variable"
                         }
                     ]
@@ -198,7 +198,7 @@
                             "storage": "1",
                             "varName": "link",
                             "changeType": "0",
-                            "value": "\"https://nodejs.org/de/download/\"",
+                            "value": "\"nodejs.org/de/download\"",
                             "name": "Control Variable"
                         }
                     ]
@@ -211,7 +211,7 @@
                             "storage": "1",
                             "varName": "link",
                             "changeType": "0",
-                            "value": "\"https://nodejs.org/de/download/package-manager/\"",
+                            "value": "\"nodejs.org/de/download/package-manager\"",
                             "name": "Control Variable"
                         }
                     ]
@@ -224,7 +224,7 @@
                             "storage": "1",
                             "varName": "link",
                             "changeType": "0",
-                            "value": "\"https://discord.js.org/\"",
+                            "value": "\"discord.js.org\"",
                             "name": "Control Variable"
                         }
                     ]
@@ -237,7 +237,7 @@
                             "storage": "1",
                             "varName": "link",
                             "changeType": "0",
-                            "value": "\"https://discord.js.org/#/docs/\"",
+                            "value": "\"discord.js.org/#/docs\"",
                             "name": "Control Variable"
                         }
                     ]
@@ -250,7 +250,7 @@
                             "storage": "1",
                             "varName": "link",
                             "changeType": "0",
-                            "value": "\"https://discordjs.guide/\"",
+                            "value": "\"discordjs.guide\"",
                             "name": "Control Variable"
                         }
                     ]
@@ -263,7 +263,7 @@
                             "storage": "1",
                             "varName": "link",
                             "changeType": "0",
-                            "value": "\"https://github.com/discordjs/\"",
+                            "value": "\"github.com/discordjs\"",
                             "name": "Control Variable"
                         }
                     ]
@@ -276,7 +276,7 @@
                             "storage": "1",
                             "varName": "link",
                             "changeType": "0",
-                            "value": "\"https://code.visualstudio.com/\"",
+                            "value": "\"code.visualstudio.com\"",
                             "name": "Control Variable"
                         }
                     ]
@@ -289,7 +289,20 @@
                             "storage": "1",
                             "varName": "link",
                             "changeType": "0",
-                            "value": "\"https://getsharex.com/\"",
+                            "value": "\"getsharex.com\"",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "1",
+                    "value": "\"RegEx101\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "link",
+                            "changeType": "0",
+                            "value": "\"regex101.com\"",
                             "name": "Control Variable"
                         }
                     ]
@@ -302,7 +315,7 @@
                             "storage": "1",
                             "varName": "link",
                             "changeType": "0",
-                            "value": "\"https://regexr.com/\"",
+                            "value": "\"regexr.com\"",
                             "name": "Control Variable"
                         }
                     ]
@@ -311,38 +324,30 @@
             "name": "Multi-Check Variable"
         },
         {
-            "title": "Link – ${slashParams(\"Webseite\")}",
-            "author": "",
-            "color": "${globalVars(\"default-color\")}",
-            "timestamp": "false",
-            "url": "",
-            "authorIcon": "",
-            "imageUrl": "",
-            "thumbUrl": "",
             "storage": "1",
-            "varName": "embed",
-            "name": "Create Embed Message"
+            "varName": "title",
+            "changeType": "0",
+            "value": "`Link – ${slashParams(\"Webseite\")}`",
+            "name": "Control Variable"
         },
         {
             "storage": "1",
-            "varName": "embed",
-            "message": "🔗 [Link öffnen](${tempVars(\"link\")} \"Öffne ${tempVars(\"link\")}\")",
-            "name": "Set Embed Description"
+            "varName": "description",
+            "changeType": "0",
+            "value": "`🔗 [Link öffnen](https://${tempVars(\"link\")} \"Öffne ${tempVars(\"link\")}\")`",
+            "name": "Control Variable"
         },
         {
             "storage": "1",
-            "varName": "embed",
-            "message": "DBM German Bot v${globalVars(\"version\")}",
-            "footerIcon": "",
-            "name": "Set Embed Footer"
+            "varName": "channel",
+            "changeType": "0",
+            "value": "channel",
+            "name": "Control Variable"
         },
         {
-            "behavior": "1",
-            "interpretation": "1",
-            "code": "const data = cache.actions[cache.index];\n\nlet messageOptions = {\n    embeds: [ tempVars(\"embed\") ]\n};\nlet promise = null;\n\nif(cache.interaction.deferred) {\n    promise = cache.interaction.editReply(messageOptions);\n} else {\n    promise = cache.interaction.reply(messageOptions);\n}\n\npromise\n    .then(() => this.callNextAction(cache))\n    .catch((err) => this.displayError(data, cache, err));",
-            "storage": "0",
-            "varName": "",
-            "name": "Run Script"
+            "source": "FGdiL",
+            "type": "true",
+            "name": "Call Command/Event"
         }
     ],
     "comType": "4",
@@ -437,6 +442,10 @@
                 {
                     "name": "sharex",
                     "value": "ShareX"
+                },
+                {
+                    "name": "regex101",
+                    "value": "RegEx101"
                 },
                 {
                     "name": "regexr",

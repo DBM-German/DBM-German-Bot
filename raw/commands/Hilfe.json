@@ -144,16 +144,35 @@
                 },
                 {
                     "storage": "1",
-                    "varName": "exists",
+                    "varName": "command",
                     "changeType": "0",
-                    "value": "globalVars(\"commands\").some(c => c.name.toLowerCase() == slashParams(\"Befehl\").toLowerCase())",
+                    "value": "globalVars(\"commands\").find(c => c.name.toLowerCase() == slashParams(\"Befehl\").toLowerCase())",
                     "name": "Control Variable"
                 },
                 {
                     "storage": "1",
-                    "varName": "exists",
-                    "comparison": "1",
-                    "value": "true",
+                    "varName": "command",
+                    "comparison": "0",
+                    "value": "",
+                    "branch": {
+                        "iftrue": "4",
+                        "iffalse": "0",
+                        "iftrueVal": "send-info"
+                    },
+                    "name": "Check Variable"
+                },
+                {
+                    "storage": "1",
+                    "varName": "command",
+                    "changeType": "0",
+                    "value": "globalVars(\"commands\").find(c => globalVars(\"levenshtein\")(c.name.toLowerCase(), slashParams(\"Befehl\").toLowerCase()) <= 2)",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "1",
+                    "varName": "command",
+                    "comparison": "0",
+                    "value": "",
                     "branch": {
                         "iftrue": "4",
                         "iffalse": "0",
@@ -183,7 +202,7 @@
                 {
                     "behavior": "0",
                     "interpretation": "1",
-                    "code": "let command = globalVars(\"commands\").find(c => c.name.toLowerCase() == slashParams(\"Befehl\").toLowerCase());\n\nlet title = `Hilfe – ${command.name} (${globalVars(\"resolveCommandType\")(command.type)})`;\n\nlet description = `\n${command.description}\n\nParameter:\n${\n    Array.isArray(command.parameters)\n    ? command.parameters.map(p => `• ${p.name}: ${p.description}`).join(\"\\n\")\n    : \"keine\"\n}\n`;\n\n\nthis.storeValue(title, 1, \"title\", cache);\nthis.storeValue(description, 1, \"description\", cache);",
+                    "code": "let command = tempVars(\"command\");\n\nlet title = `Hilfe – ${command.name} (${globalVars(\"resolveCommandType\")(command.type)})`;\n\nlet description = `\n${command.description}\n\nParameter:\n${\n    Array.isArray(command.parameters)\n    ? command.parameters.map(p => `• ${p.name}: ${p.description}`).join(\"\\n\")\n    : \"keine\"\n}\n`;\n\n\nthis.storeValue(title, 1, \"title\", cache);\nthis.storeValue(description, 1, \"description\", cache);",
                     "storage": "0",
                     "varName": "",
                     "name": "Run Script"

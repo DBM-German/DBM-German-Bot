@@ -57,17 +57,22 @@ try {
  */
 let container = new Map();
 
-for(let entry of await readdir(`${BOT_DIR}/data`)) {
-    let path = `${BOT_DIR}/data/${entry}`;
-    let info = await stat(path);
-
-    if(!info.isFile() || !entry.endsWith(".json") || !TYPES.includes(entry.substring(0, entry.length - 5))) continue;
-
-    container.set(entry.substring(0, entry.length - 5), await readDBM(path));
-}
-
-for(let [type, raws] of container) {
-    await writeRaws(`${RAW_DIR}/${type}`, raws);
+try {
+    for(let entry of await readdir(`${BOT_DIR}/data`)) {
+        let path = `${BOT_DIR}/data/${entry}`;
+        let info = await stat(path);
+    
+        if(!info.isFile() || !entry.endsWith(".json") || !TYPES.includes(entry.substring(0, entry.length - 5))) continue;
+    
+        container.set(entry.substring(0, entry.length - 5), await readDBM(path));
+    }
+    
+    for(let [type, raws] of container) {
+        await writeRaws(`${RAW_DIR}/${type}`, raws);
+    }
+} catch(e) {
+    console.error(`Daten können nicht konvertiert werden: ${e}`);
+    process.exit(1);
 }
 
 // Exit
