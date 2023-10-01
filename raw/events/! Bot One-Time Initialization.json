@@ -111,7 +111,7 @@
                     "storage": "3",
                     "varName": "team-server-id",
                     "changeType": "0",
-                    "value": "\"533618507699585035\"",
+                    "value": "globalVars(\"debug\") ? \"724330774257729647\" : \"533618507699585035\"",
                     "name": "Control Variable"
                 },
                 {
@@ -125,14 +125,14 @@
                     "storage": "3",
                     "varName": "main-team-general-role",
                     "changeType": "0",
-                    "value": "globalVars(\"debug\") ? \"756234066545606818\" : \"488731124248346644\"",
+                    "value": "globalVars(\"debug\") ? \"724334624041600037\" : \"488731124248346644\"",
                     "name": "Control Variable"
                 },
                 {
                     "storage": "3",
                     "varName": "team-team-general-role",
                     "changeType": "0",
-                    "value": "globalVars(\"debug\") ? \"724334624041600037\" : \"559431217590697985\"",
+                    "value": "globalVars(\"debug\") ? \"756234066545606818\" : \"559431217590697985\"",
                     "name": "Control Variable"
                 },
                 {
