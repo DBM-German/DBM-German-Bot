@@ -7,7 +7,7 @@
     "commandsOrder": [],
     "eventsOrder": [],
     "modules": {
-        "discord.js": ["13.14.0", true],
+        "discord.js": ["13.16.0", true],
         "fstorm": ["", true],
         "jimp": ["", true],
         "isolated-vm": ["4.5", true],
