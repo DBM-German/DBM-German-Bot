@@ -47,6 +47,276 @@
                         "changeType": "0",
                         "value": "globalVars(\"team-welcome-goodbye-channel-id\")",
                         "name": "Control Variable"
+                    },
+                    {
+                        "server": "101",
+                        "varName": "${globalVars(\"main-server-id\")}",
+                        "name": "Change Server"
+                    },
+                    {
+                        "info": "0",
+                        "find": "${globalVars(\"main-expert-role-id\")}",
+                        "storage": "1",
+                        "varName": "main-expert-role",
+                        "name": "Find Role"
+                    },
+                    {
+                        "info": "0",
+                        "find": "${globalVars(\"main-moderator-role-id\")}",
+                        "storage": "1",
+                        "varName": "main-moderator-role",
+                        "name": "Find Role"
+                    },
+                    {
+                        "info": "0",
+                        "find": "${globalVars(\"main-manager-role-id\")}",
+                        "storage": "1",
+                        "varName": "main-manager-role",
+                        "name": "Find Role"
+                    },
+                    {
+                        "info": "0",
+                        "find": "${tempVars(\"member\").id}",
+                        "storage": "1",
+                        "varName": "member-main",
+                        "name": "Find Member"
+                    },
+                    {
+                        "storage": "1",
+                        "varName": "has-any-team-role",
+                        "changeType": "0",
+                        "value": "false",
+                        "name": "Control Variable"
+                    },
+                    {
+                        "storage": "1",
+                        "varName": "has-expert-role",
+                        "changeType": "0",
+                        "value": "false",
+                        "name": "Control Variable"
+                    },
+                    {
+                        "storage": "1",
+                        "varName": "has-moderator-role",
+                        "changeType": "0",
+                        "value": "false",
+                        "name": "Control Variable"
+                    },
+                    {
+                        "storage": "1",
+                        "varName": "has-manager-role",
+                        "changeType": "0",
+                        "value": "false",
+                        "name": "Control Variable"
+                    },
+                    {
+                        "storage": "1",
+                        "varName": "member-team",
+                        "comparison": "0",
+                        "value": "",
+                        "branch": {
+                            "iftrue": "99",
+                            "iffalse": "0",
+                            "iftrueActions": [
+                                {
+                                    "member": "2",
+                                    "varName": "member-main",
+                                    "role": "3",
+                                    "varName2": "main-expert-role",
+                                    "branch": {
+                                        "iftrue": "99",
+                                        "iffalse": "0",
+                                        "iftrueActions": [
+                                            {
+                                                "storage": "1",
+                                                "varName": "has-any-team-role",
+                                                "changeType": "0",
+                                                "value": "true",
+                                                "name": "Control Variable"
+                                            },
+                                            {
+                                                "storage": "1",
+                                                "varName": "has-expert-role",
+                                                "changeType": "0",
+                                                "value": "true",
+                                                "name": "Control Variable"
+                                            }
+                                        ]
+                                    },
+                                    "name": "Check If Member has Role"
+                                },
+                                {
+                                    "member": "2",
+                                    "varName": "member-main",
+                                    "role": "3",
+                                    "varName2": "main-moderator-role",
+                                    "branch": {
+                                        "iftrue": "99",
+                                        "iffalse": "0",
+                                        "iftrueActions": [
+                                            {
+                                                "storage": "1",
+                                                "varName": "has-any-team-role",
+                                                "changeType": "0",
+                                                "value": "true",
+                                                "name": "Control Variable"
+                                            },
+                                            {
+                                                "storage": "1",
+                                                "varName": "has-moderator-role",
+                                                "changeType": "0",
+                                                "value": "true",
+                                                "name": "Control Variable"
+                                            }
+                                        ]
+                                    },
+                                    "name": "Check If Member has Role"
+                                },
+                                {
+                                    "member": "2",
+                                    "varName": "member-main",
+                                    "role": "3",
+                                    "varName2": "main-manager-role",
+                                    "branch": {
+                                        "iftrue": "99",
+                                        "iffalse": "0",
+                                        "iftrueActions": [
+                                            {
+                                                "storage": "1",
+                                                "varName": "has-any-team-role",
+                                                "changeType": "0",
+                                                "value": "true",
+                                                "name": "Control Variable"
+                                            },
+                                            {
+                                                "storage": "1",
+                                                "varName": "has-manager-role",
+                                                "changeType": "0",
+                                                "value": "true",
+                                                "name": "Control Variable"
+                                            }
+                                        ]
+                                    },
+                                    "name": "Check If Member has Role"
+                                }
+                            ]
+                        },
+                        "name": "Check Variable"
+                    },
+                    {
+                        "server": "101",
+                        "varName": "${globalVars(\"team-server-id\")}",
+                        "name": "Change Server"
+                    },
+                    {
+                        "info": "0",
+                        "find": "${globalVars(\"team-team-general-role-id\")}",
+                        "storage": "1",
+                        "varName": "team-general-role",
+                        "name": "Find Role"
+                    },
+                    {
+                        "info": "0",
+                        "find": "${globalVars(\"team-expert-role-id\")}",
+                        "storage": "1",
+                        "varName": "team-expert-role",
+                        "name": "Find Role"
+                    },
+                    {
+                        "info": "0",
+                        "find": "${globalVars(\"team-moderator-role-id\")}",
+                        "storage": "1",
+                        "varName": "team-moderator-role",
+                        "name": "Find Role"
+                    },
+                    {
+                        "info": "0",
+                        "find": "${globalVars(\"team-manager-role-id\")}",
+                        "storage": "1",
+                        "varName": "team-manager-role",
+                        "name": "Find Role"
+                    },
+                    {
+                        "storage": "1",
+                        "varName": "has-any-team-role",
+                        "comparison": "1",
+                        "value": "true",
+                        "branch": {
+                            "iftrue": "0",
+                            "iffalse": "1"
+                        },
+                        "name": "Check Variable"
+                    },
+                    {
+                        "member": "2",
+                        "varName2": "team-general-role",
+                        "role": "3",
+                        "varName": "member",
+                        "reason": "",
+                        "name": "Add Member Role"
+                    },
+                    {
+                        "storage": "1",
+                        "varName": "has-expert-role",
+                        "comparison": "1",
+                        "value": "true",
+                        "branch": {
+                            "iftrue": "99",
+                            "iffalse": "0",
+                            "iftrueActions": [
+                                {
+                                    "member": "2",
+                                    "varName2": "member",
+                                    "role": "3",
+                                    "varName": "team-expert-role",
+                                    "reason": "",
+                                    "name": "Add Member Role"
+                                }
+                            ]
+                        },
+                        "name": "Check Variable"
+                    },
+                    {
+                        "storage": "1",
+                        "varName": "has-moderator-role",
+                        "comparison": "1",
+                        "value": "true",
+                        "branch": {
+                            "iftrue": "99",
+                            "iffalse": "0",
+                            "iftrueActions": [
+                                {
+                                    "member": "2",
+                                    "varName2": "member",
+                                    "role": "3",
+                                    "varName": "team-moderator-role",
+                                    "reason": "",
+                                    "name": "Add Member Role"
+                                }
+                            ]
+                        },
+                        "name": "Check Variable"
+                    },
+                    {
+                        "storage": "1",
+                        "varName": "has-manager-role",
+                        "comparison": "1",
+                        "value": "true",
+                        "branch": {
+                            "iftrue": "99",
+                            "iffalse": "0",
+                            "iftrueActions": [
+                                {
+                                    "member": "2",
+                                    "varName2": "member",
+                                    "role": "3",
+                                    "varName": "team-manager-role",
+                                    "reason": "",
+                                    "name": "Add Member Role"
+                                }
+                            ]
+                        },
+                        "name": "Check Variable"
                     }
                 ]
             },
