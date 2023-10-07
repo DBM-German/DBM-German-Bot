@@ -274,7 +274,7 @@
                             {
                                 "storage": "1",
                                 "varName": "current-team-roles",
-                                "comparison": "4",
+                                "comparison": "1",
                                 "value": "1",
                                 "branch": {
                                     "iftrue": "0",
@@ -358,37 +358,10 @@
                         ],
                         "iffalseActions": [
                             {
-                                "storage": "3",
-                                "varName": "debug",
-                                "comparison": "1",
-                                "value": "true",
-                                "branch": {
-                                    "iftrue": "99",
-                                    "iffalse": "99",
-                                    "iftrueActions": [
-                                        {
-                                            "storage": "1",
-                                            "varName": "member",
-                                            "changeType": "0",
-                                            "value": "tempVars(\"Nutzer-Team\")",
-                                            "name": "Control Variable"
-                                        },
-                                        {
-                                            "source": "mUQis",
-                                            "type": "false",
-                                            "name": "Call Command/Event"
-                                        }
-                                    ],
-                                    "iffalseActions": [
-                                        {
-                                            "member": "2",
-                                            "varName": "Nutzer-Team",
-                                            "reason": "${member.displayName} hat ${slashParams(\"Nutzer\").displayName} die Rolle ${slashParams(\"Rolle\")} entfernt.",
-                                            "name": "Kick Member"
-                                        }
-                                    ]
-                                },
-                                "name": "Check Variable"
+                                "member": "2",
+                                "varName": "Nutzer-Team",
+                                "reason": "${member.displayName} hat ${slashParams(\"Nutzer\").displayName} die Rolle ${slashParams(\"Rolle\")} entfernt.",
+                                "name": "Kick Member"
                             },
                             {
                                 "channel": "8",

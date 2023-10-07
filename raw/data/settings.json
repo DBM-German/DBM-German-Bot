@@ -19,7 +19,7 @@
     "invalidButtonText": "Der Knopf ist nicht länger gültig.",
     "leaveVoiceTimeout": "60",
     "slashType": "manual",
-    "slashServers": "488722832201613344\n533618507699585035\n724330774257729647",
+    "slashServers": "488722832201613344\n533618507699585035\n724330774257729647\n1160220945701670943",
     "autoResponseText": "Der Befehl wurde auf eine unvorhergesehene Art ausgeführt.",
     "invalidPermissionsText": "Du hast nicht die vorausgesetzten Berechtigungen.",
     "invalidCooldownText": "Bitte warte %s, bevor du diese Aktion erneut aufrufst.",

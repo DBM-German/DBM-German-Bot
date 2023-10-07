@@ -238,31 +238,6 @@
                         "iffalse": "99",
                         "iftrueActions": [
                             {
-                                "storage": "3",
-                                "varName": "debug",
-                                "comparison": "1",
-                                "value": "true",
-                                "branch": {
-                                    "iftrue": "99",
-                                    "iffalse": "0",
-                                    "iftrueActions": [
-                                        {
-                                            "storage": "1",
-                                            "varName": "member",
-                                            "changeType": "0",
-                                            "value": "tempVars(\"Nutzer-Team\")",
-                                            "name": "Control Variable"
-                                        },
-                                        {
-                                            "source": "mqJdD",
-                                            "type": "false",
-                                            "name": "Call Command/Event"
-                                        }
-                                    ]
-                                },
-                                "name": "Check Variable"
-                            },
-                            {
                                 "member": "2",
                                 "varName2": "Nutzer-Team",
                                 "role": "3",
@@ -273,29 +248,16 @@
                         ],
                         "iffalseActions": [
                             {
-                                "storage": "3",
-                                "varName": "debug",
-                                "comparison": "1",
-                                "value": "true",
-                                "branch": {
-                                    "iftrue": "0",
-                                    "iffalse": "99",
-                                    "iffalseActions": [
-                                        {
-                                            "channel": "9",
-                                            "varName": "",
-                                            "maxUses": "1",
-                                            "lifetime": "${7 * 24 * 60 * 60}",
-                                            "tempInvite": "false",
-                                            "unique": "true",
-                                            "storage": "1",
-                                            "varName2": "team-server-invite",
-                                            "reason": "${member.displayName} hat ${slashParams(\"Nutzer\").displayName} die Rolle ${slashParams(\"Rolle\")} hinzugefügt.",
-                                            "name": "Create Invite"
-                                        }
-                                    ]
-                                },
-                                "name": "Check Variable"
+                                "channel": "101",
+                                "varName": "${globalVars(\"team-welcome-goodbye-channel-id\")}",
+                                "maxUses": "1",
+                                "lifetime": "${7 * 24 * 60 * 60}",
+                                "tempInvite": "false",
+                                "unique": "true",
+                                "storage": "1",
+                                "varName2": "team-server-invite",
+                                "reason": "${member.displayName} hat ${slashParams(\"Nutzer\").displayName} die Rolle ${slashParams(\"Rolle\")} hinzugefügt.",
+                                "name": "Create Invite"
                             },
                             {
                                 "channel": "8",

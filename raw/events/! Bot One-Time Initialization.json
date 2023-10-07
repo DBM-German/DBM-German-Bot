@@ -111,7 +111,7 @@
                     "storage": "3",
                     "varName": "team-server-id",
                     "changeType": "0",
-                    "value": "globalVars(\"debug\") ? \"724330774257729647\" : \"533618507699585035\"",
+                    "value": "globalVars(\"debug\") ? \"1160220945701670943\" : \"533618507699585035\"",
                     "name": "Control Variable"
                 },
                 {
@@ -132,7 +132,7 @@
                     "storage": "3",
                     "varName": "team-team-general-role-id",
                     "changeType": "0",
-                    "value": "globalVars(\"debug\") ? \"756234066545606818\" : \"559431217590697985\"",
+                    "value": "globalVars(\"debug\") ? \"1160223241953087628\" : \"559431217590697985\"",
                     "name": "Control Variable"
                 },
                 {
@@ -146,7 +146,7 @@
                     "storage": "3",
                     "varName": "team-expert-role-id",
                     "changeType": "0",
-                    "value": "globalVars(\"debug\") ? \"756233856595656767\" : \"559431231029379075\"",
+                    "value": "globalVars(\"debug\") ? \"1160223219631001760\" : \"559431231029379075\"",
                     "name": "Control Variable"
                 },
                 {
@@ -160,7 +160,7 @@
                     "storage": "3",
                     "varName": "team-moderator-role-id",
                     "changeType": "0",
-                    "value": "globalVars(\"debug\") ? \"756233777977491647\" : \"617796696549752852\"",
+                    "value": "globalVars(\"debug\") ? \"1160223200865693818\" : \"617796696549752852\"",
                     "name": "Control Variable"
                 },
                 {
@@ -174,7 +174,7 @@
                     "storage": "3",
                     "varName": "team-manager-role-id",
                     "changeType": "0",
-                    "value": "globalVars(\"debug\") ? \"756233661187358843\" : \"559420175439364100\"",
+                    "value": "globalVars(\"debug\") ? \"1160223166011031562\" : \"559420175439364100\"",
                     "name": "Control Variable"
                 },
                 {
@@ -188,7 +188,7 @@
                     "storage": "3",
                     "varName": "team-welcome-goodbye-channel-id",
                     "changeType": "0",
-                    "value": "globalVars(\"debug\") ? \"756233531356610580\" : \"559419622667845633\"",
+                    "value": "globalVars(\"debug\") ? \"1160222472893894757\" : \"559419622667845633\"",
                     "name": "Control Variable"
                 },
                 {
