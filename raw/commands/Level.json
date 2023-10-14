@@ -78,7 +78,7 @@
             "storage": "1",
             "varName": "isBot",
             "changeType": "0",
-            "value": "tempVars(\"member\").user.bot",
+            "value": "tempVars(\"member\").user ? tempVars(\"member\").user.bot : tempVars(\"member\").bot",
             "name": "Control Variable"
         },
         {

@@ -111,7 +111,7 @@
                     "storage": "3",
                     "varName": "team-server-id",
                     "changeType": "0",
-                    "value": "\"533618507699585035\"",
+                    "value": "globalVars(\"debug\") ? \"1160220945701670943\" : \"533618507699585035\"",
                     "name": "Control Variable"
                 },
                 {
@@ -119,6 +119,62 @@
                     "varName": "fake-server-id",
                     "changeType": "0",
                     "value": "\"731837587836371024\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
+                    "varName": "main-team-general-role-id",
+                    "changeType": "0",
+                    "value": "globalVars(\"debug\") ? \"724334624041600037\" : \"488731124248346644\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
+                    "varName": "team-team-general-role-id",
+                    "changeType": "0",
+                    "value": "globalVars(\"debug\") ? \"1160223241953087628\" : \"559431217590697985\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
+                    "varName": "main-expert-role-id",
+                    "changeType": "0",
+                    "value": "globalVars(\"debug\") ? \"724334571751080149\" : \"552490611639582720\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
+                    "varName": "team-expert-role-id",
+                    "changeType": "0",
+                    "value": "globalVars(\"debug\") ? \"1160223219631001760\" : \"559431231029379075\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
+                    "varName": "main-moderator-role-id",
+                    "changeType": "0",
+                    "value": "globalVars(\"debug\") ? \"724334554541981727\" : \"605757344365805568\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
+                    "varName": "team-moderator-role-id",
+                    "changeType": "0",
+                    "value": "globalVars(\"debug\") ? \"1160223200865693818\" : \"617796696549752852\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
+                    "varName": "main-manager-role-id",
+                    "changeType": "0",
+                    "value": "globalVars(\"debug\") ? \"724334501614059632\" : \"512626729681027103\"",
+                    "name": "Control Variable"
+                },
+                {
+                    "storage": "3",
+                    "varName": "team-manager-role-id",
+                    "changeType": "0",
+                    "value": "globalVars(\"debug\") ? \"1160223166011031562\" : \"559420175439364100\"",
                     "name": "Control Variable"
                 },
                 {
@@ -132,7 +188,7 @@
                     "storage": "3",
                     "varName": "team-welcome-goodbye-channel-id",
                     "changeType": "0",
-                    "value": "globalVars(\"debug\") ? \"756233531356610580\" : \"559419622667845633\"",
+                    "value": "globalVars(\"debug\") ? \"1160222472893894757\" : \"559419622667845633\"",
                     "name": "Control Variable"
                 },
                 {

@@ -1,0 +1,460 @@
+{
+    "name": "Team entfernen",
+    "permissions": "ADMINISTRATOR",
+    "permissions2": "NONE",
+    "restriction": "1",
+    "_id": "dXptm",
+    "actions": [
+        {
+            "source": "WFDVm",
+            "type": "true",
+            "name": "Call Command/Event"
+        },
+        {
+            "storage": "4",
+            "varName": "Rolle",
+            "branches": [
+                {
+                    "comparison": "2",
+                    "value": "\"Experte\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "main-role-id",
+                            "changeType": "0",
+                            "value": "globalVars(\"main-expert-role-id\")",
+                            "name": "Control Variable"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "team-role-id",
+                            "changeType": "0",
+                            "value": "globalVars(\"team-expert-role-id\")",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "2",
+                    "value": "\"Moderator\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "main-role-id",
+                            "changeType": "0",
+                            "value": "globalVars(\"main-moderator-role-id\")",
+                            "name": "Control Variable"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "team-role-id",
+                            "changeType": "0",
+                            "value": "globalVars(\"team-moderator-role-id\")",
+                            "name": "Control Variable"
+                        }
+                    ]
+                },
+                {
+                    "comparison": "2",
+                    "value": "\"Manager\"",
+                    "actions": [
+                        {
+                            "storage": "1",
+                            "varName": "main-role-id",
+                            "changeType": "0",
+                            "value": "globalVars(\"main-manager-role-id\")",
+                            "name": "Control Variable"
+                        },
+                        {
+                            "storage": "1",
+                            "varName": "team-role-id",
+                            "changeType": "0",
+                            "value": "globalVars(\"team-manager-role-id\")",
+                            "name": "Control Variable"
+                        }
+                    ]
+                }
+            ],
+            "name": "Multi-Check Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "channel",
+            "changeType": "0",
+            "value": "channel",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "isBot",
+            "changeType": "0",
+            "value": "slashParams(\"Nutzer\").user ? slashParams(\"Nutzer\").user.bot : slashParams(\"Nutzer\").bot",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "isBot",
+            "comparison": "1",
+            "value": "true",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "4",
+                "iffalseVal": "check-team-role"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "description",
+            "changeType": "0",
+            "value": "`${slashParams(\"Nutzer\")} ist ein Bot.`",
+            "name": "Control Variable"
+        },
+        {
+            "source": "HPCYz",
+            "type": "true",
+            "name": "Call Command/Event"
+        },
+        {
+            "name": "End Action Sequence"
+        },
+        {
+            "anchorName": "check-team-role",
+            "name": "Action Anchor"
+        },
+        {
+            "member": "5",
+            "varName": "Nutzer",
+            "role": "101",
+            "varName2": "${tempVars(\"main-role-id\")}",
+            "branch": {
+                "iftrue": "4",
+                "iffalse": "0",
+                "iftrueVal": "remove-team-role"
+            },
+            "name": "Check If Member has Role"
+        },
+        {
+            "storage": "1",
+            "varName": "description",
+            "changeType": "0",
+            "value": "`${slashParams(\"Nutzer\")} hat die Rolle **${slashParams(\"Rolle\")}** nicht.`",
+            "name": "Control Variable"
+        },
+        {
+            "source": "HPCYz",
+            "type": "true",
+            "name": "Call Command/Event"
+        },
+        {
+            "name": "End Action Sequence"
+        },
+        {
+            "anchorName": "remove-team-role",
+            "name": "Action Anchor"
+        },
+        {
+            "ephemeral": false,
+            "name": "Start Thinking"
+        },
+        {
+            "comment": "Main Server Actions",
+            "actions": [
+                {
+                    "info": "0",
+                    "find": "${globalVars(\"main-team-general-role-id\")}",
+                    "storage": "1",
+                    "varName": "main-general-role",
+                    "name": "Find Role"
+                },
+                {
+                    "info": "0",
+                    "find": "${tempVars(\"main-role-id\")}",
+                    "storage": "1",
+                    "varName": "main-selected-role",
+                    "name": "Find Role"
+                },
+                {
+                    "member": "5",
+                    "varName": "Nutzer",
+                    "role": "3",
+                    "varName2": "main-general-role",
+                    "branch": {
+                        "iftrue": "99",
+                        "iffalse": "0",
+                        "iftrueActions": [
+                            {
+                                "info": "0",
+                                "find": "${globalVars(\"main-expert-role-id\")}",
+                                "storage": "1",
+                                "varName": "main-expert-role",
+                                "name": "Find Role"
+                            },
+                            {
+                                "info": "0",
+                                "find": "${globalVars(\"main-moderator-role-id\")}",
+                                "storage": "1",
+                                "varName": "main-moderator-role",
+                                "name": "Find Role"
+                            },
+                            {
+                                "info": "0",
+                                "find": "${globalVars(\"main-manager-role-id\")}",
+                                "storage": "1",
+                                "varName": "main-manager-role",
+                                "name": "Find Role"
+                            },
+                            {
+                                "storage": "1",
+                                "varName": "current-team-roles",
+                                "changeType": "0",
+                                "value": "0",
+                                "name": "Control Variable"
+                            },
+                            {
+                                "member": "5",
+                                "varName": "Nutzer",
+                                "role": "3",
+                                "varName2": "main-expert-role",
+                                "branch": {
+                                    "iftrue": "99",
+                                    "iffalse": "0",
+                                    "iftrueActions": [
+                                        {
+                                            "storage": "1",
+                                            "varName": "current-team-roles",
+                                            "changeType": "1",
+                                            "value": "1",
+                                            "name": "Control Variable"
+                                        }
+                                    ]
+                                },
+                                "name": "Check If Member has Role"
+                            },
+                            {
+                                "member": "5",
+                                "varName": "Nutzer",
+                                "role": "3",
+                                "varName2": "main-moderator-role",
+                                "branch": {
+                                    "iftrue": "99",
+                                    "iffalse": "0",
+                                    "iftrueActions": [
+                                        {
+                                            "storage": "1",
+                                            "varName": "current-team-roles",
+                                            "changeType": "1",
+                                            "value": "1",
+                                            "name": "Control Variable"
+                                        }
+                                    ]
+                                },
+                                "name": "Check If Member has Role"
+                            },
+                            {
+                                "member": "5",
+                                "varName": "Nutzer",
+                                "role": "3",
+                                "varName2": "main-manager-role",
+                                "branch": {
+                                    "iftrue": "99",
+                                    "iffalse": "0",
+                                    "iftrueActions": [
+                                        {
+                                            "storage": "1",
+                                            "varName": "current-team-roles",
+                                            "changeType": "1",
+                                            "value": "1",
+                                            "name": "Control Variable"
+                                        }
+                                    ]
+                                },
+                                "name": "Check If Member has Role"
+                            },
+                            {
+                                "storage": "1",
+                                "varName": "current-team-roles",
+                                "comparison": "1",
+                                "value": "1",
+                                "branch": {
+                                    "iftrue": "0",
+                                    "iffalse": "1"
+                                },
+                                "name": "Check Variable"
+                            },
+                            {
+                                "member": "5",
+                                "varName2": "Nutzer",
+                                "role": "3",
+                                "varName": "main-general-role",
+                                "reason": "${member.displayName} hat ${slashParams(\"Nutzer\").displayName} die Rolle ${slashParams(\"Rolle\")} entfernt.",
+                                "name": "Remove Member Role"
+                            }
+                        ]
+                    },
+                    "name": "Check If Member has Role"
+                },
+                {
+                    "member": "5",
+                    "varName2": "Nutzer",
+                    "role": "3",
+                    "varName": "main-selected-role",
+                    "reason": "${member.displayName} hat ${slashParams(\"Nutzer\").displayName} die Rolle ${slashParams(\"Rolle\")} entfernt.",
+                    "name": "Remove Member Role"
+                }
+            ],
+            "name": "Action Container"
+        },
+        {
+            "server": "101",
+            "varName": "${globalVars(\"team-server-id\")}",
+            "name": "Change Server"
+        },
+        {
+            "comment": "Team Server Actions",
+            "actions": [
+                {
+                    "info": "0",
+                    "find": "${slashParams(\"Nutzer\").id}",
+                    "storage": "1",
+                    "varName": "Nutzer-Team",
+                    "name": "Find Member"
+                },
+                {
+                    "info": "0",
+                    "find": "${tempVars(\"team-role-id\")}",
+                    "storage": "1",
+                    "varName": "team-selected-role",
+                    "name": "Find Role"
+                },
+                {
+                    "storage": "1",
+                    "varName": "Nutzer-Team",
+                    "comparison": "0",
+                    "value": "",
+                    "branch": {
+                        "iftrue": "0",
+                        "iffalse": "1"
+                    },
+                    "name": "Check Variable"
+                },
+                {
+                    "storage": "1",
+                    "varName": "current-team-roles",
+                    "comparison": "4",
+                    "value": "1",
+                    "branch": {
+                        "iftrue": "99",
+                        "iffalse": "99",
+                        "iftrueActions": [
+                            {
+                                "member": "2",
+                                "varName2": "Nutzer-Team",
+                                "role": "3",
+                                "varName": "team-selected-role",
+                                "reason": "${member.displayName} hat ${slashParams(\"Nutzer\").displayName} die Rolle ${slashParams(\"Rolle\")} entfernt.",
+                                "name": "Remove Member Role"
+                            }
+                        ],
+                        "iffalseActions": [
+                            {
+                                "member": "2",
+                                "varName": "Nutzer-Team",
+                                "reason": "${member.displayName} hat ${slashParams(\"Nutzer\").displayName} die Rolle ${slashParams(\"Rolle\")} entfernt.",
+                                "name": "Kick Member"
+                            },
+                            {
+                                "channel": "8",
+                                "varName": "Nutzer",
+                                "message": "**Vielen Dank für deine Unterstützung im DBM German Team!**\n\nDu wirst nun aus dem Teamserver entfernt.",
+                                "buttons": [],
+                                "selectMenus": [],
+                                "attachments": [],
+                                "embeds": [],
+                                "reply": true,
+                                "ephemeral": false,
+                                "tts": false,
+                                "overwrite": false,
+                                "dontSend": false,
+                                "editMessage": "0",
+                                "editMessageVarName": "",
+                                "storage": "0",
+                                "varName2": "",
+                                "name": "Send Message"
+                            }
+                        ]
+                    },
+                    "name": "Check Variable"
+                }
+            ],
+            "name": "Action Container"
+        },
+        {
+            "server": "101",
+            "varName": "${globalVars(\"main-server-id\")}",
+            "name": "Change Server"
+        },
+        {
+            "channel": "8",
+            "varName": "Nutzer",
+            "message": "Dir wurde die Rolle **${slashParams(\"Rolle\")}** entfernt.",
+            "buttons": [],
+            "selectMenus": [],
+            "attachments": [],
+            "embeds": [],
+            "reply": true,
+            "ephemeral": false,
+            "tts": false,
+            "overwrite": false,
+            "dontSend": false,
+            "editMessage": "0",
+            "editMessageVarName": "",
+            "storage": "0",
+            "varName2": "",
+            "name": "Send Message"
+        },
+        {
+            "storage": "1",
+            "varName": "description",
+            "changeType": "0",
+            "value": "`${slashParams(\"Nutzer\")} wurde die Rolle **${slashParams(\"Rolle\")}** entfernt.`",
+            "name": "Control Variable"
+        },
+        {
+            "source": "LITqX",
+            "type": "true",
+            "name": "Call Command/Event"
+        }
+    ],
+    "comType": "4",
+    "description": "Ein Teammitglied entfernen (Team-spezifischer Befehl)",
+    "parameters": [
+        {
+            "name": "Nutzer",
+            "description": "Nutzer",
+            "type": "USER",
+            "required": true,
+            "choices": null
+        },
+        {
+            "name": "Rolle",
+            "description": "Teamrolle",
+            "type": "STRING",
+            "required": true,
+            "choices": [
+                {
+                    "name": "experte",
+                    "value": "Experte"
+                },
+                {
+                    "name": "moderator",
+                    "value": "Moderator"
+                },
+                {
+                    "name": "manager",
+                    "value": "Manager"
+                }
+            ]
+        }
+    ]
+}

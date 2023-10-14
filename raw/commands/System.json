@@ -89,6 +89,10 @@
                                             "name": "End Action Sequence"
                                         },
                                         {
+                                            "ephemeral": false,
+                                            "name": "Start Thinking"
+                                        },
+                                        {
                                             "storage": "1",
                                             "varName": "member",
                                             "changeType": "0",
@@ -96,7 +100,7 @@
                                             "name": "Control Variable"
                                         },
                                         {
-                                            "source": "mUQis",
+                                            "source": "mwDHw",
                                             "type": "true",
                                             "name": "Call Command/Event"
                                         },
@@ -167,6 +171,10 @@
                                             "name": "End Action Sequence"
                                         },
                                         {
+                                            "ephemeral": false,
+                                            "name": "Start Thinking"
+                                        },
+                                        {
                                             "storage": "1",
                                             "varName": "member",
                                             "changeType": "0",
@@ -174,7 +182,7 @@
                                             "name": "Control Variable"
                                         },
                                         {
-                                            "source": "mqJdD",
+                                            "source": "ebvZt",
                                             "type": "true",
                                             "name": "Call Command/Event"
                                         },
