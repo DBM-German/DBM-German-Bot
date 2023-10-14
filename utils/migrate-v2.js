@@ -42,7 +42,6 @@ try {
 // Migrate
 try {
     let levels = JSON.parse(await readFile(`${V2_DATA_DIR}/levels.json`));
-    let teamMetadata = JSON.parse(await readFile(`${V2_TEAM_DATA_DIR}/metadata.json`));// TODO New schema for team data is not final yet
 
     // Levels and xp can be passed through as the old schema matches the new one
     await writeFile(`${BOT_DATA_DIR}/players.json`, JSON.stringify(levels), { encoding: ENCODING });
