@@ -24,7 +24,8 @@
   "type": "module",
   "scripts": {
     "start": "cd bot && node bot.js",
-    "setup": "npm i && node utils/setup.js && node utils/copy-code.js && node utils/copy-res.js && node utils/to-dbm.js",
+    "setup": "npm i && node utils/setup.js && node utils/to-dbm.js",
+    "export": "docker build --tag dbm-german-bot:3.0.0 .",
     "copy-code": "node utils/copy-code.js",
     "copy-res": "node utils/copy-res.js",
     "to-dbm": "node utils/to-dbm.js",

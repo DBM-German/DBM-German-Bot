@@ -1,0 +1,10 @@
+# Bot dependencies
+bot/node_modules/
+bot/package-lock.json
+
+# Optional npm cache directory
+.npm
+
+# Dependencies
+node_modules/
+package-lock.json
