@@ -1,11 +1,6 @@
-import { constants } from "fs";
 import { access, readdir, readFile, rm, stat, writeFile } from "fs/promises";
 
-
-const RAW_DIR = "./raw";
-const BOT_DIR = "./bot";
-const FS_R = constants.F_OK | constants.R_OK;
-const FS_RW = FS_R | constants.W_OK;
+import { RAW_DIR, BOT_DIR, FS_R, FS_RW, RAW_DATA_TYPES, ENCODING } from "./support/constants.js";
 
 
 /**
@@ -17,18 +12,6 @@ const FS_RW = FS_R | constants.W_OK;
  * @typedef RawDataContainer
  * @type { Map<string, RawData[]> }
  */
-
-/**
- * File encoding
- * @type {BufferEncoding}
- */
-const ENCODING = "utf8";
-
-/**
- * Raw data types
- * @type {string[]}
- */
-const TYPES = JSON.parse(await readFile("./utils/types.json"), { encoding: ENCODING });
 
 
 // Start
@@ -61,12 +44,12 @@ try {
     for(let entry of await readdir(`${BOT_DIR}/data`)) {
         let path = `${BOT_DIR}/data/${entry}`;
         let info = await stat(path);
-    
-        if(!info.isFile() || !entry.endsWith(".json") || !TYPES.includes(entry.substring(0, entry.length - 5))) continue;
-    
+
+        if(!info.isFile() || !entry.endsWith(".json") || !RAW_DATA_TYPES.includes(entry.substring(0, entry.length - 5))) continue;
+
         container.set(entry.substring(0, entry.length - 5), await readDBM(path));
     }
-    
+
     for(let [type, raws] of container) {
         await writeRaws(`${RAW_DIR}/${type}`, raws);
     }

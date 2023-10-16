@@ -1,13 +1,7 @@
-import { constants } from "fs";
 import { access, cp, stat } from "fs/promises";
 
+import { RAW_DIR, RAW_CODE_DIR, BOT_DIR, BOT_CODE_DIR, FS_R, FS_RW } from "./support/constants.js";
 
-const RAW_DIR = "./raw";
-const RAW_CODE_DIR = `${RAW_DIR}/code`;
-const BOT_DIR = "./bot";
-const BOT_CODE_DIR = `${BOT_DIR}/code`;
-const FS_R = constants.F_OK | constants.R_OK;
-const FS_RW = FS_R | constants.W_OK;
 
 // Start
 console.log("Passe Projekt-Code an...");
@@ -28,7 +22,7 @@ try {
     process.exit(1);
 }
 
-// Copy
+// Copy additional code
 try {
     console.log("Kopiere zusätzlichen Code...");
     await cp(RAW_CODE_DIR, BOT_CODE_DIR, {

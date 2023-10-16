@@ -1,21 +1,10 @@
-import { constants } from "fs";
 import { access, readFile, writeFile } from "fs/promises";
+
+import { BOT_DIR, BOT_DATA_DIR, FS_R, FS_RW, ENCODING } from "./support/constants.js";
 
 
 const V2_DIR = "./v2";
 const V2_DATA_DIR = `${V2_DIR}/data`;
-const V2_TEAM_DATA_DIR = `${V2_DATA_DIR}/team`;
-const BOT_DIR = "./bot";
-const BOT_DATA_DIR = `${BOT_DIR}/data`;
-const FS_R = constants.F_OK | constants.R_OK;
-const FS_RW = FS_R | constants.W_OK;
-
-
-/**
- * File encoding
- * @type {BufferEncoding}
- */
-const ENCODING = "utf8";
 
 
 // Start

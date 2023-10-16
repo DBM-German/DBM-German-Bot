@@ -1,12 +1,7 @@
-import { constants } from "fs";
 import { access, cp, stat } from "fs/promises";
 
+import { RES_DIR, BOT_DIR, BOT_RES_DIR, FS_R, FS_RW } from "./support/constants.js";
 
-const RES_DIR = "./res";
-const BOT_DIR = "./bot";
-const BOT_RES_DIR = `${BOT_DIR}/resources`;
-const FS_R = constants.F_OK | constants.R_OK;
-const FS_RW = FS_R | constants.W_OK;
 
 // Start
 console.log("Passe Projekt-Resourcen an...");
@@ -27,7 +22,7 @@ try {
     process.exit(1);
 }
 
-// Copy
+// Copy resources
 try {
     console.log("Kopiere Resourcen...");
     await cp(RES_DIR, BOT_RES_DIR, {
