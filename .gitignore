@@ -1,6 +1,9 @@
 # Bot directory
 bot/
 
+# Build file
+dbm-german-bot.tar
+
 # Optional npm cache directory
 .npm
 
