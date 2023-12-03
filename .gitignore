@@ -4,6 +4,9 @@ bot/
 # Build file
 dbm-german-bot.tar
 
+# Docker temp files
+.docker_temp_*
+
 # Optional npm cache directory
 .npm
 
