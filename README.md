@@ -68,7 +68,7 @@ Zur Synchronisation aller Änderungen stehen nachfolgende Skripte zur Verfügung
 
 ## EN | How to run the bot with Docker
 
-1. Build the Docker image via `npm run build`
+1. Build the Docker image via `npm run build` / `npm run build-arm`
 2. Create a data directory or Docker volume on your host machine and copy the DBM data files into it
 3. Open the copied `settings.json` and insert the bot token and client id
 4. Start a container using `docker run` and a mount to the data directory
@@ -81,7 +81,7 @@ Optionally `--detach` and `--restart always` can be used to run the container in
 
 ## DE | Wie man den Bot mit Docker laufen lässt
 
-1. Baue das Docker-Image via `npm run build`
+1. Baue das Docker-Image via `npm run build` / `npm run build-arm`
 2. Erstelle ein Daten-Verzeichnis oder Docker-Volume auf deinem Host-Rechner und kopiere die DBM-Datendateien hinein
 3. Öffne die kopierte `settings.json` und füge den Bot-Token und die Client-ID ein
 4. Starte den Container mittels `docker run` und einem Mount zum Daten-Verzeichnis
