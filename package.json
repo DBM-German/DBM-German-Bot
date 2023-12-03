@@ -1,6 +1,6 @@
 {
   "name": "dbm-german-bot",
-  "version": "3.0.0",
+  "version": "3.0.1-beta",
   "description": "The official bot of the DBM German Discord server.",
   "author": "DBM German",
   "license": "Attribution-NonCommercial-ShareAlike 4.0 International",
@@ -25,7 +25,7 @@
   "scripts": {
     "start": "cd bot && node bot.js",
     "setup": "npm i && node utils/setup.js && node utils/to-dbm.js",
-    "build": "(npm run setup) && (docker build --tag dbm-german-bot:3.0.0 .) && (docker save -o dbm-german-bot.tar dbm-german-bot:3.0.0)",
+    "build": "(npm run setup) && (docker build --tag dbm-german-bot:3.0.1 .) && (docker save -o dbm-german-bot.tar dbm-german-bot:3.0.1)",
     "copy-code": "node utils/copy-code.js",
     "copy-res": "node utils/copy-res.js",
     "to-dbm": "node utils/to-dbm.js",
