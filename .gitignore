@@ -2,7 +2,7 @@
 bot/
 
 # Build file
-dbm-german-bot.tar
+dbm-german-bot*.tar
 
 # Docker temp files
 .docker_temp_*
