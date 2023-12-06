@@ -33,12 +33,25 @@
                 "iffalse": "0",
                 "iftrueActions": [
                     {
-                        "member": "2",
-                        "varName": "member",
-                        "info": "2",
                         "storage": "1",
-                        "varName2": "username",
-                        "name": "Store Member Info"
+                        "varName": "displayname",
+                        "changeType": "0",
+                        "value": "null",
+                        "name": "Control Variable"
+                    },
+                    {
+                        "storage": "1",
+                        "varName": "game-status",
+                        "changeType": "0",
+                        "value": "null",
+                        "name": "Control Variable"
+                    },
+                    {
+                        "storage": "1",
+                        "varName": "custom-status",
+                        "changeType": "0",
+                        "value": "null",
+                        "name": "Control Variable"
                     },
                     {
                         "member": "2",
@@ -67,7 +80,7 @@
                     {
                         "behavior": "0",
                         "interpretation": "1",
-                        "code": "const regex = globalVars(\"advertisement-regex\");\n\nlet username = regex.test(tempVars(\"username\"));\nlet displayname = regex.test(tempVars(\"displayname\"));\nlet gameStatus = regex.test(tempVars(\"game-status\"));\nlet customStatus = regex.test(tempVars(\"custom-status\"));\n\nusername || displayname || gameStatus || customStatus;",
+                        "code": "const regex = globalVars(\"advertisement-regex\");\n\nlet displayname = regex.test(tempVars(\"displayname\"));\nlet gameStatus = regex.test(tempVars(\"game-status\"));\nlet customStatus = regex.test(tempVars(\"custom-status\"));\n\ndisplayname || gameStatus || customStatus;",
                         "storage": "1",
                         "varName": "regex-check",
                         "name": "Run Script"
@@ -93,6 +106,49 @@
                         "name": "Action Anchor"
                     },
                     {
+                        "behavior": "0",
+                        "interpretation": "1",
+                        "code": "globalVars(\"log\")(cache, `Display name: ${tempVars(\"displayname\")}`);",
+                        "storage": "0",
+                        "varName": "",
+                        "name": "Run Script"
+                    },
+                    {
+                        "behavior": "0",
+                        "interpretation": "1",
+                        "code": "globalVars(\"log\")(cache, `Game status: ${tempVars(\"game-status\")}`);",
+                        "storage": "0",
+                        "varName": "",
+                        "name": "Run Script"
+                    },
+                    {
+                        "behavior": "0",
+                        "interpretation": "1",
+                        "code": "globalVars(\"log\")(cache, `Custom status: ${tempVars(\"custom-status\")}`);",
+                        "storage": "0",
+                        "varName": "",
+                        "name": "Run Script"
+                    },
+                    {
+                        "member": "2",
+                        "varName": "member",
+                        "role": "101",
+                        "varName2": "${globalVars(\"hidden-role-id\")}",
+                        "branch": {
+                            "iftrue": "1",
+                            "iffalse": "0"
+                        },
+                        "name": "Check If Member has Role"
+                    },
+                    {
+                        "behavior": "0",
+                        "interpretation": "1",
+                        "code": "globalVars(\"log\")(cache, `Hiding member ${tempVars(\"member\").id} because ads have been detected in the user profile`);",
+                        "storage": "0",
+                        "varName": "",
+                        "name": "Run Script"
+                    },
+                    {
                         "member": "2",
                         "varName2": "member",
                         "role": "101",
@@ -106,6 +162,25 @@
                     {
                         "anchorName": "show-member",
                         "name": "Action Anchor"
+                    },
+                    {
+                        "member": "2",
+                        "varName": "member",
+                        "role": "101",
+                        "varName2": "${globalVars(\"hidden-role-id\")}",
+                        "branch": {
+                            "iftrue": "0",
+                            "iffalse": "1"
+                        },
+                        "name": "Check If Member has Role"
+                    },
+                    {
+                        "behavior": "0",
+                        "interpretation": "1",
+                        "code": "globalVars(\"log\")(cache, `Showing member ${tempVars(\"member\").id} because ads are no longer present in user profile`);",
+                        "storage": "0",
+                        "varName": "",
+                        "name": "Run Script"
                     },
                     {
                         "member": "2",
@@ -301,6 +376,14 @@
                         "name": "Check Member Data"
                     },
                     {
+                        "behavior": "0",
+                        "interpretation": "1",
+                        "code": "globalVars(\"log\")(cache, `Warning member ${tempVars(\"author\").id} because ads have been detected in a message`);",
+                        "storage": "0",
+                        "varName": "",
+                        "name": "Run Script"
+                    },
+                    {
                         "storage": "1",
                         "varName": "message",
                         "reason": "Werbung",
@@ -331,6 +414,14 @@
                     {
                         "anchorName": "timeout",
                         "name": "Action Anchor"
+                    },
+                    {
+                        "behavior": "0",
+                        "interpretation": "1",
+                        "code": "globalVars(\"log\")(cache, `Timing out member ${tempVars(\"author\").id} because ads have been detected in a message`);",
+                        "storage": "0",
+                        "varName": "",
+                        "name": "Run Script"
                     },
                     {
                         "member": "2",
