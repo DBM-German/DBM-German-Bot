@@ -1440,6 +1440,14 @@
                     "storage": "3",
                     "varName": "levenshtein",
                     "name": "Run Script"
+                },
+                {
+                    "behavior": "0",
+                    "interpretation": "1",
+                    "code": "// Create a function to log messages with additional metadata\n// Erstelle eine Funktion zum Ausgeben von Nachrichten mit zusätzlichen Metadaten\n\nconst dateTimeFormat = new Intl.DateTimeFormat(\"de-DE\", {\n    year: \"numeric\",\n    month: \"numeric\",\n    day: \"numeric\",\n    hour: \"numeric\",\n    minute: \"numeric\",\n    second: \"numeric\"\n});\n\nconst log = function(cache, ...args) {\n    const data = cache.actions[cache.index];\n    const location = cache.toString();\n    const metadataString = `[${location} - Action #${cache.index + 1} (${data.name})]`;\n\n    return console.log(dateTimeFormat.format(new Date()), metadataString, ...args);\n}\n\nlog;",
+                    "storage": "3",
+                    "varName": "log",
+                    "name": "Run Script"
                 }
             ],
             "name": "Action Container"

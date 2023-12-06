@@ -158,6 +158,16 @@ console.log(distance); // 2
 ```
 
 
+### Log | ${`globalVars("log")`}
+
+A function to log messages with additional metadata. Example:
+```js
+// Logs the following message to the console:
+// 06.12.2023, 22:25:28 [Command "ABC" - Action #1 (XYZ)] Message with timestamp and location
+globalVars("log")(cache, "Message with timestamp and location");
+```
+
+
 
 [string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 [Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array

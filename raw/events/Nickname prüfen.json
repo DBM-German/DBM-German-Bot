@@ -105,6 +105,14 @@
             "name": "Check Variable"
         },
         {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "globalVars(\"log\")(cache, `Updating nickname of member ${tempVars(\"member\").id} to ${tempVars(\"replacementNickname\")}`);",
+            "storage": "0",
+            "varName": "",
+            "name": "Run Script"
+        },
+        {
             "member": "2",
             "varName": "member",
             "nickname": "${tempVars(\"replacementNickname\")}",

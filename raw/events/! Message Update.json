@@ -29,6 +29,14 @@
             "name": "Store Message Info"
         },
         {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "globalVars(\"log\")(cache, `Event triggerd by member ${tempVars(\"member\").id} on server ${server.id}`);",
+            "storage": "0",
+            "varName": "",
+            "name": "Run Script"
+        },
+        {
             "storage": "1",
             "varName": "oldText",
             "comparison": "1",

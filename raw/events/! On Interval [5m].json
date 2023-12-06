@@ -5,6 +5,14 @@
     "_id": "adGvC",
     "actions": [
         {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "globalVars(\"log\")(cache, `Event triggerd on server ${server.id}`);",
+            "storage": "0",
+            "varName": "",
+            "name": "Run Script"
+        },
+        {
             "list": "0",
             "varName": "",
             "tempVarName": "member",

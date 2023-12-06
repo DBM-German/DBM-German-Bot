@@ -72,6 +72,14 @@
             "name": "Store Server Info"
         },
         {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "globalVars(\"log\")(cache, `Updating member count of server ${server.id} to ${tempVars(\"member-count\")}`);",
+            "storage": "0",
+            "varName": "",
+            "name": "Run Script"
+        },
+        {
             "channel": "101",
             "channelVarName": "${tempVars(\"welcome-goodbye-channel-id\")}",
             "channelName": "mitglieder-${tempVars(\"member-count\")}",
