@@ -94,6 +94,10 @@
             "name": "Check Variable"
         },
         {
+            "ephemeral": false,
+            "name": "Start Thinking"
+        },
+        {
             "member": "2",
             "varName": "member",
             "dataName": "level",
