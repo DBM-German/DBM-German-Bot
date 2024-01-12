@@ -65,6 +65,32 @@
             "name": "Store Member Data"
         },
         {
+            "storage": "1",
+            "varName": "isNaN",
+            "changeType": "0",
+            "value": "tempVars(\"xp\") === null || Number.isNaN(tempVars(\"xp\"))",
+            "name": "Control Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "isNaN",
+            "comparison": "1",
+            "value": "true",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "3",
+                "iffalseVal": "1"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "xp",
+            "changeType": "0",
+            "value": "0",
+            "name": "Control Variable"
+        },
+        {
             "member": "2",
             "varName": "member",
             "dataName": "xp-timestamp",
