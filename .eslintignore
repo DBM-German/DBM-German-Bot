@@ -1,0 +1,9 @@
+# Bot directory
+bot/
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Dependency files
+package-lock.json

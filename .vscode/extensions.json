@@ -2,6 +2,7 @@
     "recommendations": [
         "christian-kohler.npm-intellisense", // Required
         "christian-kohler.path-intellisense",// Required
+        "dbaeumer.vscode-eslint",            // Required
         "bierner.github-markdown-preview",   // Semi-optional
         "ExodiusStudios.comment-anchors",    // Semi-optional
         "eamodio.gitlens",                   // Optional

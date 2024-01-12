@@ -2,5 +2,9 @@
     "[markdown]": {
         "editor.wordWrap": "off",
         "diffEditor.wordWrap": "off"
-    }
+    },
+    "eslint.run": "onSave",
+    "eslint.validate": ["javascript", "markdown"],
+    "eslint.format.enable": true,
+    "markdownlint.ignore": ["**/*"] // Disable markdownlint extension in favor of eslint
 }

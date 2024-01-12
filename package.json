@@ -30,14 +30,24 @@
     "copy-code": "node utils/copy-code.js",
     "copy-res": "node utils/copy-res.js",
     "to-dbm": "node utils/to-dbm.js",
-    "to-raw": "node utils/to-raw.js"
+    "to-raw": "node utils/to-raw.js",
+    "lint": "npx eslint ."
   },
   "dependencies": {
     "regedit": "5.1",
     "vdf-parser": "1.2"
   },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-markdownlint": "^0.5.0",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.1.1"
+  },
   "engines": {
     "node": "18",
-    "os": [ "win32" ]
+    "os": [
+      "win32"
+    ]
   }
 }
