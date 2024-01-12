@@ -11,6 +11,15 @@
             "name": "Call Command/Event"
         },
         {
+            "shortComment": "Resolve member | Mitglied auflösen",
+            "longComment": "EN:\nSource can either be the parameter or the interacted member because this command can be called via a context menu interaction.\n\n\nDE:\nQuelle kann entweder der Parameter oder das interagierte Mitglied sein, da dieser Command von einer Kontextmenü-Interaktion aufgerufen werden kann.",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "member": "5",
             "varName": "Nutzer",
             "info": "0",
@@ -59,6 +68,15 @@
             "name": "Store Member Info"
         },
         {
+            "shortComment": "Collect data | Daten erfassen",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "member": "2",
             "varName": "member",
             "info": "3",
@@ -82,6 +100,15 @@
             "name": "Control Variable"
         },
         {
+            "shortComment": "Easter egg \"Bot\"",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "storage": "1",
             "varName": "isBot",
             "comparison": "1",
@@ -92,6 +119,15 @@
                 "iftrueVal": "bot-easter-egg"
             },
             "name": "Check Variable"
+        },
+        {
+            "shortComment": "Calculate rank | Berechne Rang",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
         },
         {
             "ephemeral": false,
@@ -201,6 +237,15 @@
             "name": "Loop Through List"
         },
         {
+            "shortComment": "Create and send embed | Erstelle und sende Embed",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "storage": "1",
             "varName": "title",
             "changeType": "0",
@@ -214,6 +259,15 @@
             "storage": "1",
             "varName": "description",
             "name": "Run Script"
+        },
+        {
+            "shortComment": "Easter egg \"Level 100\"",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
         },
         {
             "storage": "1",

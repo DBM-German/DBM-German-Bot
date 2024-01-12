@@ -92,6 +92,15 @@
             "name": "Control Variable"
         },
         {
+            "shortComment": "Check if the member is a bot | Prüfe, ob das Mitglied ein Bot ist",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "storage": "1",
             "varName": "isBot",
             "comparison": "1",
@@ -123,6 +132,15 @@
             "name": "Action Anchor"
         },
         {
+            "shortComment": "Check if the role is assigned | Prüfe, ob die Rolle zugeteilt ist",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "member": "5",
             "varName": "Nutzer",
             "role": "101",
@@ -148,6 +166,15 @@
         },
         {
             "name": "End Action Sequence"
+        },
+        {
+            "shortComment": "Unassign the role | Rolle wegnehmen",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
         },
         {
             "anchorName": "remove-team-role",

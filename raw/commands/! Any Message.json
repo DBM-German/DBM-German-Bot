@@ -22,9 +22,27 @@
             "name": "Store Message Info"
         },
         {
+            "shortComment": "Check advertisement | Werbung prüfen",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "source": "nGjuv",
             "type": "true",
             "name": "Call Command/Event"
+        },
+        {
+            "shortComment": "Trigger leveling system | Leveling-System auslösen",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
         },
         {
             "source": "CJKBd",

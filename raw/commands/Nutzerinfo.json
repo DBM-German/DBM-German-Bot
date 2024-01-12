@@ -11,6 +11,15 @@
             "name": "Call Command/Event"
         },
         {
+            "shortComment": "Resolve member | Mitglied auflösen",
+            "longComment": "EN:\nSource can either be the parameter or the interacted member because this command can be called via a context menu interaction.\n\n\nDE:\nQuelle kann entweder der Parameter oder das interagierte Mitglied sein, da dieser Command von einer Kontextmenü-Interaktion aufgerufen werden kann.",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "member": "5",
             "varName": "Nutzer",
             "info": "0",
@@ -57,6 +66,15 @@
             "storage": "1",
             "varName2": "member",
             "name": "Store Member Info"
+        },
+        {
+            "shortComment": "Collect data | Daten erfassen",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
         },
         {
             "member": "2",
@@ -138,6 +156,15 @@
             "storage": "1",
             "varName2": "status",
             "name": "Store Member Info"
+        },
+        {
+            "shortComment": "Create and send embed | Erstelle und sende Embed",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
         },
         {
             "storage": "1",

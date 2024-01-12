@@ -33,12 +33,30 @@
             "comment": "Command overview | Befehlsübersicht",
             "actions": [
                 {
+                    "shortComment": "Create and partion texts (max. 10) | Erstelle und partitioniere Texte (max. 10)",
+                    "longComment": "EN:\nMerge 10 texts into one and store those partions in a new list.\n\n\nDE:\nVereine 10 Texte in einem und speichere diese Partitionen in einer neuen Liste.",
+                    "color": "#fff700",
+                    "bold": false,
+                    "italic": false,
+                    "underline": false,
+                    "name": "Comment [DBM German]"
+                },
+                {
                     "behavior": "0",
                     "interpretation": "1",
-                    "code": "const MAX = 10;// Max command count per page\n\nlet commandDescriptions = [];\nlet page = 0;// Current page\nlet count = 0;// Command count on current page\n\nfor(let { name, description, type } of globalVars(\"commands\")) {\n    if(typeof commandDescriptions[page] != \"string\") commandDescriptions[page] = \"\";\n\n    commandDescriptions[page] += `**${name} (${globalVars(\"resolveCommandType\")(type)})**\\n${description}\\n\\n`;\n\n    if(++count >= MAX) {\n        count = 0;\n        page++;\n    }\n}\n\ncommandDescriptions;",
+                    "code": "const MAX = 10;// Max command count per page\n\nlet commandDescriptions = [];\nlet page = 0;// Current page\nlet count = 0;// Command count on current page\n\nfor(let { name, description, type } of globalVars(\"commands\")) {\n    if(typeof commandDescriptions[page] != \"string\") commandDescriptions[page] = \"\";\n\n    commandDescriptions[page] += `**${name} (${globalVars(\"resolveCommandType\")(type)})**\\n${description}\\n\\n`;\n    count++;\n\n    if(count >= MAX) {\n        count = 0;\n        page++;\n    }\n}\n\ncommandDescriptions;",
                     "storage": "1",
                     "varName": "commandDescriptions",
                     "name": "Run Script"
+                },
+                {
+                    "shortComment": "Create an embed for each partion | Erstelle ein Embed für jede Parition",
+                    "longComment": "",
+                    "color": "#fff700",
+                    "bold": false,
+                    "italic": false,
+                    "underline": false,
+                    "name": "Comment [DBM German]"
                 },
                 {
                     "list": "7",
@@ -98,6 +116,15 @@
                     "name": "Control Variable"
                 },
                 {
+                    "shortComment": "Continue with next event loop cycle | Fahre mit nächstem Event Loop-Zyklus fort",
+                    "longComment": "EN:\nThis is to avoid an Stack Overflow Error.\n\n\nDE:\nDas dient dazu, um einen Stack Overflow-Error zu vermeiden.",
+                    "color": "#fff700",
+                    "bold": false,
+                    "italic": false,
+                    "underline": false,
+                    "name": "Comment [DBM German]"
+                },
+                {
                     "time": "0",
                     "measurement": "0",
                     "name": "Wait"
@@ -113,6 +140,15 @@
                         "iffalseVal": "loop-entry"
                     },
                     "name": "Check Variable"
+                },
+                {
+                    "shortComment": "Send page embed | Sende Page Embed",
+                    "longComment": "",
+                    "color": "#fff700",
+                    "bold": false,
+                    "italic": false,
+                    "underline": false,
+                    "name": "Comment [DBM German]"
                 },
                 {
                     "storage": "1",

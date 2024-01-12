@@ -40,6 +40,15 @@
             "name": "Control Variable"
         },
         {
+            "shortComment": "Calculate easter sunday | Berechne Ostersonntag",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "behavior": "0",
             "interpretation": "1",
             "code": "// Easter sunday\n// Ostersonntag\n\nconst now = new Date();\nconst year = now.getFullYear();\n\nconst a = year % 19;\nconst b = Math.floor(year / 100);\nconst c = year % 100;\nconst d = Math.floor(b / 4);\nconst e = b % 4;\nconst f = Math.floor((b + 8) / 25);\nconst g = Math.floor((b - f + 1) / 3);\nconst h = (19*a + b - d - g + 15) % 30;\nconst i = Math.floor(c / 4);\nconst k = c % 4;\nconst l = (32 + 2*e + 2*i - h - k) % 7;\nconst m = Math.floor((a + 11*h + 22*l) / 451);\nconst n = Math.floor((h + l - 7*m + 114) / 31);\nconst o = (h + l - 7*m + 114) % 31;\n\nconst easterDay = o + 1;\nconst easterMonth = n;\n\nnew Date(year, easterMonth - 1, easterDay);\n\n// https://de.wikipedia.org/wiki/Gesetzliche_Feiertage_in_Deutschland (2023-04-30)\n// https://de.wikipedia.org/wiki/Osterdatum (2023-04-30)\n// https://de.wikipedia.org/wiki/Spencers_Osterformel (2023-04-30)",
@@ -55,9 +64,13 @@
             "name": "Control Variable"
         },
         {
-            "storage": "1",
-            "varName": "holidays",
-            "name": "Create List"
+            "shortComment": "Calculate dates | Berechne Daten",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
         },
         {
             "behavior": "0",
@@ -202,6 +215,20 @@
             "storage": "1",
             "varName": "day-of-repentance-and-prayer",
             "name": "Run Script"
+        },
+        {
+            "shortComment": "Add ordered dates to list | Füge geordnete Daten zur Liste hinzu",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
+            "storage": "1",
+            "varName": "holidays",
+            "name": "Create List"
         },
         {
             "storage": "1",
@@ -363,6 +390,15 @@
             "name": "Control Variable"
         },
         {
+            "shortComment": "Compare to current date | Vergleiche mit aktuellem Datum",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "list": "7",
             "varName": "holidays",
             "tempVarName": "holiday",
@@ -420,6 +456,15 @@
                 }
             ],
             "name": "Loop Through List"
+        },
+        {
+            "shortComment": "If no match, clear global variable | Bei keinem Treffer, globale Variable leeren",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
         },
         {
             "storage": "1",

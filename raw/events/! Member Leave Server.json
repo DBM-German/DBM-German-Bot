@@ -13,6 +13,15 @@
             "name": "Run Script"
         },
         {
+            "shortComment": "Server leave notification | Server-Austrittsbenachrichtigung",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "source": "mUQis",
             "type": "true",
             "name": "Call Command/Event"

@@ -23,6 +23,15 @@
             "name": "Store Server Info"
         },
         {
+            "shortComment": "Get a member list without bots | Bekomme eine Mitgliederliste ohne Bots",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "list": "7",
             "varName": "members",
             "transform": "item.user.bot ? null : item",
@@ -30,6 +39,15 @@
             "storage": "1",
             "varName2": "members",
             "name": "Transform List"
+        },
+        {
+            "shortComment": "Store member data in three lists | Speichere Member Date in drei Listen",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
         },
         {
             "storage": "1",
@@ -105,6 +123,15 @@
             "name": "Loop Through List"
         },
         {
+            "shortComment": "Merge lists | Vereine Listen",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "list": "7",
             "varName": "members",
             "transform": "({ member: item, xp: tempVars(\"xps\")[index], requiredXp: tempVars(\"requiredXps\")[index], level: tempVars(\"levels\")[index] })",
@@ -114,12 +141,30 @@
             "name": "Transform List"
         },
         {
+            "shortComment": "Sort list | Sortiere Liste",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "behavior": "0",
             "interpretation": "1",
             "code": "// Sort list\n// Liste sortieren\n\ntempVars(\"memberStats\").sort((a, b) => {\n    let levelDiff = (a.level - b.level) * (-1);\n    if(levelDiff != 0) return levelDiff;\n\n    let xpDiff = (a.xp - b.xp) * (-1);\n    if(xpDiff != 0) return xpDiff;\n\n    return a.member.displayName - b.member.displayName;\n});",
             "storage": "0",
             "varName": "",
             "name": "Run Script"
+        },
+        {
+            "shortComment": "Convert entries to text | Konvertiere Einträge zu Text",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
         },
         {
             "list": "7",
@@ -131,9 +176,18 @@
             "name": "Transform List"
         },
         {
+            "shortComment": "Merge and partion texts (max. 10) | Vereine und partitioniere Texte (max. 10)",
+            "longComment": "EN:\nMerge 10 texts into one and store those partions in a new list.\n\n\nDE:\nVereine 10 Texte in einem und speichere diese Partitionen in einer neuen Liste.",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "behavior": "0",
             "interpretation": "1",
-            "code": "const MAX = 10;// Max member stats per page\n\nlet memberStatsPages = [];\nlet page = 0;// Current page\nlet count = 0;// Member stats count on current page\n\nfor(let statsText of tempVars(\"memberStatsTexts\")) {\n    if(typeof memberStatsPages[page] != \"string\") memberStatsPages[page] = \"\";\n\n    memberStatsPages[page] += `${statsText}\\n`;\n\n    if(++count >= MAX) {\n        count = 0;\n        page++;\n    }\n}\n\nmemberStatsPages;",
+            "code": "const MAX_PAGES = 10; // Max pages\nconst MAX_PER_PAGE = 10; // Max member stats per page\n\nlet memberStatsPages = [];\nlet page = 0;// Current page\nlet count = 0;// Member stats count on current page\n\nfor(let statsText of tempVars(\"memberStatsTexts\")) {\n    if(typeof memberStatsPages[page] != \"string\") memberStatsPages[page] = \"\";\n\n    memberStatsPages[page] += `${statsText}\\n`;\n    count++;\n\n    if(count >= MAX_PER_PAGE) {\n        count = 0;\n        page++;\n    }\n\n    if(page >= MAX_PAGES) break;\n}\n\nmemberStatsPages;",
             "storage": "1",
             "varName": "memberStatsPages",
             "name": "Run Script"
@@ -144,6 +198,15 @@
             "storage": "1",
             "varName2": "memberStatsPagesCount",
             "name": "Get List Length"
+        },
+        {
+            "shortComment": "Create an embed for each partion | Erstelle ein Embed für jede Parition",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
         },
         {
             "storage": "1",
@@ -196,6 +259,15 @@
             "name": "Control Variable"
         },
         {
+            "shortComment": "Continue with next event loop cycle | Fahre mit nächstem Event Loop-Zyklus fort",
+            "longComment": "EN:\nThis is to avoid an Stack Overflow Error.\n\n\nDE:\nDas dient dazu, um einen Stack Overflow-Error zu vermeiden.",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "time": "0",
             "measurement": "0",
             "name": "Wait"
@@ -211,6 +283,15 @@
                 "iffalseVal": "loop-entry"
             },
             "name": "Check Variable"
+        },
+        {
+            "shortComment": "Send page embed | Sende Page Embed",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
         },
         {
             "storage": "1",

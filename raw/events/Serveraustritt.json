@@ -64,6 +64,15 @@
             "name": "Check Variable"
         },
         {
+            "shortComment": "Send goodbye message | Aufwiedersehensnachricht senden",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "member": "2",
             "varName": "member",
             "info": "3",

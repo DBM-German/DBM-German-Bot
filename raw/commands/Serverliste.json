@@ -59,6 +59,15 @@
             "name": "Call Command/Event"
         },
         {
+            "shortComment": "If team member: send server list | Wenn Teammitglied: sende Serverliste",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "member": "1",
             "varName": "",
             "permission": "MANAGE_MESSAGES",

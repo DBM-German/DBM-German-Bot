@@ -47,6 +47,15 @@
             "name": "Control Variable"
         },
         {
+            "shortComment": "Check for \"hilfe\" forum | Prüfe auf \"hilfe\"-Forum",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "storage": "1",
             "varName": "channel-type",
             "comparison": "6",
@@ -93,6 +102,15 @@
             "name": "Control Variable"
         },
         {
+            "shortComment": "Check for post author | Prüfe auf Post-Autor",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "storage": "1",
             "varName": "channel-owner-id",
             "comparison": "1",
@@ -126,6 +144,15 @@
             "storage": "1",
             "varName2": "message-author",
             "name": "Store Message Info"
+        },
+        {
+            "shortComment": "Pin message and add tag | Pinne Nachricht und füge Tag hinzu",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
         },
         {
             "storage": "0",

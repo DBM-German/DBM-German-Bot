@@ -55,6 +55,15 @@
             "name": "Action Container"
         },
         {
+            "shortComment": "Update member count | Mitgliederanzahl aktualisieren",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "source": "wpLYn",
             "type": "true",
             "name": "Call Command/Event"

@@ -19,9 +19,27 @@
             "type": "true",
             "actions": [
                 {
+                    "shortComment": "Check nickname | Nickname prüfen",
+                    "longComment": "",
+                    "color": "#fff700",
+                    "bold": false,
+                    "italic": false,
+                    "underline": false,
+                    "name": "Comment [DBM German]"
+                },
+                {
                     "source": "FscMD",
                     "type": "true",
                     "name": "Call Command/Event"
+                },
+                {
+                    "shortComment": "Check advertisement | Werbung prüfen",
+                    "longComment": "",
+                    "color": "#fff700",
+                    "bold": false,
+                    "italic": false,
+                    "underline": false,
+                    "name": "Comment [DBM German]"
                 },
                 {
                     "source": "nGjuv",
@@ -30,6 +48,15 @@
                 }
             ],
             "name": "Loop Through List"
+        },
+        {
+            "shortComment": "Update member count | Mitgliederanzahl aktualisieren",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
         },
         {
             "source": "wpLYn",

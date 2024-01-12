@@ -13,14 +13,41 @@
             "name": "Run Script"
         },
         {
+            "shortComment": "Check nickname | Nickname prüfen",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "source": "FscMD",
             "type": "true",
             "name": "Call Command/Event"
         },
         {
+            "shortComment": "Check advertisement | Werbung prüfen",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "source": "nGjuv",
             "type": "true",
             "name": "Call Command/Event"
+        },
+        {
+            "shortComment": "Server join notification | Server-Beitrittsbenachrichtigung",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
         },
         {
             "source": "mqJdD",

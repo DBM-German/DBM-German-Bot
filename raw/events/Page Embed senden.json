@@ -5,6 +5,15 @@
     "_id": "IVhmi",
     "actions": [
         {
+            "shortComment": "Validate and parse options | Validiere und lese Optionen ein",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "behavior": "1",
             "interpretation": "1",
             "code": "// Check variables and store embed amount\n// Prüfe Variablen und speichere Embed-Menge\n\nconst Discord = this.getDBM().DiscordJS;\n\nlet embeds = tempVars(\"embeds\");// Embeds\nlet amount = embeds?.length;// Embed amount\nlet index = tempVars(\"index\") || 0;// Embed index (starts at 0)\n\nif(!Array.isArray(embeds) || amount == 0) throw new Error(\"No embeds specified\");\nif(!(typeof index == \"number\") || index >= amount || index < 0) throw new Error(\"Embed index out of range\");\nif(embeds.some((e, i) => !(e instanceof Discord.MessageEmbed))) throw new Error(`Expected an array of embeds but received a value of type \"${typeof e}\" at index ${i}`);\n\nthis.storeValue(index, 1, \"index\", cache);\nthis.storeValue(amount, 1, \"amount\", cache);\nthis.callNextAction(cache);",
@@ -77,9 +86,18 @@
             "branch": {
                 "iftrue": "0",
                 "iffalse": "3",
-                "iffalseVal": "2"
+                "iffalseVal": "3"
             },
             "name": "Check Variable"
+        },
+        {
+            "shortComment": "Edit existing page embed | Bearbeite existierendes Page Embed",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
         },
         {
             "channel": "5",
@@ -169,11 +187,29 @@
             "name": "End Action Sequence"
         },
         {
+            "shortComment": "Button calls should edit the embed | Button-Aufrufe sollte das Embed bearbeiten",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "storage": "1",
             "varName": "editReply",
             "changeType": "0",
             "value": "true",
             "name": "Control Variable"
+        },
+        {
+            "shortComment": "Send initial page embed | Sende initiales Page Embed",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
         },
         {
             "channel": "5",

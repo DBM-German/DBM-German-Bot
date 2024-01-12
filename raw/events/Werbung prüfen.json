@@ -24,6 +24,15 @@
             "name": "Check Variable"
         },
         {
+            "shortComment": "Member checks | Mitglieder-Prüfungen",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "storage": "1",
             "varName": "member",
             "comparison": "0",
@@ -195,6 +204,15 @@
             "name": "Check Variable"
         },
         {
+            "shortComment": "Message checks | Nachrichten-Prüfungen",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "storage": "1",
             "varName": "message",
             "comparison": "0",
@@ -235,6 +253,15 @@
                         "name": "Control Variable"
                     },
                     {
+                        "shortComment": "Check for ads | Prüfe auf Werbung",
+                        "longComment": "",
+                        "color": "#fff700",
+                        "bold": false,
+                        "italic": false,
+                        "underline": false,
+                        "name": "Comment [DBM German]"
+                    },
+                    {
                         "source": "vdjKu",
                         "type": "true",
                         "name": "Call Command/Event"
@@ -251,6 +278,15 @@
                         "name": "Check Variable"
                     },
                     {
+                        "shortComment": "Check exceptions | Ausnahmen prüfen",
+                        "longComment": "",
+                        "color": "#fff700",
+                        "bold": false,
+                        "italic": false,
+                        "underline": false,
+                        "name": "Comment [DBM German]"
+                    },
+                    {
                         "list": "7",
                         "varName": "matches",
                         "tempVarName": "match",
@@ -264,7 +300,7 @@
                                 "branch": {
                                     "iftrue": "0",
                                     "iffalse": "3",
-                                    "iffalseVal": "3"
+                                    "iffalseVal": "2"
                                 },
                                 "name": "Check Variable"
                             },
@@ -273,12 +309,7 @@
                                 "name": "Go To Action Anchor"
                             },
                             {
-                                "source": "vkigl",
-                                "type": "true",
-                                "name": "Call Command/Event"
-                            },
-                            {
-                                "name": "End Action Sequence"
+                                "name": "End Action Sequence Recursively [DBM German]"
                             },
                             {
                                 "storage": "1",
@@ -288,7 +319,7 @@
                                 "branch": {
                                     "iftrue": "0",
                                     "iffalse": "3",
-                                    "iffalseVal": "3"
+                                    "iffalseVal": "2"
                                 },
                                 "name": "Check Variable"
                             },
@@ -297,12 +328,7 @@
                                 "name": "Go To Action Anchor"
                             },
                             {
-                                "source": "vkigl",
-                                "type": "true",
-                                "name": "Call Command/Event"
-                            },
-                            {
-                                "name": "End Action Sequence"
+                                "name": "End Action Sequence Recursively [DBM German]"
                             },
                             {
                                 "behavior": "0",
@@ -313,16 +339,22 @@
                                 "name": "Run Script"
                             },
                             {
+                                "list": "9",
+                                "varName": "advertisement-exceptions",
+                                "comparison": "1",
+                                "value": "tempVars(\"item\")",
                                 "storage": "1",
-                                "varName": "list",
-                                "changeType": "0",
-                                "value": "globalVars(\"advertisement-exceptions\")",
-                                "name": "Control Variable"
+                                "varName2": "position",
+                                "name": "Find Item in List [DBM German]"
                             },
                             {
-                                "source": "zZHod",
-                                "type": "true",
-                                "name": "Call Command/Event"
+                                "shortComment": "If match has been found: stop | Falls Treffer gefunden wurde: aufhören",
+                                "longComment": "",
+                                "color": "#fff700",
+                                "bold": false,
+                                "italic": false,
+                                "underline": false,
+                                "name": "Comment [DBM German]"
                             },
                             {
                                 "storage": "1",
@@ -336,12 +368,19 @@
                                 "name": "Check Variable"
                             },
                             {
-                                "source": "vkigl",
-                                "type": "true",
-                                "name": "Call Command/Event"
+                                "name": "End Action Sequence Recursively [DBM German]"
                             }
                         ],
                         "name": "Loop Through List"
+                    },
+                    {
+                        "shortComment": "Take action | Maßnahmen ergreifen",
+                        "longComment": "EN:\nAt this point no exceptions have matched and therefore actions should be taken.\n\nDE:\nAn diesem Punkt haben keine Ausnahmen zugetroffen und deswegen sollten Maßnahmen ergriffen werden.",
+                        "color": "#fff700",
+                        "bold": false,
+                        "italic": false,
+                        "underline": false,
+                        "name": "Comment [DBM German]"
                     },
                     {
                         "anchorName": "take-action",
@@ -361,6 +400,15 @@
                         "changeType": "1",
                         "value": "1",
                         "name": "Control Member Data"
+                    },
+                    {
+                        "shortComment": "Check spam counter | Spam-Zähler prüfen",
+                        "longComment": "EN:\nIf the spam counter is >=3, the member gets timeouted, otherwise a warning gets displayed. The counter is reset with each restart / reconnect of the bot as well as a timeout action.\n\nDE:\nWenn der Spam-Zähler >=3 ist, wird das Mitglied in ein Timeout geschickt, andernfalls wird eine Warnung angezeigt. Der Zähler wird mit jedem Neustart / jeder Neuverbindung des Bots sowie einer Timeout-Aktion zurückgesetzt.",
+                        "color": "#fff700",
+                        "bold": false,
+                        "italic": false,
+                        "underline": false,
+                        "name": "Comment [DBM German]"
                     },
                     {
                         "member": "2",

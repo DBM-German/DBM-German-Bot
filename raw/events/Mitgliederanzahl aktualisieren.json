@@ -13,6 +13,15 @@
             "name": "Store Server Info"
         },
         {
+            "shortComment": "Only check on the main / team server | Nur auf dem Haupt- / Teamserver prüfen",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "storage": "1",
             "varName": "serverId",
             "comparison": "1",

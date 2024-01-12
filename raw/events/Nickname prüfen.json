@@ -13,6 +13,15 @@
             "name": "Store Server Info"
         },
         {
+            "shortComment": "Only check on the main server | Nur auf dem Hauptserver prüfen",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "storage": "1",
             "varName": "serverId",
             "comparison": "1",
@@ -32,6 +41,15 @@
             "name": "Store Member Info"
         },
         {
+            "shortComment": "Check for user-friendly name | Prüfe auf benutzerfreundlichen Namen",
+            "longComment": "EN:\nThe name should be mentionable with a German keyboard layout and non-hoisting.\n\nExamples: \"Mähdräscher\" - ok; \"1LonelyPerson\" - ok; \"! Hi\" - not ok\n\n\nDE:\nDer Name sollte erwähnbar mit einem deutschen Tastaturlayout und nicht hebend sein.\n\nBeispiele: \"Mähdräscher\" - ok; \"1EinsamePerson\" - ok; \"! Hi\" - nicht ok",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "storage": "1",
             "varName": "name",
             "comparison": "6",
@@ -41,6 +59,15 @@
                 "iffalse": "0"
             },
             "name": "Check Variable"
+        },
+        {
+            "shortComment": "Generate replacement name | Generiere Ersatzname",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
         },
         {
             "list": "9",
@@ -64,6 +91,15 @@
             "storage": "1",
             "varName2": "replacementNickname",
             "name": "Get Item from List"
+        },
+        {
+            "shortComment": "Easter egg \"Mathilda\"",
+            "longComment": "EN:\nThe name \"Mathilda\" has a 50% chance it'll be \"Mathilda Jonas\" instead. This is a reference to the German audiobook series \"Die drei ???\" (original English title: \"The Three Investigators\").\n\n\nDE:\nDer Name \"Mathilda\" hat eine 50-prozentige Chance, dass es stattdessen \"Mathilda Jonas\" sein wird. Das ist eine Referenz zu der Audiobuchreihe \"Die drei ???\".",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
         },
         {
             "storage": "1",

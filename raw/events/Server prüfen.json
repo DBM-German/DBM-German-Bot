@@ -13,6 +13,15 @@
             "name": "Store Server Info"
         },
         {
+            "shortComment": "Check if this is the main server | Prüfe, ob das der Hauptserver ist",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "storage": "1",
             "varName": "server-id",
             "comparison": "1",
@@ -22,6 +31,15 @@
                 "iffalse": "0"
             },
             "name": "Check Variable"
+        },
+        {
+            "shortComment": "Optional: Check for team server | Optional: Auf Teamserver prüfen",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
         },
         {
             "storage": "1",
@@ -45,6 +63,15 @@
                 "iffalse": "0"
             },
             "name": "Check Variable"
+        },
+        {
+            "shortComment": "Send info if wrong server | Sende Info bei falschem Server",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
         },
         {
             "storage": "1",
@@ -73,9 +100,16 @@
             "name": "Call Command/Event"
         },
         {
-            "source": "vkigl",
-            "type": "true",
-            "name": "Call Command/Event"
+            "shortComment": "Cancel current command / event | Aktuellen Command / Event abbrechen",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
+            "name": "End Action Sequence Recursively [DBM German]"
         }
     ]
 }

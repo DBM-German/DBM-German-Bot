@@ -13,6 +13,15 @@
             "name": "Run Script"
         },
         {
+            "shortComment": "Check holidays | Feiertage prüfen",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "source": "CmzVR",
             "type": "true",
             "name": "Call Command/Event"

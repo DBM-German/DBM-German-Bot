@@ -32,14 +32,23 @@
             "name": "Control Variable"
         },
         {
+            "shortComment": "Check amount | Prüfe Menge",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
             "storage": "4",
             "varName": "Menge",
             "comparison": "4",
             "value": "0",
             "branch": {
                 "iftrue": "0",
-                "iffalse": "3",
-                "iffalseVal": "1"
+                "iffalse": "4",
+                "iffalseVal": "invalid-amount"
             },
             "name": "Check Variable"
         },
@@ -49,26 +58,11 @@
             "comparison": "3",
             "value": "1000",
             "branch": {
-                "iftrue": "3",
-                "iffalse": "0",
-                "iftrueVal": "3"
+                "iftrue": "0",
+                "iffalse": "4",
+                "iffalseVal": "invalid-amount"
             },
             "name": "Check Variable"
-        },
-        {
-            "storage": "1",
-            "varName": "description",
-            "changeType": "0",
-            "value": "\"Ungültige Menge an Nachrichten. Erlaubt sind 1 - 999.\"",
-            "name": "Control Variable"
-        },
-        {
-            "source": "HPCYz",
-            "type": "true",
-            "name": "Call Command/Event"
-        },
-        {
-            "name": "End Action Sequence"
         },
         {
             "channel": "0",
@@ -94,6 +88,25 @@
         },
         {
             "source": "FGdiL",
+            "type": "true",
+            "name": "Call Command/Event"
+        },
+        {
+            "name": "End Action Sequence"
+        },
+        {
+            "anchorName": "invalid-amount",
+            "name": "Action Anchor"
+        },
+        {
+            "storage": "1",
+            "varName": "description",
+            "changeType": "0",
+            "value": "\"Ungültige Menge an Nachrichten. Erlaubt sind 1 - 999.\"",
+            "name": "Control Variable"
+        },
+        {
+            "source": "HPCYz",
             "type": "true",
             "name": "Call Command/Event"
         }
