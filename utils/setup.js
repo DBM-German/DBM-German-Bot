@@ -10,6 +10,10 @@ import {
     RAW_DATA_DIR,
     RAW_CODE_DIR,
     RES_DIR,
+    MODS_DIR,
+    MODS_ACTIONS_DIR,
+    MODS_EVENTS_DIR,
+    MODS_EXTENSIONS_DIR,
     BOT_DIR,
     BOT_DATA_DIR,
     BOT_CODE_DIR,
@@ -124,6 +128,22 @@ try {
     process.exit(1);
 }
 
+// Check permissions for res directory
+try {
+    await access(RES_DIR, FS_R);
+} catch(e) {
+    console.error(`Auf Resourcen-Verzeichnis kann nicht zugegriffen werden: ${e}`);
+    process.exit(1);
+}
+
+// Check permissions for mods directory
+try {
+    await access(MODS_DIR, FS_R);
+} catch(e) {
+    console.error(`Auf Mods-Verzeichnis kann nicht zugegriffen werden: ${e}`);
+    process.exit(1);
+}
+
 // Check permissions for bot directory
 let botDirExists;
 
@@ -218,6 +238,19 @@ try {
     });
 } catch(e) {
     console.error(`Resourcen können nicht kopiert werden: ${e}`);
+    process.exit(1);
+}
+
+// Copy mods
+try {
+    console.log("Kopiere Mods...");
+    await Promise.all([
+        cp(`${MODS_ACTIONS_DIR}`, BOT_ACTIONS_DIR, { recursive: true }),
+        cp(`${MODS_EVENTS_DIR}`, BOT_EVENTS_DIR, { recursive: true }),
+        cp(`${MODS_EXTENSIONS_DIR}`, BOT_EXTENSIONS_DIR, { recursive: true })
+    ]);
+} catch (e) {
+    console.error(`Mods können nicht kopiert werden: ${e}`);
     process.exit(1);
 }
 

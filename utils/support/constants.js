@@ -15,6 +15,11 @@ export const RAW_CODE_DIR = `${RAW_DIR}/code`;
 
 export const RES_DIR = "./res";
 
+export const MODS_DIR = "./mods";
+export const MODS_ACTIONS_DIR = `${MODS_DIR}/actions`;
+export const MODS_EVENTS_DIR = `${MODS_DIR}/events`;
+export const MODS_EXTENSIONS_DIR = `${MODS_DIR}/extensions`;
+
 export const BOT_DIR = "./bot";
 export const BOT_DATA_DIR = `${BOT_DIR}/data`;
 export const BOT_CODE_DIR = `${BOT_DIR}/code`;
