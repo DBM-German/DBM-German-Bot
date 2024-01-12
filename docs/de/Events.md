@@ -1,12 +1,11 @@
-## Aktionssequenz rekursiv beenden
-Beendet die Aktionssequenz rekursiv, indem weder "this.callNextAction()", noch "this.endActions()" aufgerufen werden.
-
+# Events
 
 ## Bot stoppen
+
 Führt einen Logout aus und stoppt dann den restlichen Bot.
 
-
 ## Embed senden
+
 Erstellt und versendet ein generisches Embed anhand der übergebenen Daten.
 
 | Ein- / Ausgabe | Variable          | Art der Variable | Datentyp                | Optional | Standard                      | Beschreibung                                                                                          |
@@ -20,8 +19,8 @@ Erstellt und versendet ein generisches Embed anhand der übergebenen Daten.
 | Eingabe        | image             | Temp             | [string]                | x        | *nichts*                      | Ein anzuzeigendes Bild (URL)                                                                          |
 | Eingabe        | thumbnail         | Temp             | [string]                | x        | *nichts*                      | Ein anzuzeigendes Thumbnail (URL)                                                                     |
 
-
 ## Failure Embed senden
+
 Erstellt und versendet ein Fehlschlags-Embed anhand der übergebenen Daten.
 
 | Ein- / Ausgabe | Variable          | Art der Variable | Datentyp                | Optional | Standard                      | Beschreibung                                                                                          |
@@ -35,16 +34,16 @@ Erstellt und versendet ein Fehlschlags-Embed anhand der übergebenen Daten.
 | Eingabe        | image             | Temp             | [string]                | x        | *nichts*                      | Ein anzuzeigendes Bild (URL)                                                                          |
 | Eingabe        | thumbnail         | Temp             | [string]                | x        | *nichts*                      | Ein anzuzeigendes Thumbnail (URL)                                                                     |
 
-
 ## Feiertage prüfen
+
 Überprüft, ob der aktuelle Tag ein deutscher Feiertag ist.
 
 | Ein- / Ausgabe | Variable          | Art der Variable | Datentyp                | Optional | Standard                      | Beschreibung                                                                                          |
 |----------------|-------------------|------------------|-------------------------|----------|-------------------------------|-------------------------------------------------------------------------------------------------------|
 | Ausgabe        | holiday           | Global           | [string]                | x        | `null`                        | Der Name des aktuellen Feiertags                                                                      |
 
-
 ## Info Embed senden
+
 Erstellt und versendet ein Info-Embed anhand der übergebenen Daten.
 
 | Ein- / Ausgabe | Variable          | Art der Variable | Datentyp                | Optional | Standard                      | Beschreibung                                                                                          |
@@ -58,18 +57,8 @@ Erstellt und versendet ein Info-Embed anhand der übergebenen Daten.
 | Eingabe        | image             | Temp             | [string]                | x        | *nichts*                      | Ein anzuzeigendes Bild (URL)                                                                          |
 | Eingabe        | thumbnail         | Temp             | [string]                | x        | *nichts*                      | Ein anzuzeigendes Thumbnail (URL)                                                                     |
 
-
-## Item in Liste finden
-Sucht nach einem bestimmten Element in einer Liste.
-
-| Ein- / Ausgabe | Variable          | Art der Variable | Datentyp                | Optional | Standard                      | Beschreibung                                                                                          |
-|----------------|-------------------|------------------|-------------------------|----------|-------------------------------|-------------------------------------------------------------------------------------------------------|
-| Eingabe        | list              | Temp             | [Array]<[Object]>       |          |                               | Die zu durchsuchende Liste                                                                            |
-| Eingabe        | item              | Temp             | [Object]                |          |                               | Das zu findende Element                                                                               |
-| Ausgabe        | position          | Temp             | [number]                | x        | `-1`                          | Position in der Liste                                                                                 |
-
-
 ## Leveling System
+
 Verteilt Level und XP anhand gesendeter Nachrichten.
 
 | Ein- / Ausgabe | Variable          | Art der Variable | Datentyp                | Optional | Standard                      | Beschreibung                                                                                          |
@@ -77,16 +66,16 @@ Verteilt Level und XP anhand gesendeter Nachrichten.
 | Eingabe        | message           | Temp             | [Message]               |          |                               | Die Nachricht, welche als XP verrechnet werden soll                                                   |
 | Eingabe        | member            | Temp             | [GuildMember]           |          |                               | Das Servermitglied, welches die XP erhalten soll                                                      |
 
-
 ## Nickname prüfen
+
 Überprüft, ob ein Nickname gegen die Regeln verstößt oder unübliche Zeichen beinhaltet.
 
 | Ein- / Ausgabe | Variable          | Art der Variable | Datentyp                | Optional | Standard                      | Beschreibung                                                                                          |
 |----------------|-------------------|------------------|-------------------------|----------|-------------------------------|-------------------------------------------------------------------------------------------------------|
 | Eingabe        | member            | Temp             | [GuildMember]           |          |                               | Das zu prüfende Servermitglied                                                                        |
 
-
 ## Page Embed senden
+
 Erstellt und versendet ein mehrseitiges Embed. Einzelne Seiten können über entsprechende Knöpfe aufgerufen werden.
 
 | Ein- / Ausgabe | Variable          | Art der Variable | Datentyp                | Optional | Standard                      | Beschreibung                                                                                          |
@@ -102,8 +91,8 @@ Erstellt und versendet ein mehrseitiges Embed. Einzelne Seiten können über ent
 - image (optional)
 - thumbnail (optional)
 
-
 ## RegEx auswerten
+
 Versucht einen Regulären Ausdruck (Regular Expression; RegEx) für einen gegebenen Text auszuwerten.
 
 | Ein- / Ausgabe | Variable          | Art der Variable | Datentyp                | Optional | Standard                      | Beschreibung                                                                                          |
@@ -112,32 +101,32 @@ Versucht einen Regulären Ausdruck (Regular Expression; RegEx) für einen gegebe
 | Eingabe        | regex             | Temp             | [RegExp]                |          |                               | Den auszuwertenden RegEx                                                                              |
 | Ausgabe        | matches           | Temp             | [Array]<[string]>       | x        | `undefined`                   | RegEx-Treffer, falls vorhanden                                                                        |
 
-
 ## Server prüfen
+
 Überprüft, ob ein Befehl auf dem vorgesehenen Server ausgeführt wird und beendet ggf. die Aktionssequenz.
 
 | Ein- / Ausgabe | Variable          | Art der Variable | Datentyp                | Optional | Standard                      | Beschreibung                                                                                          |
 |----------------|-------------------|------------------|-------------------------|----------|-------------------------------|-------------------------------------------------------------------------------------------------------|
 | Eingabe        | check-team-server | Temp             | [boolean]               | x        | `false`                       | Zusätzlich zum Hauptserver soll auch auf den Teamserver geprüft werden                                |
 
-
 ## Serveraustritt
+
 Verkündet Servermitglieder, die ausgetreten sind.
 
 | Ein- / Ausgabe | Variable          | Art der Variable | Datentyp                | Optional | Standard                      | Beschreibung                                                                                          |
 |----------------|-------------------|------------------|-------------------------|----------|-------------------------------|-------------------------------------------------------------------------------------------------------|
 | Eingabe        | member            | Temp             | [GuildMember]           |          |                               | Das Servermitglied, das ausgetreten ist                                                               |
 
-
 ## Serverbeitritt
+
 Verkündet Servermitglieder, die beigetreten sind.
 
 | Ein- / Ausgabe | Variable          | Art der Variable | Datentyp                | Optional | Standard                      | Beschreibung                                                                                          |
 |----------------|-------------------|------------------|-------------------------|----------|-------------------------------|-------------------------------------------------------------------------------------------------------|
 | Eingabe        | member            | Temp             | [GuildMember]           |          |                               | Das Servermitglied, das beigetreten ist                                                               |
 
-
 ## Success Embed senden
+
 Erstellt und versendet ein Erfolgs-Embed anhand der übergebenen Daten.
 
 | Ein- / Ausgabe | Variable          | Art der Variable | Datentyp                | Optional | Standard                      | Beschreibung                                                                                          |
@@ -151,8 +140,8 @@ Erstellt und versendet ein Erfolgs-Embed anhand der übergebenen Daten.
 | Eingabe        | image             | Temp             | [string]                | x        | *nichts*                      | Ein anzuzeigendes Bild (URL)                                                                          |
 | Eingabe        | thumbnail         | Temp             | [string]                | x        | *nichts*                      | Ein anzuzeigendes Thumbnail (URL)                                                                     |
 
-
 ## Warning Embed senden
+
 Erstellt und versendet ein Warnungs-Embed anhand der übergebenen Daten.
 
 | Ein- / Ausgabe | Variable          | Art der Variable | Datentyp                | Optional | Standard                      | Beschreibung                                                                                          |
@@ -166,15 +155,14 @@ Erstellt und versendet ein Warnungs-Embed anhand der übergebenen Daten.
 | Eingabe        | image             | Temp             | [string]                | x        | *nichts*                      | Ein anzuzeigendes Bild (URL)                                                                          |
 | Eingabe        | thumbnail         | Temp             | [string]                | x        | *nichts*                      | Ein anzuzeigendes Thumbnail (URL)                                                                     |
 
-
 ## Werbung prüfen
+
 Überprüft, ob eine Nachricht oder Servermitglied Werbung beinhalten / anzeigen.
 
 | Ein- / Ausgabe | Variable          | Art der Variable | Datentyp                | Optional | Standard                      | Beschreibung                                                                                          |
 |----------------|-------------------|------------------|-------------------------|----------|-------------------------------|-------------------------------------------------------------------------------------------------------|
 | Eingabe        | message           | Temp             | [Message]               |          |                               | Die zu prüfende Nachricht                                                                             |
 | Eingabe        | member            | Temp             | [GuildMember]           |          |                               | Das zu prüfende Servermitglied                                                                        |
-
 
 [boolean]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean
 [number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number

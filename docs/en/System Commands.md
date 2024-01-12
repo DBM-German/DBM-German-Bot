@@ -2,7 +2,6 @@
 
 The `/system` command can be used to execute internal commands which are intended for testing purposes.
 
-
 ## auslösen (trigger)
 
 Trigger a specific event with the specified parameters.
@@ -13,7 +12,6 @@ Trigger a specific event with the specified parameters.
 |----------------|----------------|-------------------|
 | Serveraustritt | Austritt       | Any user          |
 | Serverbeitritt | Beitritt       | Any user          |
-
 
 ## Embed (Embed message)
 
@@ -27,7 +25,6 @@ Send one of the predefined embeds.
 | Success Embed | Success        | Unused            |
 | Warning Embed | Warning        | Unused            |
 | Page Embed    | Page           | Unused            |
-
 
 ## Werbeinfo
 

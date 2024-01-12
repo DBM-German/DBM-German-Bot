@@ -2,7 +2,6 @@
 
 Mit dem Befehl `/system` können interne Befehle ausgeführt werden, welche für Testzwecke gedacht sind.
 
-
 ## auslösen (trigger)
 
 Ein bestimmtes Event mit den angegebenen Parametern auslösen.
@@ -13,7 +12,6 @@ Ein bestimmtes Event mit den angegebenen Parametern auslösen.
 |----------------|----------------|-------------------|
 | Serveraustritt | Austritt       | Beliebiger Nutzer |
 | Serverbeitritt | Beitritt       | Beliebiger Nutzer |
-
 
 ## Embed (Embed message)
 
@@ -27,7 +25,6 @@ Eines der vordefinierten Embeds versenden.
 | Success Embed | Success        | Ungenutzt         |
 | Warning Embed | Warning        | Ungenutzt         |
 | Page Embed    | Page           | Ungenutzt         |
-
 
 ## Werbeinfo
 

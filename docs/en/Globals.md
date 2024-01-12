@@ -1,16 +1,15 @@
 # Global variables
 
 Global variables can be divided in two categories:
+
 - [Constants](#Constants)
 - [Functions](#Functions)
-
-
 
 ## Constants
 
 | Variable                        | Regular value                                   | Value in debug mode                             | Description                                                                                                                                      |
 |---------------------------------|-------------------------------------------------|-------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| version                         | *current version*                               | *regular value*                                 | The current version of the bot as text (Examples: "3.0.0", "3.0.0-beta")                                                                             |
+| version                         | *current version*                               | *regular value*                                 | The current version of the bot as text (Examples: "3.0.0", "3.0.0-beta")                                                                         |
 | debug                           | `false`                                         | `true`                                          | A boolean that defines whether this is the beta bot or not (for the client id "724335784798322833" it is `false`, otherwise `true`)              |
 | github-link                     | `https://github.com/DBM-German/DBM-German-Bot`  | *regular value*                                 | Link to the GitHub repository of the DBM German Bot                                                                                              |
 | default-color                   | `#fff700`                                       | *regular value*                                 | Default color of the bot                                                                                                                         |
@@ -45,7 +44,6 @@ Global variables can be divided in two categories:
 | advertisement-exceptions        | [RegExp]                                        | *regular value*                                 | Exceptions for the Advertisement RegEx (hits should be checked for Discord invite links in advance because Discord generally are allowed)        |
 | holiday                         | [string] / `null`                               | *regular value*                                 | Should the current day be a German public holiday then its name is in the variable, otherwise `null` (gets updated daily)                        |
 
-
 ### Commands
 
 | Key                   | Type of value                 |
@@ -54,7 +52,6 @@ Global variables can be divided in two categories:
 | description           | [string]                      |
 | parameters            | [ApplicationCommandOption]    |
 | type                  | [ApplicationCommandType]      |
-
 
 ### Command Types
 
@@ -68,7 +65,6 @@ Global variables can be divided in two categories:
 | USER_MENU             | 5                     |
 | MSG_MENU              | 6                     |
 
-
 ### Command Type Names
 
 | Key                   | Value ([string])      |
@@ -80,7 +76,6 @@ Global variables can be divided in two categories:
 | 4                     | Slash Command         |
 | 5                     | User Menu Command     |
 | 6                     | Message Menu          |
-
 
 ### Replacement Nicknames
 
@@ -100,24 +95,22 @@ Global variables can be divided in two categories:
 
 <sup>1</sup> With this name, there's a 50 percent chance in the "Nicknamen prüfen" (check nickname) event that it'll be Mathilda Jonas instead.
 
-
-
 ## Functions
-
 
 ### Resolve Command Type | ${`globalVars("resolveCommandType")`}
 
 A function to resolve command types to readable names. Example:
+
 ```js
 let internalType = "4";
 let readableType = globalVars("resolveCommandType")(commandType);
 console.log(readableType); // Slash Command
 ```
 
-
 ### Break Text | ${`globalVars("breakText")`}
 
 A function to break texts if needed and replace the end with break characters. Example:
+
 ```js
 let text1 = "DBM German";
 let text2 = "DBM German Bot";
@@ -126,30 +119,30 @@ console.log(globalVars("breakText")(text2, 10)); // DBM Ger...
 console.log(globalVars("breakText")(text2, 10, " [...]")); // DBM  [...]
 ```
 
-
 ### Is Nitro Booster | ${`globalVars("isNitroBooster")`}
 
 A function to check if a member is a Nitro booster. Example:
+
 ```js
 let member = tempVars("member");
 let status = globalVars("isNitroBooster")(member);
 console.log(status); // true / false
 ```
 
-
 ### Is Bot Owner | ${`globalVars("isBotOwner")`}
 
 A function to check if a member is the bot owner. Example:
+
 ```js
 let member = tempVars("member");
 let status = globalVars("isBotOwner")(member);
 console.log(status); // true / false
 ```
 
-
 ### Levenshtein | ${`globalVars("levenshtein")`}
 
 A function to calculate the levenshtein distance between to strings. Example:
+
 ```js
 let a = "sample";
 let b = "example";
@@ -157,17 +150,15 @@ let distance = globalVars("levenshtein")(a, b);
 console.log(distance); // 2
 ```
 
-
 ### Log | ${`globalVars("log")`}
 
 A function to log messages with additional metadata. Example:
+
 ```js
 // Logs the following message to the console:
 // 06.12.2023, 22:25:28 [Command "ABC" - Action #1 (XYZ)] Message with timestamp and location
 globalVars("log")(cache, "Message with timestamp and location");
 ```
-
-
 
 [string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 [Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
