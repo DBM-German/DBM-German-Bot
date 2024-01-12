@@ -75,7 +75,7 @@ Zur Synchronisation aller Änderungen stehen nachfolgende Skripte zur Verfügung
 
 Example to start the bot with a mount to the sub-folder `data` of the current directory:
 
-`docker run --name dbm-german-bot --mount type=bind,source="$(pwd)"/data,target=/home/node/app/data dbm-german-bot:3.0.1`
+`docker run --name dbm-german-bot --mount type=bind,source="$(pwd)"/data,target=/home/node/app/data dbm-german-bot:3.1.0`
 
 Optionally `--detach` and `--restart always` can be used to run the container in the background and restart it automatically.
 
@@ -88,6 +88,6 @@ Optionally `--detach` and `--restart always` can be used to run the container in
 
 Beispiel zum Starten des Bots mit einem Mount zum Unterordner `data` im aktuellen Verzeichnis:
 
-`docker run --name dbm-german-bot --mount type=bind,source="$(pwd)"/data,target=/home/node/app/data dbm-german-bot:3.0.1`
+`docker run --name dbm-german-bot --mount type=bind,source="$(pwd)"/data,target=/home/node/app/data dbm-german-bot:3.1.0`
 
 Optional können `--detach` und `--restart always` verwendet werden, um den Container im Hintergrund auszuführen und ihn automatisch neu zu starten.

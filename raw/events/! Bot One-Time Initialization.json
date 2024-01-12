@@ -48,7 +48,7 @@
                     "storage": "3",
                     "varName": "version",
                     "changeType": "0",
-                    "value": "\"3.0.1\"",
+                    "value": "\"3.1.0-beta\"",
                     "name": "Control Variable"
                 },
                 {
@@ -62,7 +62,7 @@
                     "storage": "3",
                     "varName": "github-link",
                     "changeType": "0",
-                    "value": "\"https://github.com/dbm-german/DBM-German-Bot\"",
+                    "value": "\"https://github.com/DBM-German/DBM-German-Bot\"",
                     "name": "Control Variable"
                 },
                 {
@@ -640,6 +640,14 @@
                             "storage": "3",
                             "varName": "advertisement-exceptions",
                             "name": "Create List"
+                        },
+                        {
+                            "storage": "3",
+                            "varName": "advertisement-exceptions",
+                            "addType": "0",
+                            "position": "",
+                            "value": "\"example.com\"",
+                            "name": "Add Item to List"
                         },
                         {
                             "storage": "3",
