@@ -24,7 +24,7 @@
   "type": "module",
   "scripts": {
     "start": "cd bot && node bot.js",
-    "setup": "npm i && node utils/setup.js && node utils/to-dbm.js",
+    "setup": "(git submodule update --init) && (npm i) && (node utils/setup.js) && (node utils/to-dbm.js)",
     "build": "(npm run setup) && (docker build --tag dbm-german-bot:3.1.0 .) && (docker save -o dbm-german-bot.tar dbm-german-bot:3.1.0)",
     "build-arm": "(npm run setup) && (docker build --tag dbm-german-bot:3.1.0-arm -f Dockerfile.arm .) && (docker save -o dbm-german-bot_arm.tar dbm-german-bot:3.1.0-arm)",
     "copy-code": "node utils/copy-code.js",
@@ -34,6 +34,7 @@
     "lint": "npx eslint ."
   },
   "dependencies": {
+    "dbm-types": "^0.1.1",
     "regedit": "5.1",
     "vdf-parser": "1.2"
   },
