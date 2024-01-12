@@ -34,7 +34,7 @@
     "lint": "npx eslint ."
   },
   "dependencies": {
-    "dbm-types": "^0.1.1",
+    "dbm-types": "^0.1.2",
     "regedit": "5.1",
     "vdf-parser": "1.2"
   },

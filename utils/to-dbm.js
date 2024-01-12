@@ -5,12 +5,12 @@ import { RAW_DIR, BOT_DIR, FS_R, FS_RW, RAW_DATA_TYPES, ENCODING } from "./suppo
 
 /**
  * @typedef RawData
- * @type {{ name: string; _id: string; actions: any[] }}
+ * @type {import("dbm-types/dbm-2.1").DBMCommandJSON | import("dbm-types/dbm-2.1").DBMEventJSON}
  */
 
 /**
  * @typedef RawDataContainer
- * @type { Map<string, RawData[]> }
+ * @type {Map<string, RawData[]>}
  */
 
 

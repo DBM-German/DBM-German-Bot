@@ -32,15 +32,8 @@ import { findSteamDir, findSteamLibFolders, findDBM } from "./support/functions.
 const exec = promisify(execCb);
 
 
-/**
- * @typedef DBMSettings
- * @type {{ token: string; client: string; tag: string; case: boolean | `${boolean}`; separator: string; commandsOrder: string[]; eventsOrder: string[]; modules: {[dependency: string]: [string, boolean]}; ownerId: string; invalidUserText: string; invalidSelectText: string; invalidButtonText: string; leaveVoiceTimeout: number; slashType: string; slashServers: string; autoResponseText: string; invalidPermissionsText: string; invalidCooldownText: string; noDescriptionText: string; [extension: string]: {customData: {[data: string]: any}} }}
- */
-
-/**
- * @typedef DBMPackage
- * @type {{ name: string; author: string; main: string; version: string; dependencies: {[dependency: string]: string} }}
- */
+/** @typedef {import("dbm-types/dbm-2.1").DBMSettingsJSON} DBMSettingsJSON */
+/** @typedef {import("dbm-types/dbm-2.1").DBMPackage} DBMPackage */
 
 
 // Start
@@ -199,7 +192,7 @@ try {
 try {
     console.log("Wende Module Manager-Einstellungen an...");
     /**
-     * @type {DBMSettings}
+     * @type {DBMSettingsJSON}
      */
     let settings = JSON.parse(await readFile(`${BOT_DATA_DIR}/settings.json`, { encoding: ENCODING }));
     /**
