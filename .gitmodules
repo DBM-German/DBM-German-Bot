@@ -1,4 +1,4 @@
 [submodule "mods"]
 	path = mods
 	url = https://github.com/DBM-German/Mods
-	branch = main
+	branch = dev
