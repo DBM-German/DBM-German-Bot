@@ -15,14 +15,6 @@
             "name": "Start Thinking"
         },
         {
-            "server": "0",
-            "varName": "",
-            "info": "15",
-            "storage": "1",
-            "varName2": "members",
-            "name": "Store Server Info"
-        },
-        {
             "shortComment": "Get a member list without bots | Bekomme eine Mitgliederliste ohne Bots",
             "longComment": "",
             "color": "#fff700",
@@ -30,6 +22,14 @@
             "italic": false,
             "underline": false,
             "name": "Comment [DBM German]"
+        },
+        {
+            "server": "0",
+            "varName": "",
+            "info": "15",
+            "storage": "1",
+            "varName2": "members",
+            "name": "Store Server Info"
         },
         {
             "list": "7",
@@ -41,7 +41,7 @@
             "name": "Transform List"
         },
         {
-            "shortComment": "Store member data in three lists | Speichere Member Date in drei Listen",
+            "shortComment": "Transform, sort and store as chunks | Transformiere, sortiere und speichere in Stücken",
             "longComment": "",
             "color": "#fff700",
             "bold": false,
@@ -50,147 +50,89 @@
             "name": "Comment [DBM German]"
         },
         {
-            "storage": "1",
-            "varName": "xps",
-            "name": "Create List"
-        },
-        {
-            "storage": "1",
-            "varName": "requiredXps",
-            "name": "Create List"
-        },
-        {
-            "storage": "1",
-            "varName": "levels",
-            "name": "Create List"
-        },
-        {
-            "list": "7",
+            "storage": "7",
             "varName": "members",
-            "tempVarName": "member",
-            "type": "true",
-            "actions": [
+            "storage2": "1",
+            "varName2": "memberSequence",
+            "name": "Create Sequence from List [DBM German]"
+        },
+        {
+            "storage": "1",
+            "varName": "memberSequence",
+            "operations": [
                 {
-                    "member": "2",
-                    "varName": "member",
-                    "dataName": "xp",
-                    "defaultVal": "0",
-                    "storage": "1",
-                    "varName2": "xp",
-                    "name": "Store Member Data"
+                    "type": "map",
+                    "value": "",
+                    "number": "",
+                    "selector": "",
+                    "dataName": "",
+                    "dataDefaultVal": "0",
+                    "predicate": "",
+                    "transform": "{ member: item, level: item.data(\"level\", 1), xp: item.data(\"xp\", 0), requiredXp: item.data(\"level\", 1) * 10 }",
+                    "comparisons": [],
+                    "prependNewValues": "false",
+                    "tempVarName": "",
+                    "callType": "0",
+                    "actions": []
                 },
                 {
-                    "member": "2",
-                    "varName": "member",
-                    "dataName": "level",
-                    "defaultVal": "1",
-                    "storage": "1",
-                    "varName2": "level",
-                    "name": "Store Member Data"
+                    "type": "sortedWith",
+                    "value": "",
+                    "number": "",
+                    "selector": "",
+                    "dataName": "",
+                    "dataDefaultVal": "0",
+                    "predicate": "",
+                    "transform": "",
+                    "comparison": "a.level - b.level || a.xp - b.xp",
+                    "prependNewValues": "false",
+                    "tempVarName": "",
+                    "callType": "0",
+                    "actions": []
                 },
                 {
-                    "storage": "1",
-                    "varName": "requiredXp",
-                    "changeType": "0",
-                    "value": "tempVars(\"level\") * 10",
-                    "name": "Control Variable"
+                    "type": "reverse",
+                    "value": "",
+                    "number": "",
+                    "selector": "",
+                    "dataName": "",
+                    "dataDefaultVal": "0",
+                    "predicate": "",
+                    "transform": "",
+                    "comparison": "",
+                    "prependNewValues": "false",
+                    "tempVarName": "",
+                    "callType": "0",
+                    "actions": []
                 },
                 {
-                    "storage": "1",
-                    "varName": "xps",
-                    "addType": "0",
-                    "position": "",
-                    "value": "tempVars(\"xp\")",
-                    "name": "Add Item to List"
-                },
-                {
-                    "storage": "1",
-                    "varName": "levels",
-                    "addType": "0",
-                    "position": "",
-                    "value": "tempVars(\"level\")",
-                    "name": "Add Item to List"
-                },
-                {
-                    "storage": "1",
-                    "varName": "requiredXps",
-                    "addType": "0",
-                    "position": "",
-                    "value": "tempVars(\"requiredXp\")",
-                    "name": "Add Item to List"
+                    "type": "mapIndexed",
+                    "value": "",
+                    "number": "",
+                    "selector": "",
+                    "dataName": "",
+                    "dataDefaultVal": "0",
+                    "predicate": "",
+                    "transform": "`**#${index+1}** ${item.member.displayName} – ${item.level} (${item.xp}/${item.requiredXp})`",
+                    "comparisons": [],
+                    "prependNewValues": "false",
+                    "tempVarName": "",
+                    "callType": "0",
+                    "actions": []
                 }
             ],
-            "name": "Loop Through List"
+            "name": "Run Sequence Operations [DBM German]"
         },
         {
-            "shortComment": "Merge lists | Vereine Listen",
-            "longComment": "",
-            "color": "#fff700",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "name": "Comment [DBM German]"
-        },
-        {
-            "list": "7",
-            "varName": "members",
-            "transform": "({ member: item, xp: tempVars(\"xps\")[index], requiredXp: tempVars(\"requiredXps\")[index], level: tempVars(\"levels\")[index] })",
-            "null": "null",
             "storage": "1",
-            "varName2": "memberStats",
-            "name": "Transform List"
-        },
-        {
-            "shortComment": "Sort list | Sortiere Liste",
-            "longComment": "",
-            "color": "#fff700",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "name": "Comment [DBM German]"
-        },
-        {
-            "behavior": "0",
-            "interpretation": "1",
-            "code": "// Sort list\n// Liste sortieren\n\ntempVars(\"memberStats\").sort((a, b) => {\n    let levelDiff = (a.level - b.level) * (-1);\n    if(levelDiff != 0) return levelDiff;\n\n    let xpDiff = (a.xp - b.xp) * (-1);\n    if(xpDiff != 0) return xpDiff;\n\n    return a.member.displayName - b.member.displayName;\n});",
-            "storage": "0",
-            "varName": "",
-            "name": "Run Script"
-        },
-        {
-            "shortComment": "Convert entries to text | Konvertiere Einträge zu Text",
-            "longComment": "",
-            "color": "#fff700",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "name": "Comment [DBM German]"
-        },
-        {
-            "list": "7",
-            "varName": "memberStats",
-            "transform": "`**#${index+1}** ${item.member.displayName} – ${item.level} (${item.xp}/${item.requiredXp})`",
-            "null": "null",
-            "storage": "1",
-            "varName2": "memberStatsTexts",
-            "name": "Transform List"
-        },
-        {
-            "shortComment": "Merge and partion texts (max. 10) | Vereine und partitioniere Texte (max. 10)",
-            "longComment": "EN:\nMerge 10 texts into one and store those partions in a new list.\n\n\nDE:\nVereine 10 Texte in einem und speichere diese Partitionen in einer neuen Liste.",
-            "color": "#fff700",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "name": "Comment [DBM German]"
-        },
-        {
-            "behavior": "0",
-            "interpretation": "1",
-            "code": "const MAX_PAGES = 10; // Max pages\nconst MAX_PER_PAGE = 10; // Max member stats per page\n\nlet memberStatsPages = [];\nlet page = 0;// Current page\nlet count = 0;// Member stats count on current page\n\nfor(let statsText of tempVars(\"memberStatsTexts\")) {\n    if(typeof memberStatsPages[page] != \"string\") memberStatsPages[page] = \"\";\n\n    memberStatsPages[page] += `${statsText}\\n`;\n    count++;\n\n    if(count >= MAX_PER_PAGE) {\n        count = 0;\n        page++;\n    }\n\n    if(page >= MAX_PAGES) break;\n}\n\nmemberStatsPages;",
-            "storage": "1",
-            "varName": "memberStatsPages",
-            "name": "Run Script"
+            "varName": "memberSequence",
+            "operation": "chunk",
+            "restore": "false",
+            "size": "10",
+            "predicate": "",
+            "storage2": "1",
+            "varName2": "memberStatsPages",
+            "name": "Store Sequence as List [DBM German]"
         },
         {
             "list": "7",
@@ -200,7 +142,7 @@
             "name": "Get List Length"
         },
         {
-            "shortComment": "Create an embed for each partion | Erstelle ein Embed für jede Parition",
+            "shortComment": "Create an embed for each chunk | Erstelle ein Embed für jedes Stück",
             "longComment": "",
             "color": "#fff700",
             "bold": false,
@@ -225,6 +167,25 @@
             "name": "Action Anchor"
         },
         {
+            "list": "7",
+            "varName": "memberStatsPages",
+            "getType": "3",
+            "position": "${tempVars(\"loop\")}",
+            "storage": "1",
+            "varName2": "memberStatsPageLines",
+            "name": "Get Item from List"
+        },
+        {
+            "list": "7",
+            "varName": "memberStatsPageLines",
+            "start": "",
+            "middle": "",
+            "end": "\\n",
+            "storage": "1",
+            "varName2": "memberStatsPage",
+            "name": "Convert List to Text"
+        },
+        {
             "title": "Bestenliste (Seite ${tempVars(\"loop\")+1}/${tempVars(\"memberStatsPagesCount\")})",
             "author": "",
             "color": "",
@@ -240,7 +201,7 @@
         {
             "storage": "1",
             "varName": "embed",
-            "message": "Verwende `/level [nutzer]`, um spezifischere Informationen zu erhalten.\n\n\n${tempVars(\"memberStatsPages\")[tempVars(\"loop\")]}",
+            "message": "Verwende `/level [nutzer]`, um spezifischere Informationen zu erhalten.\n\n\n${tempVars(\"memberStatsPage\")}",
             "name": "Set Embed Description"
         },
         {

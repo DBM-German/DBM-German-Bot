@@ -121,6 +121,32 @@
             "name": "Check Variable"
         },
         {
+            "shortComment": "Get a member list without bots | Bekomme eine Mitgliederliste ohne Bots",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
+        },
+        {
+            "server": "0",
+            "varName": "",
+            "info": "15",
+            "storage": "1",
+            "varName2": "members",
+            "name": "Store Server Info"
+        },
+        {
+            "list": "7",
+            "varName": "members",
+            "transform": "item.user.bot ? null : item",
+            "null": "null",
+            "storage": "1",
+            "varName2": "members",
+            "name": "Transform List"
+        },
+        {
             "shortComment": "Calculate rank | Berechne Rang",
             "longComment": "",
             "color": "#fff700",
@@ -132,6 +158,85 @@
         {
             "ephemeral": false,
             "name": "Start Thinking"
+        },
+        {
+            "storage": "7",
+            "varName": "members",
+            "storage2": "1",
+            "varName2": "memberSequence",
+            "name": "Create Sequence from List [DBM German]"
+        },
+        {
+            "storage": "1",
+            "varName": "memberSequence",
+            "operations": [
+                {
+                    "type": "map",
+                    "value": "",
+                    "number": "",
+                    "selector": "",
+                    "dataName": "",
+                    "dataDefaultVal": "0",
+                    "predicate": "",
+                    "transform": "{ member: item, level: item.data(\"level\", 1), xp: item.data(\"xp\", 0), requiredXp: item.data(\"level\", 1) * 10 }",
+                    "comparisons": [],
+                    "prependNewValues": "false",
+                    "tempVarName": "",
+                    "callType": "0",
+                    "actions": []
+                },
+                {
+                    "type": "sortedWith",
+                    "value": "",
+                    "number": "",
+                    "selector": "",
+                    "dataName": "",
+                    "dataDefaultVal": "0",
+                    "predicate": "",
+                    "transform": "",
+                    "comparison": "a.level - b.level || a.xp - b.xp",
+                    "prependNewValues": "false",
+                    "tempVarName": "",
+                    "callType": "0",
+                    "actions": []
+                },
+                {
+                    "type": "reverse",
+                    "value": "",
+                    "number": "",
+                    "selector": "",
+                    "dataName": "",
+                    "dataDefaultVal": "0",
+                    "predicate": "",
+                    "transform": "",
+                    "comparison": "",
+                    "prependNewValues": "false",
+                    "tempVarName": "",
+                    "callType": "0",
+                    "actions": []
+                }
+            ],
+            "name": "Run Sequence Operations [DBM German]"
+        },
+        {
+            "storage": "1",
+            "varName": "memberSequence",
+            "operation": "indexOfFirst",
+            "restore": "false",
+            "comparison": "code",
+            "value": "item.member.id === tempVars(\"member\").id",
+            "storage2": "1",
+            "varName2": "rank",
+            "name": "Find Item in Sequence [DBM German]"
+        },
+        {
+            "shortComment": "Create and send embed | Erstelle und sende Embed",
+            "longComment": "",
+            "color": "#fff700",
+            "bold": false,
+            "italic": false,
+            "underline": false,
+            "name": "Comment [DBM German]"
         },
         {
             "member": "2",
@@ -160,93 +265,6 @@
         },
         {
             "storage": "1",
-            "varName": "rank",
-            "changeType": "0",
-            "value": "1",
-            "name": "Control Variable"
-        },
-        {
-            "list": "0",
-            "varName": "",
-            "tempVarName": "loopMember",
-            "type": "true",
-            "actions": [
-                {
-                    "member": "2",
-                    "varName": "loopMember",
-                    "dataName": "level",
-                    "defaultVal": "1",
-                    "storage": "1",
-                    "varName2": "loopLevel",
-                    "name": "Store Member Data"
-                },
-                {
-                    "member": "2",
-                    "varName": "loopMember",
-                    "dataName": "xp",
-                    "defaultVal": "0",
-                    "storage": "1",
-                    "varName2": "loopXp",
-                    "name": "Store Member Data"
-                },
-                {
-                    "storage": "1",
-                    "varName": "level",
-                    "branches": [
-                        {
-                            "comparison": "1",
-                            "value": "tempVars(\"loopLevel\")",
-                            "actions": [
-                                {
-                                    "storage": "1",
-                                    "varName": "xp",
-                                    "comparison": "3",
-                                    "value": "tempVars(\"loopXp\")",
-                                    "branch": {
-                                        "iftrue": "0",
-                                        "iffalse": "1"
-                                    },
-                                    "name": "Check Variable"
-                                },
-                                {
-                                    "storage": "1",
-                                    "varName": "rank",
-                                    "changeType": "1",
-                                    "value": "1",
-                                    "name": "Control Variable"
-                                }
-                            ]
-                        },
-                        {
-                            "comparison": "3",
-                            "value": "tempVars(\"loopLevel\")",
-                            "actions": [
-                                {
-                                    "storage": "1",
-                                    "varName": "rank",
-                                    "changeType": "1",
-                                    "value": "1",
-                                    "name": "Control Variable"
-                                }
-                            ]
-                        }
-                    ],
-                    "name": "Multi-Check Variable"
-                }
-            ],
-            "name": "Loop Through List"
-        },
-        {
-            "shortComment": "Create and send embed | Erstelle und sende Embed",
-            "longComment": "",
-            "color": "#fff700",
-            "bold": false,
-            "italic": false,
-            "underline": false,
-            "name": "Comment [DBM German]"
-        },
-        {
-            "storage": "1",
             "varName": "title",
             "changeType": "0",
             "value": "`Level – ${tempVars(\"displayname\")}`",
@@ -255,7 +273,7 @@
         {
             "behavior": "0",
             "interpretation": "1",
-            "code": "let description = `**Level:** ${tempVars(\"level\")}\n**XP:** ${tempVars(\"xp\")}/${tempVars(\"requiredXp\")}\n**Rang:** #${tempVars(\"rank\")}`;\n\nlet multiplier = 1;\n\nif(globalVars(\"holiday\")) {\n    if(multiplier == 1) description += `\\n\\n${globalVars(\"holiday\")}`;\n    multiplier += 1;\n}\nif(globalVars(\"isNitroBooster\")(tempVars(\"member\"))) {\n    if(multiplier == 1) description += `\\n\\nNitro Booster`;\n    multiplier += 1;\n}\n\nswitch(multiplier) {\n    case 3:\n        description += \" – **dreifache XP!**\";\n        break;\n    case 2:\n        description += \" – **zweifache XP!**\";\n        break;\n    case 1:\n    default:\n        break;\n}\n\ndescription;",
+            "code": "let description = `**Level:** ${tempVars(\"level\")}\n**XP:** ${tempVars(\"xp\")}/${tempVars(\"requiredXp\")}\n**Rang:** #${tempVars(\"rank\") + 1}`;\n\nlet multiplier = 1;\n\nif(globalVars(\"holiday\")) {\n    if(multiplier == 1) description += `\\n\\n${globalVars(\"holiday\")}`;\n    multiplier += 1;\n}\nif(globalVars(\"isNitroBooster\")(tempVars(\"member\"))) {\n    if(multiplier == 1) description += `\\n\\nNitro Booster`;\n    multiplier += 1;\n}\n\nswitch(multiplier) {\n    case 3:\n        description += \" – **dreifache XP!**\";\n        break;\n    case 2:\n        description += \" – **zweifache XP!**\";\n        break;\n    case 1:\n    default:\n        break;\n}\n\ndescription;",
             "storage": "1",
             "varName": "description",
             "name": "Run Script"
