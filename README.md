@@ -22,10 +22,11 @@ Should the used bot not be on the DBM German servers, the IDs in the initializat
 3. Make sure Steam and Discord Bot Maker 2.0 (without mods!) are installed
    - Steam Client – Download: <https://store.steampowered.com/about/>
    - Discord Bot Maker 2.0 – Steam Website: <https://s.team/a/682130> | Steam Client: <steam://store/682130>
-4. Run the setup via `npm run setup`
-5. Open the project in DBM
-6. Set a bot token in the settings
-7. Start the bot using `npm run start`
+4. Initialize and update the mods sub-module using `git submodule update --init`
+5. Run the setup via `npm run setup`
+6. Open the project in DBM
+7. Set a bot token in the settings
+8. Start the bot using `npm run start`
 
 ## DE | Wie man loslegt
 
@@ -38,10 +39,11 @@ müssen die IDs im Initialisierungsevent angepasst werden.
 3. Stelle sicher, dass Steam und Discord Bot Maker 2.0 (ohne Mods!) installiert sind
    - Steam Client – Download: <https://store.steampowered.com/about/>
    - Discord Bot Maker 2.0 – Steam Website: <https://s.team/a/682130> | Steam Client: <steam://store/682130>
-4. Führe das Setup aus via `npm run setup`
-5. Öffne das Projekt in DBM
-6. Lege einen Bot-Token in den Einstellungen fest
-7. Starte den Bot mittels `npm run start`
+4. Initialisiere und aktualisiere das Mods-Sub-Module mittels `git submodule update --init`
+5. Führe das Setup aus via `npm run setup`
+6. Öffne das Projekt in DBM
+7. Lege einen Bot-Token in den Einstellungen fest
+8. Starte den Bot mittels `npm run start`
 
 ## EN | How to edit the bot
 
