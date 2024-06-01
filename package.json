@@ -47,8 +47,10 @@
   },
   "engines": {
     "node": "18",
+    "npm": "10.2.4",
     "os": [
       "win32"
     ]
-  }
+  },
+  "packageManager": "npm@10.2.4"
 }
