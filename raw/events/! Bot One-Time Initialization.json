@@ -688,6 +688,24 @@
                                 },
                                 {
                                     "value": "\"caseking.de\""
+                                },
+                                {
+                                    "value": "\"verbraucherzentrale.de\""
+                                },
+                                {
+                                    "value": "\"bund.de\""
+                                },
+                                {
+                                    "value": "\"bpb.de\""
+                                },
+                                {
+                                    "value": "\"wahl-o-mat.de\""
+                                },
+                                {
+                                    "value": "\"europa.eu\""
+                                },
+                                {
+                                    "value": "\"votematch.eu\""
                                 }
                             ],
                             "storage": "1",
