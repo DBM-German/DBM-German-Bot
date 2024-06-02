@@ -1,6 +1,9 @@
 # Bot directory
 bot/
 
+# Build directory
+build/
+
 # Dependency directories
 node_modules/
 jspm_packages/

@@ -1,8 +1,11 @@
 # Bot directory
 bot/
 
-# Build file
-dbm-german-bot*.tar
+# Environment variable file
+.env
+
+# Build directory
+build/
 
 # Docker temp files
 .docker_temp_*

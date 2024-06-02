@@ -2,6 +2,15 @@
 bot/node_modules/
 bot/package-lock.json
 
+# Environment variable file
+.env
+
+# Build directory
+build/
+
+# Docker temp files
+.docker_temp_*
+
 # Optional npm cache directory
 .npm
 

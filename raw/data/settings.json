@@ -7,11 +7,11 @@
     "commandsOrder": [],
     "eventsOrder": [],
     "modules": {
-        "discord.js": ["13.16.0", true],
+        "discord.js": ["13.17.1", true],
         "fstorm": ["", true],
         "jimp": ["", true],
-        "isolated-vm": ["4.5", true],
-        "fastest-levenshtein": ["1.0", true]
+        "isolated-vm": ["5.0", true],
+        "fastest-levenshtein": ["1.0.16", true]
     },
     "ownerId": "320507572455079949",
     "invalidUserText": "Diese Aktion kann nur von der Person gestartet werden, welche den Befehl aufgerufen hat.",
@@ -27,6 +27,18 @@
     "Bot Intents": {
         "customData": {
             "Bot Intents": {"intents":-1}
+        }
+    },
+    "Environment Variable Settings Provider [DBM German]": {
+        "customData": {
+            "Environment Variable Settings Provider [DBM German]": {
+                "enable": "true",
+                "token": "DBM_CLIENT_TOKEN",
+                "client": "DBM_CLIENT_ID",
+                "ownerId": "DBM_OWNER_ID",
+                "slashType": "",
+                "slashServers": ""
+            }
         }
     }
 }

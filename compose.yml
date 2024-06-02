@@ -1,0 +1,6 @@
+services:
+    dbm-german-bot:
+        image: dbm-german-bot:3.1.0
+        volumes:
+            - ./sample-data/:/mnt/dbm-data:rw
+        env_file: .env
