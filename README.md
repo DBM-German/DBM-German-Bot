@@ -50,10 +50,15 @@ or `res` folder. For synchronization of all changes, there are the following scr
 
 | NPM script | Description                                                                                                       |
 |------------|-------------------------------------------------------------------------------------------------------------------|
+| setup      | Set up the bot for editing/debugging via DBM                                                                      |
+| start      | Start the bot directly using the local Node.js installation                                                       |
+| build      | Build the Docker image with your system architecture (should be x64/x86)                                          |
+| build-arm  | Build the Docker image with the arm32v7 architecture (for use with systems like the Raspberry Pi)                 |
 | to-dbm     | Raw data files in the folders `raw/commands` and `raw/events` get konverted to DBM files and saved in `bot/data`. |
 | to-raw     | DBM files in the `bot/data` folder get konverted to raw data files and saved in `raw/commands` / `raw/events`.    |
 | copy-code  | Additional code in the `raw/code` folder gets copied to `bot/code`.                                               |
 | copy-res   | Resources in the `res` folder gets copied to `bot/resources`.                                                     |
+| lint       | Run linters to check source file formatting (includes Markdown docs)                                              |
 
 ## DE | Wie man den Bot bearbeitet
 
@@ -62,10 +67,15 @@ oder `res`-Ordner vorgenommen werden. Zur Synchronisation aller Änderungen steh
 
 | NPM-Skript | Beschreibung                                                                                                                     |
 |------------|----------------------------------------------------------------------------------------------------------------------------------|
+| setup      | Setze den Bot für Bearbeitung/Fehlersuche auf                                                                                    |
+| start      | Starte den Bot direkt mittels der lokalen Node.js installation                                                                   |
+| build      | Baue das Docker-Image mit deiner System-Architektur (sollte x64/x86 sein)                                                        |
+| build-arm  | Baue das Docker-Image mit der arm32v7-Architektur (für Verwendung mit Systemen wie dem Raspberry Pi)                             |
 | to-dbm     | Raw Data-Dateien in den Ordnern `raw/commands` und `raw/events` werden zu DBM-Dateien konvertiert und in `bot/data` gespeichert. |
 | to-raw     | DBM-Dateien in dem `bot/data`-Ordner werden zu Raw Data-Dateien konvertiert und in `raw/commands` / `raw/events` gespeichert.    |
 | copy-code  | Zusätzlicher Code in dem `raw/code`-Ordner wird nach `bot/code` kopiert.                                                         |
 | copy-res   | Resourcen in dem `res`-Ordner werden nach `bot/resources` kopiert.                                                               |
+| lint       | Führe Linter aus, um die Quelldatei-Formatierung zu prüfen (beinhaltet Markdown-Doku)                                            |
 
 ## EN | How to run the bot with Docker
 
@@ -74,14 +84,23 @@ oder `res`-Ordner vorgenommen werden. Zur Synchronisation aller Änderungen steh
 3. Open the copied `settings.json` and insert the bot token and client id
 4. Start a container using `docker run` and a mount to the data directory
 
-Example to start the bot with a mount to the sub-folder `data` of the current directory:
+Example to start the bot with a mount to the `dbm-data` folder:
 
-```sh
-docker run --name dbm-german-bot --mount type=bind,source="$(pwd)"/data,target=/home/node/app/data dbm-german-bot:3.1.0
-```
+`
+docker run
+--name dbm-german-bot
+--mount "type=bind,source=$(pwd)/data,target=/mnt/dbm-data"
+--env-file .env
+dbm-german-bot:3.1.0
+`
 
-Optionally `--detach` and `--restart always` can be used to run the container in the background
+> Required environment variables: DBM_CLIENT_TOKEN, DBM_CLIENT_ID
+
+The parameters `--detach` and `--restart always` can be used to run the container in the background
 and restart it automatically.
+
+Alternatively you can start the bot using Docker Compose. To do so, create a `.env` file,
+add the environment variables for the bot's ID and token and then start it via `docker compose up`.
 
 ## DE | Wie man den Bot mit Docker laufen lässt
 
@@ -90,13 +109,22 @@ and restart it automatically.
 3. Öffne die kopierte `settings.json` und füge den Bot-Token und die Client-ID ein
 4. Starte den Container mittels `docker run` und einem Mount zum Daten-Verzeichnis
 
-Beispiel zum Starten des Bots mit einem Mount zum Unterordner `data` im aktuellen Verzeichnis:
+Beispiel zum Starten des Bots mit einem Mount zum `dbm-data`-Ordner:
 
-```sh
-docker run --name dbm-german-bot --mount type=bind,source="$(pwd)"/data,target=/home/node/app/data dbm-german-bot:3.1.0
-```
+`
+docker run
+--name dbm-german-bot
+--mount "type=bind,source=$(pwd)/data,target=/mnt/dbm-data"
+--env-file .env
+dbm-german-bot:3.1.0
+`
 
-Optional können `--detach` und `--restart always` verwendet werden, um den Container im Hintergrund auszuführen
+> Benötigte Umgebungsvariablen: DBM_CLIENT_TOKEN, DBM_CLIENT_ID
+
+Die Parameter `--detach` und `--restart always` können verwendet werden, um den Container im Hintergrund auszuführen
 und ihn automatisch neu zu starten.
+
+Alternativ kannst du den Bot mittels Docker Compose starten. Um das zu tun, erstelle eine `.env`-Datei,
+füge die Umgebungsvariablen für die ID und den Token des Bots hinzu und starte ihn dann via `docker compose up`.
 
 [Licence-CC-BY-NC-SA]: https://creativecommons.org/licenses/by-nc-sa/4.0/
