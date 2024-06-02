@@ -238,9 +238,9 @@ try {
 try {
     console.log("Kopiere Mods...");
     await Promise.all([
-        cp(`${MODS_ACTIONS_DIR}`, BOT_ACTIONS_DIR, { recursive: true }),
-        cp(`${MODS_EVENTS_DIR}`, BOT_EVENTS_DIR, { recursive: true }),
-        cp(`${MODS_EXTENSIONS_DIR}`, BOT_EXTENSIONS_DIR, { recursive: true })
+        cp(MODS_ACTIONS_DIR, BOT_ACTIONS_DIR, { recursive: true }),
+        cp(MODS_EVENTS_DIR, BOT_EVENTS_DIR, { recursive: true }),
+        cp(MODS_EXTENSIONS_DIR, BOT_EXTENSIONS_DIR, { recursive: true })
     ]);
 } catch (e) {
     console.error(`Mods können nicht kopiert werden: ${e}`);
