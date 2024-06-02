@@ -1,0 +1,4 @@
+{
+    // Disable markdownlint extension in favor of eslint
+    "ignores": ["**/*"]
+}
