@@ -384,7 +384,7 @@
                         {
                             "behavior": "0",
                             "interpretation": "1",
-                            "code": "tempVars(\"embed\").setImage(\"https://cdn.discordapp.com/attachments/655451974610714636/841282570683023419/Layer8b.webp\");",
+                            "code": "tempVars(\"embed\").setImage(\"https://cdn.pixabay.com/photo/2013/07/12/16/52/you-151415_1280.png\");",
                             "storage": "0",
                             "varName": "",
                             "name": "Run Script"
@@ -563,7 +563,7 @@
                             "storage": "1",
                             "varName": "embed",
                             "fieldName": "Linux",
-                            "message": "1. Öffne den Projekt Ordner\n2. Füge dieses [Shell Script](https://cdn.discordapp.com/attachments/655451974610714636/655452456775581714/start.sh) in den Ordner ein\n3. Terminal im Projekt Ordner öffnen und `chmod 777 start.sh` ausführen\n\n__Mit Desktop__\n4. Terminal schließen\n5. Doppelklick auf die Datei ausführen und `Im Terminal ausführen` wählen\n\n__Ohne Desktop__\n4. `./start.sh` im Terminal ausführen",
+                            "message": "1. Öffne den Projekt Ordner\n2. Füge dieses [Shell Script](https://raw.githubusercontent.com/DBM-German/DBM-German-Bot/${globalVars(\"version\")}/res/samples/start.sh) in den Ordner ein\n3. Terminal im Projekt Ordner öffnen und `chmod 777 start.sh` ausführen\n\n__Mit Desktop__\n4. Terminal schließen\n5. Doppelklick auf die Datei ausführen und `Im Terminal ausführen` wählen\n\n__Ohne Desktop__\n4. `./start.sh` im Terminal ausführen",
                             "inline": "1",
                             "name": "Add Embed Field"
                         },
@@ -571,7 +571,7 @@
                             "storage": "1",
                             "varName": "embed",
                             "fieldName": "Windows",
-                            "message": "1. Öffne den Projekt Ordner\n2. Füge die [Batchdatei](https://cdn.discordapp.com/attachments/655451974610714636/655452453482790942/start.bat) in den Ordner ein\n\n__Mit Desktop__\n3. Doppelklick auf die Datei ausführen\n\n__Ohne Desktop__\n4. Terminal im Projekt Ordner öffnen und `.\\start.bat` ausführen",
+                            "message": "1. Öffne den Projekt Ordner\n2. Füge die [Batchdatei](https://raw.githubusercontent.com/DBM-German/DBM-German-Bot/${globalVars(\"version\")}/res/samples/start.bat) in den Ordner ein\n\n__Mit Desktop__\n3. Doppelklick auf die Datei ausführen\n\n__Ohne Desktop__\n4. Terminal im Projekt Ordner öffnen und `.\\start.bat` ausführen",
                             "inline": "1",
                             "name": "Add Embed Field"
                         }
