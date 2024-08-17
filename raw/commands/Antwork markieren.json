@@ -174,7 +174,7 @@
         {
             "behavior": "1",
             "interpretation": "1",
-            "code": "channel.setAppliedTags([ ...channel.appliedTags, globalVars(\"answered-tag-id\") ])\n    .then(newChannel => {\n        this.callNextAction(cache);\n    })\n    .catch(error => {\n        this.displayError(data, cache, error);\n        this.callNextAction(cache);\n    });",
+            "code": "if (channel.appliedTags.includes(globalVars(\"answered-tag-id\"))) {\n    this.callNextAction(cache);\n    return;\n}\n\nchannel.setAppliedTags([ ...channel.appliedTags, globalVars(\"answered-tag-id\") ])\n    .then(newChannel => {\n        this.callNextAction(cache);\n    })\n    .catch(error => {\n        this.displayError(data, cache, error);\n        this.callNextAction(cache);\n    });",
             "storage": "0",
             "varName": "",
             "name": "Run Script"
