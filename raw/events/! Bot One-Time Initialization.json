@@ -516,6 +516,15 @@
                                     "value": "\"proxmox.com\""
                                 },
                                 {
+                                    "value": "\"grafana.com\""
+                                },
+                                {
+                                    "value": "\"prometheus.io\""
+                                },
+                                {
+                                    "value": "\"uptime.kuma.pet\""
+                                },
+                                {
                                     "value": "\"u-labs.de\""
                                 },
                                 {
