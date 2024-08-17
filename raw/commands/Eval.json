@@ -246,6 +246,38 @@
         },
         {
             "storage": "1",
+            "varName": "isOwner",
+            "comparison": "1",
+            "value": "true",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "3",
+                "iffalseVal": "2"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "storage": "1",
+            "varName": "eval-code",
+            "comparison": "7",
+            "value": "\"\\\"use sandbox\\\";\"",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "3",
+                "iffalseVal": "1"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "behavior": "0",
+            "interpretation": "1",
+            "code": "let code = tempVars(\"eval-code\");\n\n// Remove \"use sandbox\", as this only indicates to the bot to use sandbox mode\ncode = code.replace(/^\"use sandbox\";?\\s+(\\n\\s*)?/, \"\");\n\nthis.storeValue(code, 1, \"eval-code\", cache);\nthis.storeValue(false, 1, \"isOwner\", cache);",
+            "storage": "0",
+            "varName": "",
+            "name": "Run Script"
+        },
+        {
+            "storage": "1",
             "varName": "channel",
             "changeType": "0",
             "value": "channel",
