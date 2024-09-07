@@ -208,7 +208,7 @@
                     "timestamp": "false",
                     "imageUrl": "",
                     "thumbUrl": "",
-                    "description": "Verwende `/eval [code]` oder den Knopf unter dieser Nachricht, um JavaScript-Code auszuführen.\nSchadcode darf nicht ausgeführt werden.",
+                    "description": "Verwende `/eval [code]` oder den Knopf unter dieser Nachricht, um JavaScript-Code auszuführen.\n${tempVars(\"isOwner\") ? \"Beginne den Code mit `\\\"use sandbox\\\";`, um die Sandbox zu verwenden.\" : \"Schadcode darf nicht ausgeführt werden.\"}",
                     "fields": [],
                     "author": "",
                     "authorUrl": "",
