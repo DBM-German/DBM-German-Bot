@@ -224,17 +224,84 @@
                     {
                         "message": "1",
                         "varName": "message",
-                        "info": "3",
+                        "info": "4",
                         "storage": "1",
-                        "varName2": "author",
+                        "varName2": "channel",
                         "name": "Store Message Info"
+                    },
+                    {
+                        "storage": "1",
+                        "varName": "parentChannel",
+                        "changeType": "0",
+                        "value": "globalVars(\"debug\") ? tempVars(\"channel\") : tempVars(\"channel\").parent",
+                        "name": "Control Variable"
+                    },
+                    {
+                        "shortComment": "Check for help forum | Prüfe auf Hilfe-Forum",
+                        "longComment": "",
+                        "color": "#fff700",
+                        "bold": false,
+                        "italic": false,
+                        "underline": false,
+                        "name": "Comment [DBM German]"
+                    },
+                    {
+                        "storage": "1",
+                        "varName": "parentChannel",
+                        "comparison": "0",
+                        "value": "",
+                        "branch": {
+                            "iftrue": "99",
+                            "iffalse": "0",
+                            "iftrueActions": [
+                                {
+                                    "storage": "1",
+                                    "varName": "parentChannelType",
+                                    "changeType": "0",
+                                    "value": "tempVars(\"parentChannel\").type",
+                                    "name": "Control Variable"
+                                },
+                                {
+                                    "channel": "3",
+                                    "varName": "parentChannel",
+                                    "info": "1",
+                                    "storage": "1",
+                                    "varName2": "parentChannelID",
+                                    "name": "Store Channel Info"
+                                },
+                                {
+                                    "shortComment": "If help forum been detected: stop | Falls Hilfe-Forum erkannt wurde: aufhören",
+                                    "longComment": "",
+                                    "color": "#fff700",
+                                    "bold": false,
+                                    "italic": false,
+                                    "underline": false,
+                                    "name": "Comment [DBM German]"
+                                },
+                                {
+                                    "storage": "1",
+                                    "varName": "parentChannelID",
+                                    "comparison": "1",
+                                    "value": "globalVars(\"help-channel-id\")",
+                                    "branch": {
+                                        "iftrue": "0",
+                                        "iffalse": "1"
+                                    },
+                                    "name": "Check Variable"
+                                },
+                                {
+                                    "name": "End Action Sequence Recursively [DBM German]"
+                                }
+                            ]
+                        },
+                        "name": "Check Variable"
                     },
                     {
                         "message": "1",
                         "varName": "message",
-                        "info": "4",
+                        "info": "3",
                         "storage": "1",
-                        "varName2": "channel",
+                        "varName2": "author",
                         "name": "Store Message Info"
                     },
                     {
