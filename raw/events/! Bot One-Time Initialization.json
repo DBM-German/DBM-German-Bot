@@ -387,6 +387,9 @@
                                     "value": "\"discordapp.net\""
                                 },
                                 {
+                                    "value": "\"discordstatus.com\""
+                                },
+                                {
                                     "value": "\"dis.gd\""
                                 },
                                 {
@@ -508,6 +511,12 @@
                                 },
                                 {
                                     "value": "\"raspberrypi.org\""
+                                },
+                                {
+                                    "value": "\"nginx.org\""
+                                },
+                                {
+                                    "value": "\"nginx.com\""
                                 },
                                 {
                                     "value": "\"truenas.com\""
