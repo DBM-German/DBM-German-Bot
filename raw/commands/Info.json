@@ -611,7 +611,7 @@
                             "storage": "1",
                             "varName": "embed",
                             "fieldName": "Empfohlene Anbieter",
-                            "message": "• [Strato](https://www.strato.de/)\n• [IONOS](https://www.ionos.de/)\n• [Contabo](https://contabo.de/)\n• [netcup](https://www.netcup.de/)\n• [DeinServerHost](https://deinserverhost.de/)\n• [XeonServ](https://xeonserv.de/)\n• [Signaltransmitter](https://signaltransmitter.de/)\n• [Zap-Hosting](https://zap-hosting.com/de/)\n• [Hetzner](https://www.hetzner.com/de/)",
+                            "message": "• [Strato](https://www.strato.de/)\n• [IONOS](https://www.ionos.de/)\n• [Contabo](https://contabo.de/)\n• [netcup](https://www.netcup.de/)\n• [DeinServerHost](https://deinserverhost.de/)\n• [Signaltransmitter](https://signaltransmitter.de/)\n• [Zap-Hosting](https://zap-hosting.com/de/)\n• [Hetzner](https://www.hetzner.com/de/)",
                             "inline": "1",
                             "name": "Add Embed Field"
                         }
