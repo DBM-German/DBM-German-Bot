@@ -25,8 +25,8 @@
     "scripts": {
         "start": "(cd bot) && (node bot.js)",
         "setup": "(git submodule update --init) && (npm i) && (node utils/setup.js) && (node utils/to-dbm.js)",
-        "build": "(npm run setup) && (docker build --tag dbm-german-bot:3.1.0 .) && (docker save -o ./build/dbm-german-bot.tar dbm-german-bot:3.1.0)",
-        "build-arm": "(npm run setup) && (docker build --platform linux/arm/v7 --tag dbm-german-bot:3.1.0-arm -f Dockerfile.arm .) && (docker save -o ./build/dbm-german-bot_arm.tar dbm-german-bot:3.1.0-arm)",
+        "build": "(npm run setup) && (docker build --tag dbm-german-bot:3.1.1 .) && (docker save -o ./build/dbm-german-bot.tar dbm-german-bot:3.1.1)",
+        "build-arm": "(npm run setup) && (docker build --platform linux/arm/v7 --tag dbm-german-bot:3.1.1-arm -f Dockerfile.arm .) && (docker save -o ./build/dbm-german-bot_arm.tar dbm-german-bot:3.1.1-arm)",
         "copy-code": "node utils/copy-code.js",
         "copy-res": "node utils/copy-res.js",
         "to-dbm": "node utils/to-dbm.js",
