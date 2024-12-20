@@ -9,7 +9,8 @@
         "eslint-plugin-markdownlint",
         "eslint-plugin-import",
         "eslint-plugin-promise",
-        "eslint-plugin-n"
+        "eslint-plugin-n",
+        "stylistic"
     ],
     "extends": ["eslint:recommended"],
     "overrides": [
@@ -20,18 +21,18 @@
                 "sourceType": "module"
             },
             "rules": {
-                "indent": ["error", 4, {
-                    "SwitchCase": 1
-                }],
-                "quotes": ["error", "double"],
-                "semi": ["error", "always"],
                 "no-unused-vars": ["error", {
                     "args": "after-used",
                     "argsIgnorePattern": "^_",
                     "caughtErrors": "none",
                     "destructuredArrayIgnorePattern": "^_"
                 }],
-                "eol-last": "error"
+                "@stylistic/indent": ["error", 4, {
+                    "SwitchCase": 1
+                }],
+                "@stylistic/eol-last": "error",
+                "@stylistic/quotes": ["error", "double"],
+                "@stylistic/semi": ["error", "always"]
             }
         },
         {
