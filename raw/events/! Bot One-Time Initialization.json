@@ -393,6 +393,18 @@
                                     "value": "\"dis.gd\""
                                 },
                                 {
+                                    "value": "\"teamspeak.com\""
+                                },
+                                {
+                                    "value": "\"matrix.org\""
+                                },
+                                {
+                                    "value": "\"element.io\""
+                                },
+                                {
+                                    "value": "\"slack.com\""
+                                },
+                                {
                                     "value": "\"ecosia.org\""
                                 },
                                 {
@@ -417,7 +429,76 @@
                                     "value": "\"live.com\""
                                 },
                                 {
+                                    "value": "\"apple.com\""
+                                },
+                                {
+                                    "value": "\"reddit.com\""
+                                },
+                                {
+                                    "value": "\"facebook.com\""
+                                },
+                                {
+                                    "value": "\"instagram.com\""
+                                },
+                                {
+                                    "value": "\"threads.net\""
+                                },
+                                {
+                                    "value": "\"whatsapp.com\""
+                                },
+                                {
+                                    "value": "\"twitter.com\""
+                                },
+                                {
+                                    "value": "\"x.com\""
+                                },
+                                {
+                                    "value": "\"mastodon.social\""
+                                },
+                                {
+                                    "value": "\"bsky.app\""
+                                },
+                                {
+                                    "value": "\"tiktok.com\""
+                                },
+                                {
+                                    "value": "\"signal.org\""
+                                },
+                                {
+                                    "value": "\"threema.ch\""
+                                },
+                                {
+                                    "value": "\"telegram.org\""
+                                },
+                                {
                                     "value": "\"visualstudio.com\""
+                                },
+                                {
+                                    "value": "\"jetbrains.com\""
+                                },
+                                {
+                                    "value": "\"eclipse.org\""
+                                },
+                                {
+                                    "value": "\"windows.com\""
+                                },
+                                {
+                                    "value": "\"kernel.org\""
+                                },
+                                {
+                                    "value": "\"linuxfoundation.org\""
+                                },
+                                {
+                                    "value": "\"linuxmint.com\""
+                                },
+                                {
+                                    "value": "\"ubuntu.com\""
+                                },
+                                {
+                                    "value": "\"system76.com\""
+                                },
+                                {
+                                    "value": "\"f-droid.org\""
                                 },
                                 {
                                     "value": "\"office.com\""
@@ -427,6 +508,15 @@
                                 },
                                 {
                                     "value": "\"libreoffice.org\""
+                                },
+                                {
+                                    "value": "\"openoffice.org\""
+                                },
+                                {
+                                    "value": "\"nextcloud.com\""
+                                },
+                                {
+                                    "value": "\"owncloud.com\""
                                 },
                                 {
                                     "value": "\"tenor.com\""
@@ -439,6 +529,18 @@
                                 },
                                 {
                                     "value": "\"github.io\""
+                                },
+                                {
+                                    "value": "\"gitlab.com\""
+                                },
+                                {
+                                    "value": "\"gitea.com\""
+                                },
+                                {
+                                    "value": "\"bitbucket.org\""
+                                },
+                                {
+                                    "value": "\"codeberg.org\""
                                 },
                                 {
                                     "value": "\"nodejs.org\""
@@ -471,16 +573,19 @@
                                     "value": "\"discordjs.guide\""
                                 },
                                 {
+                                    "value": "\"docker.com\""
+                                },
+                                {
+                                    "value": "\"podman.io\""
+                                },
+                                {
+                                    "value": "\"kubernetes.io\""
+                                },
+                                {
                                     "value": "\"ffmpeg.org\""
                                 },
                                 {
                                     "value": "\"mysql.com\""
-                                },
-                                {
-                                    "value": "\"jetbrains.com\""
-                                },
-                                {
-                                    "value": "\"eclipse.org\""
                                 },
                                 {
                                     "value": "\"crystalmark.info\""
@@ -534,6 +639,18 @@
                                     "value": "\"uptime.kuma.pet\""
                                 },
                                 {
+                                    "value": "\"plex.tv\""
+                                },
+                                {
+                                    "value": "\"jellyfin.org\""
+                                },
+                                {
+                                    "value": "\"emby.media\""
+                                },
+                                {
+                                    "value": "\"videolan.org\""
+                                },
+                                {
                                     "value": "\"u-labs.de\""
                                 },
                                 {
@@ -561,6 +678,9 @@
                                     "value": "\"firefox.com\""
                                 },
                                 {
+                                    "value": "\"thunderbird.net\""
+                                },
+                                {
                                     "value": "\"brave.com\""
                                 },
                                 {
@@ -582,6 +702,24 @@
                                     "value": "\"symbl.cc\""
                                 },
                                 {
+                                    "value": "\"keepass.info\""
+                                },
+                                {
+                                    "value": "\"keepassxc.org\""
+                                },
+                                {
+                                    "value": "\"bitwarden.com\""
+                                },
+                                {
+                                    "value": "\"bitwarden.eu\""
+                                },
+                                {
+                                    "value": "\"passbolt.com\""
+                                },
+                                {
+                                    "value": "\"yubico.com\""
+                                },
+                                {
                                     "value": "\"getsharex.com\""
                                 },
                                 {
@@ -592,6 +730,12 @@
                                 },
                                 {
                                     "value": "\"proton.me\""
+                                },
+                                {
+                                    "value": "\"tuta.com\""
+                                },
+                                {
+                                    "value": "\"tutanota.com\""
                                 },
                                 {
                                     "value": "\"simplelogin.io\""
@@ -610,6 +754,9 @@
                                 },
                                 {
                                     "value": "\"pixabay.com\""
+                                },
+                                {
+                                    "value": "\"virustotal.com\""
                                 },
                                 {
                                     "value": "\"geizhals.de\""
@@ -642,6 +789,9 @@
                                     "value": "\"steamstat.us\""
                                 },
                                 {
+                                    "value": "\"truesteamachievements.com\""
+                                },
+                                {
                                     "value": "\"epicgames.com\""
                                 },
                                 {
@@ -670,6 +820,9 @@
                                 },
                                 {
                                     "value": "\"amazon.de\""
+                                },
+                                {
+                                    "value": "\"www.amazon.co.uk\""
                                 },
                                 {
                                     "value": "\"ebay.com\""
@@ -708,10 +861,76 @@
                                     "value": "\"caseking.de\""
                                 },
                                 {
+                                    "value": "\"berrybase.de\""
+                                },
+                                {
+                                    "value": "\"netflix.com\""
+                                },
+                                {
+                                    "value": "\"disney.com\""
+                                },
+                                {
+                                    "value": "\"disney.de\""
+                                },
+                                {
+                                    "value": "\"disneyplus.com\""
+                                },
+                                {
+                                    "value": "\"crunchyroll.com\""
+                                },
+                                {
+                                    "value": "\"spotify.com\""
+                                },
+                                {
+                                    "value": "\"deezer.com\""
+                                },
+                                {
+                                    "value": "\"tidal.com\""
+                                },
+                                {
+                                    "value": "\"qobuz.com\""
+                                },
+                                {
+                                    "value": "\"soundcloud.com\""
+                                },
+                                {
+                                    "value": "\"bandcamp.com\""
+                                },
+                                {
+                                    "value": "\"discogs.com\""
+                                },
+                                {
+                                    "value": "\"musicbrainz.org\""
+                                },
+                                {
+                                    "value": "\"theaudiodb.com\""
+                                },
+                                {
+                                    "value": "\"themoviedb.org\""
+                                },
+                                {
+                                    "value": "\"imdb.com\""
+                                },
+                                {
+                                    "value": "\"myanimelist.net\""
+                                },
+                                {
+                                    "value": "\"anilist.co\""
+                                },
+                                {
+                                    "value": "\"emojipedia.org\""
+                                },
+                                {
+                                    "value": "\"symbl.cc\""
+                                },
+                                {
                                     "value": "\"verbraucherzentrale.de\""
                                 },
                                 {
                                     "value": "\"bund.de\""
+                                },
+                                {
+                                    "value": "\"gesetze-im-internet.de\""
                                 },
                                 {
                                     "value": "\"bpb.de\""
