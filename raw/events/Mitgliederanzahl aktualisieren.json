@@ -81,6 +81,39 @@
             "name": "Store Server Info"
         },
         {
+            "info": "0",
+            "find": "${tempVars(\"welcome-goodbye-channel-id\")}",
+            "storage": "1",
+            "varName": "welcome-goodbye-channel",
+            "name": "Find Channel"
+        },
+        {
+            "storage": "1",
+            "varName": "welcome-goodbye-channel-desired-name",
+            "changeType": "0",
+            "value": "`mitglieder-${tempVars(\"member-count\")}`",
+            "name": "Control Variable"
+        },
+        {
+            "channel": "3",
+            "varName": "welcome-goodbye-channel",
+            "info": "2",
+            "storage": "1",
+            "varName2": "welcome-goodbye-channel-name",
+            "name": "Store Channel Info"
+        },
+        {
+            "storage": "1",
+            "varName": "welcome-goodbye-channel-name",
+            "comparison": "1",
+            "value": "tempVars(\"welcome-goodbye-channel-desired-name\")",
+            "branch": {
+                "iftrue": "1",
+                "iffalse": "0"
+            },
+            "name": "Check Variable"
+        },
+        {
             "behavior": "0",
             "interpretation": "1",
             "code": "globalVars(\"log\")(cache, `Updating member count of server ${server.id} to ${tempVars(\"member-count\")}`);",
@@ -89,8 +122,8 @@
             "name": "Run Script"
         },
         {
-            "channel": "101",
-            "channelVarName": "${tempVars(\"welcome-goodbye-channel-id\")}",
+            "channel": "3",
+            "channelVarName": "welcome-goodbye-channel",
             "channelName": "mitglieder-${tempVars(\"member-count\")}",
             "reason": "",
             "channelEdits": {
