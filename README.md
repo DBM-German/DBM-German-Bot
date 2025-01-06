@@ -91,7 +91,7 @@ docker run
 --name dbm-german-bot
 --mount "type=bind,source=$(pwd)/data,target=/mnt/dbm-data"
 --env-file .env
-dbm-german-bot:3.1.1
+dbm-german-bot:3.1.2
 `
 
 > Required environment variables: DBM_CLIENT_TOKEN, DBM_CLIENT_ID
@@ -116,7 +116,7 @@ docker run
 --name dbm-german-bot
 --mount "type=bind,source=$(pwd)/data,target=/mnt/dbm-data"
 --env-file .env
-dbm-german-bot:3.1.1
+dbm-german-bot:3.1.2
 `
 
 > Benötigte Umgebungsvariablen: DBM_CLIENT_TOKEN, DBM_CLIENT_ID
