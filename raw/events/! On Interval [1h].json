@@ -13,6 +13,32 @@
             "name": "Run Script"
         },
         {
+            "type": "3",
+            "storage": "1",
+            "varName": "hour",
+            "name": "Store Time Info"
+        },
+        {
+            "storage": "1",
+            "varName": "hour",
+            "comparison": "1",
+            "value": "4",
+            "branch": {
+                "iftrue": "0",
+                "iffalse": "3",
+                "iffalseVal": "2"
+            },
+            "name": "Check Variable"
+        },
+        {
+            "source": "mcYdf",
+            "type": "true",
+            "name": "Call Command/Event"
+        },
+        {
+            "name": "End Action Sequence"
+        },
+        {
             "shortComment": "Check holidays | Feiertage prüfen",
             "longComment": "",
             "color": "#fff700",
