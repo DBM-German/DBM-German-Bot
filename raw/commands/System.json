@@ -895,7 +895,7 @@
                             "code": "`Du wurdest ausgeblendet, da in deinem Spielstatus bzw. benutzerdefinierten Status Werbung erkannt wurde.\nBitte ändere deinen Status, um auf diesen Server zuzugreifen. Vielen Dank.`;",
                             "storage": "1",
                             "varName": "description",
-                            "name": "Run Script"
+                            "name": "Run Code [DBM German]"
                         },
                         {
                             "source": "FGdiL",

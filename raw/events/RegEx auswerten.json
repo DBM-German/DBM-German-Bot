@@ -10,7 +10,7 @@
             "code": "tempVars(\"text\").match(tempVars(\"regex\"));",
             "storage": "1",
             "varName": "matches",
-            "name": "Run Script"
+            "name": "Run Code [DBM German]"
         }
     ]
 }

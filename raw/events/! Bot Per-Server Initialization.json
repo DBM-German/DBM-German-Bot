@@ -18,7 +18,7 @@
             "code": "console.log(`Starte Initialisierung für Server ${tempVars(\"server-id\")}...`);",
             "storage": "0",
             "varName": "",
-            "name": "Run Script"
+            "name": "Run Code [DBM German]"
         },
         {
             "comment": "Update Member Data | Member Data aktualisieren",
@@ -74,7 +74,7 @@
             "code": "console.log(`Initialisierung für Server ${tempVars(\"server-id\")} beendet.`);",
             "storage": "0",
             "varName": "",
-            "name": "Run Script"
+            "name": "Run Code [DBM German]"
         }
     ]
 }

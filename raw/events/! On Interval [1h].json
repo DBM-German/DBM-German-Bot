@@ -10,7 +10,7 @@
             "code": "globalVars(\"log\")(cache, `Event triggerd on server ${server.id}`);",
             "storage": "0",
             "varName": "",
-            "name": "Run Script"
+            "name": "Run Code [DBM German]"
         },
         {
             "type": "3",

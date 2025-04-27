@@ -30,7 +30,7 @@
             "code": "`Bot: v${globalVars(\"version\")}\nDBM: v${DBM.version}\nDiscord.js: v${DBM.DiscordJS.version}\nNode.js: ${process.version}\nOS: ${process.platform == \"win32\" ? \"Windows\" : \"Linux\"} (${process.arch})\nServer-Betriebszeit: ${this.generateTimeString(process.uptime() * 1000)}\nBot-Betriebszeit: ${this.generateTimeString(client.uptime)}`;",
             "storage": "1",
             "varName": "description",
-            "name": "Run Script"
+            "name": "Run Code [DBM German]"
         },
         {
             "storage": "1",

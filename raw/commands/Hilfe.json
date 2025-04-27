@@ -47,7 +47,7 @@
                     "code": "const MAX = 10;// Max command count per page\n\nlet commandDescriptions = [];\nlet page = 0;// Current page\nlet count = 0;// Command count on current page\n\nfor(let { name, description, type } of globalVars(\"commands\")) {\n    if(typeof commandDescriptions[page] != \"string\") commandDescriptions[page] = \"\";\n\n    commandDescriptions[page] += `**${name} (${globalVars(\"resolveCommandType\")(type)})**\\n${description}\\n\\n`;\n    count++;\n\n    if(count >= MAX) {\n        count = 0;\n        page++;\n    }\n}\n\ncommandDescriptions;",
                     "storage": "1",
                     "varName": "commandDescriptions",
-                    "name": "Run Script"
+                    "name": "Run Code [DBM German]"
                 },
                 {
                     "shortComment": "Create an embed for each partion | Erstelle ein Embed für jede Parition",
@@ -241,7 +241,7 @@
                     "code": "let command = tempVars(\"command\");\n\nlet title = `Hilfe – ${command.name} (${globalVars(\"resolveCommandType\")(command.type)})`;\n\nlet description = `\n${command.description}\n\nParameter:\n${\n    Array.isArray(command.parameters)\n    ? command.parameters.map(p => `• ${p.name}: ${p.description}`).join(\"\\n\")\n    : \"keine\"\n}\n`;\n\n\nthis.storeValue(title, 1, \"title\", cache);\nthis.storeValue(description, 1, \"description\", cache);",
                     "storage": "0",
                     "varName": "",
-                    "name": "Run Script"
+                    "name": "Run Code [DBM German]"
                 },
                 {
                     "source": "FGdiL",

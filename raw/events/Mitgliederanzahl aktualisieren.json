@@ -119,7 +119,7 @@
             "code": "globalVars(\"log\")(cache, `Updating member count of server ${server.id} to ${tempVars(\"member-count\")}`);",
             "storage": "0",
             "varName": "",
-            "name": "Run Script"
+            "name": "Run Code [DBM German]"
         },
         {
             "channel": "3",

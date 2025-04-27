@@ -10,7 +10,7 @@
             "code": "console.log(\"Stoppe Bot...\");\n\ntry {\n    client.destroy();\n    process.exit(0);\n} catch(e) {\n    process.exit(1);\n}",
             "storage": "0",
             "varName": "",
-            "name": "Run Script"
+            "name": "Run Code [DBM German]"
         }
     ]
 }

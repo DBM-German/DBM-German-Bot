@@ -387,7 +387,7 @@
                             "code": "tempVars(\"embed\").setImage(\"https://cdn.pixabay.com/photo/2013/07/12/16/52/you-151415_1280.png\");",
                             "storage": "0",
                             "varName": "",
-                            "name": "Run Script"
+                            "name": "Run Code [DBM German]"
                         },
                         {
                             "storage": "1",
@@ -647,7 +647,7 @@
             "code": "const data = cache.actions[cache.index];\n\nlet messageOptions = {\n    embeds: [ tempVars(\"embed\") ]\n};\nlet promise = null;\n\nif(cache.interaction.deferred) {\n    promise = cache.interaction.editReply(messageOptions);\n} else {\n    promise = cache.interaction.reply(messageOptions);\n}\n\npromise\n    .then(() => this.callNextAction(cache))\n    .catch((err) => this.displayError(data, cache, err));",
             "storage": "0",
             "varName": "",
-            "name": "Run Script"
+            "name": "Run Code [DBM German]"
         }
     ],
     "comType": "4",

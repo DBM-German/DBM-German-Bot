@@ -276,7 +276,7 @@
             "code": "let description = `**Level:** ${tempVars(\"level\")}\n**XP:** ${tempVars(\"xp\")}/${tempVars(\"requiredXp\")}\n**Rang:** #${tempVars(\"rank\") + 1}`;\n\nlet multiplier = 1;\n\nif(globalVars(\"holiday\")) {\n    if(multiplier == 1) description += `\\n\\n${globalVars(\"holiday\")}`;\n    multiplier += 1;\n}\nif(globalVars(\"isNitroBooster\")(tempVars(\"member\"))) {\n    if(multiplier == 1) description += `\\n\\nNitro Booster`;\n    multiplier += 1;\n}\n\nswitch(multiplier) {\n    case 3:\n        description += \" – **dreifache XP!**\";\n        break;\n    case 2:\n        description += \" – **zweifache XP!**\";\n        break;\n    case 1:\n    default:\n        break;\n}\n\ndescription;",
             "storage": "1",
             "varName": "description",
-            "name": "Run Script"
+            "name": "Run Code [DBM German]"
         },
         {
             "shortComment": "Easter egg \"Level 100\"",
@@ -345,7 +345,7 @@
             "code": "`**Level:** ¯\\\\\\_(ツ)\\_/¯\n**XP:** ┬─┬ノ( º \\_ ºノ)\n**Rang:** (╯°□°)╯︵ ┻━┻`;",
             "storage": "1",
             "varName": "description",
-            "name": "Run Script"
+            "name": "Run Code [DBM German]"
         },
         {
             "storage": "1",

@@ -34,7 +34,7 @@
             "code": "globalVars(\"log\")(cache, `Event triggerd by member ${tempVars(\"member\").id} on server ${server.id}`);",
             "storage": "0",
             "varName": "",
-            "name": "Run Script"
+            "name": "Run Code [DBM German]"
         },
         {
             "storage": "1",

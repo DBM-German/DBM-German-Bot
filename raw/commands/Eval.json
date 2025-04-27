@@ -11,7 +11,7 @@
             "code": "globalVars(\"isBotOwner\")(member);",
             "storage": "1",
             "varName": "isOwner",
-            "name": "Run Script"
+            "name": "Run Code [DBM German]"
         },
         {
             "storage": "1",
@@ -274,7 +274,7 @@
             "code": "let code = tempVars(\"eval-code\");\n\n// Remove \"use sandbox\", as this only indicates to the bot to use sandbox mode\ncode = code.replace(/^\"use sandbox\";?\\s+(\\n\\s*)?/, \"\");\n\nthis.storeValue(code, 1, \"eval-code\", cache);\nthis.storeValue(false, 1, \"isOwner\", cache);",
             "storage": "0",
             "varName": "",
-            "name": "Run Script"
+            "name": "Run Code [DBM German]"
         },
         {
             "storage": "1",
@@ -312,7 +312,7 @@
                         "code": "const EVAL_CODE_LENGTH = 1500;\nconst { Util } = DBM.DiscordJS;\n\n`Eingabe:\n\\`\\`\\`js\n${Util.escapeMarkdown(globalVars(\"breakText\")(tempVars(\"eval-code\"), EVAL_CODE_LENGTH))}\n\\`\\`\\`\nAusgabe:\n\\`\\`\\`js\nBitte warten...\n\\`\\`\\`\n\n*Vollzugriff – Sandbox deaktiviert*`;",
                         "storage": "1",
                         "varName": "description",
-                        "name": "Run Script"
+                        "name": "Run Code [DBM German]"
                     },
                     {
                         "source": "FGdiL",
@@ -325,7 +325,7 @@
                         "code": "try {\n    let promise = eval(\n        \"(async () => {\\n\" +\n        tempVars(\"eval-code\") +\n        \"\\n})();\"\n    );\n\n    promise.then(result => {\n        this.storeValue(result, 1, \"eval-result\", cache);\n        this.callNextAction(cache);\n    }).catch(error => {\n        this.storeValue(error, 1, \"eval-error\", cache);\n        this.callNextAction(cache);\n    });\n    \n} catch(error) {\n    this.storeValue(error, 1, \"eval-error\", cache);\n    this.callNextAction(cache);\n}",
                         "storage": "0",
                         "varName": "",
-                        "name": "Run Script"
+                        "name": "Run Code [DBM German]"
                     },
                     {
                         "behavior": "0",
@@ -333,7 +333,7 @@
                         "code": "const EVAL_CODE_LENGTH = 1500;\nconst EVAL_CONTENT_LENGTH = 4500;\nconst { Util } = DBM.DiscordJS;\n\nlet content = tempVars(\"eval-result\");\nlet contentName = \"Ausgabe\";\n\nif(tempVars(\"eval-error\")) {\n    content = tempVars(\"eval-error\");\n    contentName = \"Error\";\n}\n\n`Eingabe:\n\\`\\`\\`js\n${Util.escapeMarkdown(globalVars(\"breakText\")(tempVars(\"eval-code\"), EVAL_CODE_LENGTH))}\n\\`\\`\\`\n${contentName}:\n\\`\\`\\`js\n${Util.escapeMarkdown(globalVars(\"breakText\")(String(content?.toString()), EVAL_CONTENT_LENGTH))}\n\\`\\`\\`\n\n*Vollzugriff – Sandbox deaktiviert*`;",
                         "storage": "1",
                         "varName": "description",
-                        "name": "Run Script"
+                        "name": "Run Code [DBM German]"
                     },
                     {
                         "storage": "1",
@@ -369,7 +369,7 @@
                         "code": "const EVAL_CODE_LENGTH = 1500;\nconst { Util } = DBM.DiscordJS;\n\n`Eingabe:\n\\`\\`\\`js\n${Util.escapeMarkdown(\n    globalVars(\"breakText\")(\n        tempVars(\"eval-code\"),\n        EVAL_CODE_LENGTH\n    )\n)}\n\\`\\`\\`\nAusgabe:\n\\`\\`\\`js\nBitte warten...\n\\`\\`\\`\nKonsole:\n\\`\\`\\`cmd\nBitte warten...\n\\`\\`\\`\nExit Code:\n\\`\\`\\`\nBitte warten...\n\\`\\`\\`\n\nAusführung endet <t:${Math.ceil(tempVars(\"eval-timestamp\") / 1000) + 5}:R>`;",
                         "storage": "1",
                         "varName": "description",
-                        "name": "Run Script"
+                        "name": "Run Code [DBM German]"
                     },
                     {
                         "source": "FGdiL",
@@ -382,7 +382,7 @@
                         "code": "const { fork } = require(\"node:child_process\");\n\nconst child = fork(\"./code/eval-worker.js\", { silent: true , timeout: 10e3, serialization: \"advanced\" });\nlet consoleOutput = \"\";\n\n// Send eval code to child process after this script fully executed\nsetImmediate(() => child.send(tempVars(\"eval-code\")));\n\nchild.on(\"message\", response => {\n    if(response.result !== undefined) {\n        let result;\n        try {\n            result = JSON.parse(response.result);\n\n            if(result === undefined) throw new Error(\"No JSON-friendly result.\");\n        } catch(e) {\n            result = response.result;\n        }\n\n        this.storeValue(result, 1, \"eval-result\", cache);\n    } else if(response.error !== undefined) {\n        this.storeValue(response.error, 1, \"eval-error\", cache);\n    } else {\n        this.storeValue(new TypeError(\"Invalid eval worker response: \" + response), 1, \"eval-error\", cache);\n    }\n});\n\nchild.on(\"error\", error => {\n    this.storeValue(error, 1, \"eval-error\", cache);\n});\n\nchild.on(\"exit\", code => {\n    this.storeValue(code ?? 0, 1, \"eval-exit-code\", cache);\n    this.storeValue(consoleOutput, 1, \"eval-console\", cache);\n    this.callNextAction(cache);\n});\n\nchild.stdout.on(\"data\", data => {\n    consoleOutput += data.toString();\n});\n\nchild.stderr.on(\"data\", data => {\n    consoleOutput += data.toString();\n});",
                         "storage": "0",
                         "varName": "",
-                        "name": "Run Script"
+                        "name": "Run Code [DBM German]"
                     },
                     {
                         "behavior": "0",
@@ -390,7 +390,7 @@
                         "code": "const EVAL_CODE_LENGTH = 1500;\nconst EVAL_CONTENT_LENGTH = 2000;\nconst EVAL_CONSOLE_LENGTH = 2000;\nconst EVAL_EXIT_CODE_LENGTH = 500;\nconst INVISIBLE_CHAR = \"ㅤ\";\nconst { Util } = DBM.DiscordJS;\n\nlet content = tempVars(\"eval-result\");\nlet contentName = \"Ausgabe\";\n\nif(tempVars(\"eval-error\")) {\n    content = tempVars(\"eval-error\");\n    contentName = \"Error\";\n}\n\n`Eingabe:\n\\`\\`\\`js\n${Util.escapeMarkdown(\n    globalVars(\"breakText\")(\n        tempVars(\"eval-code\"),\n        EVAL_CODE_LENGTH\n    )\n)}\n\\`\\`\\`\n${contentName}:\n\\`\\`\\`js\n${Util.escapeMarkdown(\n    globalVars(\"breakText\")(\n        String(content?.toString()),\n        EVAL_CONTENT_LENGTH\n    )\n)}\n\\`\\`\\`\nKonsole:\n\\`\\`\\`cmd\n${tempVars(\"eval-console\")?.length > 0\n    ? Util.escapeMarkdown(\n        globalVars(\"breakText\")(\n            tempVars(\"eval-console\"),\n            EVAL_CONSOLE_LENGTH\n        )\n    )\n    : INVISIBLE_CHAR\n}\n\\`\\`\\`\nExit Code:\n\\`\\`\\`\n${Util.escapeMarkdown(\n    globalVars(\"breakText\")(\n        String(tempVars(\"eval-exit-code\")),\n        EVAL_EXIT_CODE_LENGTH\n    )\n)}\n\\`\\`\\``;",
                         "storage": "1",
                         "varName": "description",
-                        "name": "Run Script"
+                        "name": "Run Code [DBM German]"
                     },
                     {
                         "storage": "1",

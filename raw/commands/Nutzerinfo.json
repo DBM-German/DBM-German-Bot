@@ -179,7 +179,7 @@
             "code": "`**ID:** ${tempVars(\"id\")}\n**Tag:** ${tempVars(\"tag\")}\n**Bot:** ${tempVars(\"member\").user.bot ? \"Ja\" : \"Nein\"}\n**Level:** ${tempVars(\"level\")}\n**XP:** ${tempVars(\"xp\")}/${tempVars(\"requiredXp\")}\n**Nitro Booster:** ${tempVars(\"member\").premiumSince ? \"Ja\" : \"Nein\"}\n**Erstellung des Accounts:** <t:${Math.round(tempVars(\"created-timestamp\") / 1000)}:F>\n**Beitritt des Servers:** <t:${Math.round(tempVars(\"joined-timestamp\") / 1000)}:F>`;",
             "storage": "1",
             "varName": "description",
-            "name": "Run Script"
+            "name": "Run Code [DBM German]"
         },
         {
             "storage": "1",
