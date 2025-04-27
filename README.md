@@ -24,7 +24,7 @@ Should the used bot not be on the DBM German servers, the IDs in the initializat
    - Discord Bot Maker 2.0 – Steam Website: <https://s.team/a/682130> | Steam Client: <steam://store/682130>
 4. Run the setup via `npm run setup`
 5. Open the project in DBM
-6. Set a bot token in the settings
+6. Set a bot token in the settings or create a `.env` file (see [example](#example-env-file))
 7. Start the bot using `npm run start`
 
 ## DE | Wie man loslegt
@@ -40,7 +40,7 @@ müssen die IDs im Initialisierungsevent angepasst werden.
    - Discord Bot Maker 2.0 – Steam Website: <https://s.team/a/682130> | Steam Client: <steam://store/682130>
 4. Führe das Setup aus via `npm run setup`
 5. Öffne das Projekt in DBM
-6. Lege einen Bot-Token in den Einstellungen fest
+6. Lege einen Bot-Token in den Einstellungen fest oder erstelle eine `.env`-Datei (siehe [Beispiel](#example-env-file))
 7. Starte den Bot mittels `npm run start`
 
 ## EN | How to edit the bot
@@ -126,5 +126,14 @@ und ihn automatisch neu zu starten.
 
 Alternativ kannst du den Bot mittels Docker Compose starten. Um das zu tun, erstelle eine `.env`-Datei,
 füge die Umgebungsvariablen für die ID und den Token des Bots hinzu und starte ihn dann via `docker compose up`.
+
+## Example .env file
+
+```properties
+DBM_CLIENT_TOKEN=XXX
+DBM_CLIENT_ID=YYY
+# Add path to node.exe and npm.cmd if necessary (e.g. when using FNM)
+# PATH=...\AppData\Roaming\fnm\aliases\lts-latest
+```
 
 [Licence-CC-BY-NC-SA]: https://creativecommons.org/licenses/by-nc-sa/4.0/

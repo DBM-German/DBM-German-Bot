@@ -9,6 +9,7 @@
                 "start"
             ],
             "runtimeExecutable": "npm",
+            "envFile": "${workspaceFolder}/.env",
             "skipFiles": [
                 "<node_internals>/**"
             ],
@@ -22,6 +23,7 @@
                 "setup"
             ],
             "runtimeExecutable": "npm",
+            "envFile": "${workspaceFolder}/.env",
             "skipFiles": [
                 "<node_internals>/**"
             ],
@@ -35,6 +37,7 @@
                 "copy-code"
             ],
             "runtimeExecutable": "npm",
+            "envFile": "${workspaceFolder}/.env",
             "skipFiles": [
                 "<node_internals>/**"
             ],
@@ -48,6 +51,7 @@
                 "copy-res"
             ],
             "runtimeExecutable": "npm",
+            "envFile": "${workspaceFolder}/.env",
             "skipFiles": [
                 "<node_internals>/**"
             ],
@@ -61,6 +65,7 @@
                 "to-dbm"
             ],
             "runtimeExecutable": "npm",
+            "envFile": "${workspaceFolder}/.env",
             "skipFiles": [
                 "<node_internals>/**"
             ],
@@ -74,6 +79,7 @@
                 "to-raw"
             ],
             "runtimeExecutable": "npm",
+            "envFile": "${workspaceFolder}/.env",
             "skipFiles": [
                 "<node_internals>/**"
             ],
