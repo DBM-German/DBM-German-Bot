@@ -234,6 +234,15 @@ try {
     process.exit(1);
 }
 
+// Build mods
+try {
+    console.log("Baue Mods...");
+    await exec("npm i && npm run build", { cwd: MODS_DIR, windowsHide: true, encoding: ENCODING });
+} catch (e) {
+    console.error(`Mods können nicht gebaut werden: ${e}`);
+    process.exit(1);
+}
+
 // Copy mods
 try {
     console.log("Kopiere Mods...");
